@@ -27,7 +27,7 @@ As a database user, DBA or application developer,
 
 3. Click the **Navigation Menu** in the upper left, navigate to **Oracle Database**, and select **Bare Metal, VM, and Exadata**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-dbcs.png " ")
+	![](https://oracle-livelabs.github.io/common/images/console/database-dbcs.png " ")
 
 4. Select **ExaCS Compartment**. Note: Oracle Cloud Infrastructure allows logical isolation of users within a tenancy through Compartments. This allows multiple users and business units to share an OCI tenancy while being isolated from each other.
 
