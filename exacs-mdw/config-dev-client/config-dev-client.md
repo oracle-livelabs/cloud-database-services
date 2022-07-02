@@ -7,7 +7,7 @@ The Oracle Cloud Infrastructure marketplace provides a pre-built image with nece
 The image is pre-configured with tools and language drivers so that you can configure a secure connection using Oracle SQL Developer, SQLcl, and SQL*Plus.
 For a complete list of features, login to your OCI account, select 'Marketplace' from the top left menu, and browse details on the 'Oracle Developer Cloud Image'
 
-![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/marketplace.png " ")
+![](https://oracle-livelabs.github.io/common/images/console/marketplace.png " ")
 
 Estimated Lab Time: 30 minutes.
 
@@ -33,7 +33,7 @@ We start by deploying a pre-configured client machine instance from the OCI mark
 
 2. Click the **Navigation Menu** in the upper left, navigate to **Compute**, and select **Instances**.
 
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+	![](https://oracle-livelabs.github.io/common/images/console/compute-instances.png " ")
 
 3. Click **Create Instance**.
 
