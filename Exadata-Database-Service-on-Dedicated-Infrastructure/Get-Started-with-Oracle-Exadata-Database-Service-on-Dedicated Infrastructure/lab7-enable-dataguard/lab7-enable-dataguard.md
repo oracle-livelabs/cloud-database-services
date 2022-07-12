@@ -72,16 +72,18 @@ This lab requires completion of the following:
         * **Region**: Select a region where you want to locate the standby database. The hint text associated with this field tells you in which Region the primary Database is located. The Region where the primary Database is located is selected by default. You can choose to locate the standby database in a different region.
         * **Availability domain**: Select an availability domain for the standby database. The hint text associated with this field tells you in which availability domain the primary Database is located.
         * **Shape**: Select the Shape of the standby Exadata system.
-        * **Data Guard peer resource type**: Select DB System or **VM Cluster**.
-        * Select a DB system or cloud VM cluster from the drop-down list.
+        * **Data Guard peer resource type**: Select DB System or VM Cluster.
+        * Select a DB system or VM cluster from the drop-down list.
 
       * **Data Guard association details**:
 
    ![Data Guard Type](./images/select-data-guard-type.png " ")
 
-      * Data Guard Type: Select Active Data Guard or Data Guard. Active Data Guard provides additional features, including Real-Time Query and DML Offload, Automatic Block Repair, Standby Block Change Tracking, Far Sync, Global Data Services, and Application Continuity. Note that Active Data Guard requires an Oracle Active Data Guard license. For more information on Active Data Guard, see Active Data Guard. For a complete overview of both Data Guard types, see Introduction to Oracle Data Guard
+      * Data Guard Type: Select Active Data Guard or Data Guard. Active Data Guard provides additional features, including Real-Time Query and DML Offload, Automatic Block Repair, Standby Block Change Tracking, Far Sync, Global Data Services, and Application Continuity. Note that Active Data Guard requires an Oracle Active Data Guard license.
 
-          * Protection mode: The protection mode can be Maximum Performance or Maximum Availability. See Oracle Data Guard Protection Modes for information on these options.
+      For more information on Active Data Guard, see [Active Data Guard](https://www.oracle.com/database/data-guard/).
+
+          * Protection mode: The protection mode can be **Maximum Performance** or **Maximum Availability**.
 
           * Transport type: The redo transport type used for this Data Guard association.
 
@@ -165,4 +167,4 @@ Click [here](https://docs.oracle.com/en-us/iaas/exadatacloud/exacs/using-data-gu
 
 * **Contributors** - Tammy Bednar, Eddie Ambler, Product Management
 
-* **Last Update** - June 2022.
+* **Last Update** - July 2022.

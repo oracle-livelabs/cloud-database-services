@@ -207,4 +207,4 @@ Click [here](https://docs.oracle.com/en-us/iaas/exadatacloud/exacs/manage-databa
 
 * **Contributors** - Tammy Bednar, Eddie Ambler, Product Management
 
-* **Last Update** - May 2022.
+* **Last Update** - July 2022.

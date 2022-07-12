@@ -94,4 +94,4 @@ Click [here](https://docs.oracle.com/en-us/iaas/exadatacloud/exacs/ecs-managing-
 
 * **Contributors** - Tammy Bednar, Eddie Ambler, Product Management
 
-* **Last Update** - June 2022.
+* **Last Update** - July 2022.

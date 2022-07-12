@@ -132,8 +132,8 @@ You may now **proceed to the next lab**.
     Choose a **Shape family**. A custom database software image is compatible with only one shape family. Available shape families are
     the following:
 
-       * Bare metal and virtual machine DB systems
-       * Exadata Cloud Service instances
+       * Virtual Machine and Bare Metal Shapes
+       * Exadata Shapes
 
 5. Choose the **Database version** for your image. You can create a database software image using any supported Oracle Database release
     update (RU).
@@ -166,4 +166,4 @@ Click [here](https://docs.oracle.com/en-us/iaas/exadatacloud/exacs/ecs-manage-db
 
 * **Contributors** - Tammy Bednar, Eddie Ambler, Product Management
 
-* **Last Update** - May 2022.
+* **Last Update** - July 2022.
