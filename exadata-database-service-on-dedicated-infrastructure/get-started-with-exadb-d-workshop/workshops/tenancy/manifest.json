@@ -7,7 +7,7 @@
       {
           "title": "Introduction",
           "description": "Introduction",
-          "filename": "./introduction/introduction.md"
+          "filename": "../../introduction/introduction.md"
       },
         {
             "title": "Get Started",
@@ -18,37 +18,37 @@
         {
             "title": "Lab 1: Create your Virtual Cloud Network (VCN) and Required IAM Policy for Exadata Database Service on Dedicated Infrastructure",
             "description": "Create your Virtual Cloud Network (VCN) and Required IAM Policy",
-            "filename": "./lab1-prepare-network-and-iam/lab1-prepare-network-and-iam.md"
+            "filename": "../../lab1-prepare-network-and-iam/lab1-prepare-network-and-iam.md"
         },
         {
             "title": "Lab 2: Create an Exadata Cloud Infrastructure resource",
             "description": "Creating Exadata Cloud Infrastructure",
-            "filename": "./lab2-create-exacloud-infra/lab2-create-exacloud-infra.md"
+            "filename": "../../lab2-create-exacloud-infra/lab2-create-exacloud-infra.md"
         },
        {
             "title": "Lab 3: Create a Cloud VM Cluster resource",
             "description": "Create VM Cluster",
-            "filename": "./lab3-create-cloud-vmcluster/lab3-create-cloud-vmcluster.md"
+            "filename": "../../lab3-create-cloud-vmcluster/lab3-create-cloud-vmcluster.md"
         },
         {
             "title": "Lab 4: Create Oracle Database Home on an Exadata Database Service on Dedicated Infrastructure",
             "description": "Create Oracle Database Home",
-            "filename": "./lab4-create-dbhome/lab4-create-dbhome.md"
+            "filename": "../../lab4-create-dbhome/lab4-create-dbhome.md"
         },
         {
             "title": "Lab 5: Create Oracle Database on an Exadata Database Service on Dedicated Infrastructure",
             "description": "Create Oracle Database",
-            "filename": "./lab5-create-database/lab5-create-database.md"
+            "filename": "../../lab5-create-database/lab5-create-database.md"
         },
         {
             "title": "Lab 6: Enable Automatic Backups for a Database",
             "description": "Enable Automatic Backups",
-            "filename": "./lab6-enable-automatic-backups-for-a-database/lab6-enable-automatic-backups-for-a-database.md"
+            "filename": "../../lab6-enable-automatic-backups-for-a-database/lab6-enable-automatic-backups-for-a-database.md"
         },
         {
             "title": "Lab 7: Enable Data Guard on an Exadata Database Service on Dedicated Infrastructure",
             "description": "Enable Data Guard",
-            "filename": "./lab7-enable-dataguard/lab7-enable-dataguard.md"
+            "filename": "../../lab7-enable-dataguard/lab7-enable-dataguard.md"
         },
 
         {
