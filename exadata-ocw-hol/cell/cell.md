@@ -2,27 +2,19 @@
 
 ## Introduction
 
-*Describe the lab in one or two sentences, for example:* This lab walks you through the steps to ...
+In this practice, you are introduced to the cellcli utility for querying and manipulating Exadata storage attributes. You will execute list commands to show various Exadata storage components.
 
 Estimated Lab Time: 20 minutes
 
 ### Objectives
 
-*List objectives for this lab using the format below*
-
 In this lab, you will:
-* Objective 1
-* Objective 2
-* Objective 3
+* Execute list commands in cellcli to show Exadata storage features
 
-### Prerequisites (Optional)
+### Prerequisites
 
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is necessary to complete the lab. Do NOT list each previous lab as a prerequisite.*
-
-This lab assumes you have:
-* An Oracle Cloud account
-* All previous labs successfully completed
-
+This lab assumes:
+* You have access to cellcli on an Exadata storage server or a cellcli simulator
 
 ## Exadata Storage Objects
 

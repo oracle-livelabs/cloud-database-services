@@ -2,40 +2,32 @@
 
 ## About this Workshop
 
-These labs are intended on giving you a solid foundation (or refreshing your memory) on the use of some Oracle Exadata's perfomance features. Specifically, Exadata Smart Scan, Storage Indexes, Hybrid Columnar Compression, Smart Flash Cache & Persistent Memory
+These labs are intended on giving you a solid foundation (or refreshing your memory) on the use of some Oracle Exadata's performance features.
 
-Estimated Workshop Time: -- hours -- minutes (This estimate is for the entire workshop - it is the sum of the estimates provided for each of the labs included in the workshop.)
+Estimated Workshop Time: 60 minutes
 
 ### Objectives
 
-*List objectives for the workshop*
+In this workshop, you will learn about:
+* Storage server features through CellCLI
+* Smart Scan
+* Hybrid Columnar Compression
+* Flash Cache
+* Storage Indexes
 
-In this workshop, you will learn how to:
-* Provision
-* Setup
-* Load
-* Query
-
-### Prerequisites (Optional)
-
-*List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
+### Prerequisites
 
 This lab assumes you have:
-* An Oracle account
-* All previous labs successfully completed
-
-*This is the "fold" - below items are collapsed by default*
-
-In general, the Introduction does not have Steps.
+* Access to cellcli on an Exadata storage server or a cellcli simulator
+* Sqlplus access to a database running on an Exadata
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
+* [Exadata Documentation](https://docs.oracle.com/en/engineered-systems/exadata-database-machine)
+* [Exadata Blog](https://blogs.oracle.com/exadata)
+* [My Oracle Support Exadata Information Center](https://support.oracle.com/epmos/faces/DocumentDisplay?id=1306791.2)
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+* **Author** - Seth Miller, Principal Product Manager, Exadata Product Management
+* **Contributors** - Alex Blythe, Exadata Product Management
+* **Last Updated By/Date** - Seth Miller, August 2022
