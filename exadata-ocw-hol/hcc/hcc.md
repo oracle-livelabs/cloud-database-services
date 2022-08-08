@@ -12,7 +12,7 @@ In this lab, you will:
 * Create two tables using Hybrid Columnar Compression
 * Observe how the compression levels affect the size of the data
 
-### Prerequisites (Optional)
+### Prerequisites
 
 This lab assumes:
 * Your current working directory includes all of the lab scripts

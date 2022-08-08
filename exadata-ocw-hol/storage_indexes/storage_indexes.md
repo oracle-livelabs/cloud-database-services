@@ -27,6 +27,6 @@ Execute the SQL script `lab_storage_indexes_02.sql`.
 
     @lab_storage_indexes_02.sql
 
-Repeat the statistics query using the SQL script `lab_storage_indexes_01.sql`. The statistics show that this query benefits from a storage index. Storage indexes were used to bypass a significant amount of I/O. Queries that benefit from storage indexes can execute more quickly using fewer resources which allows other workloads to benefit from the unused I/O resources.
+Repeat the statistics query using the SQL script `lab_storage_indexes_01.sql`. The statistic `cell physical IO bytes saved by storage index` shows that this query benefits from a storage index. Storage indexes were used to bypass a significant amount of I/O. Queries that benefit from storage indexes can execute more quickly using fewer resources which allows other workloads to benefit from the unused I/O resources.
 
     @lab_storage_indexes_01.sql

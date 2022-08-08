@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-These labs are intended on giving you a solid foundation (or refreshing your memory) on the use of some Oracle Exadata's performance features.
+These labs give you a solid foundation (or refresh your memory) on the use of some Oracle Exadata's signature performance features.
 
 Estimated Workshop Time: 60 minutes
 

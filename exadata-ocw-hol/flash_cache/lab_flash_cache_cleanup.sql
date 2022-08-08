@@ -6,7 +6,7 @@ create table customers_fc as
 select * from customers_org
 where 1=0;
 
-insert /*+ APPEND PARALLEL(4) */ into customers_fc
-select * from customers_org;
+INSERT /*+ APPEND PARALLEL(4) */ INTO customers_fc
+SELECT * FROM customers_org;
 
 commit;
