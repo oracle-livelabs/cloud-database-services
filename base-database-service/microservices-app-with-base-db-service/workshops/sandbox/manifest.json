@@ -4,20 +4,23 @@
     "variables": ["../../variables/variables.json",
         "../../variables/variables-in-another-file.json"],
     "tutorials": [
+
         {
-            "title": "Get Started",
-            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+          "title": "Introduction",
+          "description": "Introduction",
+          "filename": "../../Introduction/introduction.md"
         },
+
         {
-            "title": "Introduction",
-            "description": "Introduction",
-            "filename": "../../introduction/introduction.md"
+            "title": "Get Started with noVNC Remote Desktop",
+            "description": "Using noVNC Remote Desktop",
+            "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
         },
+
         {
             "title": "Lab 1: Create an Oracle Base Database Service Instance",
             "description": "Create Oracle Base Database Service",
-            "filename": "../../lab1-prepare-network-and-iam/lab1-prepare-network-and-iam.md"
+            "filename": "../../lab1/lab1-create-oracle-base-database-service.md"
         },
         {
             "title": "Lab 2: Create The Cloud Application Tier",
