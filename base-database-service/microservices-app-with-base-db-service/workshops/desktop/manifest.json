@@ -1,0 +1,51 @@
+{
+    "workshoptitle": "Deploy a Microservices-based App Connected to Oracle Base Database Service",
+    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "variables": ["../../variables/variables.json",
+        "../../variables/variables-in-another-file.json"],
+    "tutorials": [
+
+        {
+          "title": "Introduction",
+          "description": "Introduction",
+          "filename": "../../Introduction/introduction.md"
+        },
+
+        {
+            "title": "Get Started with noVNC Remote Desktop",
+            "description": "Using noVNC Remote Desktop",
+            "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
+        },
+
+        {
+            "title": "Lab 1: Create an Oracle Base Database Service Instance",
+            "description": "Create Oracle Base Database Service",
+            "filename": "../../lab1/lab1-create-oracle-base-database-service.md"
+        },
+        {
+            "title": "Lab 2: Create The Cloud Application Tier",
+            "description": "Creating Exadata Cloud Infrastructure",
+            "filename": "../../lab2-create-exacloud-infra/lab2-create-exacloud-infra.md"
+        },
+       {
+            "title": "Lab 3: Configure Cloud Microservice Application Tier to connect to Oracle Base Database Service",
+            "description": "Create VM Cluster",
+            "filename": "../../lab3-create-cloud-vmcluster/lab3-create-cloud-vmcluster.md"
+        },
+        {
+            "title": "Lab 4: Build The Application",
+            "description": "Create Oracle Database Home",
+            "filename": "../../lab4-create-dbhome/lab4-create-dbhome.md"
+        },
+        {
+            "title": "Lab 5: Run The Application",
+            "description": "Create Oracle Database",
+            "filename": "../../lab5-create-database/lab5-create-database.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}
