@@ -28,19 +28,19 @@ By default the attributes that are shown with `list lun` are NAME, ID, and STATU
 
 Examine the detailed attribute listing for a LUN. Note the attribute setting `isSystemLun=FALSE`. This indicates that the LUN is not located on a system disk. Notice also that the LUN is associated with one physical disk and one cell disk.
 
-    list lun 1_0 detail
+    list lun 0_0 detail
 
 Exadata maintains the physical attributes of each hard disk in a physicaldisk object. A physicaldisk object is automatically created for each hard disk. Examine the attributes for the hard disk associated with a LUN.
 
-    list physicaldisk where luns = '1_0' detail
+    list physicaldisk where luns = '0_0' detail
 
 A cell disk is a higher level storage abstraction. Each cell disk is based on a LUN and contains additional attributes and metadata. Examine the attributes for the cell disk.
 
-    list celldisk where devicename = '/dev/md301' detail
+    list celldisk where devicename = '/dev/sda' detail
 
 A grid disk defines an area of storage on a cell disk. Grid disks are consumed by ASM and are used as the storage for ASM disk groups. Each cell disk can contain a number of grid disks. Examine the grid disks associated with a cell disk. Note the names and sizes of the grid disks.
 
-    list griddisk where name = 'C_DATA_CD_00_cell01' detail
+    list griddisk where name = 'DATAC1_CD_00_cell01' detail
 
 ## Flash Cache
 
