@@ -28,9 +28,9 @@
             "filename": "../../lab2-create-exacloud-infra/lab2-create-exacloud-infra.md"
         },
        {
-            "title": "Lab 3: Configure Cloud Microservice Application Tier to connect to Oracle Base Database Service",
-            "description": "Create VM Cluster",
-            "filename": "../../lab3-create-cloud-vmcluster/lab3-create-cloud-vmcluster.md"
+            "title": "Lab 3: Configure The Microservice Application to connect to Oracle Base Database Service",
+            "description": "Configure the microservice application to connect to Oracle Base Database Service",
+            "filename": "../../lab3/lab3-configure-app-to-connect-to-basedb.md"
         },
         {
             "title": "Lab 4: Build The Application",
@@ -43,9 +43,9 @@
             "filename": "../../lab5-create-database/lab5-create-database.md"
         },
         {
-            "title": "Need Help?",
+            "title": "Oracle CloudWorld 2022 - Get Help",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+            "filename":"https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
         }
     ]
 }
