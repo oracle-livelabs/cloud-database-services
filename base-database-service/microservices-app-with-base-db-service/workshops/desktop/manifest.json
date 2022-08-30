@@ -12,6 +12,11 @@
         },
 
         {
+            "title": "Get Started - LiveLabs login",
+            "description": "Using noVNC Remote Desktop",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
+        },
+        {
             "title": "Get Started with noVNC Remote Desktop",
             "description": "Using noVNC Remote Desktop",
             "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
@@ -28,17 +33,18 @@
             "filename": "../../lab2-create-exacloud-infra/lab2-create-exacloud-infra.md"
         },
        {
-            "title": "Lab 3: Configure The Microservice Application to connect to Oracle Base Database Service",
+            "title": "Lab 3: Configure and Build The Microservice Application to connect to Oracle Base Database Service",
             "description": "Configure the microservice application to connect to Oracle Base Database Service",
             "filename": "../../lab3/lab3-configure-app-to-connect-to-basedb.md"
         },
         {
-            "title": "Lab 4: Build The Application",
+            "title": "Lab 4: Run The Application",
             "description": "Create Oracle Database Home",
-            "filename": "../../lab4-create-dbhome/lab4-create-dbhome.md"
+            "filename": "../../lab4/lab4-run-the-application.md"
         },
+
         {
-            "title": "Lab 5: Run The Application",
+            "title": "Bonus Lab: Additional Labs & Tasks (Optional)",
             "description": "Create Oracle Database",
             "filename": "../../lab5-create-database/lab5-create-database.md"
         },
