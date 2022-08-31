@@ -9,17 +9,13 @@
           "title": "Introduction",
           "description": "Introduction",
           "filename": "../../Introduction/introduction.md"
-<<<<<<< HEAD
         },
 
         {
             "title": "Get Started - LiveLabs login",
             "description": "Using noVNC Remote Desktop",
             "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
-=======
->>>>>>> upstream/main
         },
-
         {
             "title": "Get Started with noVNC Remote Desktop",
             "description": "Using noVNC Remote Desktop",
@@ -53,18 +49,9 @@
             "filename": "../../lab5bonuslabs/lab5-bonus-labs.md"
         },
         {
-<<<<<<< HEAD
-=======
-            "title": "Lab 5: Run The Application",
-            "description": "Create Oracle Database",
-            "filename": "../../lab5-create-database/lab5-create-database.md"
-        },
-        {
->>>>>>> upstream/main
             "title": "Oracle CloudWorld 2022 - Get Help",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
         }
-
     ]
 }

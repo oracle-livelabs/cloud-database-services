@@ -5,14 +5,7 @@
 
 This lab walks you through the steps to Run the Application Connected to Oracle Base Database Service.
 
-<<<<<<< HEAD
-Estimated Time: 20 minutes
-=======
-Estimated Time: 30 minutes
->>>>>>> upstream/main
-
-
-
+Estimated Time: 25 minutes
 
 ### Objectives
 
@@ -90,6 +83,61 @@ This lab requires completion of the following:
     <copy>
 
       curl -i localhost:8080/mytable
+
+    </copy>
+    ```
+
+    ```
+    <copy>
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+        content-length: 49
+        connection: keep-alive
+
+        [{"id":1,"name":"Dustin"},{"id":2,"name":"Vecna"}]
+
+    </copy>
+    ```
+
+    ```
+    <copy>
+
+        curl -i localhost:8080/mytable/Dustin
+
+    </copy>
+    ```
+
+    ```
+    <copy>
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+        content-length: 22
+        connection: keep-alive
+
+        {"id":1,"name":"Dustin"}
+
+    </copy>
+    ```
+
+    ```
+    <copy>
+
+        curl -i localhost:8080/mytable/Debbie
+
+    </copy>
+    ```
+
+    ```
+    <copy>
+
+          HTTP/1.1 404 Not Found
+          Content-Type: application/json
+          content-length: 89
+          connection: keep-alive
+
+          {"message":"Page Not Found","_links":{"self":{"href":"/mytable/Debbie","templated":false}}}
 
     </copy>
     ```
