@@ -43,14 +43,14 @@ This lab requires completion of the following:
 
 2. Create the Application schema user
 
-   ```
-   <copy>
+     ```
+     <copy>
 
-   CREATE USER MyBaseDB_APP IDENTIFIED BY "WELcome123#!";
-   GRANT CONNECT, RESOURCE, CREATE SESSION, UNLIMITED TABLESPACE TO MyBaseDB;
+     CREATE USER MyBaseDB_APP IDENTIFIED BY "WELcome123#!";
+     GRANT CONNECT, RESOURCE, CREATE SESSION, UNLIMITED TABLESPACE TO MyBaseDB;
 
-   </copy>
-   ```
+     </copy>
+     ```
    Create a schema user password (must be at least 12 characters and contain a number and an uppercase letter).
 
    ![create user](./images/create-user.png" ")
@@ -73,7 +73,7 @@ This lab requires completion of the following:
 
 
        ```
-       <copy> mn create-app Demo.BaseDB
+       <copy> mn create-app example.basedb
         --build=gradle --lang=java --jdk=11 \
         --features=data-jdbc,flyway,oracle
        </copy>
@@ -91,13 +91,13 @@ This lab requires completion of the following:
    Create a MyTable entity class to represent database data:
 
    Create the entity class on this directory
-   *src/main/java/example/micronaut/domain/MyTable.java*
+   *src/main/java/example/basedb/domain/MyTable.java*
 
        ```
 
        <copy>
 
-              package example.micronaut.domain;
+              package example.basedb.domain;
 
               import io.micronaut.core.annotation.Creator;
               import io.micronaut.data.annotation.GeneratedValue;
@@ -139,15 +139,15 @@ This lab requires completion of the following:
 
    Create a MyTableRepository class to read and write MyTable database data:
 
-   Create the repository class on this directory *src/main/java/example/micronaut/repository/MyTableRepository.java*
+   Create the repository class on this directory *src/main/java/example/basedb/repository/MyTableRepository.java*
 
        ```
 
        <copy>
 
-              package example.micronaut.repository;
+              package demo.basedb.repository;
 
-              import example.micronaut.domain.MyTable;
+              import demo.basedb.domain.MyTable;
               import io.micronaut.core.annotation.NonNull;
               import io.micronaut.data.jdbc.annotation.JdbcRepository;
               import io.micronaut.data.model.query.builder.sql.Dialect;
@@ -177,15 +177,15 @@ This lab requires completion of the following:
 
    Create a DataPopulator class to create some example database entries when the application starts:
 
-   Create the Data populator Class on this directory *src/main/java/example/micronaut/DataPopulator.java*
+   Create the Data populator Class on this directory *src/main/java/example/basedb/DataPopulator.java*
 
        ```
        <copy>
 
-              package example.micronaut;
+              package example.basedb;
 
-              import example.micronaut.domain.MyTable;
-              import example.micronaut.repository.MyTableRepository;
+              import example.basedb.domain.MyTable;
+              import example.basedb.repository.MyTableRepository;
               import io.micronaut.context.annotation.Requires;
               import io.micronaut.context.event.StartupEvent;
               import io.micronaut.runtime.event.annotation.EventListener;
@@ -226,15 +226,15 @@ This lab requires completion of the following:
 
    Create a MyTableController class to view persisted data:
 
-   Create the controller class on this directory *src/main/java/example/micronaut/controller/MyTableController.java*
+   Create the controller class on this directory *src/main/java/example/basedb/controller/MyTableController.java*
 
        ```
        <copy>
 
-              package example.micronaut.controller;
+              package example.basedb.controller;
 
-              import example.micronaut.domain.MyTable;
-              import example.micronaut.repository.MyTableRepository;
+              import example.basedb.domain.MyTable;
+              import example.basedb.repository.MyTableRepository;
               import io.micronaut.http.annotation.Controller;
               import io.micronaut.http.annotation.Get;
               import io.micronaut.scheduling.TaskExecutors;
@@ -308,7 +308,7 @@ This lab requires completion of the following:
 
         micronaut:
           application:
-            name: micronautguide
+            name: example-basedb
           executors:
             io:
               type: fixed

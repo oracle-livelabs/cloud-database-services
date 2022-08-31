@@ -29,8 +29,8 @@
         },
         {
             "title": "Lab 2: Create The Cloud Application Tier",
-            "description": "Creating Exadata Cloud Infrastructure",
-            "filename": "../../lab2-create-exacloud-infra/lab2-create-exacloud-infra.md"
+            "description": "Creating Application Tier",
+            "filename": "../../lab2/lab2-create-app-tier.md"
         },
        {
             "title": "Lab 3: Configure and Build The Microservice Application to connect to Oracle Base Database Service",
@@ -39,13 +39,13 @@
         },
         {
             "title": "Lab 4: Run The Application",
-            "description": "Create Oracle Database Home",
+            "description": "Run The Application",
             "filename": "../../lab4/lab4-run-the-application.md"
         },
 
         {
             "title": "Bonus Labs: Additional Labs & Tasks (Optional)",
-            "description": "Create Oracle Database",
+            "description": "Bonus Labs",
             "filename": "../../lab5bonuslabs/lab5-bonus-labs.md"
         },
         {

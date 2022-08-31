@@ -23,4 +23,4 @@ This lab requires completion of the following:
 
 
 
-## Task 1: Create Oracle Base Database Service Instance.
+## Task 1: Create Application Tier.
