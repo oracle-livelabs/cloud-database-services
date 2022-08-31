@@ -12,6 +12,11 @@
         },
 
         {
+            "title": "Get Started - LiveLabs login",
+            "description": "Using noVNC Remote Desktop",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
+        },
+        {
             "title": "Get Started with noVNC Remote Desktop",
             "description": "Using noVNC Remote Desktop",
             "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
@@ -24,29 +29,29 @@
         },
         {
             "title": "Lab 2: Create The Cloud Application Tier",
-            "description": "Creating Exadata Cloud Infrastructure",
-            "filename": "../../lab2-create-exacloud-infra/lab2-create-exacloud-infra.md"
+            "description": "Creating Application Tier",
+            "filename": "../../lab2/lab2-create-app-tier.md"
         },
        {
-            "title": "Lab 3: Configure Cloud Microservice Application Tier to connect to Oracle Base Database Service",
-            "description": "Create VM Cluster",
-            "filename": "../../lab3-create-cloud-vmcluster/lab3-create-cloud-vmcluster.md"
+            "title": "Lab 3: Configure and Build The Microservice Application to connect to Oracle Base Database Service",
+            "description": "Configure the microservice application to connect to Oracle Base Database Service",
+            "filename": "../../lab3/lab3-configure-app-to-connect-to-basedb.md"
         },
         {
-            "title": "Lab 4: Build The Application",
-            "description": "Create Oracle Database Home",
-            "filename": "../../lab4-create-dbhome/lab4-create-dbhome.md"
+            "title": "Lab 4: Run The Application",
+            "description": "Run The Application",
+            "filename": "../../lab4/lab4-run-the-application.md"
         },
+
         {
-            "title": "Lab 5: Run The Application",
-            "description": "Create Oracle Database",
-            "filename": "../../lab5-create-database/lab5-create-database.md"
+            "title": "Bonus Labs: Additional Labs & Tasks (Optional)",
+            "description": "Bonus Labs",
+            "filename": "../../lab5bonuslabs/lab5-bonus-labs.md"
         },
         {
             "title": "Oracle CloudWorld 2022 - Get Help",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
         }
-
     ]
 }
