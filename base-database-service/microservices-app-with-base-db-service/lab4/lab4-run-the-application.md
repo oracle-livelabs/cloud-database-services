@@ -5,7 +5,7 @@
 
 This lab walks you through the steps to Run the Application Connected to Oracle Base Database Service.
 
-Estimated Time: 30 minutes
+Estimated Time: 20 minutes
 
 
 
