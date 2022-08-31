@@ -1,11 +1,11 @@
-# Configure The Microservice Application to Connect to Oracle Base Database Service
+# Configure and Build The Microservice Application to Connect to Oracle Base Database Service
 
 
 ## Introduction
 
 This lab walks you through the steps to Configure The Microservice Application to Connect to Oracle Base Database Service.
 
-Estimated Time: 15 minutes
+Estimated Time: 20 minutes
 
 
 
