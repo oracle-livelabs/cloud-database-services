@@ -19,40 +19,59 @@ This lab assumes:
 * You are connected to an Exadata database with sqlplus as the SH user
 * The MYCUST_QUERY table has not yet been created - if it has, run the `lab_hcc_cleanup.sql` script
 
-## Verify the Source Table
+## Task 1: Verify the Source Table
 
-Determine the size of the uncompressed CUSTOMERS table using the SQL script `lab_hcc_01.sql`.
-
-    @lab_hcc_01.sql
-
-Verify that the CUSTOMERS table is uncompressed using the SQL script `lab_hcc_02.sql`.
-
-    @lab_hcc_02.sql
-
-## Create Compressed Tables
-
-Exadata Hybrid Columnar Compression achieves its highest levels of compression with data that is direct-path inserted. Execute the following `ALTER SESSION` commands to ensure the use of direct-path inserts in the practice.
-
+Step 1: Determine the size of the uncompressed CUSTOMERS table using the SQL script `lab_hcc_01.sql`.
+```text
+<copy>
+@lab_hcc_01.sql
+</copy>
 ```
+
+Step 2: Verify that the CUSTOMERS table is uncompressed using the SQL script `lab_hcc_02.sql`.
+```text
+<copy>
+@lab_hcc_02.sql
+</copy>
+```
+
+## Task 2: Create Compressed Tables
+
+Step 1: Exadata Hybrid Columnar Compression achieves its highest levels of compression with data that is direct-path inserted. Execute the following `ALTER SESSION` commands to ensure the use of direct-path inserts in the practice.
+```text
+<copy>
 alter session force parallel query;
 alter session force parallel ddl;
 alter session force parallel dml;
+</copy>
 ```
 
-Create a compressed copy of the CUSTOMERS table by using the QUERY HIGH warehouse compression mode using the SQL script `lab_hcc_03.sql`.
+Step 2: Create a compressed copy of the CUSTOMERS table by using the QUERY HIGH warehouse compression mode using the SQL script `lab_hcc_03.sql`.
+```text
+<copy>
+@lab_hcc_03.sql
+</copy>
+```
 
-    @lab_hcc_03.sql
+Step 3: Create a compressed copy of the CUSTOMERS table using the ARCHIVE HIGH archive compression mode using the SQL script `lab_hcc_04.sql`. Note that it may take a few minutes for the table to be created.
+```text
+<copy>
+@lab_hcc_04.sql
+</copy>
+```
 
-Create a compressed copy of the CUSTOMERS table using the ARCHIVE HIGH archive compression mode using the SQL script `lab_hcc_04.sql`. Note that it may take a few minutes for the table to be created.
+## Task 3: Observe the Effects of HCC
 
-    @lab_hcc_04.sql
+Step 1: Verify the compression mode settings for the tables you just created using the SQL script `lab_hcc_02.sql`.
+```text
+<copy>
+@lab_hcc_02.sql
+</copy>
+```
 
-## Observe the Effects of HCC
-
-Verify the compression mode settings for the tables you just created using the SQL script `lab_hcc_02.sql`.
-
-    @lab_hcc_02.sql
-
-Compare the size of the original uncompressed table with the two compressed copies you created using the SQL script `lab_hcc_01.sql`.
-
-    @lab_hcc_01.sql
+Step 2: Compare the size of the original uncompressed table with the two compressed copies you created using the SQL script `lab_hcc_01.sql`.
+```text
+<copy>
+@lab_hcc_01.sql
+</copy>
+```
