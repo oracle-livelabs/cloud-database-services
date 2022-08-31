@@ -47,7 +47,7 @@ This lab requires completion of the following:
      <copy>
 
      CREATE USER MyBaseDB_APP IDENTIFIED BY "WELcome123#!";
-     GRANT CONNECT, RESOURCE, CREATE SESSION, UNLIMITED TABLESPACE TO MyBaseDB;
+     GRANT CONNECT, RESOURCE, CREATE SESSION, UNLIMITED TABLESPACE TO MyBaseDB_APP;
 
      </copy>
      ```
