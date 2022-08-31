@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to Run the Application Connected to Oracle Base Database Service.
+This lab walks you through the steps to Run the Microserives-based Application Connected to Oracle Base Database Service.
 
 Estimated Time: 30 minutes
 
