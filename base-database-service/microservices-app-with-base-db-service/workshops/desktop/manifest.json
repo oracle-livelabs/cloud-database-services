@@ -44,9 +44,9 @@
         },
 
         {
-            "title": "Bonus Lab: Additional Labs & Tasks (Optional)",
+            "title": "Bonus Labs: Additional Labs & Tasks (Optional)",
             "description": "Create Oracle Database",
-            "filename": "../../lab5-create-database/lab5-create-database.md"
+            "filename": "../../lab5bonuslabs/lab5-bonus-labs.md"
         },
         {
             "title": "Oracle CloudWorld 2022 - Get Help",

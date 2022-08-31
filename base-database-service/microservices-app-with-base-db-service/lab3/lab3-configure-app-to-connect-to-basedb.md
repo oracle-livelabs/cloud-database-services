@@ -26,6 +26,21 @@ This lab requires completion of the following:
 ## Task 1: Connect your Application Tier to Oracle Base Database Service.
 
 1. Connect using SQL Developer
+
+    * Select Create New connection Icon
+    * Enter a Name for the Connection
+    * For the Database Type select Oracle
+    * For the Username enter Sys
+    * Enter the Sys password
+    * For the Role select SYSDBA
+    * For Hostname enter <Host IP>
+    * For Port enter 1521
+    * For Service Name Enter
+           <Database Service Name>
+    * Test & Save connection
+
+    ![connect using sqldeveloper](./images/sql-developer.png" ")
+
 2. Create the Application schema user
 
    ```
@@ -37,6 +52,8 @@ This lab requires completion of the following:
    </copy>
    ```
    Create a schema user password (must be at least 12 characters and contain a number and an uppercase letter).
+
+   ![create user](./images/create-user.png" ")
 
 ## Task 2: Create the Microservice Application.
 
@@ -80,7 +97,7 @@ This lab requires completion of the following:
 
        <copy>
 
-                 package example.micronaut.domain;
+              package example.micronaut.domain;
 
               import io.micronaut.core.annotation.Creator;
               import io.micronaut.data.annotation.GeneratedValue;
@@ -120,7 +137,7 @@ This lab requires completion of the following:
 
 3. Create a Repository class
 
-   Create a MyTableRepository clas to read and write MyTable database data:
+   Create a MyTableRepository class to read and write MyTable database data:
 
    Create the repository class on this directory *src/main/java/example/micronaut/repository/MyTableRepository.java*
 
