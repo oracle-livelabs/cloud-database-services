@@ -308,7 +308,7 @@ This lab requires completion of the following:
 
         micronaut:
           application:
-            name: example-basedb
+            name: exampleBasedb
           executors:
             io:
               type: fixed
