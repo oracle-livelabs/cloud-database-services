@@ -60,8 +60,8 @@ This lab requires completion of the following:
 1. Create an application using Micronaut Launch in a web browser and perform the following steps:
 
     * Choose JDK 11 as the Java version.
-    * Choose Demo-BaseDB as the Name
-    * Choose Demo.BaseDB as the Base Package
+    * Choose example-basedb as the Name
+    * Choose example.basedb as the Base Package
     * Click the Features button and select the oracle, data-jdbc, flyway features
     * Then click Generate -> Download Zip which will download a zip file you can unzip locally with the created application.
 
