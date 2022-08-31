@@ -145,9 +145,9 @@ This lab requires completion of the following:
 
        <copy>
 
-              package demo.basedb.repository;
+              package example.basedb.repository;
 
-              import demo.basedb.domain.MyTable;
+              import example.basedb.domain.MyTable;
               import io.micronaut.core.annotation.NonNull;
               import io.micronaut.data.jdbc.annotation.JdbcRepository;
               import io.micronaut.data.model.query.builder.sql.Dialect;
