@@ -46,7 +46,7 @@ This lab requires completion of the following:
      ```
      <copy>
 
-     CREATE USER MyBaseDB_APP IDENTIFIED BY "WELcome123#!";
+     CREATE USER MyBaseDB_APP IDENTIFIED BY "WELcome123##";
      GRANT CONNECT, RESOURCE, CREATE SESSION, UNLIMITED TABLESPACE TO MyBaseDB_APP;
 
      </copy>
@@ -318,7 +318,7 @@ This lab requires completion of the following:
             url: jdbc:oracle:thin:@(database connection string)
             driverClassName: oracle.jdbc.OracleDriver
             username: MyBaseDB_APP
-            password: WELcome123#!
+            password: WELcome123##
             dialect: ORACLE
             data-source-properties:
              oracle:
