@@ -336,3 +336,14 @@ This lab requires completion of the following:
        </copy>
 
        ```
+
+
+
+
+## Acknowledgements
+
+       * **Author** - Leo Alvarado, Eddie Ambler Product Management
+
+       * **Contributors** - Tammy Bednar Product Management
+
+       * **Last Update** - Aug 2022.

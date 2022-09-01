@@ -23,7 +23,7 @@ This lab requires completion of the following:
 
 
 
-## Task 1: Create Application Tier.
+## Task 1: Create Application Tier
 
 1. Open the navigation menu and click Compute. Under Compute, click Instances.
 
@@ -94,3 +94,13 @@ This lab requires completion of the following:
     After the instance is provisioned, details about it appear in the instance list. To view more details, including IP addresses, click the instance name.
 
     When the instance is fully provisioned and running, you can connect to it using SSH as described in Connecting to an Instance.
+
+
+
+## Acknowledgements
+
+    * **Author** - Leo Alvarado, Eddie Ambler Product Management
+
+    * **Contributors** - Tammy Bednar Product Management
+
+    * **Last Update** - Aug 2022.

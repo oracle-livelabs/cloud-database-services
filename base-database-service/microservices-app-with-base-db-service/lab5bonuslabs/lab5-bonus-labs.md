@@ -79,3 +79,16 @@ In this lab, we will go through how to create a Custom Database Software Image u
 ## Task 6: Change DB System VM Shape / Scale OCPU.
 ## Task 7: Scale DB System Storage.
 ## Task 8: Enable Automatic Backup for DB System.
+
+
+
+
+
+
+## Acknowledgements
+
+* **Author** - Leo Alvarado, Eddie Ambler Product Management
+
+* **Contributors** - Tammy Bednar Product Management
+
+* **Last Update** - Aug 2022.

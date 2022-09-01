@@ -7,7 +7,7 @@ This lab walks you through the steps to Create Oracle Base Database Service Inst
 
 Estimated Time: 15 minutes
 
-
+[](youtube:89V4Pr1xc-c)
 
 
 ### Objectives
@@ -136,4 +136,12 @@ This lab requires completion of the following:
 
 23.	Click on the Create DB System button to launch the Create DB System workflow
 
-Congratulations on accomplishing the mission to create your Enterprise Database VM DB System.
+
+
+## Acknowledgements
+
+* **Author** - Leo Alvarado, Eddie Ambler Product Management
+
+* **Contributors** - Tammy Bednar Product Management
+
+* **Last Update** - Aug 2022.
