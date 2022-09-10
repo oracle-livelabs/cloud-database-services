@@ -192,8 +192,8 @@ In summary, creating and maintaining robust, scalable microservices applications
 
 * **Author** - Leo Alvarado, Eddie Ambler Product Management
 
-* **Contributors** - Tammy Bednar Product Management, Ron Mayfield – Distinguished Enterprise Architect
+* **Contributors** - Tammy Bednar Product Management
 
-* **Last Update** - July 2022.
+* **Last Update** - Aug 2022.
 
 **You are all set. Let us begin!**
