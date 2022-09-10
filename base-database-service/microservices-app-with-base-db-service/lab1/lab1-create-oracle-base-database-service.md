@@ -195,6 +195,90 @@ This lab requires completion of the following:
 
 You may now **proceed to the next lab**.
 
+## Task 2: Discover DB System Networking Details
+
+**You can find the VCN, Subnet, Port, and DB IP address in the Oracle Cloud Infrastructure Console as follows:**
+
+1. **Login** into the **OCI Console** and Select **Oracle Database**
+
+  ![OCI Console Navigate to Oracle Database](./images/navigate.oracledatabase.png" ")
+
+2. **Navigate** to the **database service** that you deployed by selecting **Oracle Base Database**
+
+  ![Navigate to Base Database](./images/navigate.basedb.png" ")
+
+3. **Validate** you are in the **Compartment** where your DB resources should be provisioned
+
+  ![Validate Compartment](./images/validate.db.png" ")
+
+4. Select your **DB System Name**
+
+  ![Click Database System](./images/click.db.system.png" ")
+
+    * This will render the **DB System Details** page
+    * Under the **Network Section** of the page, note the value for the **VCN, Client Subnet,** and **Port**
+
+  ![View Database Details](./images/db.details.png" ")
+
+5. On the left rail under **Resources** Click on **Nodes.**
+
+  ![Click on Nodes](./images/click.db.nodes.png" ")
+
+    * Record the value of the Private & Public IP (if available)
+
+  ![View Private and Public IP](./images/node.ip.png" ")
+
+## Task 3: Discover Database Connection String
+
+**You can find the DB Connection String in the Oracle Cloud Infrastructure Console as follows:**
+
+1. **Login** into the **OCI Console** and Select **Oracle Database**
+
+  ![OCI Console Navigate to Oracle Database](./images/navigate.oracledatabase.png" ")
+
+2. **Navigate** to the **database service** that you deployed by selecting **Oracle Base Database**
+
+  ![Navigate to Base Database](./images/navigate.basedb.png" ")
+
+3. **Validate** you are in the **Compartment** where your DB resources should be provisioned
+
+  ![Validate Compartment](./images/validate.db.png" ")
+
+4. From the list of available DB Systems, Select your **DB System Name**
+
+  ![Click Database System](./images/click.db.system.png" ")
+
+    * This will render the **DB System Details** page
+
+  ![View Database Details](./images/db.details.png" ")
+
+5. In the **Databases section** of the page, Click on the **Name of your Database.**
+
+  ![Click Database Name](./images/click.db.name.png" ")
+
+    * This will render the **Database Details** page
+
+  ![Database Page Details](./images/db.page.details.png" ")
+
+6. On the left rail under **Resources** Click on **Pluggable Databases.**
+
+  ![Click Pluggable Databases](./images/click.pdb.png" ")
+
+7. In the **Pluggable Databases section** of the page, Click on the **Name of your Pluggable Database.**
+
+    * This will render the **Pluggable Database Details** page
+
+8. Near the top of the page, Click on the **PDB Connection** button
+
+  ![Click PDB Connection](./images/click.pdb.connection.png" ")
+
+    * This will render the Pluggable Database Connection Screen
+    * **Click** on the **Copy  Link** and paste the **Connection String** to your notepad for use in upcoming labs
+
+  ![PDB Connection](./images/pdb.connection.png" ")
+
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 * **Author** - Leo Alvarado, Eddie Ambler Product Management

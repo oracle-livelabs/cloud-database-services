@@ -25,9 +25,20 @@ This lab requires completion of the following:
 
 ## Task 1: Connect your Application Tier to Oracle Base Database Service.
 
-1. Connect using SQL Developer
+1. In the No-VNC Desktop Click on Activities, search for SQL Developer, Click on SQL Developer
+
+  ![Load SQL Developer](./images/load.sql.dev.png" ")
+
+  ![Click SQL Dev](./images/click.sql.dev.png" ")
+
+  ![SQL Developer](./images/sqldev.png" ")
+
+2. Connect using SQL Developer
 
     * Select Create New connection Icon
+
+  ![Create Connection](./images/create.connection.png" ")
+
     * Enter a Name for the Connection
     * For the Database Type select Oracle
     * For the Username enter Sys
@@ -39,7 +50,7 @@ This lab requires completion of the following:
            <Database Service Name>
     * Test & Save connection
 
-    ![connect using sqldeveloper](./images/sql-developer.png" ")
+    ![connect using sqldeveloper](./images/connect.png" ")
 
 2. Create the Application schema user
 
@@ -53,7 +64,7 @@ This lab requires completion of the following:
      ```
    Create a schema user password (must be at least 12 characters and contain a number and an uppercase letter).
 
-   ![create user](./images/create-user.png" ")
+   ![create user](./images/create.user.png" ")
 
 ## Task 2: Create the Microservice Application.
 
@@ -66,7 +77,7 @@ This lab requires completion of the following:
     * Then click Generate -> Download Zip which will download a zip file you can unzip locally with the created application.
 
 
-   ![Micronaut Launch](./images/micronaut-launch.png" ")
+   ![Micronaut Launch](./images/micronaut.launch.png" ")
 
 
     If you have the Micronaut CLI installed (see the Installation instructions for how to install) you can use the mn command to create a new application. This will create an application that uses Micronaut Data JDBC and has support for Oracle Base Database Service.
