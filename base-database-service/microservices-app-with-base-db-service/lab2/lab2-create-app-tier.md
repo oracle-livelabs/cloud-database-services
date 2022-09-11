@@ -115,13 +115,15 @@ This lab requires completion of the following:
 
     When the instance is fully provisioned and running, you can connect to it using SSH as described in Connecting to an Instance.
 
-    For this lab, the application tier is pre-provisioned Let's proceed on connecting to the application tiers
+    For this lab, the application tier is pre-provisioned Let's proceed on connecting to the application tier
 
 ## Task 2: Connect to Application Tier using No-VNC Desktop
 
 1. Go to your Reservation Information, and Click on the Remote Desktop Link
 
   ![No VNC Link](./images/no.vnc.png" ")
+
+  ![No VNC Link](./images/novnc.load.png" ")
 
 
 You may now **proceed to the next lab**.

@@ -52,7 +52,7 @@ This lab requires completion of the following:
 
     ![connect using sqldeveloper](./images/connect.png" ")
 
-2. Create the Application schema user
+2. Create the Application schema user, Copy the SQL Command to Create schema user in your sql developer and Click on Run Script
 
      ```
      <copy>
@@ -68,116 +68,132 @@ This lab requires completion of the following:
 
 ## Task 2: Create the Microservice Application.
 
-1. Create an application using Micronaut Launch in a web browser and perform the following steps:
-
-    * Choose JDK 11 as the Java version.
-    * Choose example-basedb as the Name
-    * Choose example.basedb as the Base Package
-    * Click the Features button and select the oracle, data-jdbc, flyway features
-    * Then click Generate -> Download Zip which will download a zip file you can unzip locally with the created application.
+1. In the lab, Micronaut CLI is pre-installed in the application tier and we will use the mn command to create a new application. This will create an application that uses Micronaut Data JDBC and has support for Oracle Base Database Service.
 
 
-   ![Micronaut Launch](./images/micronaut.launch.png" ")
+    In the No-VNC Desktop Click on Activities and Launch the Linux Terminal
+
+    ![Launch Terminal](./images/terminal.png" ")
+
+    ![Launch Terminal](./images/terminal.mn.png" ")
+
+    Copy the mn command to create an application that uses Micronaut with the following configuration:
+
+    * JDK 11 as the Java version.
+    * example-basedb as the Name
+    * example.basedb as the Base Package
+    * Additional Features for oracle, data-jdbc, flyway features
 
 
-    If you have the Micronaut CLI installed (see the Installation instructions for how to install) you can use the mn command to create a new application. This will create an application that uses Micronaut Data JDBC and has support for Oracle Base Database Service.
-
-
-       ```
-       <copy> mn create-app example.basedb
+    ```
+       <copy> mn create-app example.basedb  \
         --build=gradle --lang=java --jdk=11 \
         --features=data-jdbc,flyway,oracle
        </copy>
 
-        ```
+    ```
+
+    ![Copy Create App](./images/copy.mn.create.png" ")
+
+    ![Create App](./images/application.created.png" ")
+
+
+**Your Micronaut Application has been created! You are ready to Launch!**
 
 
 
-    If you don’t specify the --build argument, Gradle is used as the build tool.
-    If you don’t specify the --lang argument, Java is used as the language.
-    If you have an existing Micronaut application and want to add the functionality described here, you can view the dependency and configuration changes from the specified features and apply those changes to your application.
 
-2. Create an Entity Class
+  > **Note**: You can also create the application using the [Micronaut Launch](https://micronaut.io/launch) in a web browser  by  and perform the following steps:
+  ![Micronaut Launch](./images/micronaut.launch.png" ")
+      Choose **JDK 11** as the **Java version**, Choose **example-basedb** as the **Name**, Choose **example.basedb** as the **Base Package**, Click the **Add Features** button and select the oracle, data-jdbc, flyway features, Then click **Generate** -> **Download Zip** which will download a zip file you can unzip locally with the created application.
 
-   Create a MyTable entity class to represent database data:
 
-   Create the entity class on this directory
-   *src/main/java/example/basedb/domain/MyTable.java*
+
+
+2. Create a Thing entity class to represent database data:
+
+
+   Download the entity class *Thing.java* from [**This Link**](./files/Thing.java) and Copy the the entity class to this
+   *src/main/java/example/basedb/domain/Thing.java*
+
+
 
        ```
 
        <copy>
 
-              package example.basedb.domain;
+       package example.basedb.domain;
 
-              import io.micronaut.core.annotation.Creator;
-              import io.micronaut.data.annotation.GeneratedValue;
-              import io.micronaut.data.annotation.Id;
-              import io.micronaut.data.annotation.MappedEntity;
+       import io.micronaut.core.annotation.Creator;
+       import io.micronaut.data.annotation.GeneratedValue;
+       import io.micronaut.data.annotation.Id;
+       import io.micronaut.data.annotation.MappedEntity;
 
-              @MappedEntity
-              public class MyTable {
+       @MappedEntity
+       public class Thing {
 
-              @Id
-              @GeneratedValue
-              private Long id;
+           @Id
+           @GeneratedValue
+           private Long id;
 
-              private final String name;
+           private final String name;
 
-              @Creator
-              public MyTable(String name) {
-                 this.name = name;
-              }
+           @Creator
+           public Thing(String name) {
+               this.name = name;
+           }
 
-              public String getName() {
-                 return name;
-              }
+           public String getName() {
+               return name;
+           }
 
-              public Long getId() {
-                 return id;
-              }
+           public Long getId() {
+               return id;
+           }
 
-              public void setId(Long id) {
-                 this.id = id;
-              }
-              }
+           public void setId(Long id) {
+               this.id = id;
+           }
+       }
 
         </copy>
 
         ```
 
+
+
+
+
 3. Create a Repository class
 
-   Create a MyTableRepository class to read and write MyTable database data:
+   Create a ThingRepository class to read and write Thing database data:
 
-   Create the repository class on this directory *src/main/java/example/basedb/repository/MyTableRepository.java*
+   Download the repository class *ThingRepository.java* from [**This Link**](./files/ThingRepository.java) and copy on this directory *src/main/java/example/basedb/repository/MyTableRepository.java*
 
        ```
 
        <copy>
 
-              package example.basedb.repository;
+       package example.basedb.repository;
 
-              import example.basedb.domain.MyTable;
-              import io.micronaut.core.annotation.NonNull;
-              import io.micronaut.data.jdbc.annotation.JdbcRepository;
-              import io.micronaut.data.model.query.builder.sql.Dialect;
-              import io.micronaut.data.repository.CrudRepository;
+       import example.basedb.domain.Thing;
+       import io.micronaut.core.annotation.NonNull;
+       import io.micronaut.data.jdbc.annotation.JdbcRepository;
+       import io.micronaut.data.model.query.builder.sql.Dialect;
+       import io.micronaut.data.repository.CrudRepository;
 
-              import java.util.List;
-              import java.util.Optional;
+       import java.util.List;
+       import java.util.Optional;
 
-              @JdbcRepository(dialect = Dialect.ORACLE)
-              public interface MyTableRepository extends CrudRepository<MyTable, Long>
+       @JdbcRepository(dialect = Dialect.ORACLE)
+       public interface ThingRepository extends CrudRepository<Thing, Long> {
 
-              {
+           @Override
+           @NonNull
+           List<Thing> findAll();
 
-                  @Override
-                  @NonNull
-                  List<MyTable> findAll();
-
-                  Optional<MyTable> findByName(String name);
-              }
+           Optional<Thing> findByName(String name);
+       }
 
 
        </copy>
@@ -186,47 +202,47 @@ This lab requires completion of the following:
 
 4. Create a Data populator Class
 
-   Create a DataPopulator class to create some example database entries when the application starts:
+   Create a **DataPopulator** class to create some example database entries when the application starts:
 
-   Create the Data populator Class on this directory *src/main/java/example/basedb/DataPopulator.java*
+   Download the Data populator Class *DataPopulator.java* from [**This Link**](./files/DataPopulator.java) and copy  on this directory *src/main/java/example/basedb/DataPopulator.java*
 
        ```
        <copy>
 
-              package example.basedb;
+        package example.basedb;
 
-              import example.basedb.domain.MyTable;
-              import example.basedb.repository.MyTableRepository;
-              import io.micronaut.context.annotation.Requires;
-              import io.micronaut.context.event.StartupEvent;
-              import io.micronaut.runtime.event.annotation.EventListener;
-              import jakarta.inject.Singleton;
+        import example.basedb.domain.Thing;
+        import example.basedb.repository.ThingRepository;
+        import io.micronaut.context.annotation.Requires;
+        import io.micronaut.context.event.StartupEvent;
+        import io.micronaut.runtime.event.annotation.EventListener;
+        import jakarta.inject.Singleton;
 
-              import javax.transaction.Transactional;
-              import java.util.Arrays;
+        import javax.transaction.Transactional;
+        import java.util.Arrays;
 
-              @Singleton
-              @Requires(notEnv = "test")
-              public class DataPopulator {
+        @Singleton
+        @Requires(notEnv = "test")
+        public class DataPopulator {
 
-              private final MyTableRepository mytableRepository;
+        private final ThingRepository thingRepository;
 
-              public DataPopulator(MyTableRepository mytableRepository) {
-               this.mytableRepository = mytableRepository;
-              }
+        public DataPopulator(ThingRepository thingRepository) {
+         this.thingRepository = thingRepository;
+        }
 
-              @EventListener
-              @Transactional
-              void init(StartupEvent event) {
-               // clear out any existing data
-               mytableRepository.deleteAll();
+        @EventListener
+        @Transactional
+        void init(StartupEvent event) {
+         // clear out any existing data
+         thingRepository.deleteAll();
 
-               // create data
-               MyTable dustin = new MyTable("Dustin");
-               MyTable vecna = new MyTable("Vecna");
-               mytableRepository.saveAll(Arrays.asList(dustin, vecna));
-              }
-              }
+         // create data
+         Thing fred = new Thing("Fred");
+         Thing barney = new Thing("Barney");
+         thingRepository.saveAll(Arrays.asList(fred, barney));
+        }
+        }
 
 
        </copy>
@@ -235,46 +251,46 @@ This lab requires completion of the following:
 
 5. Create a Controller Class
 
-   Create a MyTableController class to view persisted data:
+   Create a **ThingController** class to view persisted data:
 
-   Create the controller class on this directory *src/main/java/example/basedb/controller/MyTableController.java*
+   Download the controller class *ThingController.java* from [**This Link**](./files/ThingController.java) and copy on this directory *src/main/java/example/basedb/controller/ThingController.java*
 
        ```
        <copy>
 
-              package example.basedb.controller;
+        package example.basedb.controller;
 
-              import example.basedb.domain.MyTable;
-              import example.basedb.repository.MyTableRepository;
-              import io.micronaut.http.annotation.Controller;
-              import io.micronaut.http.annotation.Get;
-              import io.micronaut.scheduling.TaskExecutors;
-              import io.micronaut.scheduling.annotation.ExecuteOn;
+        import example.basedb.domain.Thing;
+        import example.basedb.repository.ThingRepository;
+        import io.micronaut.http.annotation.Controller;
+        import io.micronaut.http.annotation.Get;
+        import io.micronaut.scheduling.TaskExecutors;
+        import io.micronaut.scheduling.annotation.ExecuteOn;
 
-              import javax.validation.constraints.NotBlank;
-              import java.util.List;
-              import java.util.Optional;
+        import javax.validation.constraints.NotBlank;
+        import java.util.List;
+        import java.util.Optional;
 
-              @Controller("/MyTables")
-              @ExecuteOn(TaskExecutors.IO)
-              class MyTableController {
+        @Controller("/things")
+        @ExecuteOn(TaskExecutors.IO)
+        class ThingController {
 
-                  private final MyTableRepository mytableRepository;
+        private final ThingRepository thingRepository;
 
-                  MyTableController(MyTableRepository mytableRepository) {
-                      this.mytableRepository = mytableRepository;
-                  }
+        ThingController(ThingRepository thingRepository) {
+         this.thingRepository = thingRepository;
+        }
 
-                  @Get
-                  List<MyTable> all() {
-                      return mytableRepository.findAll();
-                  }
+        @Get
+        List<Thing> all() {
+         return thingRepository.findAll();
+        }
 
-                  @Get("/{name}")
-                  Optional<MyTable> byName(@NotBlank String name) {
-                      return mytableRepository.findByName(name);
-                  }
-              }
+        @Get("/{name}")
+        Optional<Thing> byName(@NotBlank String name) {
+         return thingRepository.findByName(name);
+        }
+        }
 
         </copy>
 
@@ -287,13 +303,13 @@ This lab requires completion of the following:
 
 1. Create configuration
 
-   Create a new Flyway migration SQL script in *src/main/resources/db/migration/V1_create-schema.sql* and add the following:
+   Create a new Flyway migration SQL script in *src/main/resources/db/migration/V1__create-schema.sql* You can download the sql script from [**This Link**](./files/V1__create-schema.sql)
 
        ```
        <copy>
 
-       CREATE TABLE "MyTable" ("ID" NUMBER(19) PRIMARY KEY NOT NULL,"NAME" VARCHAR(255) NOT NULL);
-       CREATE SEQUENCE "MyTable_SEQ" MINVALUE 1 START WITH 1 NOCACHE NOCYCLE;
+       CREATE TABLE "THING" ("ID" NUMBER(19) PRIMARY KEY NOT NULL,"NAME" VARCHAR(255) NOT NULL);
+       CREATE SEQUENCE "THING_SEQ" MINVALUE 1 START WITH 1 NOCACHE NOCYCLE;
 
        </copy>
 
@@ -326,7 +342,7 @@ This lab requires completion of the following:
               nThreads: 75
         datasources:
           default:
-            url: jdbc:oracle:thin:@(database connection string)
+            url: jdbc:oracle:thin:@dbhostnameIP:1521/dbservicename
             driverClassName: oracle.jdbc.OracleDriver
             username: MyBaseDB_APP
             password: WELcome123##
@@ -348,8 +364,32 @@ This lab requires completion of the following:
 
        ```
 
+    ![Application yml file](./images/yml.page.png" ")
 
+3. Add the following entries to your /etc/hosts
 
+   As opc, run *sudo -s* to switch to root
+
+   ![sudo root](./images/sudo.png" ")
+
+   run *vi /etc/hosts* and add the following entries:
+
+      ```
+       <copy>
+
+       104.18.190.9 services.gradle.org plugins.gradle.org
+       104.18.165.99 downloads.gradle-dn.com
+       151.101.124.215 repo.maven.apache.org
+
+       </copy>
+
+      ```
+
+    As opc, validate your /etc/hosts to confirm following entries are added
+
+    ![View etc hosts](./images/etc.hosts.png" ")
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
