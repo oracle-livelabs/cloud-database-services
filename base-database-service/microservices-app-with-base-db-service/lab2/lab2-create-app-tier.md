@@ -115,7 +115,13 @@ This lab requires completion of the following:
 
     When the instance is fully provisioned and running, you can connect to it using SSH as described in Connecting to an Instance.
 
-    For this lab, the application tier is pre-provisioned Let's proceed on connecting to the application tier
+    Install the following:
+
+    * [Micronaut 3.4](https://micronaut.io/download/).
+    * [GraalVM 22.0.0.2 for JDK 11](https://www.graalvm.org/docs/getting-started/)
+    * An IDE such as [VS Code](https://code.visualstudio.com/) or [IntelliJ](https://www.jetbrains.com/idea/download/)
+
+    For this lab, the application tier is pre-provisioned with the all the software requirements. Let's proceed on connecting to the application tier
 
 ## Task 2: Connect to Application Tier using No-VNC Desktop
 
