@@ -1,4 +1,4 @@
-# Bonus Lab
+# Bonus Labs
 
 
 ## Introduction
