@@ -358,7 +358,7 @@ This lab requires completion of the following:
             url: jdbc:oracle:thin:@[dbhostnameIP]:[port]/[dbservice name]
             driverClassName: oracle.jdbc.OracleDriver
             username: MyBaseDB_APP
-            password: WElcome123##
+            password: WELcome123##
             dialect: ORACLE
             data-source-properties:
              oracle:
