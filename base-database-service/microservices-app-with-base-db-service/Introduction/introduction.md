@@ -194,6 +194,6 @@ In summary, creating and maintaining robust, scalable microservices applications
 
 * **Contributors** - Tammy Bednar Product Management
 
-* **Last Update** - Aug 2022.
+* **Last Update** - Sep 2022.
 
 **You are all set. Let us begin!**
