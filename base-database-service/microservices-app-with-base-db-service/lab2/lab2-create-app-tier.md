@@ -112,8 +112,8 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-    * **Author** - Leo Alvarado, Eddie Ambler Product Management
+* **Author** - Leo Alvarado, Eddie Ambler Product Management
 
-    * **Contributors** - Tammy Bednar Product Management
+* **Contributors** - Tammy Bednar Product Management
 
-    * **Last Update** - Aug 2022.
+* **Last Update** - Sep 2022.

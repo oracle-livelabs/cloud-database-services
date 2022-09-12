@@ -378,4 +378,4 @@ Congratulations on accomplishing the mission of Enabling Automatic Backup for a 
 
 * **Contributors** - Tammy Bednar Product Management
 
-* **Last Update** - Aug 2022.
+* **Last Update** - Sep 2022.
