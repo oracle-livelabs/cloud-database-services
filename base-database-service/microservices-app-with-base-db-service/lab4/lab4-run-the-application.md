@@ -20,124 +20,100 @@ This lab requires completion of the following:
 
 
 
-## Task 1: Test the Application.
+## Task 1: Run the Application.
 
-1. To test using the live database, replace the generated application-test.yml with this:
+1. Open the terminal, go to the directory of your application *basedb*
 
-   src/test/resources/application-test.yml
+   ![Navigate to app home directory](./images/basedb.png" ")
 
-       ```
-       <copy>
+2. To run the application use *./gradlew run*
 
-         flyway:
-        datasources:
-          default:
-            locations: classpath:db/migration
-            baseline-version: 0
-            baseline-on-migrate: true
+   ![Run Application](./images/gradlew.run.png" ")
 
-       </copy>
-       ```
 
-2. Run the tests
+   Startup will start the application on port 8080.
 
-    ```
-    <copy>
+   You should see output similar to the following, indicating that the database connectivity is all handled automatically, and the Flyway db migration runs. Since we enabled the query monitor then you’ll see the results of the work done by DataPopulator:
 
-      ./gradlew test
+   ![Run Application](./images/run.app.png" ")
 
-    </copy>
-    ```
 
-    Then open *build/reports/tests/test/index.html* in a browser to see the results.
 
-## Task 2: Run the Application.
+## Task 2: Test the Application.
 
-1. To run the application use:
+1. You can run some cURL requests to test the application:
+
+   Open a new tab in the terminal, and run the cURL requests
 
     ```
     <copy>
 
-      MICRONAUT_ENVIRONMENTS=oraclecloud ./gradlew run
+      curl -i localhost:8080/things
 
     </copy>
     ```
 
-    which will start the application on port 8080.
+    You should see output similar below, showing our data entries for our new friends Fred and Barney
 
-    You should see output similar to the following, indicating that the database connectivity is all handled automatically, and the Flyway migration runs since the database is determined to be out of date. Also, if you added the Logback logger above, you’ll see the results of the work done by DataPopulator:
+    ![Run Application things](./images/things.png" ")
+
+    You can also run the cURL using the browser
+
+    ![Run Application things](./images/browser.png" ")
+
+2. Let's do more cURL requests testing, this time let's view our data record for Fred
+
+    ```
+    <copy>
+
+        curl -i localhost:8080/things/Fred
+
+    </copy>
+    ```
+
+    You should see output for the data entry for Fred
+
+    ![Run Application things](./images/things.fred.png" ")
+
+
+    Let's view our data record for Barney
+
+    ```
+    <copy>
+
+        curl -i localhost:8080/things/Barney
+
+    </copy>
+    ```
+
+    You should see output for the data entry for Barney
+
+    ![Run Application things](./images/things.barney.png" ")
+
+
+3. Now let's try testing to view data entry for Leo
 
 
     ```
     <copy>
 
-      MICRONAUT_ENVIRONMENTS=oraclecloud ./gradlew run
+        curl -i localhost:8080/things/Leo
 
     </copy>
     ```
 
+    ![Run Application things](./images/things.leo.png" ")
 
-    You can run some cURL requests to test the application:
 
-    ```
-    <copy>
+    You should see output "Page Not Found" as we do not have data entry for Leo
 
-      curl -i localhost:8080/mytable
+You may now **proceed to the next lab**.
 
-    </copy>
-    ```
 
-    ```
-    <copy>
+## Acknowledgements
 
-        HTTP/1.1 200 OK
-        Content-Type: application/json
-        content-length: 49
-        connection: keep-alive
+    * **Author** - Leo Alvarado, Eddie Ambler Product Management
 
-        [{"id":1,"name":"Dustin"},{"id":2,"name":"Vecna"}]
+    * **Contributors** - Tammy Bednar Product Management
 
-    </copy>
-    ```
-
-    ```
-    <copy>
-
-        curl -i localhost:8080/mytable/Dustin
-
-    </copy>
-    ```
-
-    ```
-    <copy>
-
-        HTTP/1.1 200 OK
-        Content-Type: application/json
-        content-length: 22
-        connection: keep-alive
-
-        {"id":1,"name":"Dustin"}
-
-    </copy>
-    ```
-
-    ```
-    <copy>
-
-        curl -i localhost:8080/mytable/Debbie
-
-    </copy>
-    ```
-
-    ```
-    <copy>
-
-          HTTP/1.1 404 Not Found
-          Content-Type: application/json
-          content-length: 89
-          connection: keep-alive
-
-          {"message":"Page Not Found","_links":{"self":{"href":"/mytable/Debbie","templated":false}}}
-
-    </copy>
-    ```
+    * **Last Update** - Aug 2022.
