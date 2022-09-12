@@ -134,6 +134,7 @@ If you are not sure if you should apply tags, then skip this option (you can app
 13. Click on the **PDB Connections** button, to see the connect string for **connecting** to your PDB’s **administration service**.
  
  
+
 Congratulations on accomplishing the mission of **Creating a PDB in an existing Container Database in a VM DB System!!!**
 
 ## Task 3: Create Pluggable Database Clone (MyPDBClone).
@@ -208,6 +209,7 @@ To begin the process of **Changing the License Type** of a VM DB System, **open 
 
 6. Now Click on **Save Changes** to process your request to change the DB System’s Licensing Type.
  
+
 Congratulations on accomplishing the mission of **Changing the License Type for your VM DB System!!!**
 
 ## Task 5: View Database Metrics.
@@ -318,6 +320,7 @@ Let’s start by opening the navigation menu.
     * Once the Storage expansion request completes, note that the State of the DB System will change from UPDATING to AVAILABLE
     * Also note that the DB System Data Storage now reflects 512GB
  
+
 Congratulations On completing the task of Scaling the VM DB System Storage!!!!
 
 

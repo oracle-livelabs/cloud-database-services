@@ -33,7 +33,7 @@ This lab requires completion of the following:
 
    Startup will start the application on port 8080.
 
-   You should see output similar to the following, indicating that the database connectivity is all handled automatically, and the Flyway migration runs since the database is determined to be out of date. Also, if you added the Logback logger above, you’ll see the results of the work done by DataPopulator:
+   You should see output similar to the following, indicating that the database connectivity is all handled automatically, and the Flyway db migration runs. Since we enabled the query monitor then you’ll see the results of the work done by DataPopulator:
 
    ![Run Application](./images/run.app.png" ")
 

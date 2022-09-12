@@ -75,9 +75,11 @@ This lab requires completion of the following:
 
     ![Launch Terminal](./images/terminal.png" ")
 
+    Validate installed Application (micronaut) version
+
     ![Launch Terminal](./images/terminal.mn.png" ")
 
-    Copy the mn command to create an application that uses Micronaut with the following configuration:
+    Copy the mn command below to create an application that uses Micronaut with the following configuration:
 
     * JDK 11 as the Java version.
     * example-basedb as the Name
@@ -112,6 +114,7 @@ This lab requires completion of the following:
 
 2. Create a Thing entity class to represent database data:
 
+   Create *domain* folder under *src/main/java/example/basedb*
 
    Download the entity class *Thing.java* from [**This Link**](./files/Thing.java) and Copy the the entity class to this
    *src/main/java/example/basedb/domain/Thing.java*
@@ -166,9 +169,11 @@ This lab requires completion of the following:
 
 3. Create a Repository class
 
-   Create a ThingRepository class to read and write Thing database data:
+   Create a ThingRepository class to read and write data into the database table named Thing:
 
-   Download the repository class *ThingRepository.java* from [**This Link**](./files/ThingRepository.java) and copy on this directory *src/main/java/example/basedb/repository/MyTableRepository.java*
+   Create *repository* folder under *src/main/java/example/basedb*
+
+   Download the repository class *ThingRepository.java* from [**This Link**](./files/ThingRepository.java) and copy on this directory *src/main/java/example/basedb/repository/ThingRepository.java*
 
        ```
 
@@ -253,6 +258,8 @@ This lab requires completion of the following:
 
    Create a **ThingController** class to view persisted data:
 
+   Create *controller* folder under *src/main/java/example/basedb*
+
    Download the controller class *ThingController.java* from [**This Link**](./files/ThingController.java) and copy on this directory *src/main/java/example/basedb/controller/ThingController.java*
 
        ```
@@ -303,7 +310,7 @@ This lab requires completion of the following:
 
 1. Create configuration
 
-   Create a new Flyway migration SQL script in *src/main/resources/db/migration/V1__create-schema.sql* You can download the sql script from [**This Link**](./files/V1__create-schema.sql)
+   Create a new Flyway migration SQL script in *src/main/resources/db/migration/V1__create-schema.sql* You can download the sql script from [**This Link**](./files/V1__create-schema.sql) *ensure to save file with* *.sql* *extension*
 
        ```
        <copy>
@@ -328,7 +335,13 @@ This lab requires completion of the following:
 
 2. Add and configure the Application Datasources with the Oracle Base Database Service connection information and credentials
 
-   Add the following details in the application.yml from *src/main/resources/application.yml*
+   Replace the content of the *application.yml* from *src/main/resources/application.yml* with below:
+
+   Ensure to update the url value with your specific environment values
+
+    * [dbhostname IP]
+    * [port]
+    * [database service name]
 
       ```
       <copy>
@@ -342,10 +355,10 @@ This lab requires completion of the following:
               nThreads: 75
         datasources:
           default:
-            url: jdbc:oracle:thin:@dbhostnameIP:1521/dbservicename
+            url: jdbc:oracle:thin:@[dbhostnameIP]:[port]/[dbservice name]
             driverClassName: oracle.jdbc.OracleDriver
             username: MyBaseDB_APP
-            password: WELcome123##
+            password: WElcome123##
             dialect: ORACLE
             data-source-properties:
              oracle:
@@ -364,9 +377,9 @@ This lab requires completion of the following:
 
        ```
 
-    ![Application yml file](./images/yml.page.png" ")
 
-3. Add the following entries to your /etc/hosts
+
+3. From the terminal, add the following entries to your /etc/hosts
 
    As opc, run *sudo -s* to switch to root
 
