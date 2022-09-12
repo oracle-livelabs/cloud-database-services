@@ -3,9 +3,9 @@
 
 ## Introduction
 
-This lab walks you through the steps to Run the Microserives-based Application Connected to Oracle Base Database Service.
+This lab walks you through the steps to Run the Microservices-based Application Connected to Oracle Base Database Service.
 
-Estimated Time: 30 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -15,7 +15,7 @@ Estimated Time: 30 minutes
 
 This lab requires completion of the following:
 
-* Setting Up Your Tenancy - After Oracle creates your tenancy in OCI, an administrator at your company will need to perform some setup tasks and establish an organization plan for your cloud resources and users.
+* Setting Up Your Tenancy - After Oracle creates your tenancy in OCI, an administrator at your company will need to perform some setup tasks and establish an organizational plan for your cloud resources and users.
 
 
 
@@ -26,14 +26,14 @@ This lab requires completion of the following:
 
    ![Navigate to app home directory](./images/basedb.png" ")
 
-2. To run the application use *./gradlew run*
+2. To run the application, use *./gradlew run*.
 
    ![Run Application](./images/gradlew.run.png" ")
 
 
-   Startup will start the application on port 8080.
+   The startup will start the application on port 8080.
 
-   You should see output similar to the following, indicating that the database connectivity is all handled automatically, and the Flyway db migration runs. Since we enabled the query monitor then you’ll see the results of the work done by DataPopulator:
+   You should see an output similar to the following, indicating that the database connectivity is all handled automatically and the Flyway DB migration runs. Since we enabled the query monitor then you’ll see the results of the work done by DataPopulator:
 
    ![Run Application](./images/run.app.png" ")
 
@@ -43,7 +43,7 @@ This lab requires completion of the following:
 
 1. You can run some cURL requests to test the application:
 
-   Open a new tab in the terminal, and run the cURL requests
+   Open a new tab in the terminal, and run the cURL requests.
 
     ```
     <copy>
@@ -53,7 +53,7 @@ This lab requires completion of the following:
     </copy>
     ```
 
-    You should see output similar below, showing our data entries for our new friends Fred and Barney
+    You should see an output similar below, showing our data entries for Fred and Barney
 
     ![Run Application things](./images/things.png" ")
 
@@ -61,7 +61,7 @@ This lab requires completion of the following:
 
     ![Run Application things](./images/browser.png" ")
 
-2. Let's do more cURL requests testing, this time let's view our data record for Fred
+2. Let's do more cURL requests testing; this time, let's view our data record for Fred.
 
     ```
     <copy>
@@ -71,7 +71,7 @@ This lab requires completion of the following:
     </copy>
     ```
 
-    You should see output for the data entry for Fred
+    You should see the output for the data entry for Fred.
 
     ![Run Application things](./images/things.fred.png" ")
 
@@ -86,12 +86,12 @@ This lab requires completion of the following:
     </copy>
     ```
 
-    You should see output for the data entry for Barney
+    You should see the output for the data entry for Barney.
 
     ![Run Application things](./images/things.barney.png" ")
 
 
-3. Now let's try testing to view data entry for Leo
+3. Now let's try testing to view data entry for Leo.
 
 
     ```
@@ -105,7 +105,7 @@ This lab requires completion of the following:
     ![Run Application things](./images/things.leo.png" ")
 
 
-    You should see output "Page Not Found" as we do not have data entry for Leo
+    You should see the output "Page Not Found", as we do not have data entry for Leo.
 
 You may now **proceed to the next lab**.
 
@@ -113,8 +113,8 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Eddie Ambler Product Management
+* **Author** - Leo Alvarado, Eddie Ambler, Product Management
 
-* **Contributors** - Tammy Bednar Product Management
+* **Contributors** - Tammy Bednar, Product Management
 
 * **Last Update** - Sep 2022.

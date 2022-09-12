@@ -1,4 +1,4 @@
-# Create Oracle Base Database Service Instance
+# Create an Oracle Base Database Service Instance
 
 
 ## Introduction
@@ -18,7 +18,7 @@ Estimated Time: 15 minutes
 
 This lab requires completion of the following:
 
-* Setting Up Your Tenancy - After Oracle creates your tenancy in OCI, an administrator at your company will need to perform some setup tasks and establish an organization plan for your cloud resources and users.
+* Setting Up Your Tenancy - After Oracle creates your tenancy in OCI, an administrator at your company will need to perform some setup tasks and establish an organizational plan for your cloud resources and users.
 
 
 
@@ -37,7 +37,7 @@ This lab requires completion of the following:
 
     ![Create DB System](./images/create.db.png" ")
 
-    * This will bring up the Create DB System Dialog screen
+    * This will bring up the Create DB System Dialog screen.
 
 **Follow the steps to fill in the information for the DB System.**
 
@@ -47,8 +47,7 @@ This lab requires completion of the following:
 
 5.	Enter a **display name** for your DB system.
 
-6.	Select the **Availability Domain (AD)** in which the DB system will resides ensuring to select a region that best meets your business needs and    
-    satisfies any data location restrictions.
+6.	Select the **Availability Domain (AD)** in which the DB system will reside, ensuring to select a region that best meets your business needs and satisfies any data location restrictions.
 
 7.	Select **Virtual Machine** for the **Shape Type** option to be used for launching the DB system.
     * The shape type selected determines the list of available shapes to select from in the next step.
@@ -62,7 +61,7 @@ This lab requires completion of the following:
 
     ![Select Shape](./images/select.shape.png" ")
 
-10.	Click on the **Select Shape button** to complete the shape selection process
+10.	Click on the **Select Shape button** to complete the shape selection process.
 
 
 **Now let’s Choose the type of storage management software that we will use with our database VM.**
@@ -70,31 +69,31 @@ This lab requires completion of the following:
 
     ![Change Storage](./images/change.storage.png" ")
 
-    * 2 things to note is that Oracle Grid Infrastructure is recommended for production workloads and that Logical Volume Manager is only available for single-node VM systems
+    * Two things to note are that Oracle Grid Infrastructure is recommended for production workloads and that Logical Volume Manager is only available for single-node VM systems.
 
     ![Select Storage](./images/select.storage.png" ")
 
 
-**Next, we will configure the storage performance**
+**Next, we will configure the storage performance.**
 12.	Choose between **Balanced & Higher Performance** Storage Volumes
 
-    * For the **Available Data Storage**, Select the amount of Block storage that you want allocated to the VM DN System.
-    * The **Recovery Area Storage** field displays the amount of storage that will be available for recovery log data (RECO data) based on the amount of storage select ed for the DATA space.
-    * You can change the amount of Recovery area storage independently after provisioning
+    * For the **Available Data Storage**, Select the amount of Block storage that you want to be allocated to the VM DN System.
+    * The **Recovery Area Storage** field displays the amount of storage that will be available for recovery log data (RECO data) based on the amount of storage selected for the DATA space.
+    * You can change the amount of Recovery area storage independently after provisioning.
 
     ![Select Storage performance](./images/select.storage.perf.png" ")
 
-13.	Click on the **save changes** button to continue configuring the DB system
+13.	Click on the **save changes** button to continue configuring the DB system.
 
-14.	Next, we will Select the **Total number of VM Nodes** that will be in our **DB System** and the **Oracle Database Software Edition** that will be supported by the DB system
+14.	Next, we will Select the **Total number of VM Nodes** that will be in our **DB System** and the **Oracle Database Software Edition** that will be supported by the DB system.
 
     ![Configure Node](./images/configure.node.png" ")
 
     ![Select Database Edition](./images/db.edition.png" ")
 
-15.	In the **Add SSH Keys section** of the page we will add our SSH public key to enable access to the VM DB System via SSH.
+15.	In the **Add SSH Keys section** of the page, we will add our SSH public key to enable access to the VM DB System via SSH.
 
-    * To Add the **SSH Public Key** portion of the key pair, choose from one of the provided 3 options.
+    * To Add the **SSH Public Key** portion of the key pair, choose from one of the provided three options.
 
     ![Add SSH Keys](./images/add.ssh.keys.png" ")
 
@@ -106,7 +105,7 @@ This lab requires completion of the following:
 
 17.	**In the Network Information section**:
 
-    a)	For the **VCN** use the pull-down menu to **select the VCN** in which you want to launch the VM DB system.
+    a)	For the **VCN**, use the pull-down menu to **select the VCN** in which you want to launch the VM DB system.
 
     b)	For the **CLIENT SUBNET**
 
@@ -116,48 +115,48 @@ This lab requires completion of the following:
 
     d)	For the HOSTNAME PREFIX, enter the desired value.
 
-    * The Hostname Prefix forms the first portion of the DB systems Host Name and will be used as part of the Fully Qualified Domain Name
+    * The Hostname Prefix forms the first portion of the DB systems Host Name and will be used as part of the Fully Qualified Domain Name.
     * For RAC systems, the Database service automatically appends a node number after the hostname prefix.
 
-    e)	The **HOST Domain Name**, note how the Subnet DNS and VCN labels are used to auto generate the **HOST DOMAIN NAME**.
+    e)	The **HOST Domain Name**, note how the Subnet DNS and VCN labels are used to auto-generate the **HOST DOMAIN NAME**.
 
-    f)	The **Host and domain URL** is auto generated and combines the hostname prefix and host domain name to display the fully qualified domain name (FQDN) for the database.
+    f)	The **Host and domain URL** is auto-generated and combines the hostname prefix and host domain name to display the fully qualified domain name (FQDN) for the database.
 
     ![Hostname Prefix](./images/hostname.prefix.png" ")
 
-18.	If you click on the **Advanced Option Link**, you will see the ability to optionally select a **Fault domain**, **Time Zone**, or **set Tags** for the DB System.
+18.	If you click on the **Advanced Option Link**, you will see the ability to optionally select a **Fault Domain**, **Time Zone**, or **set Tags** for the DB System.
 
-19.	Click on **Next** to proceed with entering the **details for the initial database**
+19.	Click on **Next** to proceed with entering the **details for the initial database.**
 
-    a)	For the **Database Name** field enter the **desired database name**  
+    a)	For the **Database Name** field, enter the **desired database name**  
 
-    b)	For the **Database Unique Name Suffix** enter **the desired value**
+    b)	For the **Database Unique Name Suffix,** enter **the desired value**
 
-    * Note that the Database Unique Name is the combination of the DB Name and the DB Unique Name Suffix
+    * Note that the Database Unique Name is the combination of the DB Name and the DB Unique Name Suffix.
 
     ![Database Name](./images/db.name.png" ")
 
-20.	**Let’s explore the available database images** by clicking on the **Change Database Image Button**
+20.	**Let’s explore the available database images** by clicking on the **Change Database Image Button**.
 
     ![Change DB Image](./images/change.db.image.png" ")
 
-    * You are able to choose between **Oracle Database Software Images** and **Custom Database Software Images**
+    * You are able to choose between **Oracle Database Software Images** and **Custom Database Software Images**.
 
     ![Choose Database Software Image](./images/db.sw.image.png" ")
 
-21.	Click on the Select Button to proceed with configuring the database details
+21.	Click on the Select Button to proceed with configuring the database details.
 
     ![PDB Name](./images/pdb.name.png" ")
 
-    a) For the **Pluggable Database Name** enter **the desired value**
+    a) For the **Pluggable Database Name**, enter **the desired value**
 
-    b) Next enter the **Administrator Credentials**
+    b) Next, enter the **Administrator Credentials**
 
     c) Ensure that the **Use Administrator password for the TDE wallet** box is checked if you want to **Use of Oracle Managed Keys**
 
-    d) For the **Database Workload Type** you can choose between **Transaction Processing** and **Data Warehouse**
+    d) For the **Database Workload Type**, you can choose between **Transaction Processing** and **Data Warehouse**
 
-      * Choose the type that best aligns with your application
+      * Choose the type that best aligns with your application.
 
     ![Select Database Workload Type](./images/db.workload.png" ")
 
@@ -165,7 +164,7 @@ This lab requires completion of the following:
 
     ![Enable Automatic Backups](./images/enable.automatic.bkup.png" ")
 
-      *	You can select the **backup retention period**
+      *	You can select the **backup retention period**.
 
     ![Backup retention period](./images/retention.period.png" ")
 
@@ -176,7 +175,7 @@ This lab requires completion of the following:
       *	Uncheck the **Enable Automatic Backups** box if you want to configure it after the database is provisioned
 
 
-22.	If you click on the **Advanced Options** link, you will find 3 tabs with options to fine tune the planned database configuration
+22.	If you click on the **Advanced Options** link, you will find three tabs with options to fine-tune the planned database configuration.
 
     ![Advanced Options](./images/advanced.options.png" ")
 
@@ -186,9 +185,9 @@ This lab requires completion of the following:
 
     ![Encryption Tab](./images/encryption.png" ")
 
-    c)	The **Tags Tab** allows you **to set tags**, that allows you to organize and track resources within your tenancy.
+    c)	The **Tags Tab** allows you **to set tags** that allow you to organize and track resources within your tenancy.
 
-23.	Click on the **Create DB System button** to launch the Create DB System workflow
+23.	Click on the **Create DB System button** to launch the Create DB System workflow.
 
     ![Create Database System](./images/create.db.system.png" ")
 
@@ -209,7 +208,7 @@ You may now **proceed to the next lab**.
 
   ![View Database Details](./images/db.details.png" ")
 
-2. On the left rail under **Resources** Click on **Nodes.**
+2. On the left rail, under **Resources**, Click on **Nodes.**
 
   ![Click on Nodes](./images/click.db.nodes.png" ")
 
@@ -230,7 +229,7 @@ You may now **proceed to the next lab**.
 
   ![Database Page Details](./images/db.page.details.png" ")
 
-2. On the left rail under **Resources** Click on **Pluggable Databases.**
+2. On the left rail, under **Resources**, Click on **Pluggable Databases.**
 
   ![Click Pluggable Databases](./images/click.pdb.png" ")
 
@@ -251,8 +250,8 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Eddie Ambler Product Management
+* **Author** - Leo Alvarado, Eddie Ambler, Product Management
 
-* **Contributors** - Tammy Bednar Product Management
+* **Contributors** - Tammy Bednar, Product Management
 
 * **Last Update** - Sep 2022.

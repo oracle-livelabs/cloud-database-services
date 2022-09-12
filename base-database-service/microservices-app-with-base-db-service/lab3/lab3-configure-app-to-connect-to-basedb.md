@@ -18,14 +18,14 @@ Estimated Time: 20 minutes
 
 This lab requires completion of the following:
 
-* Setting Up Your Tenancy - After Oracle creates your tenancy in OCI, an administrator at your company will need to perform some setup tasks and establish an organization plan for your cloud resources and users.
+* Setting Up Your Tenancy - After Oracle creates your tenancy in OCI, an administrator at your company will need to perform some setup tasks and establish an organizational plan for your cloud resources and users.
 
 
 
 
 ## Task 1: Connect your Application Tier to Oracle Base Database Service.
 
-1. In the No-VNC Desktop Click on Activities, search for SQL Developer, Click on SQL Developer
+1. In the No-VNC Desktop, Click on Activities, search for SQL Developer, and Click on SQL Developer.
 
   ![Load SQL Developer](./images/load.sql.dev.png" ")
 
@@ -35,24 +35,23 @@ This lab requires completion of the following:
 
 2. Connect using SQL Developer
 
-    * Select Create New connection Icon
+    * Select Create New Connection Icon
 
   ![Create Connection](./images/create.connection.png" ")
 
-    * Enter a Name for the Connection
-    * For the Database Type select Oracle
-    * For the Username enter Sys
-    * Enter the Sys password
-    * For the Role select SYSDBA
-    * For Hostname enter <Host IP>
-    * For Port enter 1521
-    * For Service Name Enter
-           <Database Service Name>
-    * Test & Save connection
+    * Enter a **Name** for the Connection
+    * For the **Database Type**, Select **Oracle**.
+    * For the **Username**, Enter **Sys**.
+    * Enter the Sys **password**
+    * For the **Role**, Select **SYSDBA**.
+    * For **Hostname**, enter **Database Host IP**
+    * For **Port** enter **1521**
+    * For **Service name** Enter **Database Service Name**
+    * **Test** & **Save** connection
 
     ![connect using sqldeveloper](./images/connect.png" ")
 
-2. Create the Application schema user, Copy the SQL Command to Create schema user in your sql developer and Click on Run Script
+2. Create the Application schema user, Copy the SQL Command to Create the schema user in your SQL Developer, and Click on Run Script
 
      ```
      <copy>
@@ -68,14 +67,14 @@ This lab requires completion of the following:
 
 ## Task 2: Create the Microservice Application.
 
-1. In the lab, Micronaut CLI is pre-installed in the application tier and we will use the mn command to create a new application. This will create an application that uses Micronaut Data JDBC and has support for Oracle Base Database Service.
+1. In the lab, Micronaut CLI is pre-installed in the application tier, and we will use the mn command to create a new application. This will create an application that uses Micronaut Data JDBC and has support for Oracle Base Database Service.
 
 
-    In the No-VNC Desktop Click on Activities and Launch the Linux Terminal
+    In the No-VNC Desktop, Click on Activities and Launch the Linux Terminal
 
     ![Launch Terminal](./images/terminal.png" ")
 
-    Validate installed Application (micronaut) version
+    Validate installed Application (Micronaut) version
 
     ![Launch Terminal](./images/terminal.mn.png" ")
 
@@ -84,7 +83,7 @@ This lab requires completion of the following:
     * JDK 11 as the Java version.
     * example-basedb as the Name
     * example.basedb as the Base Package
-    * Additional Features for oracle, data-jdbc, flyway features
+    * Additional Features for oracle, data-jdbc, and flyway features
 
 
     ```
@@ -105,7 +104,7 @@ This lab requires completion of the following:
 
 
 
-  > **Note**: You can also create the application using the [Micronaut Launch](https://micronaut.io/launch) in a web browser  by  and perform the following steps:
+  > **Note**: You can also create the application using the [Micronaut Launch](https://micronaut.io/launch) in a web browser and perform the following steps:
   ![Micronaut Launch](./images/micronaut.launch.png" ")
       Choose **JDK 11** as the **Java version**, Choose **example-basedb** as the **Name**, Choose **example.basedb** as the **Base Package**, Click the **Add Features** button and select the oracle, data-jdbc, flyway features, Then click **Generate** -> **Download Zip** which will download a zip file you can unzip locally with the created application.
 
@@ -116,7 +115,7 @@ This lab requires completion of the following:
 
    Create *domain* folder under *src/main/java/example/basedb*
 
-   Download the entity class *Thing.java* from [**This Link**](./files/Thing.java) and Copy the the entity class to this
+   Download the entity class *Thing.java* from [**This Link**](./files/Thing.java) and copy it to this directory
    *src/main/java/example/basedb/domain/Thing.java*
 
 
@@ -173,7 +172,7 @@ This lab requires completion of the following:
 
    Create *repository* folder under *src/main/java/example/basedb*
 
-   Download the repository class *ThingRepository.java* from [**This Link**](./files/ThingRepository.java) and copy on this directory *src/main/java/example/basedb/repository/ThingRepository.java*
+   Download the repository class *ThingRepository.java* from [**This Link**](./files/ThingRepository.java) and copy it to this directory *src/main/java/example/basedb/repository/ThingRepository.java*
 
        ```
 
@@ -209,7 +208,7 @@ This lab requires completion of the following:
 
    Create a **DataPopulator** class to create some example database entries when the application starts:
 
-   Download the Data populator Class *DataPopulator.java* from [**This Link**](./files/DataPopulator.java) and copy  on this directory *src/main/java/example/basedb/DataPopulator.java*
+   Download the Data populator Class *DataPopulator.java* from [**This Link**](./files/DataPopulator.java) and copy it to this directory *src/main/java/example/basedb/DataPopulator.java*
 
        ```
        <copy>
@@ -260,7 +259,7 @@ This lab requires completion of the following:
 
    Create *controller* folder under *src/main/java/example/basedb*
 
-   Download the controller class *ThingController.java* from [**This Link**](./files/ThingController.java) and copy on this directory *src/main/java/example/basedb/controller/ThingController.java*
+   Download the controller class *ThingController.java* from [**This Link**](./files/ThingController.java) and copy it to this directory *src/main/java/example/basedb/controller/ThingController.java*
 
        ```
        <copy>
@@ -310,7 +309,9 @@ This lab requires completion of the following:
 
 1. Create configuration
 
-   Create a new Flyway migration SQL script in *src/main/resources/db/migration/V1__create-schema.sql* You can download the sql script from [**This Link**](./files/V1__create-schema.sql) *ensure to save file with* *.sql* *extension*
+   Create a new Flyway migration SQL script into this directory *src/main/resources/db/migration/V1__create-schema.sql*
+
+   You can download the SQL script from [**This Link**](./files/V1__create-schema.sql). Ensure to save the file with the *.sql* extension
 
        ```
        <copy>
@@ -333,11 +334,11 @@ This lab requires completion of the following:
 
        ```
 
-2. Add and configure the Application Datasources with the Oracle Base Database Service connection information and credentials
+2. Add and configure the Application Datasources with the Oracle Base Database Service connection information and credentials.
 
    Replace the content of the *application.yml* from *src/main/resources/application.yml* with below:
 
-   Ensure to update the url value with your specific environment values
+   Ensure to update the **url** value under the **datasources:** with your specific environment values
 
     * [dbhostname IP]
     * [port]
@@ -358,7 +359,7 @@ This lab requires completion of the following:
             url: jdbc:oracle:thin:@[dbhostnameIP]:[port]/[dbservice name]
             driverClassName: oracle.jdbc.OracleDriver
             username: MyBaseDB_APP
-            password: WElcome123##
+            password: WELcome123##
             dialect: ORACLE
             data-source-properties:
              oracle:
@@ -379,13 +380,13 @@ This lab requires completion of the following:
 
 
 
-3. From the terminal, add the following entries to your /etc/hosts
+3. From the terminal, add the following entries to your /etc/hosts.
 
-   As opc, run *sudo -s* to switch to root
+   As **opc**, run *sudo -s* to switch to **root**
 
    ![sudo root](./images/sudo.png" ")
 
-   run *vi /etc/hosts* and add the following entries:
+   Run *vi /etc/hosts* and add the following entries:
 
       ```
        <copy>
@@ -398,7 +399,7 @@ This lab requires completion of the following:
 
       ```
 
-    As opc, validate your /etc/hosts to confirm following entries are added
+    As **opc**, validate your /etc/hosts to confirm the following entries are added
 
     ![View etc hosts](./images/etc.hosts.png" ")
 
@@ -407,8 +408,8 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Eddie Ambler Product Management
+* **Author** - Leo Alvarado, Eddie Ambler, Product Management
 
-* **Contributors** - Tammy Bednar Product Management
+* **Contributors** - Tammy Bednar, Product Management
 
 * **Last Update** - Sep 2022.
