@@ -18,7 +18,7 @@ Estimated Time: 15 minutes
 
 This lab requires completion of the following:
 
-* Setting Up Your Tenancy - After Oracle creates your tenancy in OCI, an administrator at your company will need to perform some setup tasks and establish an organization plan for your cloud resources and users.
+* Setting Up Your Tenancy - After Oracle creates your tenancy in OCI, an administrator at your company will need to perform some setup tasks and establish an organizational plan for your cloud resources and users.
 
 
 
@@ -33,7 +33,7 @@ This lab requires completion of the following:
 
   ![Create Instance](./images/create.instance.png" ")
 
-3. Enter a name for the instance. You can add or change the name later. The name doesn't need to be unique, because an Oracle Cloud Identifier (OCID)
+3. Enter a name for the instance. You can add or change the name later. The name doesn't need to be unique because an Oracle Cloud Identifier (OCID)
    uniquely identifies the instance. Avoid entering confidential information.
 
    ![Create Compute](./images/create.compute.name.png" ")
@@ -55,7 +55,7 @@ This lab requires completion of the following:
 
    ![Select Image](./images/select.image.png" ")
 
-      * For this lab, we will be using **Oracle Linux Cloud Developer Image**
+      * For this lab, we will be using **Oracle Linux Cloud Developer Image**.
 
       b. In the Shape section, click Change shape and select AMD and choose Flexible shapes
 
@@ -63,7 +63,7 @@ This lab requires completion of the following:
 
 7. In the Networking section, configure the network details for the instance:
 
-      * Select existing virtual cloud network option
+      * Select the *"existing virtual cloud network"* option
 
    Make the following selections:
 
@@ -75,13 +75,13 @@ This lab requires completion of the following:
 
 
 
-8. In the Add SSH keys section, generate an SSH key pair or upload your own public key
+8. In the Add SSH keys section, generate an SSH key pair or upload your own public key.
 
    ![Add SSH Keys](./images/add.ssh.keys.png" ")
 
-9. In the Boot volume section, configure the size and encryption options for the instance's boot volume
+9. In the Boot volume section, configure the size and encryption options for the instance's boot volume.
 
-      * For this lab, You can accept the default value
+      * For this lab, You can accept the default value.
 
 10. (Optional) To configure advanced settings, click Show advanced options.
 
@@ -95,7 +95,7 @@ This lab requires completion of the following:
     * [GraalVM 22.0.0.2 for JDK 11](https://www.graalvm.org/docs/getting-started/)
     * An IDE such as [VS Code](https://code.visualstudio.com/)
 
-Let's proceed on connecting to the application tier
+Let's proceed with connecting to the application tier.
 
 ## Task 2: Connect to Application Tier using No-VNC Desktop
 
@@ -112,8 +112,8 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Eddie Ambler Product Management
+* **Author** - Leo Alvarado, Eddie Ambler, Product Management
 
-* **Contributors** - Tammy Bednar Product Management
+* **Contributors** - Tammy Bednar, Product Management
 
 * **Last Update** - Sep 2022.
