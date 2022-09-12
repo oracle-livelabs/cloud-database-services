@@ -411,4 +411,4 @@ You may now **proceed to the next lab**.
 
 * **Contributors** - Tammy Bednar Product Management
 
-* **Last Update** - Aug 2022.
+* **Last Update** - Sep 2022.
