@@ -1,11 +1,11 @@
-# Bonus Labs
+# Bonus Labs: Additional Labs & Tasks (Optional)
 
 
 ## Introduction
 
 This lab walks you through the steps to Run the Bonus Challenge Labs.
 
-Estimated Time: 30 minutes
+Estimated Time: 20 minutes
 
 
 

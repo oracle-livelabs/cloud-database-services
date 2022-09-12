@@ -1,4 +1,4 @@
-# Create Oracle Base Database Service Instance
+# Create an Oracle Base Database Service Instance
 
 
 ## Introduction

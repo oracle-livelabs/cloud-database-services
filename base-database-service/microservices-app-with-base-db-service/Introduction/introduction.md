@@ -2,7 +2,7 @@
 
 This workshop guides you through the tasks to Deploy a Microservices-based App connected to Oracle Base Database Service
 
-Estimated Time:
+Estimated Time: 85 minutes
 
 **Application Modernization with Microservice Containers, OCI Cloud Database Services, and Oracle Multitenant**
 
