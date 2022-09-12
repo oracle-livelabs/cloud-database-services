@@ -31,7 +31,9 @@ In this lab, we will go through how to create a Custom Database Software Image u
   * **Database software images** are either **Oracle-published software releases** or **custom software images that you create**.
   * **Custom Database Software Images** are images that include specified patches and updates that meet your organization's standards.
 
-1. Let's begin **Creating our Custom DB Software Image** by opening the **OCI navigation menu**. Click on **Oracle Database**, then click on **Oracle Base Database**.
+Let's begin **Creating our Custom DB Software Image** by opening the **OCI navigation menu**.
+
+1. Click on **Oracle Database**, then click on **Oracle Base Database**.
 
     ![Create Custom DB Software Image](./images/db.custom.image.png" ")
 
@@ -141,6 +143,7 @@ Congratulations on accomplishing the mission of **Creating a PDB in an existing 
 
 In this lab, we will go through **How to Clone a PDB in a VM DB System** using the OCI Console:
  
+
 To begin the process of **Cloning a PDB in a VM DB System**.
 
 1. **Open** the **Navigation Menu**. Select **Oracle Database**, then click on **Oracle Base Database**.
@@ -189,6 +192,7 @@ Congratulations on accomplishing the mission of Cloning a VM DB Systems PDB!!!
 
 In this lab, we will go through how to  **Change the License Type of a VM DB System** using the OCI Console.
  
+
 To begin the process of **Changing the License Type** of a VM DB System, **open the navigation menu**.
 
 1. Click on **Oracle Database**, then click on **Oracle Base Database**.
@@ -216,6 +220,7 @@ Congratulations on accomplishing the mission of **Changing the License Type for 
 
 In this lab, we will go through how to  **View the Database Metrics of a Database on a VM DB System** using the OCI Console.
  
+
 To begin the process of **Viewing the Database Metrics of a Database on a VM DB System:**
 
 1. **Open** the **Navigation Menu.** Click on **Oracle Database**, then click on **Oracle Base Database.**
@@ -241,6 +246,7 @@ In this lab, we will go through how to **Change the Shape of a VM DB System** us
 * Changing the shape of the VM does not impact the amount of storage available to the DB system.
 * However, the new shape can have different CPU, memory, and network bandwidth characteristics.
  
+
 Let’s start the process of **Changing our VM Shape** by opening the navigation menu.
 
 
@@ -290,6 +296,7 @@ Let’s start the process of **Changing our VM Shape** by opening the navigation
 
 In this lab, we will go through how to **Scale the Storage for a VM DB System** using the OCI Console:
  
+
 Let’s start by opening the navigation menu.
 
 1. Click on Oracle Database, then click on Oracle Base Database.
@@ -332,6 +339,7 @@ In this lab, we will go through How to Enable Automatic Backup for a database on
 * When you launch a DB system, you can optionally enable automatic backups for the initial database.
 * Use this procedure to configure or disable automatic backups after the database is created.
  
+
 To begin the process of Enabling Automatic Backup for a Database on an existing VM DB System.:
 
 1. Open the navigation menu. Select Oracle Database, then click Oracle Base Database.
