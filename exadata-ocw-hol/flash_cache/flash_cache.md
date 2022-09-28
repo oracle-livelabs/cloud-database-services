@@ -4,7 +4,10 @@
 
 In this practice, you are introduced to the Flash Cache capability of Exadata.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
+
+Watch the video below for a quick walk-through of the lab.
+[Flash Cache](videohub:1_23ozwakq)
 
 ### Objectives
 
