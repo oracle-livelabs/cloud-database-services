@@ -2,15 +2,15 @@
 
 This workshop guides you through the tasks to Deploy a Microservices-based App connected to Oracle Base Database Service
 
-Estimated Time:
+Estimated Time: 85 minutes
 
-**Application Modernization with Microservice Containers, OCI Cloud Database Services and Oracle Multitenant**
+**Application Modernization with Microservice Containers, OCI Cloud Database Services, and Oracle Multitenant**
 
 As organizations prepare for their journey to the cloud, they often choose to launch an application modernization effort as part of their move to the cloud instead of just using a lift & shift approach.
 
-Today’s modern applications are data driven applications that require the ability to handle many different **types of data** (Relational, Spatial, Graph, Document, … etc.) and **types of workloads** (Transactional, Analytic, ML, IoT, …etc.)
-To address these needs developers must decide between the use of Single Purpose “Best-of-Breed” databases for each data type and workload or the use of a single Converged database for all of the data types and workloads.
-Today’s modern application must also be agile, portable, & secure allowing for rapid, frequent, and reliable delivery of complex application functions to the market.  Developers have turned to the use of **Microservices** to try and reach this goal often with some unintended consequences.
+Today's modern applications are data-driven applications that require the ability to handle many different **types of data** (Relational, Spatial, Graph, Document, … etc.) and **types of workloads** (Transactional, Analytic, ML, IoT, …etc.)
+To address these needs, developers must decide between the use of Single Purpose "Best-of-Breed" databases for each data type and workload or the use of a single Converged database for all of the data types and workloads.
+Today's modern application must also be agile, portable, & secure, allowing for rapid, frequent, and reliable delivery of complex application functions to the market.  Developers have turned to the use of **Microservices** to try and reach this goal, often with some unintended consequences.
 
 **Applications built with Microservices** are a suite of loosely coupled services, each running in its own context with a lightweight communication messaging mechanism. These Microservices are normally organized around business capabilities and are independently deployed with their own database with extreme horizontal scale capabilities.
 
@@ -27,13 +27,13 @@ Each single-purpose database:
 
 ![Over Time New Functionality is Converged](./images/converged-mainstream.png" ")
 
-In this article we will discuss how the use of the **Oracle Converged database with Multitenant** can help developers to deliver on the promise of Microservice applications without the pain of fragmented data stores.
+In this article, we will discuss how the use of the **Oracle Converged database with Multitenant** can help developers to deliver on the promise of Microservice applications without the pain of fragmented data stores.
 In a recent discussion with a group of architects, it became clear to me that there was a need to discuss what a Converged database is and how developers could use it as part of their Microservices architecture to bring value to Enterprise Data versus using a collection of Point Solution databases.
 
-To truly appreciate the need for a converged database we should start by evaluating the needs of our Enterprises data over time and by persona.
-**Enterprise DATA often has varying degrees of value to many stakeholders and the value of the DATA to the organization changes over time**.
+To truly appreciate the need for a converged database, we should start by evaluating the needs of our Enterprise's data over time and by persona.
+**Enterprise DATA often has varying degrees of value to many stakeholders, and the value of the DATA to the organization changes over time**.
 The value of the data at any particular point in time is directly linked to the viewpoint being analyzed.
-For example, the information needed from the data will change as we look at the data from the viewpoint of the varying personas within the levels of the organization such as the:
+For example, the information needed from the data will change as we look at the data from the viewpoint of the varying personas within the levels of the organization, such as the:
 
 * OLTP Operations Team
 * Local Managers
@@ -117,9 +117,61 @@ Utilizing the converged database also allows the developers to take full advanta
 
 **Avoiding the need to constantly move data between database systems and build integration code reduces the effort, time, and cost of delivering the value of INFORMATION throughout the entire Information Supply Chain**.
 
-**The Oracle database platform also offers PORTABILITY as a differentiator compared to other converged and point solutions**. The Oracle converged database can be run On-Premise, in the Oracle cloud, and in other clouds. Many of the competing platforms can only be run in the Cloud and at times, only in one specific proprietary cloud.  Selecting a data platform that is performant, secure, scalable, highly available,  and portable is critical for supporting our customers' digital transformation journey.
+**The Oracle database platform also offers PORTABILITY as a differentiator compared to other converged and point solutions**. The Oracle converged database can be run On-Premise, in the Oracle cloud, and in other clouds. Many of the competing platforms can only be run in the Cloud and, at times, only in one specific proprietary cloud.  Selecting a data platform that is performant, secure, scalable, highly available,  and portable is critical for supporting our customers' digital transformation journey.
 
-When developers add the use of **Oracle Multitenant** to their Microservice architecture, they are able to fully deliver on the efficiency & scale objectives of the model without increasing complexity or sacrificing performance and scale. Multitenant helps them to deliver efficient, agile database clouds without the need to copy data everywhere & provides access to real-time, current data. The Multitenant feature is fully portable and is available on-premise, in the Cloud, and on Oracle’s fully managed Autonomous Database.
+When developers add the use of **Oracle Multitenant** to their Microservice architecture, they are able to fully deliver on the efficiency & scale objectives of the model without increasing complexity or sacrificing performance and scale. Multitenant helps them to deliver efficient, agile database clouds without the need to copy data everywhere & provides access to real-time, current data. The Multitenant feature is fully portable and is available on-premise, in the Cloud, and on Oracle's fully managed Autonomous Database.
+
+![Database Improvements](./images/converged-database.png" ")
+
+Below is an example deployment of Microservices with the Oracle Converged Container Database with Multitenant.
+
+![Database Improvements](./images/microservice-converged-db.png" ")
+
+The Multitenant Architecture allows us the ability to achieve operational efficiency by combining multiple physical databases onto the Multitenant container database as independent pluggable databases.
+
+![Database Improvements](./images/polyglot.png" ")
+
+The Oracle Converged database also contains Transactional Event Queue functionality to support event streaming built into the database with support for JMS and Kafka APIs to eliminate the need to have to build separate messaging platforms.
+
+![Database Improvements](./images/tx-event-qs.png" ")
+
+The Oracle Converged Database with Oracle Multitenant offers several reference architectures to meet your exact business requirements.
+The Database supporting the Microservices that need many data types and workloads can be combined into one Converged Container database, as depicted below.
+
+![Database Improvements](./images/container-db.png" ")
+
+If we leverage the Pluggable Database (PDB) of the Multitenant Architecture, we can provide the Microservices isolated databases within the Container Database and also enable the movement of the PDBs across physical containers.
+
+![Database Improvements](./images/pdb-multitenant.png" ")
+
+Below is an example of a Micronaut containerized microservice application deployed on OCI cloud services.
+
+![Database Improvements](./images/microservice-basedb.png" ")
+
+Diagram: Deploy a microservices-based application with Micronaut and Oracle Cloud Database Services
+
+This reference architecture diagram lays out standards-based components available on the Oracle Cloud Infrastructure to build and deploy data-driven microservices applications using Micronaut and Oracle Cloud Database Services.
+
+Micronaut is an innovative new server-side Java technology that, with its persistence framework, called Micronaut Data, precomputes your SQL queries at compilation time, making it an excellent fit for working with Cloud Database Services.
+
+The architecture has two major tiers – the application tier and the database tier to bring agility, horizontal scale, and robustness to enterprise applications.
+
+The application tier is built using Micronaut deployed as containerized microservices using Docker containers managed by Oracle Cloud Infrastructure Container Engine for Kubernetes.
+
+Each microservice is a Micronaut container connected to a set of independent pluggable databases or schemas within a single pluggable database using Micronaut Data JDBC (Oracle JDBC Driver).
+
+For microservices, the use of sharding with the use of PDBs on the Multitenant Architecture further extends the Scale and HA of the Oracle Converged database. Sharding can be used to place the data closer to where it is needed, to increase fault isolation, and provide a geographic distribution of the Microservices.
+
+![Database Improvements](./images/ha-microservice.png" ")
+
+In summary, creating and maintaining robust, scalable microservices applications without the pain of data fragmentation is now easy and possible with Oracle's Converged Multi-Model database:
+
+  * Supports many data types and workload types
+  * Provides a built-in Kafka-compatible transactional messaging layer
+  * Available On-premise and in the Cloud
+  * Available with Cloud Scale (Up/Down)
+  * Available in OCI with Co-Managed or Fully Managed Cloud Database services
+  * Removes technology divergence and the need for complex Integration
 
 
 ## Lab Breakdown
@@ -127,9 +179,9 @@ When developers add the use of **Oracle Multitenant** to their Microservice arch
 
 * Lab 1. Create an Oracle Base Database Service Instance
 * Lab 2. Create The Cloud Application Tier
-* Lab 3. Configure Cloud Microservice Application Tier to connect to Oracle Base Database Service
-* Lab 4. Build The Application       
-* Lab 5. Run The Application
+* Lab 3. Configure and Build The Microservice Application to connect to Oracle Base Database Service
+* Lab 4. Run The Application       
+* Lab 5. Bonus Labs: Additional Labs & Tasks (Optional)
 
 
 
@@ -138,10 +190,10 @@ When developers add the use of **Oracle Multitenant** to their Microservice arch
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Eddie Ambler Product Management
+* **Author** - Leo Alvarado, Eddie Ambler, Product Management
 
 * **Contributors** - Tammy Bednar, Product Management
 
-* **Last Update** - July 2022.
+* **Last Update** - Sep 2022.
 
 **You are all set. Let us begin!**
