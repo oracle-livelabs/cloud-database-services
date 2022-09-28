@@ -4,7 +4,10 @@
 
 In this practice, you are introduced to the cellcli utility for querying and manipulating Exadata storage attributes. You will execute list commands to show various Exadata storage components.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
+
+Watch the video below for a quick walk-through of the lab.
+[Explore Exadata Storage](videohub:1_hb8at2jb)
 
 ### Objectives
 
