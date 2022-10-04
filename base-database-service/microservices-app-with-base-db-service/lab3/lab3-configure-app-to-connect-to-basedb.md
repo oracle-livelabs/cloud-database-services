@@ -362,7 +362,7 @@ This lab requires completion of the following:
 
    Replace the *application.yml* file from */home/opc/basedb/src/main/resources/application.yml* with [**This File**](./files/application.yml)
 
-   Ensure to update the **url** value under the **datasources:** with your specific environment values
+   Ensure to update the file using the VsCode editor for the **url** value under the **datasources:** with your specific environment values
 
     * [dbhostname IP]
     * [port]
