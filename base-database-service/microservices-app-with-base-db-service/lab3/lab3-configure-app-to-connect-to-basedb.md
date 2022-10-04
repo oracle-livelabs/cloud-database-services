@@ -351,6 +351,9 @@ This lab requires completion of the following:
 
        ```
 
+       ![Edit logback.xml](./images/logbackxml.png" ")
+
+
 2. Add and configure the Application Datasources with the Oracle Base Database Service connection information and credentials.
 
    Replace the *application.yml* file from *src/main/resources/application.yml* with [**This File**](./files/application.yml)
