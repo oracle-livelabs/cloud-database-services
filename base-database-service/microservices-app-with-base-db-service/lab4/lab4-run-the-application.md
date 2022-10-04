@@ -22,7 +22,7 @@ This lab requires completion of the following:
 
 ## Task 1: Run the Application.
 
-1. Open the terminal, go to the directory of your application *basedb*
+1. Open the terminal, go to the directory of your application */home/opc/basedb*
 
    ![Navigate to app home directory](./images/basedb.png" ")
 

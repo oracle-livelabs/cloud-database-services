@@ -78,6 +78,10 @@ This lab requires completion of the following:
 
     ![Launch Terminal](./images/terminal.mn.png" ")
 
+    Check that your present working directory should be in */home/opc*
+
+    ![current directory](./images/homeopc.png" ")
+
     Copy the mn command below to create an application that uses Micronaut with the following configuration:
 
     * JDK 11 as the Java version.
@@ -131,7 +135,7 @@ This lab requires completion of the following:
 
 
    Download the entity class *Thing.java* from [**This Link**](./files/Thing.java) and copy it to this directory
-   *src/main/java/example/basedb/domain/Thing.java*
+   */home/opc/basedb/src/main/java/example/basedb/domain/Thing.java*
 
 
 
@@ -185,7 +189,7 @@ This lab requires completion of the following:
 
    Create a ThingRepository class to read and write data into the database table named Thing:
 
-   Download the repository class *ThingRepository.java* from [**This Link**](./files/ThingRepository.java) and copy it to this directory *src/main/java/example/basedb/repository/ThingRepository.java*
+   Download the repository class *ThingRepository.java* from [**This Link**](./files/ThingRepository.java) and copy it to this directory */home/opc/basedb/src/main/java/example/basedb/repository/ThingRepository.java*
 
        ```
 
@@ -221,7 +225,7 @@ This lab requires completion of the following:
 
    Create a **DataPopulator** class to create some example database entries when the application starts:
 
-   Download the Data populator Class *DataPopulator.java* from [**This Link**](./files/DataPopulator.java) and copy it to this directory *src/main/java/example/basedb/DataPopulator.java*
+   Download the Data populator Class *DataPopulator.java* from [**This Link**](./files/DataPopulator.java) and copy it to this directory */home/opc/basedb/src/main/java/example/basedb/DataPopulator.java*
 
        ```
        <copy>
@@ -270,7 +274,7 @@ This lab requires completion of the following:
 
    Create a **ThingController** class to view persisted data:
 
-   Download the controller class *ThingController.java* from [**This Link**](./files/ThingController.java) and copy it to this directory *src/main/java/example/basedb/controller/ThingController.java*
+   Download the controller class *ThingController.java* from [**This Link**](./files/ThingController.java) and copy it to this directory */home/opc/basedb/src/main/java/example/basedb/controller/ThingController.java*
 
        ```
        <copy>
@@ -320,7 +324,7 @@ This lab requires completion of the following:
 
 1. Create configuration
 
-   Create a new Flyway migration SQL script into this directory *src/main/resources/db/migration/V1__create-schema.sql*
+   Create a new Flyway migration SQL script into this directory */home/opc/basedb/src/main/resources/db/migration/V1__create-schema.sql*
 
    You can download the SQL script from [**This Link**](./files/V1__create-schema.sql). Ensure to save the file with the *.sql* extension
 
@@ -334,7 +338,7 @@ This lab requires completion of the following:
 
        ```
 
-       Edit *src/main/resources/logback.xml* using the *VsCode* editor
+       Edit */home/opc/basedb/src/main/resources/logback.xml* using the *VsCode* editor
 
        Launch the Vs code editor by clicking on the Activities and search for *VsCode*
 
@@ -356,7 +360,7 @@ This lab requires completion of the following:
 
 2. Add and configure the Application Datasources with the Oracle Base Database Service connection information and credentials.
 
-   Replace the *application.yml* file from *src/main/resources/application.yml* with [**This File**](./files/application.yml)
+   Replace the *application.yml* file from */home/opc/basedb/src/main/resources/application.yml* with [**This File**](./files/application.yml)
 
    Ensure to update the **url** value under the **datasources:** with your specific environment values
 
