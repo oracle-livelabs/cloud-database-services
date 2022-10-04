@@ -4,7 +4,10 @@
 
 In this practice, you are introduced to the Smart Scan capability of Exadata. You will execute queries with and without Smart Scan enabled, and examine statistics to measure the effect of Smart Scan.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
+
+Watch the video below for a quick walk-through of the lab.
+[Smart Scan](videohub:1_nmoqgvls)
 
 ### Objectives
 

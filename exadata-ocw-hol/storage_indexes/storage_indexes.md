@@ -4,7 +4,10 @@
 
 In this practice, you are introduced to the Storage Indexes capability of Exadata.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
+
+Watch the video below for a quick walk-through of the lab.
+[Storage Indexes](videohub:1_93yatb2t)
 
 ### Objectives
 

@@ -4,7 +4,10 @@
 
 In this practice, you are introduced to the Hybrid Columnar Compression capability of Exadata.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
+
+Watch the video below for a quick walk-through of the lab.
+[Hybrid Columnar Compression](videohub:1_6u8wbsrw)
 
 ### Objectives
 
