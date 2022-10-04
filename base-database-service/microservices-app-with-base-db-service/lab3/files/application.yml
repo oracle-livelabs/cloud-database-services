@@ -1,0 +1,26 @@
+micronaut:
+  application:
+    name: exampleBasedb
+  executors:
+    io:
+      type: fixed
+      nThreads: 75
+datasources:
+  default:
+    url: jdbc:oracle:thin:@[dbhostnameIP]:[port]/[dbservice name]
+    driverClassName: oracle.jdbc.OracleDriver
+    username: MyBaseDB_APP
+    password: WELcome123##
+    dialect: ORACLE
+    data-source-properties:
+     oracle:
+     jdbc:
+       fanEnabled: false
+flyway:
+  datasources:
+    default:
+      enabled: true
+netty:
+  default:
+    allocator:
+      max-order: 3

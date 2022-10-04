@@ -110,10 +110,25 @@ This lab requires completion of the following:
 
 
 
+2. Create the required directories for application deployment
 
-2. Create a Thing entity class to represent database data:
+   open the terminal and run the following commands:
 
-   Create *domain* folder under *src/main/java/example/basedb*
+     ```
+        <copy>
+
+        mkdir -p /home/opc/basedb/src/main/java/example/basedb/repository  
+        mkdir -p /home/opc/basedb/src/main/java/example/basedb/domain
+        mkdir -p /home/opc/basedb/src/main/java/example/basedb/controller
+        mkdir -p /home/opc/basedb/src/main/resources/db/migration
+
+        </copy>
+
+     ```
+
+
+3. Create a Thing entity class to represent database data:
+
 
    Download the entity class *Thing.java* from [**This Link**](./files/Thing.java) and copy it to this directory
    *src/main/java/example/basedb/domain/Thing.java*
@@ -166,11 +181,9 @@ This lab requires completion of the following:
 
 
 
-3. Create a Repository class
+4. Create a Repository class
 
    Create a ThingRepository class to read and write data into the database table named Thing:
-
-   Create *repository* folder under *src/main/java/example/basedb*
 
    Download the repository class *ThingRepository.java* from [**This Link**](./files/ThingRepository.java) and copy it to this directory *src/main/java/example/basedb/repository/ThingRepository.java*
 
@@ -204,7 +217,7 @@ This lab requires completion of the following:
 
        ```
 
-4. Create a Data populator Class
+5. Create a Data populator Class
 
    Create a **DataPopulator** class to create some example database entries when the application starts:
 
@@ -253,11 +266,9 @@ This lab requires completion of the following:
 
        ```
 
-5. Create a Controller Class
+6. Create a Controller Class
 
    Create a **ThingController** class to view persisted data:
-
-   Create *controller* folder under *src/main/java/example/basedb*
 
    Download the controller class *ThingController.java* from [**This Link**](./files/ThingController.java) and copy it to this directory *src/main/java/example/basedb/controller/ThingController.java*
 
@@ -323,7 +334,13 @@ This lab requires completion of the following:
 
        ```
 
-       Edit *src/main/resources/logback.xml* and add the following (anywhere in the <configuration> element) to monitor the SQL queries that Micronaut Data performs:
+       Edit *src/main/resources/logback.xml* using the *VsCode* editor
+
+       Launch the Vs code editor by clicking on the Activities and search for *VsCode*
+
+       ![Launch Vs code editor](./images/vseditor.png" ")
+
+       and add the following (anywhere in the <configuration> element) to monitor the SQL queries that Micronaut Data performs:
 
        ```
        <copy>
@@ -336,7 +353,7 @@ This lab requires completion of the following:
 
 2. Add and configure the Application Datasources with the Oracle Base Database Service connection information and credentials.
 
-   Replace the content of the *application.yml* from *src/main/resources/application.yml* with below:
+   Replace the *application.yml* file from *src/main/resources/application.yml* with [**This File**](./files/application.yml)
 
    Ensure to update the **url** value under the **datasources:** with your specific environment values
 
@@ -345,7 +362,7 @@ This lab requires completion of the following:
     * [database service name]
 
       ```
-      <copy>
+
 
         micronaut:
           application:
@@ -362,9 +379,9 @@ This lab requires completion of the following:
             password: WELcome123##
             dialect: ORACLE
             data-source-properties:
-             oracle:
-              jdbc:
-               fanEnabled: false
+            oracle:
+            jdbc:
+            fanEnabled: false
         flyway:
           datasources:
             default:
@@ -374,7 +391,7 @@ This lab requires completion of the following:
             allocator:
               max-order: 3
 
-       </copy>
+
 
        ```
 
