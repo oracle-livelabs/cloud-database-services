@@ -99,7 +99,7 @@ Let's proceed with connecting to the application tier.
 
 ## Task 2: Connect to Application Tier using No-VNC Desktop
 
-1. Go to your Reservation Information, and Click on the Remote Desktop Link
+1. **Click** on **View Login Info**, and Click on the Remote Desktop Link
 
   ![No VNC Link](./images/no.vnc.png" ")
 
