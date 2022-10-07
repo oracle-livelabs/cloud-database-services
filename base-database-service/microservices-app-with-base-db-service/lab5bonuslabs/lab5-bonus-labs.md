@@ -1,9 +1,9 @@
-# Bonus Labs: Additional Labs & Tasks (Optional)
+# Bonus Labs: Execute Cloud Database Administration Tasks (Optional)
 
 
 ## Introduction
 
-This lab walks you through the steps to Run the Bonus Challenge Labs.
+This lab walks you through the steps to Run and Execute Cloud Database Administration Tasks.
 
 Estimated Time: 20 minutes
 

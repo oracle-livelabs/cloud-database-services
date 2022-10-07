@@ -181,7 +181,7 @@ In summary, creating and maintaining robust, scalable microservices applications
 * Lab 2. Create The Cloud Application Tier
 * Lab 3. Configure and Build The Microservice Application to connect to Oracle Base Database Service
 * Lab 4. Run The Application       
-* Lab 5. Bonus Labs: Additional Labs & Tasks (Optional)
+* Bonus Labs: Execute Cloud Database Administration Tasks (Optional)
 
 
 
@@ -192,7 +192,7 @@ In summary, creating and maintaining robust, scalable microservices applications
 
 * **Author** - Leo Alvarado, Eddie Ambler, Product Management
 
-* **Contributors** - Tammy Bednar, Product Management
+* **Contributors** - Tammy Bednar, Product Management, Ronald Mayfield, Field CTO Cloud Engineering
 
 * **Last Update** - Sep 2022.
 
