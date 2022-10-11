@@ -25,15 +25,17 @@ This lab requires completion of the following:
 
 ## Task 1: Create Oracle Base Database Service Instance.
 
-1.  **Login** into the **OCI Console** and Select **Oracle Database**
+1.  **Open** the **Navigation Menu** in the **OCI Console** and Select **Oracle Database**
 
     ![OCI Console Navigate to Oracle Database](./images/navigate.oracledatabase.png" ")
 
-2.	**Navigate** to the **database** service that you deployed by selecting **Oracle Base Database**
+2.	**Navigate** to the **database** service that you want to deploy. Select **Oracle Base Database**
 
     ![Navigate to Base Database](./images/navigate.basedb.png" ")
 
-3.	Click the **“Create DB System”** button to proceed.
+3.	**Select** your **Compartment**. Click the **“Create DB System”** button to proceed.
+
+    ![Create DB System Compartment](./images/create.db.compartment.png" ")
 
     ![Create DB System](./images/create.db.png" ")
 
