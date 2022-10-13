@@ -28,6 +28,8 @@ This lab requires completion of the following:
 
 ## Task 1: Create Oracle Base Database Service Instance.
 
+**(For this lab, The Oracle Base Database Service is pre-provisioned - Informational Instructions ONLY)**
+
 1.  **Open** the **Navigation Menu** in the **OCI Console** and Select **Oracle Database**
 
     ![OCI Console Navigate to Oracle Database](./images/navigate.oracledatabase.png" ")

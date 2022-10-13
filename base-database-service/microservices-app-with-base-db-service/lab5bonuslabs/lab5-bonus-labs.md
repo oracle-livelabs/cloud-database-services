@@ -1,5 +1,6 @@
 # Bonus Labs: Execute Cloud Database Administration Tasks (Optional)
 
+
 ## Introduction
 
 This lab walks you through the steps to Run and Execute Cloud Database Administration Tasks.
@@ -124,15 +125,12 @@ If you are not sure if you should apply tags, then skip this option (you can app
 
       * While the **create pluggable database process** is running, the state of the Database is **Provisioning.**
  
-11. On the left rail, You can click on **WORK REQUESTS** to monitor the progress of your request to **create the Pluggable Database**.
 
-      * When the Database creation process completes, the state of the Database in the Work Request changes from **In Progress** to **Succeeded**.
-
-12. Click on **Pluggable Database Details** in the bread crumb trial to go to the Pluggable Database Details Page
+11. Click on **Pluggable Database Details** in the bread crumb trial to go to the Pluggable Database Details Page
 
       * Note that the **Pluggable Database State** is shown as **AVAILABLE**
  
-13. Click on the **PDB Connections** button to see the connection string for **connecting** to your PDB’s **administration service**.
+12. Click on the **PDB Connections** button to see the connection string for **connecting** to your PDB’s **administration service**.
  
  
 
@@ -215,30 +213,8 @@ To begin the process of **Changing the License Type** of a VM DB System, **open 
 
 Congratulations on accomplishing the mission of **Changing the License Type for your VM DB System!!!**
 
-## Task 5: View Database Metrics.
 
-In this lab, we will go through how to  **View the Database Metrics of a Database on a VM DB System** using the OCI Console.
- 
-
-To begin the process of **Viewing the Database Metrics of a Database on a VM DB System:**
-
-1. **Open** the **Navigation Menu.** Click on **Oracle Database**, then click on **Oracle Base Database.**
-
-2. On the left rail, Choose the **Compartment** of the **DB system** that you want to view database metrics for.
-
-3. In the list of DB systems displayed, click on the name of the **DB system** that you want to view database metrics for.
-
-    * This will render the **DB System Details page**
-    * For our lab, select the name of the DB System assigned to you.
-
-4. On the left rail under **Resources**, click on **Metrics**
-
-  ![DB System Metrics](./images/db.system.metrics.png" ")
-
-  ![DB System Metrics](./images/db.metrics.png" ")
-
-
-## Task 6: Change DB System VM Shape / Scale OCPU.
+## Task 5: Change DB System VM Shape / Scale OCPU.
 
 In this lab, we will go through how to **Change the Shape of a VM DB System** using the OCI Console
  
@@ -257,7 +233,7 @@ Let’s start the process of **Changing our VM Shape** by opening the navigation
 
     * For our lab, click the name of your assigned DB System
     * This will bring up the DB Systems Details Page
-      * Under the General Information section, note that the current Shape is VM Standard 2.2
+      * Under the General Information section, note that the current Shape is VM.Standard.E4.Flex
  
 4. Near the top of the page, Click on the Change Shape button.
 
@@ -270,7 +246,7 @@ Let’s start the process of **Changing our VM Shape** by opening the navigation
 
     * If your Shape is Intel Fixed OCPU based, select the desired Standard VM Shape from the drop-down list
     * If your Shape is an AMD Flex shape, proceed to adjust the enabled VM OCPU to what is required.
-    * For our lab, our VM Shape is an AMD Flex, so we will configure the desired OCPU to 3 using the Slider. Other resources like Memory and Network Bandwidth will scale proportionally.
+    * For our lab, our VM Shape is an AMD Flex, so we will configure the desired OCPU to 2 using the Slider. Other resources like Memory and Network Bandwidth will scale proportionally.
  
 6. Click on Change Shape to proceed
  
@@ -278,20 +254,15 @@ Let’s start the process of **Changing our VM Shape** by opening the navigation
  
 8. Click on the Change Shape button to process your request.
  
-9. To check on the progress of your VM Shape Change request, Scroll down and click on Work Requests on the left rail under Resources, Then click on the Change Shape Operation
-
-    * This will bring up the Work Request Details Page, from which you can see the log messages and overall operations progress
-        * Note that the state of the Work Request is IN PROGRESS and will change to SUCCEEDED once the job completes successfully.
- 
-10. Now that our Change Shape Request has been completed, click on the DB Systems Details Page link in the bread crumb trail
+9. Now that our Change Shape Request has been completed, click on the DB Systems Details Page link in the bread crumb trail
 
     * This will bring up the DB Systems Details Page
-        * Note that the new VM Shape is VM Standard E4 Flex with a CPU Core Count of 3, as we requested
+        * Note that the new VM Shape is VM Standard E4 Flex with a CPU Core Count of 2, as we requested.
 
 
 
 
-## Task 7: Scale DB System Storage.
+## Task 6: Scale DB System Storage.
 
 In this lab, we will go through how to **Scale the Storage for a VM DB System** using the OCI Console:
  
@@ -331,7 +302,7 @@ Congratulations On completing the task of Scaling the VM DB System Storage!!!!
 
 
 
-## Task 8: Enable Automatic Backup for DB System.
+## Task 7: Enable Automatic Backup for DB System.
 
 In this lab, we will go through How to Enable Automatic Backup for a database on an existing VM DB System using the OCI Console
  
@@ -372,9 +343,9 @@ To begin the process of Enabling Automatic Backup for a Database on an existing 
       * Backup scheduling (UTC): If you enable automatic backups, you can choose a two-hour scheduling window to control
         when backup operations begin. If you do not specify a window, the six-hour default window of 00:00 to 06:00 (in the time zone of the DB system's region) is used for your database.
 
-11. Click Save changes.
+11. Click Save changes. **(FYI, This final step which Enables Automatic Backups is disabled for this Lab.)**
 
-Congratulations on accomplishing the mission of Enabling Automatic Backup for a Database on an existing VM DB System!!!
+
 
 
 
