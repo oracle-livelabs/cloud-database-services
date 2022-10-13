@@ -1,14 +1,13 @@
 # Create The Application Tier
 
-
 ## Introduction
 
 This lab walks you through the steps to Create The Application Tier.
 
 Estimated Time: 15 minutes
 
-
-
+Watch the video below for a quick walk-through of the lab.
+[Create The Application Tier](videohub:1_2msxa7g4)
 
 ### Objectives
 
