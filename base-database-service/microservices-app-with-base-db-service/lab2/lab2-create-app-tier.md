@@ -25,6 +25,8 @@ This lab requires completion of the following:
 
 ## Task 1: Create Application Tier
 
+**(For this lab, The Application Tier is pre-provisioned - Informational Instructions ONLY)**
+
 1. Open the navigation menu and click Compute. Under Compute, click Instances.
 
   ![Naviage OCI Compute](./images/navigate.oci.png" ")
