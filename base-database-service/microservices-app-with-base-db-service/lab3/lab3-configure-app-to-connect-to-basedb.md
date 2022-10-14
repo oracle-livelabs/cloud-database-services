@@ -434,6 +434,6 @@ You may now **proceed to the next lab**.
 
 * **Author** - Leo Alvarado, Eddie Ambler, Product Management
 
-* **Contributors** - Tammy Bednar, Product Management
+* **Contributors** - Tammy Bednar, Product Management, Burt Beckwith, Oracle Labs 
 
 * **Last Update** - Sep 2022.
