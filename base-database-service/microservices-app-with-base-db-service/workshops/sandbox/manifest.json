@@ -25,27 +25,32 @@
         {
             "title": "Lab 1: Create an Oracle Base Database Service Instance",
             "description": "Create Oracle Base Database Service",
+            "type": "sandbox",
             "filename": "../../lab1/lab1-create-oracle-base-database-service.md"
         },
         {
             "title": "Lab 2: Create The Cloud Application Tier",
             "description": "Creating Application Tier",
+            "type": "sandbox",
             "filename": "../../lab2/lab2-create-app-tier.md"
         },
        {
             "title": "Lab 3: Configure and Build The Microservice Application to connect to Oracle Base Database Service",
             "description": "Configure the microservice application to connect to Oracle Base Database Service",
+            "type": "sandbox",
             "filename": "../../lab3/lab3-configure-app-to-connect-to-basedb.md"
         },
         {
             "title": "Lab 4: Run The Application",
             "description": "Run The Application",
+            "type": "sandbox",
             "filename": "../../lab4/lab4-run-the-application.md"
         },
 
         {
             "title": "Bonus Labs: Execute Cloud Database Administration Tasks (Optional)",
             "description": "Execute Cloud Database Administration Tasks (Optional)",
+            "type": "sandbox",
             "filename": "../../lab5bonuslabs/lab5-bonus-labs.md"
         },
         {

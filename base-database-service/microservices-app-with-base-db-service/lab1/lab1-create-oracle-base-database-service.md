@@ -9,8 +9,10 @@ Estimated Time: 15 minutes
 
 [](youtube:89V4Pr1xc-c)
 
+<if type="sandbox">
 Watch the video below for a quick walk-through of the lab.
 [Create an Oracle Base Database Service Instance](videohub:1_4le7xcoc)
+</if>
 
 
 ### Objectives

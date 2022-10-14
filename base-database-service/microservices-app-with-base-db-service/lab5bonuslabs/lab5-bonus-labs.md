@@ -6,8 +6,10 @@ This lab walks you through the steps to Run and Execute Cloud Database Administr
 
 Estimated Time: 20 minutes
 
+<if type="sandbox">
 Watch the video below for a quick walk-through of the lab.
 [Bonus Labs](videohub:1_kocwadoa)
+</if>
 
 ### Objectives
 
