@@ -1,0 +1,22 @@
+dbca -silent \
+-createDatabase \
+-templateName General_Purpose.dbc \
+-gdbName $gdbName \
+-sid $sid \
+-nodeList $nodeList \
+-createAsContainerDatabase true \
+-numberOfPdbs 0 \
+-pdbadminUsername pdbadmin \
+-pdbadminPassword $myPassword \
+-SysPassword $myPassword \
+-SystemPassword $myPassword \
+-emConfiguration NONE \
+-datafileDestination $dataDG \
+-storageType ASM \
+-characterSet AL32UTF8 \
+-asmsnmpPassword $myPassword \
+-diskGroupName $dataDG \
+-recoveryGroupName $recoDG \
+-databaseConfType RAC \
+-automaticMemoryManagement FALSE \
+-initParams 'sga_target=10G,pga_aggregate_target=5G,processes=1000'
