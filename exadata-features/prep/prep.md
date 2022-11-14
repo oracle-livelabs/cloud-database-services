@@ -1,162 +1,165 @@
-## Create SH tablespace and user
+# Exadata Storage Server Lab
 
+## Introduction
+
+This lab will create the database environment in your on-premises or cloud Exadata for the database labs in this workshop.
+
+The database labs can be run in a non-CDB or a PDB database. Since some of the labs will clear the database cache, it is recommended that if the lab database is a PDB, the CDB, in which it resides, not be shared with other PDBs, since the database cache is shared among all of the PDBs in a CDB.
+
+The labs have been tested on Exadata models X7, X8, X8M, X9M and on database versions 19 and 21.
+
+Estimated Time: 20 minutes
+
+### Objectives
+
+In this lab, you will:
+* Create the tablespace and database user
+* Import the table data with Data Pump
+* Create procedures to flush the buffer cache and shared pool
+* Grant the necessary privileges to the database user
+* Create the database tables
+
+### Prerequisites
+
+This lab assumes:
+* The Exadata you are using is an X7, X8, X8M, or X9M
+* The database version is 19 or 21
+* You have created a dedicated non-CDB database or a PDB in a CDB that is not shared with other PDBs
+* The database characterset is AL32UTF8/AL16UTF16
+
+## Task 1: Create the USERS tablespace and SH user
+
+Step 1: Create the USERS tablespace.
+```text
+<copy>
+CREATE TABLESPACE users DATAFILE SIZE 4G AUTOEXTEND ON NEXT 1G;
+</copy>
 ```
-create tablespace users datafile size 4G autoextend on next 1G;
 
-CREATE USER sh IDENTIFIED BY <password>;
+Step 2: Create the SH database user. Change <i>password</i> to the password you would like to use.
+```text
+<copy>
+CREATE USER sh IDENTIFIED BY password;
 
 ALTER USER sh DEFAULT TABLESPACE users
 QUOTA UNLIMITED ON users;
+</copy>
 ```
 
-## Import table data
+## Task 2: Import the table data
 
-If you have the datapump export for the lab, use these steps. If not, skip down to the SH sample schema install.
-
-Put the datapump file in a directory on the server, then create a database directory object with the same path and load with data pump.
-```
-create directory ocw_hol as '/home/oracle/ocw_exports';
-
-impdp dumpfile=ocw_lab_tables.dmp directory=ocw_hol logfile=imp_ocw_lab_tables.log
+Step 1: Create a directory on the server for the Data Pump import file.
+```text
+<copy>
+mkdir /home/oracle/exadata_features_hol
+</copy>
 ```
 
-## Install SH sample schema
-
-Only do this if you were not able to load the tables with the datapump export in the previous section.
-
-https://github.com/oracle-samples/db-sample-schemas/releases
-
-> Note: Only the Sales History schema is used. This command installs just the SH schema.
-```
-@/home/oracle/db-sample-schemas-19c/sales_history/sh_main &&password_sh &&default_ts &&temp_ts &&password_sys /home/oracle/db-sample-schemas-19c/sales_history/ &&logfile_dir v3 &&connect_string
+Step 2: Put the Data Pump file in the directory you just created.
+```text
+<copy>
+cp exadata_features_hol_tables.dmp /home/oracle/exadata_features_hol/
+</copy>
 ```
 
-## Procedures
-
-```
-prep/flush_buffer_cache.sql -- execute as sys
-prep/flush_shared_pool.sql -- execute as sys
-```
-
-## Grants
-
-```
-grant connect to sh;
-grant create table to sh
-grant select on v_$sysstat to sh;
-grant select on v_$mystat to sh;
-grant select on v_$statname to sh;
-grant execute on flush_buffer_cache to sh;
-grant execute on flush_shared_pool to sh;
+Step 3: Log into the database as an admin user and create the directory object.
+```text
+<copy>
+CREATE DIRECTORY exadata_features_hol AS '/home/oracle/exadata_features_hol';
+</copy>
 ```
 
-## Tables
-
-Run all of the following commands as SH.
-
-If the HCC practice has been done before, these tables will need to be dropped.
-```
-DROP TABLE mycust_archive PURGE;
-DROP TABLE mycust_query PURGE;
+Step 4: On the server, use Data Pump to import the database data.
+```text
+<copy>
+impdp dumpfile=exadata_features_hol_tables.dmp directory=exadata_features_hol logfile=exadata_features_hol_import.log
+</copy>
 ```
 
-Rename the sales table. This does not need to be done if it has been done previously or the schema was loaded from the data pump dump file.
-```
-alter table sales rename to sales_org;
+## Task 3: Create database procedures and grant privileges
+
+Step 1: Create the database procedures as an admin user in the database.
+```text
+<copy>
+@flush_buffer_cache.sql -- execute as admin user
+@flush_shared_pool.sql -- execute as admin user
+</copy>
 ```
 
-Grow the sales table to 2G.
+Step 2: Grant the necessary privileges to the SH user. Run these commands as an admin user in the database.
+```text
+<copy>
+GRANT CONNECT TO sh;
+GRANT CREATE TABLE TO sh;
+GRANT SELECT ON v_$sysstat TO sh;
+GRANT SELECT ON v_$mystat TO sh;
+GRANT SELECT ON v_$statname TO sh;
+GRANT EXECUTE ON flush_buffer_cache TO sh;
+GRANT EXECUTE ON flush_shared_pool TO sh;
+</copy>
 ```
-create table sales as
-select * from sales_org where 1=0;
+
+## Task 4: Create the database tables
+
+Execute the rest of the commands in the database as the SH user.
+
+Step 1: Create the sales table and grow it to 2GB.
+```text
+<copy>
+CREATE TABLE sales AS
+SELECT * FROM sales_org WHERE 1=0;
 
 BEGIN
 FOR i IN 1 .. 64 LOOP
-insert /*+ APPEND PARALLEL(4) */ into sales
-select * from sales_org;
-commit;
+INSERT /*+ APPEND PARALLEL(4) */ INTO sales
+SELECT * FROM sales_org;
+COMMIT;
 END LOOP;
 END;
 /
+</copy>
 ```
 
-Rename the customers table. This does not need to be done if it has been done previously or the schema was loaded from the data pump dump file.
-```
-alter table customers rename to customers_org;
-```
-
-Grow the customers table to 2G.
-```
-create table customers as
-select * from customers_org
-where 1=0;
-
-insert /*+ APPEND */ into customers
-select * from customers_tmp
-order by cust_income_level;
-commit;
-```
-
-Create a customers_tmp table and grow it to 2G.
-```
-create table customers_tmp as
-select * from customers_org where 1=0;
+Step 2: Create the customers_tmp table and grow it to 2GB.
+```text
+<copy>
+CREATE TABLE customers_tmp AS
+SELECT * FROM customers_org WHERE 1=0;
 
 BEGIN
 FOR i IN 1 .. 155 LOOP
-insert /*+ APPEND PARALLEL(4) */ into customers_tmp
-select * from customers_org;
-commit;
+INSERT /*+ APPEND PARALLEL(4) */ INTO customers_tmp
+SELECT * FROM customers_org;
+COMMIT;
 END LOOP;
 END;
 /
+</copy>
 ```
 
-Create the customers_fc table for the flash cache exercise.
-```
-create table customers_fc as
-select * from customers_org
-where 1=0;
+Step 3: Create the customers table and populate it with an ordered data set.
+```text
+<copy>
+CREATE TABLE customers AS
+SELECT * FROM customers_org
+WHERE 1=0;
 
-insert /*+ APPEND PARALLEL(4) */ into customers_fc
-select * from customers_org;
-commit;
-```
-
-## Student Environment
-
-Create a local tnsnames.ora file.
-```
-mkdir -p ~/tnsadmin
-
-echo "
-DB =
-  (DESCRIPTION =
-    (ADDRESS = (PROTOCOL = TCP)(HOST = <database scan name>)(PORT = 1521))
-    (CONNECT_DATA =
-      (SERVER = DEDICATED)
-      (SERVICE_NAME = <database service name>)
-    )
-  )" > ~/tnsadmin/tnsnames.ora
+INSERT /*+ APPEND */ INTO customers
+SELECT * FROM customers_tmp
+ORDER BY cust_income_level;
+COMMIT;
+</copy>
 ```
 
-Add environment variables to shell source file (i.e. .bashrc or .bash_profile).
-```
-export TNS_ADMIN=~/tnsadmin
-export TWO_TASK=DB
-export PATH=<oracle home path>/bin:$PATH
-export ORACLE_HOME=<oracle home path>
-cd ~/files
-```
+Step 4: Create and populate the customers_fc table.
+```text
+<copy>
+CREATE TABLE customers_fc AS
+SELECT * FROM customers_org
+WHERE 1=0;
 
-## Miscellaneous
-
-Only do this if you want to create a dump file from a fresh install of the sample schema.
-Export the sales_org and customers_org tables
-```
-mkdir /home/oracle/ocw_exports
-
-create directory ocw_hol as '/home/oracle/ocw_exports';
-
-expdp dumpfile=ocw_lab_tables.dmp directory=ocw_hol logfile=exp_ocw_lab_tables.log tables=sh.sales_org,sh.customers_org exclude=constraint,grant
+INSERT /*+ APPEND PARALLEL(4) */ INTO customers_fc
+SELECT * FROM customers_org;
+COMMIT;
+</copy>
 ```
