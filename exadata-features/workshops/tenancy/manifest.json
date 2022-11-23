@@ -4,7 +4,7 @@
     "tutorials": [
         {
             "title": "Introduction",
-            "filename": "../../introduction/introduction_sandbox.md"
+            "filename": "../../introduction/introduction_tenancy.md"
         },
         {
             "title": "Lab 1: Create Lab Environment",
