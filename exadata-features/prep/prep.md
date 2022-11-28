@@ -55,7 +55,7 @@ mkdir /home/oracle/exadata_features_hol
 </copy>
 ```
 
-Step 2: Put the Data Pump file in the directory you just created.
+Step 2: Put the [Data Pump file](https://github.com/oracle-livelabs/cloud-database-services/blob/main/exadata-features/prep/files/exadata_features_hol_tables.dmp) in the directory you just created.
 ```text
 <copy>
 cp exadata_features_hol_tables.dmp /home/oracle/exadata_features_hol/
@@ -78,7 +78,7 @@ impdp dumpfile=exadata_features_hol_tables.dmp directory=exadata_features_hol lo
 
 ## Task 3: Create database procedures and grant privileges
 
-Step 1: Create the database procedures as an admin user in the database.
+Step 1: Create the [flush_buffer_cache](https://github.com/oracle-livelabs/cloud-database-services/blob/main/exadata-features/prep/files/flush_buffer_cache.sql) and [flush_shared_pool](https://github.com/oracle-livelabs/cloud-database-services/blob/main/exadata-features/prep/files/flush_shared_pool.sql) database procedures as an admin user in the database.
 ```text
 <copy>
 @flush_buffer_cache.sql -- execute as admin user
