@@ -79,6 +79,8 @@ Step 2: Compare the size of the original uncompressed table with the two compres
 </copy>
 ```
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 * **Author** - Seth Miller, Principal Product Manager, Exadata Product Management
 * **Contributors** - Alex Blythe, Exadata Product Management
