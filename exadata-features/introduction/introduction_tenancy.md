@@ -30,4 +30,4 @@ This lab assumes you have:
 ## Acknowledgements
 * **Author** - Seth Miller, Principal Product Manager, Exadata Product Management
 * **Contributors** - Alex Blythe, Exadata Product Management
-* **Last Updated By/Date** - Seth Miller, August 2022
+* **Last Updated By/Date** - Seth Miller, March 2023

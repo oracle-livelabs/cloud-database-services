@@ -66,3 +66,8 @@ Step 3: Repeat the statistics query from the SQL script `lab_smart_scan_01.sql`.
 @lab_smart_scan_01.sql
 </copy>
 ```
+
+## Acknowledgements
+* **Author** - Seth Miller, Principal Product Manager, Exadata Product Management
+* **Contributors** - Alex Blythe, Exadata Product Management
+* **Last Updated By/Date** - Seth Miller, March 2023
