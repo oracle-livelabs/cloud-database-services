@@ -163,3 +163,10 @@ SELECT * FROM customers_org;
 COMMIT;
 </copy>
 ```
+
+You may now **proceed to the next lab**.
+
+## Acknowledgements
+* **Author** - Seth Miller, Principal Product Manager, Exadata Product Management
+* **Contributors** - Alex Blythe, Exadata Product Management
+* **Last Updated By/Date** - Seth Miller, March 2023

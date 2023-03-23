@@ -42,3 +42,8 @@ Step 3: Repeat the statistics query using the SQL script `lab_storage_indexes_01
 @lab_storage_indexes_01.sql
 </copy>
 ```
+
+## Acknowledgements
+* **Author** - Seth Miller, Principal Product Manager, Exadata Product Management
+* **Contributors** - Alex Blythe, Exadata Product Management
+* **Last Updated By/Date** - Seth Miller, March 2023
