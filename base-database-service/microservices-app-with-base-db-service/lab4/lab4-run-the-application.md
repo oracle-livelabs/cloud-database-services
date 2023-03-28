@@ -7,8 +7,10 @@ This lab walks you through the steps to Run the Microservices-based Application 
 
 Estimated Time: 15 minutes
 
+<if type="sandbox">
 Watch the video below for a quick walk-through of the lab.
 [Run the Application](videohub:1_ps0dr7bv)
+</if>
 
 ### Objectives
 

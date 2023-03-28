@@ -1,0 +1,38 @@
+{
+    "workshoptitle": "Oracle Exadata Platform Performance Features",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction_tenancy.md"
+        },
+        {
+            "title": "Lab 1: Create Lab Environment",
+            "filename": "../../prep/prep.md"
+        },
+        {
+            "title": "Lab 2: Explore Exadata Storage",
+            "filename": "../../cell/cell.md"
+        },
+        {
+            "title": "Lab 3: Smart Scan",
+            "filename": "../../smart_scan/smart_scan.md"
+        },
+        {
+            "title": "Lab 4: Hybrid Columnar Compression",
+            "filename": "../../hcc/hcc.md"
+        },
+        {
+            "title": "Lab 5: Flash Cache",
+            "filename": "../../flash_cache/flash_cache.md"
+        },
+        {
+            "title": "Lab 6: Storage Indexes",
+            "filename": "../../storage_indexes/storage_indexes.md"
+        },
+        {
+            "title": "Get Help",
+            "filename": "https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

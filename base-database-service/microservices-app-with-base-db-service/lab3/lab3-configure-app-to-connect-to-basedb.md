@@ -7,8 +7,10 @@ This lab walks you through the steps to Configure The Microservice Application t
 
 Estimated Time: 20 minutes
 
+<if type="sandbox">
 Watch the video below for a quick walk-through of the lab.
 [Configure and Build The Microservice Application to connect to Oracle Base Database Service](videohub:1_prho2s6p)
+</if>
 
 ### Objectives
 
