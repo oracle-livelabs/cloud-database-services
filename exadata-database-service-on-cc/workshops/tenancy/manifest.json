@@ -9,6 +9,11 @@
           "description": "Introduction",
           "filename": "../../introduction/introduction.md"
       },
+      {
+            "title": "Get Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
         {
             "title": "Lab 1: Create Infrastructure Resource for Exadata Database Service on Cloud@Customer",
             "description": "Create an Exadata Database Service on Cloud@Customer Infrastructure",

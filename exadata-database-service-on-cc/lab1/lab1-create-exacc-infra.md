@@ -8,7 +8,7 @@
 
 This lab walks you through the steps to create an Exadata Database Service on Cloud@Customer Infrastructure
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 Watch the video below for a quick walk-through of the lab.
 [Create an Exadata Database Service on Cloud@Customer Infrastructure](youtube:DCrivNA5bs8)

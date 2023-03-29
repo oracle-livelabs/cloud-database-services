@@ -6,7 +6,7 @@
 
 This lab walks you through the steps to create a VM Cluster Network resource
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 Watch the video below for a quick walk-through of the lab.
 [Create a VM Cluster Network](youtube:5gaKF1ewyRg)

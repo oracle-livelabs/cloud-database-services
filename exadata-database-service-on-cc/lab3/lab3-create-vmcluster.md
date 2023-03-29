@@ -6,7 +6,7 @@
 
 This lab walks you through the steps to create a VM Cluster Resource for Exadata Database Service on Cloud@Customer
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes (VM Cluster provisioning might take approximately 4hrs)
 
 Watch the video below for a quick walk-through of the lab.
 [Create a VM Cluster Resource for Exadata Database Service on Cloud@Customer](youtube:5gaKF1ewyRg)
