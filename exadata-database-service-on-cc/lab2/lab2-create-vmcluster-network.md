@@ -16,18 +16,20 @@ Watch the video below for a quick walk-through of the lab.
 
 ### Objectives
 
--   Create a VM Cluster Network resource
+-   After completing this lab, you should be able to create a VM Cluster Network resource
 
 
 ### Prerequisites
 
 This lab requires completion of the following:
 
+* Completion of **Lab1**
+
 * You must plan on allocating host names, subnets and a range of IP addresses for network interfaces on the client network and the backup network are required. The client network and the backup network require separate subnets.
 
 * Oracle recommends that you register the host names and IP addresses for the Exadata Database Service on Cloud@Customer network interfaces in your corporate Domain Name System (known as DNS).
 
-* Completion of Lab1
+
 
 ## Task 1: Create a VM Cluster Network resource
 
@@ -77,12 +79,12 @@ This lab requires completion of the following:
 
 8. (Optional) You can choose to adjust the system-generated network definitions on the Review Configuration page. Click **Edit** to adjust the system-generated network definitions to meet your requirements.
 
-9. Click **Create VM Cluster Network**. The VM Cluster Network Details page is now displayed. Initially, after creation, the state of the VM cluster network is **Requires Validation**.
+9. Click **Create VM Cluster Network**. The VM Cluster Network Details page is now displayed. After creation, the state of the VM cluster network is **Requires Validation**.
 
 
 ## Task 2: Validate the VM Cluster Network
 
-You can only validate a VM cluster network if its current state is Requires Validation, and if the underlying Exadata infrastructure is activated.
+You can only validate a VM cluster network if its current state is **Requires Validation**, and if the underlying Exadata infrastructure is activated.
 
 1. Click the name of the VM cluster network that you want to validate. The VM Cluster Network Details page displays information about the selected VM cluster network.
 

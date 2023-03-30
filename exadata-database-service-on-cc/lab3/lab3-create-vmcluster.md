@@ -13,14 +13,14 @@ Watch the video below for a quick walk-through of the lab.
 
 ### Objectives
 
--   Create a VM Cluster Resource for Exadata Database Service on Cloud@Customer
+-   After completing this lab, you should be able to create a VM Cluster Resource for Exadata Database Service on Cloud@Customer
 
 
 ### Prerequisites
 
 This lab requires completion of the following:
 
-* Completion of Lab2
+* Completion of **Lab2**
 
 ## Task 1: Create a VM Cluster Resource for Exadata Database Service on Cloud@Customer
 
@@ -79,7 +79,7 @@ This lab requires completion of the following:
         * **Bring Your Own License (BYOL):** Select this option if your organization already owns Oracle Database software licenses that you want to use on the VM cluster.
         * **License Included:** Select this option to subscribe to Oracle Database software licenses as part of Exadata Database Service on Cloud@Customer.
 
-    * Enable **Diagnostics Collection** By enabling diagnostics collection and notifications, Oracle Cloud Operations and you will be able to identify, investigate, track, and resolve guest VM issues quickly and effectively.
+    * Enable **Diagnostics Collection:** By enabling diagnostics collection and notifications, Oracle Cloud Operations and you will be able to identify, investigate, track, and resolve guest VM issues quickly and effectively.
 
         * **Enable Diagnostic Events:** Allow Oracle to collect and publish critical, warning, error, and information events to me.
 
@@ -100,7 +100,7 @@ This lab requires completion of the following:
 
         * **Tags:** Optionally, you can apply tags.
 
-6. Click **Create VM Cluster.**
+6. Click **Create VM Cluster.** When the VM cluster creation process completes, the state of the VM cluster changes to **Available**.
 
 
 

@@ -5,14 +5,14 @@
 
 This lab walks you through the steps to create Oracle Database on Exadata Database Service using the OCI Console.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 15 minutes
 
 Watch the video below for a quick walk-through of the lab.
 [Create Oracle Database](youtube:JJ4Wx0l0gkc)
 
 ### Objectives
 
--   Create a database on Exadata Database Service
+-   After completing this lab, you should be able to create a database on Exadata Database Service
 
 
 ### Prerequisites

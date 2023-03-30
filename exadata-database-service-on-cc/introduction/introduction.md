@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 The labs in this workshop walk you through all the steps to get started using the Oracle Exadata Database Service to perform lifecycle tasks and procedures.
 
@@ -59,7 +59,7 @@ Exadata Cloud@Customer uses your NTP service to ensure that all of the system c
 The deployment will require that at least one reliable NTP server is available and is accessible to the control plane servers and to all of the servers on the client network.
 You can register up to three NTP servers as part of the Exadata Cloud@Customer deployment to ensure coverage in case a server becomes unavailable.
 
-The Oracle Cloud Operations team can use the OCI Web Console or REST APIs over an HTTPS or SSH connection to manage the infrastructure.
+The Oracle Cloud Operations team can use the OCI Console or REST APIs over an HTTPS or SSH connection to manage the infrastructure.
 Their HTTPS connections travels to the infrastructure through the Oracle service tenancy via the admin VCN, and then through the persistent, secure automation tunnel.
 
 
@@ -77,7 +77,9 @@ These hands-on lab guides provide step-by-step directions to setting up and usin
 
 
 
-# Introduction
+## Want to Learn More?
+
+Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-whats-new-in-exadata-cloud-at-customer-gen2.html#GUID-2F27E5A9-67A8-459E-9453-81E1F68043DE) to learn about What's New in Exadata Database Service on Cloud@Customer.
 
 ## Acknowledgements
 
