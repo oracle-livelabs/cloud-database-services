@@ -19,7 +19,7 @@ Watch the video below for a quick walk-through of the lab.
 
 This lab requires completion of the following:
 
-* Completion of Lab3
+* Completion of **Lab3**
 
 ## Task 1: Create an Oracle Database on Exadata Database Service
 
@@ -41,11 +41,9 @@ This lab requires completion of the following:
 
     * **Select a database version:** From the list, choose the Oracle Database software release that you want to deploy.
 
-    * **Database Home:** Select an existing Database Home or create one as applicable.
+    * **Database Home:** Select an existing Database Home or create a new one as applicable. For this workshop, we will create a new Database Home
 
-        * **Select an existing Database Home:** Select this option if you have one or more Database Homes already exist for the database version you have selected. Select a Database Home from the list.
-
-        * **Create a new Database Home:** Select this option If no Database Homes exist for the database version you have selected.
+        * Click **Create a new Database Home:**
 
           * **Enter Database Home display name.**
 
