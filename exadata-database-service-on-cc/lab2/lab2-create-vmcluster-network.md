@@ -99,9 +99,9 @@ You may now **proceed to the next lab**
 
 
 
-## Want to Learn More?
+## Learn More
 
-Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/exadata/doc/ecc-setting-up-the-network.html) to learn more about Creating VM Cluster Network on Exadata Database Service on Cloud@Customer.
+* Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/exadata/doc/ecc-setting-up-the-network.html) to learn more about Creating VM Cluster Network on Exadata Database Service on Cloud@Customer.
 
 ## Acknowledgements
 
@@ -109,4 +109,4 @@ Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaa
 
 * **Contributors** - Tammy Bednar, Product Management
 
-* **Last Update** - Feb 2023.
+* **Last Updated By** - Leo Alvarado, Product Management, April 2023.

@@ -91,9 +91,9 @@ This lab requires completion of the following:
 
 
 
-## Want to Learn More?
+## Learn More?
 
-Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/exadata/doc/ecc-create-first-db.html) to learn more about Creating an Oracle Database on Exadata Database Service.
+* Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/exadata/doc/ecc-create-first-db.html) to learn more about Creating an Oracle Database on Exadata Database Service.
 
 ## Acknowledgements
 
@@ -101,4 +101,4 @@ Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaa
 
 * **Contributors** - Tammy Bednar, Product Management
 
-* **Last Update** - Feb 2023.
+* **Last Updated By** - Leo Alvarado, Product Management, April 2023.

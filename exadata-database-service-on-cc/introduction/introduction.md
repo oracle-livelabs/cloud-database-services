@@ -18,7 +18,7 @@ Oracle Exadata Database Service on Cloud@Customer enables you to apply the combi
 Oracle Exadata Database Service on Cloud@Customer is the simplest way to move an organization’s business-critical Oracle Database workloads to the cloud. It simultaneously runs Oracle Exadata Database Service and the fully managed Oracle Autonomous Database Service inside customers’ data centers and behind their firewalls to help meet strict data residency and security requirements.
 
 **Network Overview: Exadata Database Service on Cloud@Customer**
-![](./images/exadbcc.png " ")
+![exadb-c@c network architecture overview](./images/exadbcc.png " ")
 
 
 The Diagram outlines the high-level network architecture for Exadata Database Service on Cloud@Customer.
@@ -77,9 +77,9 @@ These hands-on lab guides provide step-by-step directions to setting up and usin
 
 
 
-## Want to Learn More?
+## Learn More
 
-Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-whats-new-in-exadata-cloud-at-customer-gen2.html#GUID-2F27E5A9-67A8-459E-9453-81E1F68043DE) to learn about What's New in Exadata Database Service on Cloud@Customer.
+* Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-whats-new-in-exadata-cloud-at-customer-gen2.html#GUID-2F27E5A9-67A8-459E-9453-81E1F68043DE) to learn about What's New in Exadata Database Service on Cloud@Customer.
 
 ## Acknowledgements
 
@@ -87,6 +87,6 @@ Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-cust
 
 * **Contributors** - Tammy Bednar, Product Management
 
-* **Last Update** - Feb 2023.
+* **Last Updated By** - Leo Alvarado, Product Management, April 2023.
 
 **You are all set. Let us begin!**
