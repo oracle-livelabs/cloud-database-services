@@ -1,6 +1,10 @@
 # Introduction
 
+## About this Workshop
+
 The labs in this workshop walk you through all the steps to get started using the Oracle Exadata Database Service to perform lifecycle tasks and procedures.
+
+Estimated Workshop Time: 1 hour 10 minutes
 
 **What is an Oracle Exadata Database Service?**
 

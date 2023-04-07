@@ -91,7 +91,7 @@ This lab requires completion of the following:
 
 
 
-## Learn More?
+## Learn More
 
 * Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/exadata/doc/ecc-create-first-db.html) to learn more about Creating an Oracle Database on Exadata Database Service.
 
