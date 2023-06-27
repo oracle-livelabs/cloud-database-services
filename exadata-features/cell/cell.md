@@ -86,32 +86,9 @@ list flashlog detail
 </copy>
 ```
 
-## Task 3: Persistent Memory
-
-Step 1: List the cell disks associated with the persistent memory (Pmem) modules in your Exadata cell.
-```text
-<copy>
-list celldisk where disktype = PMEM
-</copy>
-```
-
-Step 2: By default, Exadata Smart Pmem Cache is configured across all the Pmem-based cell disks. Use the `list pmemcache detail` command to confirm that Exadata Smart Pmem Cache is configured on your Pmem-based cell disks.
-```text
-<copy>
-list pmemcache detail
-</copy>
-```
-
-Step 3: In addition to Exadata Smart Pmem Cache, Exadata Smart Pmem Log provides a mechanism for improving the latency of database redo log write operations. Exadata Smart Pmem Log uses a small portion of high-performance persistent memory as temporary storage to facilitate low latency redo log writes.
-```text
-<copy>
-list pmemlog detail
-</copy>
-```
-
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Seth Miller, Principal Product Manager, Exadata Product Management
 * **Contributors** - Alex Blythe, Exadata Product Management
-* **Last Updated By/Date** - Seth Miller, March 2023
+* **Last Updated By/Date** - Seth Miller, June 2023
