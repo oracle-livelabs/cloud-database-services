@@ -22,21 +22,21 @@ This lab assumes:
 
 ## Task 1: Query with Storage Indexes
 
-Step 1: Execute the SQL script `lab_storage_indexes_01.sql` and verify that the statistics are at or near zero values. If any statistics are significantly greater than zero then reconnect and retry.
+1: Execute the SQL script `lab_storage_indexes_01.sql` and verify that the statistics are at or near zero values. If any statistics are significantly greater than zero then reconnect and retry.
 ```text
 <copy>
 @lab_storage_indexes_01.sql
 </copy>
 ```
 
-Step 2: Execute the SQL script `lab_storage_indexes_02.sql`.
+2: Execute the SQL script `lab_storage_indexes_02.sql`.
 ```text
 <copy>
 @lab_storage_indexes_02.sql
 </copy>
 ```
 
-Step 3: Repeat the statistics query using the SQL script `lab_storage_indexes_01.sql`. The statistic `cell physical IO bytes saved by storage index` shows that this query benefits from a storage index. Storage indexes were used to bypass a significant amount of I/O. Queries that benefit from storage indexes can execute more quickly using fewer resources which allows other workloads to benefit from the unused I/O resources.
+3: Repeat the statistics query using the SQL script `lab_storage_indexes_01.sql`. The statistic `cell physical IO bytes saved by storage index` shows that this query benefits from a storage index. Storage indexes were used to bypass a significant amount of I/O. Queries that benefit from storage indexes can execute more quickly using fewer resources which allows other workloads to benefit from the unused I/O resources.
 ```text
 <copy>
 @lab_storage_indexes_01.sql
