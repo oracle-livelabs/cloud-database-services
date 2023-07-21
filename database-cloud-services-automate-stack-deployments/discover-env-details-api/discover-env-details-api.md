@@ -44,6 +44,66 @@ This lab requires completion of the following:
     </copy>
     ```
 
+    You will see a similar output as below, pay attention to the **cpusEnabled** field
+
+    ```
+    <copy>
+    {
+  "data": {
+    "availabilityDomain": "cuGa:US-SANJOSE-1-AD-1",
+    "compartmentId": "ocid1.compartment.oc1.....",
+    "cpusEnabled": 6,
+    "dataCollectionOptions": {
+      "isDiagnosticsEventsEnabled": true,
+      "isHealthMonitoringEnabled": true,
+      "isIncidentLogsEnabled": true
+    },
+    "dataStorageSizeInGBs": null,
+    "dataStorageSizeInTBs": 30.0,
+    "dbNodeStorageSizeInGBs": 120,
+    "dbServers": [
+      "ocid1.dbserver.oc1.us-sanjose-1.....",
+      "ocid1.dbserver.oc1.us-sanjose-1....."
+    ],
+    "definedTags": {
+      "Oracle-Tags": {
+        "CreatedBy": "idcs/user@oracle.com",
+        "CreatedOn": "2023-06-16T03:57:18.489Z"
+      },
+      "osc": {
+        "automatic_shutdown": "off",
+        "automatic_startup": "off"
+      }
+    },
+    "displayName": "ecc4c4",
+    "exadataInfrastructureId": "ocid1.exadatainfrastructure.....",
+    "freeformTags": {},
+    "giSoftwareImageId": null,
+    "giVersion": "19.19.0.0.0",
+    "id": "ocid1.vmcluster.......",
+    "isLocalBackupEnabled": false,
+    "isSparseDiskgroupEnabled": true,
+    "lastPatchHistoryEntryId": "ocid1.dbpatchhistory......",
+    "licenseModel": "BRING_YOUR_OWN_LICENSE",
+    "lifecycleDetails": null,
+    "lifecycleState": "AVAILABLE",
+    "memorySizeInGBs": 60,
+    "ocpusEnabled": null,
+    "shape": "ExadataCC.Half3.200",
+    "sshPublicKeys": null,
+    "systemVersion": "22.1.10.0.0.230422",
+    "timeCreated": "2023-06-16T03:57:18.773Z",
+    "timeZone": "UTC",
+    "vmClusterNetworkId": "ocid1.vmclusternetwork......."
+  },
+  "headers": {
+    
+  },
+  "status": "200 OK"
+}
+  </copy>
+    ```
+
 <!--
 ## Learn More
 
