@@ -39,7 +39,7 @@ This lab requires completion of the following:
     ```
     <copy>
 
-      oci raw-request --http-method [GET|POST|...] --target-uri https://<service-endpoint>.oraclecloud.com/<api-method-path>
+      oci raw-request --http-method GET --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/vmClusters/{VMClusterOCID}"
 
     </copy>
     ```
