@@ -38,64 +38,35 @@ This lab requires completion of the following:
 
 2. Under Compute Click on **Instances** 
    
+3. Select the assigned **Compartment**
+   
    The list of Instances displays. For each compute host, the **name**, **state**, and **IP address** are displayed.
 
    ![discover compute networking details](./images/discover-app-server.png " ")
    
-3. Launch the [OSC Secured Global Desktop](https://sgdsca.osc.oracle.com/sgd/thin.jsp?clientmode=installed) 
+4. Launch the [OSC Secured Global Desktop](https://sgdsca.osc.oracle.com/sgd/thin.jsp?clientmode=installed) 
    
    ![SGD login](./images/sgd-login.png " ")
    
    Enter the assigned **username** and **Password** for your login
 
-4. Launch the SGD Linux Desktop
+5. Launch the SGD Linux Desktop
    
    ![SGD linux Desktop](./images/sgd-linux-desktop.png " ")
 
-5. Open terminal and type the following command 
+6. Open terminal and type the following command 
    
    ![ssh to database client](./images/ssh-app-tool.png " ")
-    <!--
-        ```
-        <copy>
-
-        ssh apptool2.us.osc.oracle.com 
-
-        </copy>
-        ```
-    -->
-        ```
+    
+      ```
         <copy>
 
         ssh ocw23bastion.us.osc.oracle.com 
 
         </copy>
-        ```
-<!--
-1. Open the readme file to see the key to access both VM Cluster and Database client instance via SSH
-   
-    Watch the video below for a quick walk-through of the lab.
-   [Create an Exadata Database Service on Cloud@Customer Infrastructure](youtube:DCrivNA5bs8)
+      ```     
 
-   
-    ```
-     <copy>
-
-     cat /nas/pocs/ocw169536/README.txt
-
-     </copy>
-     ```
-
-      ```
-     <copy>
-
-     cat /ocw23/sshkey_student_xx.txt
-
-     </copy>
-     ```
--->
-
-6. Use the assigned SSH Key to connect to the application server instance
+7. Use the assigned SSH Key to connect to the application server instance
    
       ```
         <copy>
@@ -110,7 +81,7 @@ This lab requires completion of the following:
    
    ![navigage oci console](./images/navigateocimenu.png " ")
 
-2. Navigate to the **VM Cluster Details** page of the VM Cluster that contains the virtual machine that you are interested in.
+2. Select the assigned **Compartment** then Navigate to the **VM Cluster Details** page of the VM Cluster that contains the virtual machine that you are interested in.
 
     The VM Cluster Details page displays information about the selected VM cluster.
 
@@ -132,7 +103,7 @@ This lab requires completion of the following:
 
     ![VM Client IP](./images/vm-client-ip.png" ")
 
-1. From your Bastion host *(In Task 2 step 5)* , Run command to connect to the Exadata Database Service Virtual Machine with SSH
+5. From your Bastion host *(In Task 2 step 5)* , Run command to connect to the Exadata Database Service Virtual Machine with SSH
 
       ```
               <copy>
