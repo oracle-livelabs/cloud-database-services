@@ -19,21 +19,17 @@ Estimated Lab Time: 10 minutes
 
 This lab requires completion of the following:
 
-* Completion of **Lab1**
+* Completion of **Lab3**
 
 ## Task 1: Discover Environment Details using REST API
 
-1. Login to the Console.
-
-2. Click the Cloud Shell/Code Editor icon in the Console header and select Cloud Shell from the drop-down menu. 
-   
-   ![oci cloudshell](./images/cloudshell.png " ")
+1. Open the Cloud Shell
 
    This displays the Cloud Shell in a "drawer" at the bottom of the console:
 
    ![oci cloudshell](./images/cloudshelllaunch.png " ")
 
-3. Run the OCI CLI Command to Get Exadata VM Cluster Details:
+2. Make OCI REST API call to get Exadata VM Cluster details using **OCI RAW-REQUEST** Command
 
 
     ```
@@ -43,6 +39,7 @@ This lab requires completion of the following:
 
     </copy>
     ```
+    Replace the *{VMClusterOCID}* with the **VM Cluster OCID** *copied from Lab 3 Task 1 step 2*
 
     You will see a similar output as below, pay attention to the **cpusEnabled** field
 
@@ -109,6 +106,72 @@ This lab requires completion of the following:
 
 * Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/exadata/doc/ecc-create-first-db.html) to learn more about Creating an Oracle Database on Exadata Database Service.
 -->
+
+## Task 2: List the Maintenance Updates that can be applied to the specified VM Cluster using REST API
+
+1. Make OCI REST API call to list maintenance updates that can be appliced to the specified VM Cluster
+
+
+    ```
+    <copy>
+
+      oci raw-request --http-method GET --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/vmClusters/{VMClusterOCID}/updates"
+
+    </copy>
+    ```
+    Replace the *{VMClusterOCID}* with the **VM Cluster OCID** 
+
+    ![list VM Cluster updates](./images/get-vmcluster-updates.png " ")
+
+    You will see a similar output as below
+
+    ```
+    <copy>
+
+    {
+  "data": [
+    {
+      "availableActions": [
+        "ROLLING_APPLY",
+        "PRECHECK"
+      ],
+      "description": "Virtual Machine OS Update 22.1.11.0.0.230516",
+      "id": "ocid1.dbupdate.oc1.us-sanjose-1....",
+      "lastAction": null,
+      "lifecycleDetails": null,
+      "lifecycleState": "AVAILABLE",
+      "timeReleased": "2023-06-06T19:15:24.842Z",
+      "updateType": "OS_UPDATE",
+      "version": "22.1.11.0.0.230516"
+    },
+    {
+      "availableActions": [
+        "ROLLING_APPLY",
+        "PRECHECK"
+      ],
+      "description": "Virtual Machine OS Update 22.1.10.0.0.230511",
+      "id": "ocid1.dbupdate.oc1.us-sanjose-1......",
+      "lastAction": null,
+      "lifecycleDetails": null,
+      "lifecycleState": "AVAILABLE",
+      "timeReleased": "2023-05-23T19:20:54.561Z",
+      "updateType": "OS_UPDATE",
+      "version": "22.1.10.0.0.230511"
+    }
+  ],
+  "headers": {
+    
+  },
+  "status": "200 OK"
+}
+
+    ```
+    </copy>
+
+## Task 3: Gets a list of Custom Database Software Images in the specified compartment using REST API
+
+
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 

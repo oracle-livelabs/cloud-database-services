@@ -29,7 +29,7 @@
         {
             "title": "Lab 3: Scale Exadata VM Cluster OCPU using OCI CLI",
             "description": "Learn how to Scale Exadata VM Cluster OCPU using OCI CLI",
-            "filename": "../../scale-vmcluster-ocpu-ocicli/scale-vmcluster-ocpu-ocicli.md"
+            "filename": "../../scale-vmcluster-ocpu-oci-cli/scale-vmcluster-ocpu-oci-cli.md"
         },
         {
             "title": "Lab 4: Discover Environment Details using REST API",
