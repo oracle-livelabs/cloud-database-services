@@ -21,14 +21,15 @@ Estimated Lab Time: 15 minutes
 
 This lab requires completion of the following:
 
-* Setting Up Your Tenancy - After Oracle creates your tenancy in OCI, an administrator at your company will need to perform some setup tasks and establish an organizational plan for your cloud resources and users.
+* Login to **Oracle Cloud** using **OSC's tenancy** with your assigned workshop credentials
+* Obtain your assigned **Secure Global Desktop (SGD)** login credentials
 
 
 
 
 ## Task 1: Review creating an Exadata Database Service on Cloud@Customer Resource Model
 
-**(For this lab, The Exadata Database Service on Cloud@Customer Resource Model is pre-provisioned - Informational Instructions for navigating the Exadata Database Service on Cloud@Customer environment will be presented by the speakers)**
+  *(For this lab, The Exadata Database Service on Cloud@Customer Resource Model is pre-provisioned - Informational Instructions for navigating the Exadata Database Service on Cloud@Customer environment will be presented by the speakers)*
 
 ## Task 2: Discover and Connect to the Application Server (Oracle Cloud Developer Image)
 
@@ -38,17 +39,17 @@ This lab requires completion of the following:
 
 2. Under Compute Click on **Instances** 
    
-3. Select the assigned **Compartment**
+3. Select your assigned **Compartment**
    
    The list of Instances displays. For each compute host, the **name**, **state**, and **IP address** are displayed.
 
    ![discover compute networking details](./images/discover-app-server.png " ")
    
-4. Launch the [OSC Secured Global Desktop](https://sgdsca.osc.oracle.com/sgd/thin.jsp?clientmode=installed) 
+4. Launch the **Secured Global Desktop (SGD)** by clicking on this [URL](https://sgdsca.osc.oracle.com/sgd/thin.jsp?clientmode=installed) 
    
    ![SGD login](./images/sgd-login.png " ")
    
-   Enter the assigned **username** and **Password** for your login
+   Enter your assigned Secured Global Desktop **username** and **Password** for your login
 
 5. Launch the SGD Linux Desktop
    

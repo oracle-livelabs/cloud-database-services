@@ -1,4 +1,4 @@
-# Create Oracle Database on Exadata Database Service
+# Create Custom Database Software Image using OCI Console
 
 
 ## Introduction
@@ -25,7 +25,7 @@ This lab requires completion of the following:
 
 * Completion of **Lab1**
 
-## Task 1: Create Database Custom Image using OCI Console
+## Task 1: Create Custom Database Software Image using OCI Console
 
 1. Open the navigation menu. Under **Oracle Database**, click **Exadata Cloud@Customer**.
 
@@ -37,21 +37,17 @@ This lab requires completion of the following:
 
 4. In the **Display name** field, provide a display name for your image.
    
-5. Choose your **Compartment**.
+5. Choose your assigned **Compartment**.
 
-6. Choose the **Database version** for your image.
+6. Choose the **Database version** for your image. For this workshop, select **19c** version
 
-7. Choose the **patch set update, proactive bundle patch, or release update**.
+7. Choose the **patch set update, proactive bundle patch, or release update**. For this workshop, choose **19.11.0.0**
 
-    * Optionally, you can enter a comma-delimited list of one-off (interim) patch numbers.
-    * Optionally, you can upload an Oracle Home inventory file from an existing Oracle Database.
-
-8. Click **Show Advanced Options** to add **tags** to your database software image.
-
-9. Click **Create Database Software Image**.
+8. Click **Create Database Software Image**.
 
     ![Create Custom Database Software Image Dialog Page](./images/create-dbsw-page.png " ")
 
+You may now **proceed to the next lab** 
 
 <!--
 ## Learn More

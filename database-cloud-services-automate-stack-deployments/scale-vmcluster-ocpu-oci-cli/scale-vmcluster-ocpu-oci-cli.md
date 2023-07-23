@@ -3,6 +3,18 @@
 
 ## Introduction
 
+Oracle Cloud Infrastructure provides a wide choice of management interfaces that can be used with the Exadata Database Service.  
+The easiest to use is the web console interface, which allows you to use a browser to graphically configure and initiate operations.  
+The web console is great for one-time actions, but some users prefer a more programmatic interface for executing things that are done repeatedly, such as provisioning, managing resources and maintenance updates. All of the operations interfaces are also exposed via a command line interface (CLI) that can be used for scripting, and for building custom tooling.
+
+The CLI is a small-footprint tool that you can use on its own or with the console to complete Oracle Cloud Infrastructure tasks. The CLI provides the same core functionality as the Console, plus additional commands. Some of these, such as the ability to run scripts, extend Console functionality.
+
+**Cloud Shell**: The CLI is pre-configured with your credentials and ready to use immediately from within Cloud Shell. 
+
+**Oracle Linux Cloud Developer image**: The CLI is pre-installed on the Oracle Linux Cloud Developer platform image. For more information.
+
+The CLI is built on the Oracle Cloud Infrastructure SDK for Python and runs on Mac, Windows, or Linux. The Python code makes calls to Oracle Cloud Infrastructure APIs to provide the functionality implemented for the various services. These are REST APIs that use HTTPS requests and responses.
+
 This lab walks you through the steps to Scale Exadata VM Cluster OCPU resource using OCI CLI.
 
 Estimated Lab Time: 10 minutes
@@ -21,6 +33,7 @@ This lab requires completion of the following:
 
 * Completion of **Lab1**
 
+
 ## Task 1: Scale Exadata VM Cluster OCPU using OCI CLI
 
 1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Cloud@Customer**.
@@ -37,7 +50,9 @@ This lab requires completion of the following:
   
    ![vm cluster details page](./images/vmcluster-details-page.png " ")
 
-3. Click the Cloud Shell/Code Editor icon in the Console header and select Cloud Shell from the drop-down menu. 
+3. To use OCI CLI for this lab, we will be using the **Cloud OCI Shell tool** where CLI is pre-configured with your credentials and ready to use immediately from within Cloud Shell in the OCI Web Console. 
+   
+4. Click the Cloud Shell/Code Editor icon in the Console header and select Cloud Shell from the drop-down menu. 
    
    ![oci cloudshell](./images/cloudshell.png " ")
 
@@ -45,7 +60,7 @@ This lab requires completion of the following:
 
    ![oci cloudshell](./images/cloudshelllaunch.png " ")
 
-4. Run the OCI CLI Command to Scale up the **VM Cluster OCPU Resources** from **4 OCPUs** to **6 OCPUs**
+5. Run the OCI CLI Command to Scale up the **VM Cluster OCPU Resources** from **4 OCPUs** to **6 OCPUs**
 
 
     ```

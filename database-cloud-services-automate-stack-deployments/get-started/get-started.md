@@ -27,11 +27,11 @@ We offer two types of Cloud Accounts:
 
 ### Prerequisites
 
-* **OSC Cloud Account Name** - The name of your assigned tenancy 
+* **Cloud Account Name** - The name of your assigned OSC's Oracle Cloud tenancy 
 
-* **Username** - The assigned username for this workshop
+* **Username** - Your assigned username for this workshop
 
-* **Password** - The assigned password for this workshop
+* **Password** - Your assigned password for this workshop
 
 ## Task 1: Log in to Oracle Cloud
 

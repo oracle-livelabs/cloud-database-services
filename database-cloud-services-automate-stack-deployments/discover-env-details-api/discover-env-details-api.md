@@ -3,13 +3,12 @@
 
 ## Introduction
 
+Any operation that you can do with the web console, you can also do with a corresponding REST API. Similar to the web console, the REST APIs transit the Internet via https, and require no special software to be installed on the local system. The Oracle Cloud Infrastructure APIs are typical REST APIs that use HTTPS requests and responses.
+
 This lab walks you through the steps to discover Exadata Database Service on Cloud@Customer environment details using REST API.
 
 Estimated Lab Time: 10 minutes
 
-<!-- Watch the video below for a quick walk-through of the lab.
-[Create Oracle Database](youtube:JJ4Wx0l0gkc)
--->
 ### Objectives
 
 -   After completing this lab, you should be able to discover Exadata Database Service on Cloud@Customer environment details using REST API.
@@ -21,15 +20,77 @@ This lab requires completion of the following:
 
 * Completion of **Lab3**
 
-## Task 1: Discover Environment Details using REST API
+## Task 1: List all the Pluggable Databases in a Container Database using REST API
 
-1. Open the Cloud Shell
-
-   This displays the Cloud Shell in a "drawer" at the bottom of the console:
+1. Open the Cloud Shell. This displays the Cloud Shell at the bottom of the console:
 
    ![oci cloudshell](./images/cloudshelllaunch.png " ")
 
-2. Make OCI REST API call to get Exadata VM Cluster details using **OCI RAW-REQUEST** Command
+2. Make OCI REST API call to get a list of the Pluggable Databases in a Container Database by running the **OCI RAW-REQUEST** Command below:
+   
+   *Note*: Replace the **"{ContainerDatabaseOCID}"** with the **Container Database OCID**
+   
+    ```
+      <copy>
+
+        oci raw-request --http-method GET --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/pluggableDatabases?databaseId={ContainerDatabaseOCID}&limit=10"
+
+      </copy>
+    ```
+    
+     
+
+3. You will see a similar output as below, Having a Response *"status": "200 OK"* means the request was successfully received and was able to get a list of all the pluggable databases in the specified container database. 
+   
+4. Copy the **PDB OCID** value from the **"id"** field and paste it in your notepad or text editor. 
+
+    ![list pluggable database](./images/getpdb.png " ")
+
+    
+## Task 2: Clone and start a pluggable database (PDB) in the same database (CDB) using REST API
+
+1. From the Cloud Shell terminal, create the json file for the REST API request body that contains the local clone pluggable database details resource.
+
+   For this lab, the json file is pre-created and you can view the details of the local clone pluggable database details by reading the json file.
+   
+    ```
+      <copy>
+
+        cat clonepdb.json
+
+      </copy>
+      ```
+    
+
+2. Make an OCI REST API call to clone and start a pluggable database (PDB) in the same container database (CDB) by running the **OCI RAW-REQUEST** command below:
+   
+   *Note*: Replace the **"{pluggableDatabaseID}"** with the **Pluggable Database OCID** obtained from *(Task1 Step 4)*
+   
+    ```
+    <copy>
+
+      oci raw-request --http-method POST --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/pluggableDatabases/{pluggableDatabaseID}/actions/localClone" --request-body file://clonepdb.json
+
+    </copy>
+
+    ```
+
+   
+   
+3. You will see a similar output as below, you will see that the local clone pluggable database is on a lifecycle state of **PROVISIONING**
+
+  ![local clone pluggable database](./images/clonepdb.png " ")
+
+
+## Task 3: Discover Exadata VM Cluster Details using REST API
+
+1. Open the Cloud Shell. This displays the Cloud Shell at the bottom of the console.
+
+   ![oci cloudshell](./images/cloudshelllaunch.png " ")
+
+2. Make OCI REST API call to get Exadata VM Cluster details by running the **OCI RAW-REQUEST** command below. 
+   
+   *Note*: Replace the **"{VMClusterOCID}"** with the **VM Cluster OCID** *copied from Lab 3 Task 1 step 2*
 
 
     ```
@@ -39,7 +100,7 @@ This lab requires completion of the following:
 
     </copy>
     ```
-    Replace the *{VMClusterOCID}* with the **VM Cluster OCID** *copied from Lab 3 Task 1 step 2*
+    
 
     You will see a similar output as below, pay attention to the **cpusEnabled** field
 
@@ -55,61 +116,18 @@ This lab requires completion of the following:
       "isHealthMonitoringEnabled": true,
       "isIncidentLogsEnabled": true
     },
-    "dataStorageSizeInGBs": null,
-    "dataStorageSizeInTBs": 30.0,
-    "dbNodeStorageSizeInGBs": 120,
-    "dbServers": [
-      "ocid1.dbserver.oc1.us-sanjose-1.....",
-      "ocid1.dbserver.oc1.us-sanjose-1....."
-    ],
-    "definedTags": {
-      "Oracle-Tags": {
-        "CreatedBy": "idcs/user@oracle.com",
-        "CreatedOn": "2023-06-16T03:57:18.489Z"
-      },
-      "osc": {
-        "automatic_shutdown": "off",
-        "automatic_startup": "off"
-      }
-    },
-    "displayName": "ecc4c4",
-    "exadataInfrastructureId": "ocid1.exadatainfrastructure.....",
-    "freeformTags": {},
-    "giSoftwareImageId": null,
-    "giVersion": "19.19.0.0.0",
-    "id": "ocid1.vmcluster.......",
-    "isLocalBackupEnabled": false,
-    "isSparseDiskgroupEnabled": true,
-    "lastPatchHistoryEntryId": "ocid1.dbpatchhistory......",
-    "licenseModel": "BRING_YOUR_OWN_LICENSE",
-    "lifecycleDetails": null,
-    "lifecycleState": "AVAILABLE",
-    "memorySizeInGBs": 60,
-    "ocpusEnabled": null,
-    "shape": "ExadataCC.Half3.200",
-    "sshPublicKeys": null,
-    "systemVersion": "22.1.10.0.0.230422",
-    "timeCreated": "2023-06-16T03:57:18.773Z",
-    "timeZone": "UTC",
-    "vmClusterNetworkId": "ocid1.vmclusternetwork......."
-  },
-  "headers": {
     
-  },
   "status": "200 OK"
 }
   </copy>
     ```
 
-<!--
-## Learn More
 
-* Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/exadata/doc/ecc-create-first-db.html) to learn more about Creating an Oracle Database on Exadata Database Service.
--->
+## Task 4: List the Maintenance Updates that can be applied to the specified VM Cluster using REST API
 
-## Task 2: List the Maintenance Updates that can be applied to the specified VM Cluster using REST API
-
-1. Make OCI REST API call to list maintenance updates that can be appliced to the specified VM Cluster
+1. Make OCI REST API call to list maintenance updates that can be applied to the specified VM Cluster by running the **OCI RAW-REQUEST** Command below.
+   
+   *Note*: Replace the **"{VMClusterOCID}"** with the **VM Cluster OCID** *copied from Lab 3 Task 1 step 2*
 
 
     ```
@@ -119,11 +137,11 @@ This lab requires completion of the following:
 
     </copy>
     ```
-    Replace the *{VMClusterOCID}* with the **VM Cluster OCID** 
+    
 
     ![list VM Cluster updates](./images/get-vmcluster-updates.png " ")
 
-    You will see a similar output as below
+    You will see a similar output as below. Having a Response *"status": "200 OK"* means the request was successfully received and was able to get a list of all the maintenance updates that can be applied to the specified VM Cluster using REST API
 
     ```
     <copy>
@@ -167,9 +185,6 @@ This lab requires completion of the following:
 
     ```
     </copy>
-
-## Task 3: Gets a list of Custom Database Software Images in the specified compartment using REST API
-
 
 You may now **proceed to the next lab**
 

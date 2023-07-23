@@ -22,8 +22,8 @@
             
         },
        {
-            "title": "Lab 2: Create Database Custom Image using OCI Console",
-            "description": "Learn how to Create Database Custom Image using OCI Console",
+            "title": "Lab 2: Create Custom Database Software Image using OCI Console",
+            "description": "Learn how to Create Custom Database Software Image using OCI Console",
             "filename": "../../create-database-custom-image/create-database-custom-image.md"
         },
         {
