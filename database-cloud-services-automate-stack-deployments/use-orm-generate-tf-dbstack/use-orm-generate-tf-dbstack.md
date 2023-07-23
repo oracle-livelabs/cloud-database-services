@@ -7,9 +7,7 @@ This lab walks you through the steps to generate and deploy Terraform for Applic
 
 Estimated Lab Time: 20 minutes
 
-<!-- Watch the video below for a quick walk-through of the lab.
-[Create Oracle Database](youtube:JJ4Wx0l0gkc)
--->
+
 ### Objectives
 
 -   After completing this lab, you should be able to generate and deploy Terraform for Applicatioin and Database stack using OCI Resource Manager.
@@ -85,4 +83,4 @@ You can either drag the file onto the dialog's control or click **Browse** and n
 
 * **Contributors** - Tammy Bednar, Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, April 2023.
+* **Last Updated By** - Leo Alvarado, Product Management, July 2023.
