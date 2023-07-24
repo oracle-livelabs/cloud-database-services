@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to review and connect to Oracle Cloud World lab environment.
+This lab walks you through reviewing and connecting to the Oracle Cloud World lab environment.
 
 Estimated Lab Time: 15 minutes
 
@@ -37,11 +37,11 @@ This lab requires completion of the following:
    
    ![navigage compute](./images/navigate-compute.png " ")
 
-2. Under Compute Click on **Instances** 
+2. Under Compute, Click on **Instances** 
    
-3. Select your assigned **Compartment**
+3. Select your assigned **Compartment**.
    
-   The list of Instances displays. For each compute host, the **name**, **state**, and **IP address** are displayed.
+   The list of Instances displays. The **name**, **state**, and **IP address** are displayed for each compute host.
 
    ![discover compute networking details](./images/discover-app-server.png " ")
    
@@ -49,13 +49,13 @@ This lab requires completion of the following:
    
    ![SGD login](./images/sgd-login.png " ")
    
-   Enter your assigned Secured Global Desktop **username** and **Password** for your login
+   Enter your assigned Secured Global Desktop **username** and **Password** for your login.
 
 5. Launch the SGD Linux Desktop
    
    ![SGD linux Desktop](./images/sgd-linux-desktop.png " ")
 
-6. Open terminal and type the following command 
+6. Open the terminal and type the following command. 
    
    ![ssh to database client](./images/ssh-app-tool.png " ")
     
@@ -82,17 +82,17 @@ This lab requires completion of the following:
    
    ![navigage oci console](./images/navigateocimenu.png " ")
 
-2. Select the assigned **Compartment** then Navigate to the **VM Cluster Details** page of the VM Cluster that contains the virtual machine that you are interested in.
+2. Select the assigned **Compartment**, then Navigate to the **VM Cluster Details** page of the VM Cluster that contains the virtual machine you are interested in.
 
     The VM Cluster Details page displays information about the selected VM cluster.
 
 3. In the **Resources** list, click **Virtual Machines**.
 
-    The list of virtual machines displays. For each virtual machine in the VM cluster, the **name**, **state**, and **client IP address** are displayed.
+    The list of virtual machines displays. The **name**, **state**, and **client IP address** are displayed for each virtual machine in the VM cluster.
 
-4. In the Virtual Machines list, find the virtual machine that you are interested in and check its state.
+4. Find the virtual machine you want in the Virtual Machines list and check its state.
 
-    The color of the icon and the associated text it indicates its status.
+    The color of the icon and the associated text indicate its status.
 
       * **Available**: Green icon. The node is operational.
       * **Starting**: Yellow icon. The node is starting because of a start or reboot action in the Console or API.
@@ -104,7 +104,7 @@ This lab requires completion of the following:
 
     ![VM Client IP](./images/vm-client-ip.png" ")
 
-5. From your Bastion host *(In Task 2 step 5)* , Run command to connect to the Exadata Database Service Virtual Machine with SSH
+5. From your Bastion host *(In Task 2 Step 5)*, Run the command to connect to the Exadata Database Service Virtual Machine with SSH.
 
       ```
               <copy>
@@ -117,39 +117,39 @@ This lab requires completion of the following:
 
 ## Task 4: Discover and Connect to the Oracle Database on Exadata Database Service
 
-1. From the Virtual Machines list page, On the left rail, under **Resources**, Click on **Databases** then Click on the **Name of your Container Database** 
+1. From the Virtual Machines list page, On the left rail, Under **Resources**, Click on **Databases**, then Click on the **Name of your Container Database**. 
 
   ![Navigate CDB](./images/navigate-cdb.png" ")
 
-2. On the left rail, under **Resources**, Click on **Pluggable Databases.** then Click on the **Name of your Pluggable Database.**
+2. On the left rail, under **Resources**, Click on **Pluggable Databases**. Then Click on the **Name of your Pluggable Database**.
 
   ![PDB list menu](./images/mypdb-list.png" ")
 
-3. In the **Pluggable Databases section** of the page, Near the top of the page, Click on the **PDB Connection** button
+3. In the **Pluggable Databases section** of the page, Near the top, Click on the **PDB Connection** button.
 
   ![PDB list menu](./images/mypdb-page.png" ")
 
-4. This will render the **Pluggable Database Connection** Screen, **Click** on the **Copy  Link** and paste the **Connection String** to your notepad or text editor.
+4. This will render the **Pluggable Database Connection** Screen. **Click** the **Copy  Link** and paste the **Connection String** to your notepad or text editor.
 
   ![PDB Connection](./images/pdb-connection-string.png" ")
 
-1. From the application server compute instance, launch Oracle SQL Developer and connect to Oracle Database on Exadata Database Service
+1. From the application server compute instance, launch Oracle SQL Developer and connect to Oracle Database on Exadata Database Service.
 
-      * Select Create New connection Icon
+      * Select Create New Connection Icon
       * Enter a Name for the Connection
-      * For the Database Type select Oracle
-      * For the Username enter Sys
+      * For the Database Type, select Oracle
+      * For the Username, enter Sys
       * Enter the Sys password
-      * For the Role select SYSDBA
-      * For Hostname enter localhost
+      * For the Role, select SYSDBA
+      * For Hostname, enter localhost
       * For Port enter 1521
       * Enter Database Service Name
-      * Test & Save connection
+      * Test & Save the connection
 
   ![connecting using sqldev](./images/sqldev.png" ")
 
 
-You may now **proceed to the next lab**
+You may now **proceed to the next lab**.
 
 <!--
 ## Learn More

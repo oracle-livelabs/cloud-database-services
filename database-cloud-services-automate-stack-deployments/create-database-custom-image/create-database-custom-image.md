@@ -3,11 +3,11 @@
 
 ## Introduction
 
-This lab walks you through the steps to create a Custom Database Software Image using the OCI Console.
+This lab walks you through creating a Custom Database Software Image using the OCI Console. 
  
   * **Database software images** are resources containing Oracle Database software used to provision and patch Oracle Databases and Oracle Database Homes.
-  * **Database software images** are either **Oracle-published software releases** or **custom software images that you create**.
-  * **Custom Database Software Images** are images that include specified patches and updates that meet your organization's standards.
+  * **Database software images** are either **Oracle-published software releases** or **custom software images you create**.
+  * **Custom Database Software Images** include specified patches and updates that meet your organization's standards.
 
 Estimated Lab Time: 10 minutes
 
@@ -21,7 +21,7 @@ Watch the video below for a quick walk-through of the lab.
 
 ### Prerequisites
 
-This lab requires completion of the following:
+This lab requires the completion of the following:
 
 * Completion of **Lab1**
 
@@ -39,7 +39,7 @@ This lab requires completion of the following:
    
 5. Choose your assigned **Compartment**.
 
-6. Choose the **Database version** for your image. For this workshop, select **19c** version
+6. Choose the **Database version** for your image. For this workshop, select the **19c** version.
 
 7. Choose the **patch set update, proactive bundle patch, or release update**. For this workshop, choose **19.11.0.0**
 
@@ -47,7 +47,7 @@ This lab requires completion of the following:
 
     ![Create Custom Database Software Image Dialog Page](./images/create-dbsw-page.png " ")
 
-You may now **proceed to the next lab** 
+You may now **proceed to the next lab**. 
 
 <!--
 ## Learn More

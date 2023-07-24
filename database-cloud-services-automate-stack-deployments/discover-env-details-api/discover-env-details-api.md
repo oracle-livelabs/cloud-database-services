@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Any operation that you can do with the web console, you can also do with a corresponding REST API. Similar to the web console, the REST APIs transit the Internet via https, and require no special software to be installed on the local system. The Oracle Cloud Infrastructure APIs are typical REST APIs that use HTTPS requests and responses.
+Any operation that you can do with the web console, you can also do with a corresponding REST API. Like the web console, the REST APIs transit the Internet via HTTPS, requiring no special software to be installed on the local system. The Oracle Cloud Infrastructure APIs are typical REST APIs that use HTTPS requests and responses.
 
 This lab walks you through the steps to discover Exadata Database Service on Cloud@Customer environment details using REST API.
 
@@ -16,7 +16,7 @@ Estimated Lab Time: 10 minutes
 
 ### Prerequisites
 
-This lab requires completion of the following:
+This lab requires the completion of the following:
 
 * Completion of **Lab3**
 
@@ -40,7 +40,7 @@ This lab requires completion of the following:
     
      
 
-3. You will see a similar output as below, Having a Response *"status": "200 OK"* means the request was successfully received and was able to get a list of all the pluggable databases in the specified container database. 
+3. You will see a similar output as below. Having a Response *"status": "200 OK"* means the request was successfully received and was able to get a list of all the pluggable databases in the specified container database. 
    
 4. Copy the **PDB OCID** value from the **"id"** field and paste it in your notepad or text editor. 
 
@@ -49,9 +49,9 @@ This lab requires completion of the following:
     
 ## Task 2: Clone and start a pluggable database (PDB) in the same database (CDB) using REST API
 
-1. From the Cloud Shell terminal, create the json file for the REST API request body that contains the local clone pluggable database details resource.
+1. From the Cloud Shell terminal, create the JSON file for the REST API request body that contains the local clone pluggable database details resource.
 
-   For this lab, the json file is pre-created and you can view the details of the local clone pluggable database details by reading the json file.
+   For this lab, the JSON file is pre-created; you can view the local clone pluggable database details by reading the JSON file.
    
     ```
       <copy>
@@ -77,7 +77,7 @@ This lab requires completion of the following:
 
    
    
-3. You will see a similar output as below, you will see that the local clone pluggable database is on a lifecycle state of **PROVISIONING**
+3. You will see a similar output as below; you will see that the local clone pluggable database is on a lifecycle state of **PROVISIONING**
 
   ![local clone pluggable database](./images/clonepdb.png " ")
 
@@ -88,7 +88,7 @@ This lab requires completion of the following:
 
    ![oci cloudshell](./images/cloudshelllaunch.png " ")
 
-2. Make OCI REST API call to get Exadata VM Cluster details by running the **OCI RAW-REQUEST** command below. 
+2. Make an OCI REST API call to get Exadata VM Cluster details by running the **OCI RAW-REQUEST** command below. 
    
     > **Note:** Replace the **"{VMClusterOCID}"** with the **VM Cluster OCID** copied from *(Lab 3 Task 1 step 2)*
 
@@ -102,7 +102,7 @@ This lab requires completion of the following:
     ```
     
 
-    You will see a similar output as below, pay attention to the **cpusEnabled** field
+    You will see a similar output below; pay attention to the **cpusEnabled** field.
 
     ```
     <copy>
@@ -186,7 +186,7 @@ This lab requires completion of the following:
     ```
     </copy>
 
-You may now **proceed to the next lab**
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

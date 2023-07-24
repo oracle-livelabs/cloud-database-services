@@ -3,19 +3,19 @@
 
 ## Introduction
 
-This lab walks you through the steps to generate and deploy Terraform for Applicatioin and Database stack using OCI Resource Manage.
+This lab walks you through the steps to generate and deploy Terraform for application and Database stack using OCI Resource Manage.
 
 Estimated Lab Time: 20 minutes
 
 
 ### Objectives
 
--   After completing this lab, you should be able to generate and deploy Terraform for Applicatioin and Database stack using OCI Resource Manager.
+-   After completing this lab, you should be able to generate and deploy Terraform for application and Database stack using OCI Resource Manager.
 
 
 ### Prerequisites
 
-This lab requires completion of the following:
+This lab requires the completion of the following:
 
 * Completion of **Lab1**
 
@@ -29,9 +29,9 @@ This lab requires completion of the following:
 
 4. On the **Create stack** page, under **Choose the origin of the Terraform configuration**, select **Existing compartment**.
 
-5. Select the compartment and region that contain the resources that you want to capture.
+5. Select the compartment and region containing the resources you want to capture.
 
-6. Filter for the specific services supported for resource discovery, select **Selected** and then select  **database** service. 
+6. Filter for the specific services supported for resource discovery, select **Selected**, and then select  **database** service. 
    
 7. Select the compartment where you want to create the stack.
 
@@ -56,7 +56,7 @@ You can either drag the file onto the dialog's control or click **Browse** and n
 
 5. For Terraform version, select the version used by the Terraform configuration.
 
-6. Click Next. In the Configure variables panel, review the variables listed from the Terraform configuration and change as needed.
+6. Click Next. In the Configure variables panel, review the variables listed from the Terraform configuration and change them as needed.
 
 7. In the **Review** panel, verify the stack configuration.
 
