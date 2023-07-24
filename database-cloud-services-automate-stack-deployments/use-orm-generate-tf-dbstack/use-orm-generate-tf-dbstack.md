@@ -1,4 +1,4 @@
-# Use OCI Resource Manager to generate Terraform for Database Stack
+# Use OCI Resource Manager to generate and deploy Terraform for Application and Database Stack
 
 
 ## Introduction
