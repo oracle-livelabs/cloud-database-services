@@ -1,7 +1,7 @@
 
 
 
-# Review and Connect to Oracle Cloud World Lab Environment
+# Review and Connect to Oracle CloudWorld Lab Environment
 
 
 ## Introduction
