@@ -62,11 +62,12 @@ This lab requires completion of the following:
 
 5. Run the OCI CLI Command to Scale up the **VM Cluster OCPU Resources** from **4 OCPUs** to **6 OCPUs**
 
+      >**Note:** Replace **{vmClusterId}** with VM Cluster OCID copied from *(Task 1 Step 2)*
 
     ```
     <copy>
 
-      oci db vm-cluster update --vm-cluster-id {replace with vmClusterId} --cpu-core-count 6
+      oci db vm-cluster update --vm-cluster-id {vmClusterId} --cpu-core-count 6
 
     </copy>
     ```

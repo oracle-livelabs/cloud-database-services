@@ -28,15 +28,15 @@ This lab requires completion of the following:
 
 2. Make OCI REST API call to get a list of the Pluggable Databases in a Container Database by running the **OCI RAW-REQUEST** Command below:
    
-   *Note*: Replace the **"{ContainerDatabaseOCID}"** with the **Container Database OCID**
+    > **Note:** Replace the **"{ContainerDatabaseOCID}"** with the **Container Database OCID**
    
-    ```
-      <copy>
+      ```
+        <copy>
 
-        oci raw-request --http-method GET --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/pluggableDatabases?databaseId={ContainerDatabaseOCID}&limit=10"
+          oci raw-request --http-method GET --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/pluggableDatabases?databaseId={ContainerDatabaseOCID}&limit=10"
 
-      </copy>
-    ```
+        </copy>
+      ```
     
      
 
@@ -64,16 +64,16 @@ This lab requires completion of the following:
 
 2. Make an OCI REST API call to clone and start a pluggable database (PDB) in the same container database (CDB) by running the **OCI RAW-REQUEST** command below:
    
-   *Note*: Replace the **"{pluggableDatabaseID}"** with the **Pluggable Database OCID** obtained from *(Task1 Step 4)*
+    > **Note:** Replace the **"{pluggableDatabaseID}"** with the **Pluggable Database OCID** copied from *(Task1 Step 4)*
    
-    ```
-    <copy>
+      ```
+      <copy>
 
-      oci raw-request --http-method POST --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/pluggableDatabases/{pluggableDatabaseID}/actions/localClone" --request-body file://clonepdb.json
+        oci raw-request --http-method POST --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/pluggableDatabases/{pluggableDatabaseID}/actions/localClone" --request-body file://clonepdb.json
 
-    </copy>
+      </copy>
 
-    ```
+      ```
 
    
    
@@ -90,7 +90,7 @@ This lab requires completion of the following:
 
 2. Make OCI REST API call to get Exadata VM Cluster details by running the **OCI RAW-REQUEST** command below. 
    
-   *Note*: Replace the **"{VMClusterOCID}"** with the **VM Cluster OCID** *copied from Lab 3 Task 1 step 2*
+    > **Note:** Replace the **"{VMClusterOCID}"** with the **VM Cluster OCID** copied from *(Lab 3 Task 1 step 2)*
 
 
     ```
@@ -127,16 +127,16 @@ This lab requires completion of the following:
 
 1. Make OCI REST API call to list maintenance updates that can be applied to the specified VM Cluster by running the **OCI RAW-REQUEST** Command below.
    
-   *Note*: Replace the **"{VMClusterOCID}"** with the **VM Cluster OCID** *copied from Lab 3 Task 1 step 2*
+    > **Note:** Replace the **"{VMClusterOCID}"** with the **VM Cluster OCID** copied from *(Lab 3 Task 1 step 2)*
 
 
-    ```
-    <copy>
+      ```
+      <copy>
 
-      oci raw-request --http-method GET --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/vmClusters/{VMClusterOCID}/updates"
+        oci raw-request --http-method GET --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/vmClusters/{VMClusterOCID}/updates"
 
-    </copy>
-    ```
+      </copy>
+      ```
     
 
     ![list VM Cluster updates](./images/get-vmcluster-updates.png " ")
