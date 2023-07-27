@@ -13,7 +13,7 @@ The CLI is built on the Oracle Cloud Infrastructure SDK for Python and runs on M
 
 This lab walks you through the steps to Scale the Exadata VM Cluster OCPU resource using OCI CLI.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 <!-- Watch the video below for a quick walk-through of the lab.
 [Create Oracle Database](youtube:JJ4Wx0l0gkc)

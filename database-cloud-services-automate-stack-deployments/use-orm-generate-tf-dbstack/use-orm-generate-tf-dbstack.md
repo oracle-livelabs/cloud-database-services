@@ -5,7 +5,7 @@
 
 This lab walks you through the steps to generate and deploy Terraform for Application and Database stack using OCI Resource Manage.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 
 ### Objectives

@@ -8,7 +8,7 @@
 
 This lab walks you through reviewing and connecting to the Oracle Cloud World lab environment.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 <!-- Watch the video below for a quick walk-through of the lab.
 [Create an Exadata Database Service on Cloud@Customer Infrastructure](youtube:DCrivNA5bs8)

@@ -7,7 +7,7 @@ Any operation that you can do with the web console, you can also do with a corre
 
 This lab walks you through the steps to discover Exadata Database Service on Cloud@Customer environment details using REST API.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 

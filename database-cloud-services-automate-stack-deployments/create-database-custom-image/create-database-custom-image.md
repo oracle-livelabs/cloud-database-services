@@ -9,7 +9,7 @@ This lab walks you through creating a Custom Database Software Image using the O
   * **Database software images** are either **Oracle-published software releases** or **custom software images you create**.
   * **Custom Database Software Images** include specified patches and updates that meet your organization's standards.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
 Watch the video below for a quick walk-through of the lab.
   [Create a Custom Database Software Image](youtube:jwxxIih3brQ)
