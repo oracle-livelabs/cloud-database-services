@@ -55,7 +55,7 @@ These hands-on lab guides provide step-by-step directions to Learn how to automa
 Gain hands-on experience on how to create standard images, discover & capture gold environment images, and use automation to deploy standardized environment stacks.
 
 
-You may now **proceed to the next lab**  
+You may now **proceed to the next lab**.  
 
 ## Learn More
 
