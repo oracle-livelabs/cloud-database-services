@@ -198,11 +198,8 @@ This lab requires the completion of the following:
         #kms_key_migration = <<Optional value not found in discovery>>
         #kms_key_rotation = <<Optional value not found in discovery>>
         #kms_key_version_id = <<Optional value not found in discovery>>
-        source = "NONE" #Required attribute not found in discovery, placeholder value set to avoid plan failure
+        source = "NONE" #Required attribute 
         #vault_id = <<Optional value not found in discovery>>
-
-        # Required attributes that were not found in discovery have been added to lifecycle ignore_changes
-        # This is done to avoid terraform plan failure for the existing infrastructure
         lifecycle {
             ignore_changes = [source, database[0].admin_password]
         }
@@ -219,7 +216,7 @@ This lab requires the completion of the following:
         #pdb_admin_password = <<Optional value not found in discovery>>
         pdb_name = "MYPDB"
         #rotate_key_trigger = <<Optional value not found in discovery>>
-        #should_pdb_admin_account_be_locked = <<Optional value not found in discovery>>
+        #should_pdb_admin_account_be_locked = <<Optional value>>
         #tde_wallet_password = <<Optional value not found in discovery>>
         }
 
@@ -232,7 +229,7 @@ This lab requires the completion of the following:
         #pdb_admin_password = <<Optional value not found in discovery>>
         pdb_name = "MYCLONEPDB"
         #rotate_key_trigger = <<Optional value not found in discovery>>
-        #should_pdb_admin_account_be_locked = <<Optional value not found in discovery>>
+        #should_pdb_admin_account_be_locked = <<Optional value>>
         #tde_wallet_password = <<Optional value not found in discovery>>
         }
 
