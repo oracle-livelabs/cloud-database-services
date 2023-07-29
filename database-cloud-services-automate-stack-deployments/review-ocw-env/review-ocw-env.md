@@ -133,18 +133,19 @@ This lab requires completion of the following:
 
   ![PDB Connection](./images/pdb-connection-string.png" ")
 
-1. From the application server compute instance, launch Oracle SQL Developer and connect to Oracle Database on Exadata Database Service.
+5. From the application server compute instance, launch Oracle SQL Developer and connect to Oracle Database on Exadata Database Service.
 
-      * Select Create New Connection Icon
-      * Enter a Name for the Connection
-      * For the Database Type, select Oracle
-      * For the Username, enter Sys
-      * Enter the Sys password
-      * For the Role, select SYSDBA
-      * For Hostname, enter localhost
-      * For Port enter 1521
-      * Enter Database Service Name
-      * Test & Save the connection
+      * Select **Create New Connection** Icon
+      * Enter a **Name** for the Connection
+      * For the **Database Type**, select **Oracle**
+      * For the **Username**, enter **Sys**
+      * Enter the Sys **password**
+      * For the Role, select **SYSDBA**
+      * For the **Hostname**, enter the **Hostname** *(from the PDB connection string - obtained from Step 4)*
+      * For the **Port** enter **1521**
+      * Enter the Database **Service Name**, enter the **Service Name** *(from the PDB connection string - obtained from Step 4)* 
+      * **Test** & **Save** the connection
+      * Click on **Connect**
 
   ![connecting using sqldev](./images/sqldev.png" ")
 
