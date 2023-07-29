@@ -285,4 +285,4 @@ This lab requires the completion of the following:
 
 * **Contributors** - Tammy Bednar, Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, June 2023.
+* **Last Updated By** - Leo Alvarado, Product Management, July 2023.
