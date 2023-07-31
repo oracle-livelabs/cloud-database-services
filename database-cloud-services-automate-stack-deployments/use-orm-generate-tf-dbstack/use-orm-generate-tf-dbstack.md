@@ -17,7 +17,7 @@ Estimated Time: 20 minutes
 
 This lab requires the completion of the following:
 
-* Completion of **Lab1**
+* Completion of **Lab4**
 
 ## Task 1: Generate Terraform baseline configuration for Database development environment using OCI Resource Manager
 
