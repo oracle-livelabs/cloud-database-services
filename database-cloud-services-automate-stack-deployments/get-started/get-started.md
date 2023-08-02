@@ -20,7 +20,7 @@ Types of Cloud Accounts that can be used for this workshop:
 -->
 ### Objectives
 
--   For this workshop we will learn how to login to a tenancy provided by the **Global Oracle Solution Center**. 
+-   For this workshop we will learn how to login to a tenancy provided by the **Global Oracle Solutions Center**. 
 
 
 ### Prerequisites
