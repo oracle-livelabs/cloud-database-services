@@ -60,6 +60,8 @@ You may now **proceed to the next lab**.
 ## Learn More
 
 * Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-whats-new-in-exadata-cloud-at-customer-gen2.html#GUID-2F27E5A9-67A8-459E-9453-81E1F68043DE) to learn about What's New in Exadata Database Service on Cloud@Customer.
+  
+* Click the [Learning Path](https://mylearn.oracle.com/ou/learning-path/become-a-exadata-database-service-cloud-administrator/121071) to become a Exadata Database Service Cloud Administrator
 
 ## Acknowledgements
 
