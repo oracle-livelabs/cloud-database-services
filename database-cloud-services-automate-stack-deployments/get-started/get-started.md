@@ -7,12 +7,11 @@ Oracle Cloud is the industry's broadest and most integrated cloud provider, with
 
 Estimated Time: 5 minutes
 
-Types of Cloud Accounts
-We offer two types of Cloud Accounts:
+Types of Cloud Accounts that can be used for this workshop:
 
-*Free Tier Accounts*: After you sign up for the free Oracle Cloud promotion or a paid account, you’ll get a welcome email. The email provides you with your cloud account details and sign-in credentials.
+**Oracle Cloud Paid Accounts**: When your tenancy is provisioned, Oracle sends an email to the default administrator at your company with the sign-in credentials and URL. This administrator can then create a user for each person who needs access to the Oracle Cloud. Check your email or contact your administrator for your credentials and account name.
 
-*Oracle Cloud Paid Accounts*: When your tenancy is provisioned, Oracle sends an email to the default administrator at your company with the sign-in credentials and URL. This administrator can then create a user for each person who needs access to the Oracle Cloud. Check your email or contact your administrator for your credentials and account name.
+**Global Oracle Solutions Center (OSC) provided Account**: Environment is provided by engaging with your Sales Engineer to coordinate obtaining approval to obtain an Event Code which will provide access to an OSC provided environment.
 
 
 
@@ -21,7 +20,7 @@ We offer two types of Cloud Accounts:
 -->
 ### Objectives
 
--   Learn how to log in to Oracle Cloud using **Oracle Solution Center** login
+-   For this workshop we will learn how to login to a tenancy provided by the **Global Oracle Solution Center**. 
 
 
 ### Prerequisites
