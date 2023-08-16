@@ -84,7 +84,6 @@ This lab requires the completion of the following:
         database_software_image_one_off_patches = [
             "29780459",
             "30310195",
-            "30432118",
         ]
         database_version = "19.0.0.0"
         defined_tags = {
@@ -94,9 +93,7 @@ This lab requires the completion of the following:
         }
         image_shape_family = "EXACC_SHAPE"
         image_type         = "DATABASE_IMAGE"
-        #ls_inventory = <<Optional value not found in discovery>>
         patch_set = "19.11.0.0"
-        #source_db_home_id = <<Optional value not found in discovery>>
         }
 
     </copy>
@@ -119,7 +116,6 @@ This lab requires the completion of the following:
             is_health_monitoring_enabled  = "true"
             is_incident_logs_enabled      = "true"
         }
-        #data_storage_size_in_gb = <<Optional value not found in discovery>>
         data_storage_size_in_tbs    = "30"
         db_node_storage_size_in_gbs = "120"
         db_servers = [
@@ -127,10 +123,6 @@ This lab requires the completion of the following:
             "ocid1.dbserver.oc1.us-sanjose-1.aaaaaaaaaaaaa",
         ]
         defined_tags = {
-            "Oracle-Tags.CreatedBy"  = 
-            "Oracle-Tags.CreatedOn"  = "2023-06-16T03:57:18.489Z"
-            "osc.automatic_shutdown" = "off"
-            "osc.automatic_startup"  = "off"
         }
         display_name              = "ecc4c4"
         exadata_infrastructure_id = "ocid1.exadatainfrastructure.oc1.us-sanjose-1.a"
@@ -141,7 +133,6 @@ This lab requires the completion of the following:
         is_sparse_diskgroup_enabled = "true"
         license_model               = "BRING_YOUR_OWN_LICENSE"
         memory_size_in_gbs          = "60"
-        #ocpu_count = <<Optional value not found in discovery>>
         ssh_public_keys = [
         ]
         time_zone             = "UTC"
@@ -159,19 +150,12 @@ This lab requires the completion of the following:
         ## This is the discovered resource for the Database Home
 
         resource oci_database_db_home export_MyDBHome {
-        #database = <<Optional value not found in discovery>>
-        #database_software_image_id = <<Optional value not found in discovery>>
-        #db_system_id = <<Optional value not found in discovery>>
         db_version = "19.13.0.0.0"
         defined_tags = {
         }
         display_name = "MyDBHome"
-        #enable_database_delete = <<Optional value not found in discovery>>
         freeform_tags = {
         }
-        #is_desupported_version = <<Optional value not found in discovery>>
-        #kms_key_id = <<Optional value not found in discovery>>
-        #kms_key_version_id = <<Optional value not found in discovery>>
         source        = "NONE"
         vm_cluster_id = oci_database_vm_cluster.export_ecc4c4.id
         }
@@ -189,11 +173,7 @@ This lab requires the completion of the following:
         resource oci_database_database export_MyDBHome_database {
         database {
             admin_password = "<placeholder for database admin password>" 
-            #backup_id = <<Optional value not found in discovery>>
-            #backup_tde_password = <<Optional value not found in discovery>>
             character_set = "AL32UTF8"
-            #database_software_image_id = <<Optional value not found in discovery>>
-            #db_backup_config = <<Optional value not found in discovery>>
             db_name        = "MyExaDB"
             db_unique_name = "exadb19"
             db_workload    = "OLTP"
@@ -201,23 +181,12 @@ This lab requires the completion of the following:
             }
             freeform_tags = {
             }
-            #kms_key_id = <<Optional value not found in discovery>>
-            #kms_key_version_id = <<Optional value not found in discovery>>
             ncharacter_set = "AL16UTF16"
             pdb_name       = "mypdb"
             sid_prefix     = "myexadbcc"
-            #tde_wallet_password = <<Optional value not found in discovery>>
-            #vault_id = <<Optional value not found in discovery>>
         }
         db_home_id = oci_database_db_home.export_MyDBHome.id
-        #db_version = <<Optional value not found in discovery>>
-        #key_store_id = <<Optional value not found in discovery>>
-        #kms_key_id = <<Optional value not found in discovery>>
-        #kms_key_migration = <<Optional value not found in discovery>>
-        #kms_key_rotation = <<Optional value not found in discovery>>
-        #kms_key_version_id = <<Optional value not found in discovery>>
         source = "NONE" #Required attribute 
-        #vault_id = <<Optional value not found in discovery>>
         lifecycle {
             ignore_changes = [source, database[0].admin_password]
         }
@@ -240,11 +209,8 @@ This lab requires the completion of the following:
         }
         freeform_tags = {
         }
-        #pdb_admin_password = <<Optional value not found in discovery>>
+        #pdb_admin_password = 
         pdb_name = "MYPDB"
-        #rotate_key_trigger = <<Optional value not found in discovery>>
-        #should_pdb_admin_account_be_locked = <<Optional value>>
-        #tde_wallet_password = <<Optional value not found in discovery>>
         }
 
         resource oci_database_pluggable_database export_pluggable_database_1 {
@@ -253,11 +219,8 @@ This lab requires the completion of the following:
         }
         freeform_tags = {
         }
-        #pdb_admin_password = <<Optional value not found in discovery>>
+        #pdb_admin_password = 
         pdb_name = "MYCLONEPDB"
-        #rotate_key_trigger = <<Optional value not found in discovery>>
-        #should_pdb_admin_account_be_locked = <<Optional value>>
-        #tde_wallet_password = <<Optional value not found in discovery>>
         }
 
     </copy>
@@ -271,34 +234,88 @@ This lab requires the completion of the following:
 
 2. On the **Create stack** page, under Choose the origin of the Terraform configuration, select **My configuration**.
 
-   Select **.Zip file** for the Terraform configuration source. then browse your desktop for a file called **SampleTF.zip** and then click **Next**. 
+   Select **.Zip file** for the Terraform configuration source. then browse your desktop for a file called ***SampleTF.zip***. 
    
    
     ![Upload zip file to deploy App and DB Stack](./images/orm-deploy-app-dbstack-from-zip.png " ")
 
 
-3. Select your assigned **compartment** where you want to create the stack.
+3. Provide the **Name** for your stack and select the **compartment** where you want to create the stack.
 
-4. For Terraform version, select the version used by the Terraform configuration.
+    >**Note:** For this lab, use ***MyAppDBStack*** for the name of your discovered database stack and use your assigned compartment for the **Create in compartment**
 
-5. Click **Next**. In the Configure variables panel, review the variables listed from the Terraform configuration and change them as needed.
+4. For Terraform version, select the *version 1.2.x*.
+   
+   ![Upload zip file to deploy App and DB Stack](./images/orm-create-name-stack.png " ")
 
-6. In the **Review** panel, verify the stack configuration.
+5. Click **Next**. In the **Configure variables panel**, review and provide the required variables listed from the Terraform configuration.
 
-7. Click **Create** to establish your customized stack.
+    Provide required variable details for the **Application Server Stack**.
+   
+   ![Deploy Application Stack](./images/orm-deploy-application-stack.png " ")
+
+      * Choose your **assigned compartment**
+      * Provide the **Application Server display name**. For this lab, use the name ***MyAppServer***
+      * Provide the **Custom Instance Image Source ID**
+    
+    Provide required variable details for the **Exadata Database Server Stack**.
+   
+   ![Deploy Database CDB Stack](./images/orm-deploy-exadata-database-cdb.png " ")
+
+      * Provide the **Custom Database Software Image Home OCID**
+      * Provide the **Container Database display name**. For this lab, use the name ***MyCDB02***
+      * Provide the **Container Database unique name**. For this lab, use the name ***MyTFDB***
+      * Provide the **Containder Database administrator password**
+   
+   ![Deploy Database PDB Stack](./images/orm-deploy-exadata-database-pdb.png " ")
+
+      * Provide the **Pluggable Database (PDB1) display name**. For this lab, use the name  ***MyPDB1***
+      * Provide the **Pluggable Database (PDB2) display name**. For this lab, use the name  ***MyPDB2***
+      * Provide the **Pluggable Database (PDB3) display name**. For this lab, use the name  ***MyPDB3***
+      * Provide the **Pluggable Database administrator password**
+  
+    Click on **Next**
+
+6. In the **Review** panel, verify the stack configuration and Click **Create** to establish your customized stack.
+   
+   ![Review App and Database Stack](./images/orm-deploy-app-db-review.png " ")
 
     >**Note:** Now that we have a defined stack, let's prepare to use the stack to deploy a new developer environment consisting of an Application Server and 1 Exadata Container Database and 3 Pluggable Databases. 
+
+    ![App and Database Available Stack](./images/orm-myappdbstack-available.png " ")
     
-8. Create Stack Deployment Plan by: Clicking on **Plan** on the Stack details page. In the Plan panel, use **MyAppDBStackPlan** for the Plan name and then Click on **Plan** to proceed. 
+7. Create Stack Deployment Plan by: Clicking on **Plan** on the Stack details page. 
+   
+    ![Create Stack Deployment Plan](./images/orm-plan-job.png " ")
+
+   In the Plan panel, use ***MyAppDBStackPlan*** for the Plan name and then Click on **Plan** to proceed. 
+
+    ![Confirm Create Stack Deployment Plan](./images/orm-click-plan.png " ")
    
     >**Note:** The plan job is created and is listed under Jobs. 
+
+    When the Stack Deployment Plan process completes, the state of the plan job changes to **Succeeded**.
+
+    ![Stack Deployment Plan Succeeded](./images/orm-plan-success.png " ")
    
     
-9. Process Stack Deployment Plan by clicking on **Apply**. In the Apply panel, edit the default name for the job. For this lab, we will use **MyAppDBStackApply** for the Apply name. 
+8.  In the **Breadcrumb** link, Click on **Stack details**.  
+
+    ![View Stack Details Page ](./images/orm-plan-stackdetails.png " ")
+
+    Process Stack Deployment Plan by clicking on **Apply**.
+
+    ![Create Stack Deployment Apply ](./images/orm-stackdetails-apply.png " ")
     
-10. Click on **Apply**. 
+    In the Apply panel, edit the default name for the job. For this lab, we will use ***MyAppDBStackApply*** for the Apply name. 
+
+    Select **Automatically Approve** for the Apply job plan resolution and then Click on **Apply**. 
+
+    ![Click Stack Deployment Apply ](./images/orm-apply-stack.png " ")
     
-    >**Note:** This will cause the apply job to be created and our new stack to be deployed once the job completes.
+    >**Note:** This will cause the apply job to be created and our new Application and Database stack to be deployed once the job completes.
+
+    ![Stack Deployment Apply Succeeded ](./images/orm-apply-succeeded.png " ")
     
 
 <!--

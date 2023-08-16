@@ -20,13 +20,33 @@ This lab requires the completion of the following:
 
 * Completion of **Lab3**
 
-## Task 1: List all the Pluggable Databases in a Container Database using REST API
+## Task 1: List the available Database Homes in a compartment using REST API
 
 1. Open the Cloud Shell. This displays the Cloud Shell at the bottom of the console:
 
    ![oci cloudshell](./images/cloudshelllaunch.png " ")
 
-2. Make OCI REST API call to get a list of the Pluggable Databases in a Container Database by running the **OCI RAW-REQUEST** Command below:
+
+2. Make an OCI REST API call to get a list of available Database Homes in a compartment by running the **OCI RAW-REQUEST** command below:
+   
+    > **Note:** Replace the **"{CompartmentOCID}"** with the **Compartment OCID** obtained from *Lab3*.
+   
+      ```
+      <copy>
+
+          oci raw-request --http-method GET --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/dbHomes?compartmentId={CompartmentOCID}&limit=10"
+
+      </copy>
+      ```
+3. You will see a similar output as below. Having a Response *"status": "200 OK"* means the request was successfully received and was able to get a list of all available DB Homes in the specified compartment.
+
+4. Look for the Database Home named **MyCustomDBHome** and Copy the **Custom Database Home OCID** value from the **"id"** field and paste it in your notepad or text editor for later use. 
+
+    ![list available dbhomes](./images/list-dbhome.png " ")
+
+## Task 2: List all the Pluggable Databases in a Container Database using REST API
+
+1. From the Cloud Shell terminal, make an OCI REST API call to get a list of the Pluggable Databases in a Container Database by running the **OCI RAW-REQUEST** command below:
    
     > **Note:** Replace the **"{ContainerDatabaseOCID}"** with the **Container Database OCID**
    
@@ -40,14 +60,14 @@ This lab requires the completion of the following:
     
      
 
-3. You will see a similar output as below. Having a Response *"status": "200 OK"* means the request was successfully received and was able to get a list of all the pluggable databases in the specified container database. 
+2. You will see a similar output as below. Having a Response *"status": "200 OK"* means the request was successfully received and was able to get a list of all the pluggable databases in the specified container database. 
    
-4. Copy the **PDB OCID** value from the **"id"** field and paste it in your notepad or text editor. 
+3. Copy the **PDB OCID** value from the **"id"** field and paste it in your notepad or text editor. 
 
     ![list pluggable database](./images/getpdb.png " ")
 
     
-## Task 2: Clone and start a pluggable database (PDB) in the same database (CDB) using REST API
+## Task 3: Clone and start a pluggable database (PDB) in the same database (CDB) using REST API
 
 1. From the Cloud Shell terminal, create the JSON file for the REST API request body that contains the local clone pluggable database details resource.
 
@@ -82,7 +102,7 @@ This lab requires the completion of the following:
   ![local clone pluggable database](./images/clonepdb.png " ")
 
 
-## Task 3: Discover Exadata VM Cluster Details using REST API
+## Task 4: Discover Exadata VM Cluster Details using REST API
 
 1. Open the Cloud Shell. This displays the Cloud Shell at the bottom of the console.
 
@@ -123,7 +143,7 @@ This lab requires the completion of the following:
     ```
 
 
-## Task 4: List the Maintenance Updates that can be applied to the specified VM Cluster using REST API
+## Task 5: List the Maintenance Updates that can be applied to the specified VM Cluster using REST API
 
 1. Make OCI REST API call to list maintenance updates that can be applied to the specified VM Cluster by running the **OCI RAW-REQUEST** Command below.
    
@@ -161,20 +181,6 @@ This lab requires the completion of the following:
       "timeReleased": "2023-06-06T19:15:24.842Z",
       "updateType": "OS_UPDATE",
       "version": "22.1.11.0.0.230516"
-    },
-    {
-      "availableActions": [
-        "ROLLING_APPLY",
-        "PRECHECK"
-      ],
-      "description": "Virtual Machine OS Update 22.1.10.0.0.230511",
-      "id": "ocid1.dbupdate.oc1.us-sanjose-1......",
-      "lastAction": null,
-      "lifecycleDetails": null,
-      "lifecycleState": "AVAILABLE",
-      "timeReleased": "2023-05-23T19:20:54.561Z",
-      "updateType": "OS_UPDATE",
-      "version": "22.1.10.0.0.230511"
     }
   ],
   "headers": {
