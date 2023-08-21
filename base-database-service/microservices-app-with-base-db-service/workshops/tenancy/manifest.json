@@ -1,48 +1,57 @@
 {
-    "workshoptitle": "The Title of the Workshop is defined in the manifest",
+    "workshoptitle": "Deploy a Microservices-based App Connected to Oracle Base Database Service",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "variables": ["../../variables/variables.json",
         "../../variables/variables-in-another-file.json"],
     "tutorials": [
+
         {
-            "title": "Get Started",
-            "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs2.md"
+          "title": "Introduction",
+          "description": "Introduction",
+          "filename": "../../Introduction/introduction.md"
+        },
+
+        {
+            "title": "Get Started - LiveLabs login",
+            "description": "Using noVNC Remote Desktop",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login-livelabs-novnc.md"
         },
         {
-            "title": "Introduction",
-            "description": "Introduction",
-            "filename": "../../introduction/introduction.md"
+            "title": "Get Started with noVNC Remote Desktop",
+            "description": "Using noVNC Remote Desktop",
+            "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
         },
+
         {
             "title": "Lab 1: Create an Oracle Base Database Service Instance",
             "description": "Create Oracle Base Database Service",
-            "filename": "../../lab1-prepare-network-and-iam/lab1-prepare-network-and-iam.md"
+            "filename": "../../lab1/lab1-create-oracle-base-database-service.md"
         },
         {
-            "title": "Lab 2: Create The Micronaut Application",
-            "description": "Creating Exadata Cloud Infrastructure",
-            "filename": "../../lab2-create-exacloud-infra/lab2-create-exacloud-infra.md"
+            "title": "Lab 2: Create The Cloud Application Tier",
+            "description": "Creating Application Tier",
+            "filename": "../../lab2/lab2-create-app-tier.md"
         },
        {
-            "title": "Lab 3: Configure The Micronaut Application to connect to Oracle Base Database Service",
-            "description": "Create VM Cluster",
-            "filename": "../../lab3-create-cloud-vmcluster/lab3-create-cloud-vmcluster.md"
+            "title": "Lab 3: Configure and Build The Microservice Application to connect to Oracle Base Database Service",
+            "description": "Configure the microservice application to connect to Oracle Base Database Service",
+            "filename": "../../lab3/lab3-configure-app-to-connect-to-basedb.md"
         },
         {
-            "title": "Lab 4: Build The Micronaut Application",
-            "description": "Create Oracle Database Home",
-            "filename": "../../lab4-create-dbhome/lab4-create-dbhome.md"
+            "title": "Lab 4: Run The Application",
+            "description": "Run The Application",
+            "filename": "../../lab4/lab4-run-the-application.md"
+        },
+
+        {
+            "title": "Bonus Labs: Execute Cloud Database Administration Tasks (Optional)",
+            "description": "Bonus Labs",
+            "filename": "../../lab5bonuslabs/lab5-bonus-labs.md"
         },
         {
-            "title": "Lab 5: Run The Micronaut Application",
-            "description": "Create Oracle Database",
-            "filename": "../../lab5-create-database/lab5-create-database.md"
-        },
-        {
-            "title": "Need Help?",
+            "title": "Oracle CloudWorld 2022 - Get Help",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+            "filename":"https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
         }
     ]
 }
