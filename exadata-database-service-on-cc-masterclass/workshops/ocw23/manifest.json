@@ -1,0 +1,80 @@
+{
+    "workshoptitle": "Deliver Exadata Database Performance and Scale with Oracle Cloud Master Class",
+
+    "help": "livelabs-help-db_us@oracle.com",
+
+    "tutorials": [
+      {
+          "title": "Introduction",
+          "description": "Introduction",
+          "filename": "../../introduction/introduction.md"
+      },
+      {
+            "title": "Get started - Oracle Solution Center login",
+            "description": "Login to Oracle Cloud",
+            "filename": "../../get-started/get-started.md"
+        },
+        {
+            "title": "Lab 1: Review and Connect to Cloud World Lab Environment",
+            "description": "Review OCW Lab Environment",
+            "filename": "../../review-ocw-env/review-ocw-env.md"
+            
+        },
+       {
+            "title": "Lab 2: Create Database Custom Image using OCI Console",
+            "description": "Learn how to Create Database Custom Image using OCI Console",
+            "filename": "../../create-database-custom-image/create-database-custom-image.md"
+        },
+        {
+            "title": "Lab 3: Enable Data Guard for local HA using OCI Console",
+            "description": "Learn how to enable Data Guard for local HA using OCI Console",
+            "filename": "../../enable-dataguard/enable-dataguard.md"
+        },
+        {
+            "title": "Lab 4: Configure Notifications for Enabled OCPU or License Type change",
+            "description": "Learn how to configure Notifications for enabled OCPU or license type change",
+            "filename": "../../configure-notifications/configure-notifications.md"
+        },
+        {
+            "title": "Lab 5: Change License Type using OCI Console",
+            "description": "Learn how to change license type using OCI Console",
+            "filename": "../../change-license-type/change-license-type.md"
+        },
+        {
+            "title": "Lab 6: Scale Exadata VM Cluster Resources using OCI CLI",
+            "description": "Learn how to scale Exadata VM Cluster resources using OCI CLI",
+            "filename": "../../scale-resources-using-api/scale-resources-using-api.md"
+        },
+        {
+            "title": "Lab 7: Discover Environment Details using REST API",
+            "description": "Learn how to discover environment details using REST API",
+            "filename": "../../discover-env-details-api/discover-env-details-api.md"
+        },
+        {
+            "title": "Lab 8: Scale Exadata VM Cluster to run on a Subset of the available compute nodes",
+            "description": "Learn how to scale Exadata VM Cluster to run on a Subset of the available compute nodes",
+            "filename": "../../node-subsetting/node-subsetting.md"
+        },
+        {
+            "title": "Lab 9: Review Enable Automatic Backups",
+            "description": "Learn how to Enable Automatic Backups",
+            "filename": "../../enable-automatic-backups/enable-automatic-backups.md"
+        },
+        {
+            "title": "Lab 10: Review Option to configure Automatic Infrastructure Maintenance",
+            "description": "Learn how to configure Automatic Infrastructure Maintenance",
+            "filename": "../../automatic-infrastructure-maintenance/automatic-infrastructure-maintenance.md"
+        },
+        {
+            "title": "Lab 11: Use OCI Resource Manager to generate and deploy Terraform for Application and Database Stack",
+            "description": "Learn how to Use OCI Resource Manager to generate Terraform for Application and Database Stack",
+            "filename": "../../use-orm-generate-tf-dbstack/use-orm-generate-tf-dbstack.md"
+        },
+
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
