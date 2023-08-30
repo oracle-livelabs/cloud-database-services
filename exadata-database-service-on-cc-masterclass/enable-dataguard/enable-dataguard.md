@@ -28,14 +28,25 @@ This lab requires completion of the following:
 
 1. In the Breadcrumb link, Click on **Oracle Exadata Database Service on Cloud@Customer**. 
    
+   ![Navigate to Exadata VM Cluster](./images/navigate-exadbcc-vmcluster.png " ")
+   
 2. In the left rail, **Exadata VM Clusters** is selected by default. Select your assigned Compartment ***MyCompartmentXX*** then Click on the name of your assigned VM Cluster ***MyVMClusterXX***.
+   
+   ![Select assigned Compartment and assigned VM Cluster](./images/select-compartment.png " ")
 
-3. In the VM Cluster details page, under **Resources** in the **Database** tab, click the container database named ***MyCDB01***. 
+3. In the VM Cluster details page, under **Resources** in the **Databases** tab, click the container database named ***MyCDB01***. 
+   
+   ![Select CDB](./images/select-cdb.png " ")
 
 4. In the Container Database details page, under **Resources**, click **Data Guard Associations**.
+   
+   ![Click on Dataguard Associations](./images/navigate-dg-association.png " ")
 
-5. Click **Enable Data Guard**. On the Enable Data Guard page, configure your Data Guard association.
+5. Click **Enable Data Guard**. 
 
+   ![Click Enable Data Guard](./images/enable-dataguard.png " ")
+
+   In the Enable Data Guard page, configure your Data Guard association.
     
     **Select Peer VM Cluster**: 
 
@@ -46,6 +57,8 @@ This lab requires completion of the following:
        * **Exadata Cloud@Customer Infrastructure**: Select the Exadata Database Service on Cloud@Customer infrastructure where the standby database is located. Click the **Change Compartment** hyperlink and select ***OCW23ExaDBCC*** for the compartment. Select ***ExaCC2*** for the Exadata Cloud@Customer Infrastructure
     
        * **Peer VM Cluster**: Select the Exadata VM Cluster that contains the standby database. Click the **Change Compartment**, select ***MyVMCluster32*** then select ***MyStandbyVMCluster*** for the Peer VM Cluster
+  
+   ![Select Peer VM Cluster](./images/select-peer-vmcluster.png " ")
     
     **Data Guard Assocation Details:**
     
@@ -53,14 +66,19 @@ This lab requires completion of the following:
     
        * **Protection mode**: Select a protection mode the Data Guard association. For this lab, select ***Maximum Performance***
 
+   ![Select Data Guard Association](./images/dg-association-details.png " ")
 
     **Choose Database Home**: Choose ***Select an existing Database Home*** then select ***MyStandbyDBHome*** for the Database Home.
 
     **Configure standby database**: Provide the unique name for the standby database. 
     
        * Provide the **Database password** 
+  
+   ![Choose Database Home](./images/choose-database-home.png " ")
 
 6. Click **Enable Data Guard**.
+
+   ![Click Enable Data Guard](./images/click-enable-dataguard.png " ")
    
    The Data Guard Association process will run in the background. When the association is created, the details for a database and its peer display their respective roles as ***Primary*** or ***Standby***.
   
