@@ -32,11 +32,7 @@ Types of Cloud Accounts that can be used for this workshop:
 * **Password** - Your assigned password for this workshop
 
 
-## Task 1: Review Exadata Database Service, Exadata Resource Model, and OCI Resource Manager
-
-  *(For this lab, The Exadata Database Service on Cloud@Customer Resource Model is pre-provisioned - Informational Instructions for navigating the Exadata Database Service on Cloud@Customer environment will be presented by the speakers)*
-
-## Task 2: Log in to Oracle Cloud
+## Task 1: Log in to Oracle Cloud Tenancy
 
 1. Go to [cloud.oracle.com](https://cloud.oracle.com), enter your **Cloud Account Name** *(**assigned tenancy**)*,  and click **Next**. 
    
@@ -51,6 +47,10 @@ Types of Cloud Accounts that can be used for this workshop:
 3. You are now signed in to Oracle Cloud! 
    
    ![oci login](./images/oci-login-page.png " ")
+
+## Task 2: Review Exadata Database Service, Exadata Cloud Infrastructure, Custom Database & Application Images, and Oracle Database Cloud MAA
+
+  *(For this lab, The Exadata Database Service on Cloud@Customer Resource Model is pre-provisioned - Informational Instructions for navigating the Exadata Database Service on Cloud@Customer environment will be presented by the speakers)*
 
 You may now **proceed to the next lab**.
 

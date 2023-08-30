@@ -34,7 +34,7 @@ This lab requires completion of the following:
    
    ![Select assigned Compartment and assigned VM Cluster](./images/select-compartment.png " ")
 
-3. In the VM Cluster details page, under **Resources** in the **Databases** tab, click the container database named ***MyCDB01***. 
+3. On the left rail, under **Resources** of the VM Cluster details page, select **Databases** and from the list of the displayed databases click the container database named ***MyCDB01***. 
    
    ![Select CDB](./images/select-cdb.png " ")
 
@@ -50,13 +50,13 @@ This lab requires completion of the following:
     
     **Select Peer VM Cluster**: 
 
-       * **Peer Region**: Select ***US West (San Jose)*** for the peer region.
+       * **Peer Region**: Select ***US East (Ashburn)*** for the peer region.
   
          >**Note:** The primary and standby databases could be running on two different VM clusters on a shared ExaDB-C@C system or on two geographically separated ExaDB-C@C systems managed from the same or different Oracle Cloud Infrastructure regions. For this lab, the primary and standby database will be running on a shared ExaDB-C@C system on the same region.
     
-       * **Exadata Cloud@Customer Infrastructure**: Select the Exadata Database Service on Cloud@Customer infrastructure where the standby database is located. Click the **Change Compartment** hyperlink and select ***OCW23ExaDBCC*** for the compartment. Select ***ExaCC2*** for the Exadata Cloud@Customer Infrastructure
+       * **Exadata Cloud@Customer Infrastructure**: Select the Exadata Database Service on Cloud@Customer infrastructure where the standby database is located. Click the **Change Compartment** hyperlink and select ***OCW23ExaDBCC*** for the compartment. Select ***osc-rst-exacca*** for the Exadata Cloud@Customer Infrastructure
     
-       * **Peer VM Cluster**: Select the Exadata VM Cluster that contains the standby database. Click the **Change Compartment**, select ***MyVMCluster32*** then select ***MyStandbyVMCluster*** for the Peer VM Cluster
+       * **Peer VM Cluster**: Select the Exadata VM Cluster that contains the standby database. Click the **Change Compartment**, select ***MyStandByCompartment*** then select ***MyStandbyVMCluster*** for the Peer VM Cluster
   
    ![Select Peer VM Cluster](./images/select-peer-vmcluster.png " ")
     

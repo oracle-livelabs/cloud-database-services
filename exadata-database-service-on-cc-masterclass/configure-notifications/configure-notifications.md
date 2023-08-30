@@ -1,12 +1,12 @@
 
 
 
-# Review and Connect to Cloud World Lab Environment
+# Configure Notifications for Enabled OCPU or License Type change
 
 
 ## Introduction
 
-This lab walks you through the steps to review and connect to Cloud World lab environment.
+This lab walks you through the steps to configure notifications to get notified for VM Cluster Event Types such as Enabled OCPU or License Type change.
 
 Estimated Lab Time: 15 minutes
 
@@ -23,9 +23,15 @@ This lab requires completion of the following:
 
 * Completion of **Lab1**
 
-## Task 1: Configure Notifications for Enabled OCPU 
+## Task 1: Configure Notifications for Enabled OCPU or License Type change
 
-## Task 2: Configure Notifications for License Type change
+1. Open the navigation menu and click **Developer Services**. Under **Application Integration**, click **Notifications**.
+
+2. **Topics** page is selected by default, select your assigned compartment and Click **Create Topic**.
+
+3. Provide the Topic name. For this lab, use **MyNotifications** for the Topic name.
+   
+4. Click **Create**.
 
 
 You may now **proceed to the next lab**

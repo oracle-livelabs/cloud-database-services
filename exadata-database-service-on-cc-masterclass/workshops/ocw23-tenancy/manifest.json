@@ -15,13 +15,13 @@
             "filename": "../../get-started/get-started.md"
         },
         {
-            "title": "Lab 1: Review and Connect to Cloud World Lab Environment",
+            "title": "Lab 1: Review and Connect to Cloud World Lab Resources",
             "description": "Review OCW Lab Environment",
             "filename": "../../review-ocw-env/review-ocw-env.md"
             
         },
        {
-            "title": "Lab 2: Create Database Custom Image using OCI Console",
+            "title": "Lab 2: Create Application and Database Custom Image using OCI Console",
             "description": "Learn how to Create Database Custom Image using OCI Console",
             "filename": "../../create-database-custom-image/create-database-custom-image.md"
         },

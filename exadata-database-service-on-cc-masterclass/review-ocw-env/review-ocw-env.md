@@ -1,7 +1,7 @@
 
 
 
-# Review and Connect to Oracle CloudWorld Lab Environment
+# Review and Connect to Oracle CloudWorld Lab Resources
 
 
 ## Introduction
@@ -96,7 +96,7 @@ This lab requires completion of the following:
       ```
        
 
-## Task 3: Discover and Connect to the Oracle Database on Exadata Database Service
+## Task 3: Discover and Connect to the Oracle Database on Exadata Database Service with Oracle Sqldeveloper
 
 1. From the Virtual Machines list page, Under the **Resources** section on the left banner, Click on **Databases**, then Click on the **Container Database** named **MyCDB01**. 
 

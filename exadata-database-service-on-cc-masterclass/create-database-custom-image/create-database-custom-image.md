@@ -25,7 +25,8 @@ This lab requires the completion of the following:
 
 * Completion of **Lab1**
 
-## Task 1: Create Custom Database Software Image using OCI Console
+## Task 1: Create Application Custom Image using OCI Console
+## Task 2: Create Custom Database Software Image using OCI Console
 
 1. Open the navigation menu. Under **Oracle Database**, click **Exadata Cloud@Customer**.
 
