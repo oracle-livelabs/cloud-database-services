@@ -70,11 +70,12 @@ This lab requires completion of the following:
 
     **Choose Database Home**: Choose ***Select an existing Database Home*** then select ***MyStandbyDBHome*** for the Database Home.
 
-    **Configure standby database**: Provide the unique name for the standby database. 
-    
-       * Provide the **Database password** 
   
    ![Choose Database Home](./images/choose-database-home.png " ")
+
+    **Configure standby database**: Provide the unique name for the standby database. 
+    
+       * Provide the **Database password**. For this lab, use the assigned password **Pass4-Student*XX*#** 
 
 6. Click **Enable Data Guard**.
 
