@@ -15,7 +15,7 @@ Estimated Lab Time: 15 minutes
 -->
 ### Objectives
 
--   After completing this lab, you should be able to create Infrastructure resource for Exadata Database Service on Cloud@Customer
+-   After completing this lab, you should be able to configure notifications and events rules for Exadata Database Service on Cloud@Customer
 
 ### Prerequisites
 
@@ -29,7 +29,7 @@ This lab requires completion of the following:
    
    ![Navigate to Notifications](./images/navigate-notifications.png " ")
 
-2. **Topics** page is selected by default, select your ***assigned compartment*** and Click **Create Topic**.
+2. **Topics** page is selected by default, select your ***Assigned Compartment*** and Click **Create Topic**.
    
    ![Click Create Topic](./images/create-topic.png " ")
 

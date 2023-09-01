@@ -1,7 +1,7 @@
 
 
 
-# Enable Data Guard using OCI Console
+# Enable Data Guard for local HA using OCI Console
 
 
 ## Introduction

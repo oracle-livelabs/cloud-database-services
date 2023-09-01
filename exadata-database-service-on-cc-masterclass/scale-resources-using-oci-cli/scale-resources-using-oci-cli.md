@@ -1,7 +1,7 @@
 
 
 
-# Scale Exadata VM Cluster Resources using API
+# Scale Exadata VM Cluster Resources using OCI CLI
 
 
 ## Introduction
@@ -30,7 +30,7 @@ Estimated Time: 10 minutes
 
 This lab requires the completion of the following:
 
-* Completion of **Lab1**
+* Completion of **Lab5**
 
 
 ## Task 1: Scale Exadata VM Cluster OCPU using OCI CLI

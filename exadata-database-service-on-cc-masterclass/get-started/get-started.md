@@ -34,7 +34,7 @@ Types of Cloud Accounts that can be used for this workshop:
 
 ## Task 1: Log in to Oracle Cloud Tenancy
 
-1. Go to [cloud.oracle.com](https://cloud.oracle.com), enter your **Cloud Account Name** *(**assigned tenancy**)*,  and click **Next**. 
+1. Go to [cloud.oracle.com](https://cloud.oracle.com), enter your **Cloud Account Name** *(**Assigned Tenancy**)*,  and click **Next**. 
    
 
    ![osc login](./images/osc-login.png " ")

@@ -1,9 +1,9 @@
-# Create Custom Database Software Image using OCI Console
+# Create Application and Database Custom Image using OCI Console
 
 
 ## Introduction
 
-This lab walks you through creating a Custom Database Software Image using the OCI Console. 
+This lab walks you through creating Application and Database Custom Image using the OCI Console. 
  
   * **Database software images** are resources containing Oracle Database software used to provision and patch Oracle Databases and Oracle Database Homes.
   * **Database software images** are either **Oracle-published software releases** or **custom software images you create**.
@@ -16,7 +16,7 @@ Watch the video below for a quick walk-through of the lab.
 
 ### Objectives
 
--   After completing this lab, you should be able to create a custom database software image using the OCI Console.
+-   After completing this lab, you should be able to create application and database custom image using the OCI Console.
 
 
 ### Prerequisites

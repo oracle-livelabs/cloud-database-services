@@ -99,7 +99,7 @@ This lab requires completion of the following:
               </copy>
       ```
        
-      >**Note:** Replace {Exadata VM IP Address} with the Exadata Database Service Virtual Machine IP Address obtained from *step 4*
+      >**Note:** Replace **{Exadata VM IP Address}** with the Exadata Virtual Machine ***Client IP Address*** obtained from *step 4*
 
 ## Task 3: Discover and Connect to the Oracle Database on Exadata Database Service with Oracle Sqldeveloper
 
@@ -123,8 +123,7 @@ This lab requires completion of the following:
 
       
                   
-
-         [opc@myappserver ~]$ sqldeveloper
+  ![launch sqldeveloper](./images/run-sqldeveloper.png " ")
 
                   
         

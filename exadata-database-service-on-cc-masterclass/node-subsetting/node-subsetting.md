@@ -21,7 +21,7 @@ Estimated Lab Time: 15 minutes
 
 This lab requires completion of the following:
 
-* Completion of **Lab1**
+* Completion of **Lab7**
 
 ## Task 1: Scale Exadata VM Cluster to run on a Subset of the available compute nodes 
 
