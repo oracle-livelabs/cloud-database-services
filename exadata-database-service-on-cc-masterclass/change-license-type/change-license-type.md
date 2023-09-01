@@ -25,7 +25,19 @@ This lab requires completion of the following:
 
 ## Task 1: Change License Type using OCI Console 
 
+1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Cloud@Customer**.
+   
+2. Select your ***Assigned Compartment***, and Click your assigned **VM Cluster** named ***MyVMClusterXX***.
+   
+3. In the VM Cluster Details page, Click **Update License Type** 
+   
+   ![Update License Type](./images/update-license-type-button.png " ")
 
+4. Change the license type from **Bring Your Own License (BYOL)** to ***License Included***
+   
+   ![Update License Type](./images/change-license-included.png " ")
+   
+5. Click **Save Changes**
 
 
 You may now **proceed to the next lab**
