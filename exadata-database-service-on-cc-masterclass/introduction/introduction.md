@@ -10,7 +10,7 @@ To meet your desired SLA levels, you’ll configure Maximum Availability constru
 
 Don’t miss your chance to learn how to use cloud automation functions to standardize your database cloud environments, all while realizing the performance and scale of the Oracle Database on the Exadata Cloud Platform that is available to all types of workloads.
 
-Estimated Workshop Time: 90 minutes
+Estimated Workshop Time: 160 minutes
 
 **What is an Oracle Exadata Database Service?**
 

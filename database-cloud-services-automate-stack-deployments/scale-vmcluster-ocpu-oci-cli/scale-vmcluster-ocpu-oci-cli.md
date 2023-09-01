@@ -27,7 +27,7 @@ Estimated Time: 10 minutes
 
 This lab requires the completion of the following:
 
-* Completion of **Lab1**
+* Completion of **Lab2**
 
 
 ## Task 1: Scale Exadata VM Cluster OCPU using OCI CLI

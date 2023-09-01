@@ -256,16 +256,16 @@ This lab requires the completion of the following:
 
       * Choose your **assigned compartment**
       * Provide the **Application Server display name**. For this lab, use the name ***MyAppServer***
-      * Provide the **Custom Instance Image Source ID**
+      * Provide the **Custom Instance Image Source ID**. For DatabaseWorld, accept the default value
     
     Provide required variable details for the **Exadata Database Server Stack**.
    
    ![Deploy Database CDB Stack](./images/orm-deploy-exadata-database-cdb.png " ")
 
-      * Provide the **Custom Database Software Image Home OCID**
+      * Provide the **Custom Database Software Image Home OCID**. Please see your ***MyEnvironment.txt*** from your cloud editor. 
       * Provide the **Container Database display name**. For this lab, use the name ***MyCDB02***
       * Provide the **Container Database unique name**. For this lab, use the name ***MyTFDB***
-      * Provide the **Containder Database administrator password**
+      * Provide the **Container Database administrator password**
    
    ![Deploy Database PDB Stack](./images/orm-deploy-exadata-database-pdb.png " ")
 
@@ -294,7 +294,7 @@ This lab requires the completion of the following:
    
     >**Note:** The plan job is created and is listed under Jobs. 
 
-    When the Stack Deployment Plan process completes, the state of the plan job changes to **Succeeded**.
+    When the Stack Deployment Plan process is completed, the state of the plan job changes to **Succeeded**.
 
     ![Stack Deployment Plan Succeeded](./images/orm-plan-success.png " ")
    
@@ -313,7 +313,7 @@ This lab requires the completion of the following:
 
     ![Click Stack Deployment Apply ](./images/orm-apply-stack.png " ")
     
-    >**Note:** This will cause the apply job to be created and our new Application and Database stack to be deployed once the job completes.
+    >**Note:** This will cause the apply job to be created and our new Application and Database stack to be deployed once the job is completed.
 
     ![Stack Deployment Apply Succeeded ](./images/orm-apply-succeeded.png " ")
     

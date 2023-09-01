@@ -36,7 +36,7 @@ Types of Cloud Accounts that can be used for this workshop:
 
   *(For this lab, The Exadata Database Service on Cloud@Customer Resource Model is pre-provisioned - Informational Instructions for navigating the Exadata Database Service on Cloud@Customer environment will be presented by the speakers)*
 
-## Task 2: Log in to Oracle Cloud
+## Task 2: Log in to Oracle Cloud Tenancy
 
 1. Go to [cloud.oracle.com](https://cloud.oracle.com), enter your **Cloud Account Name** *(**assigned tenancy**)*,  and click **Next**. 
    

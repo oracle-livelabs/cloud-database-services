@@ -294,7 +294,7 @@ This lab requires the completion of the following:
    
     >**Note:** The plan job is created and is listed under Jobs. 
 
-    When the Stack Deployment Plan process completes, the state of the plan job changes to **Succeeded**.
+    When the Stack Deployment Plan process is completed, the state of the plan job changes to **Succeeded**.
 
     ![Stack Deployment Plan Succeeded](./images/orm-plan-success.png " ")
    
@@ -313,7 +313,7 @@ This lab requires the completion of the following:
 
     ![Click Stack Deployment Apply ](./images/orm-apply-stack.png " ")
     
-    >**Note:** This will cause the apply job to be created and our new Application and Database stack to be deployed once the job completes.
+    >**Note:** This will cause the apply job to be created and our new Application and Database stack to be deployed once the job is completed.
 
     ![Stack Deployment Apply Succeeded ](./images/orm-apply-succeeded.png " ")
     
