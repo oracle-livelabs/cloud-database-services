@@ -79,11 +79,6 @@ This lab requires the completion of the following:
 
    While the scale up process is running, you can see the state of the VM cluster is changed to ***Updating***. Copy the **Compartment OCID** value from the **"compartmentId"** field and paste it in your notepad or text editor for later use.
 
-## Task 2: Scale Exadata Storage
-
-
-
-
 You may now **proceed to the next lab**
 
 ## Learn More

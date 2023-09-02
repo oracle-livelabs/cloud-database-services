@@ -25,7 +25,15 @@ This lab requires completion of the following:
 
 ## Task 1: Scale Exadata VM Cluster to run on a Subset of the available compute nodes 
 
+1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Cloud@Customer**.
+   
+2. Select your ***Assigned Compartment***, and Click your assigned **VM Cluster** named ***MyVMClusterXX***.
+   
+3. In the VM Cluster Details page, under **Resources**, click **Virtual Machines**, and then click Add **Virtual Machines**.
 
+4. On the **Add Virtual Machines** page, select additional DB servers on which to add the VM.
+   
+5. Select the DB servers with the **Available to add** status and then click **Save Changes**.
 
 
 You may now **proceed to the next lab**
