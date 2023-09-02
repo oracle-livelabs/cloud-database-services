@@ -26,6 +26,41 @@ This lab requires the completion of the following:
 * Completion of **Lab1**
 
 ## Task 1: Create Application Custom Image using OCI Console
+
+1. Open the navigation menu and click Compute. Under Compute, click Instances.
+
+  ![Naviage OCI Compute](./images/navigate-compute-instance.png" ")
+
+2. Select your ***Assigned Compartment*** and Click **Create instance**.
+
+  ![Create Instance](./images/click-create-instance.png" ")
+
+3. Provide a name for the instance. For this lab, use ***MyAppServer*** for the Instance name.
+
+4. For the **Create in compartment** Select your ***Assigned Compartment***.
+
+5. In the **Placement section**, select ***AD 1***
+
+6. In the **Image and shape** section, choose the image and shape for the instance:
+
+7. In the Networking section, configure the network details for the instance:
+
+      * Select the ***existing virtual cloud network*** option
+
+   Make the following selections:
+
+      * Virtual cloud network: The cloud network to create the instance in.
+
+      * Subnet: A subnet within the cloud network that the instance is attached to. The subnets are either public or private. Private means the instances in that subnet can't have public IP addresses.
+
+8. In the **Add SSH keys** section, generate an SSH key pair or upload your own public key.
+
+9. In the **Boot volume** section, configure the size and encryption options for the instance's boot volume.
+
+      * For this lab, You can accept the default value.
+
+10. Click **Create**.
+
 ## Task 2: Create Custom Database Software Image using OCI Console
 
 1. Open the navigation menu. Under **Oracle Database**, click **Exadata Cloud@Customer**.
