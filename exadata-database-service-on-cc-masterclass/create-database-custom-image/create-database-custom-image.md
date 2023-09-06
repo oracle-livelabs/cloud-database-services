@@ -27,43 +27,32 @@ This lab requires the completion of the following:
 
 ## Task 1: Create Application Custom Image using OCI Console
 
-1. Open the navigation menu and click Compute. Under Compute, click Instances.
+1. Open the navigation menu and click **Compute**. Under Compute, click **Instances**.
 
   ![Naviage OCI Compute](./images/navigate-compute-instance.png" ")
 
-2. Select your ***Assigned Compartment*** and Click **Create instance**.
+2. In the left rail, **Instances** is selected by default. Select your assigned compartment named ***MyCompartmentXX***. 
+   
+   Click on the name of your **Assigned Custom Application Server** named ***MyCustomAppServer***.
 
-  ![Create Instance](./images/click-create-instance.png" ")
+  ![Click MyCustomAppServer Instance](./images/click-create-instance.png" ")
 
-3. Provide a name for the instance. For this lab, use ***MyAppServer*** for the Instance name.
+3. Click **More Actions**, and then click **Create custom image**.
 
-4. For the **Create in compartment** Select your ***Assigned Compartment***.
+  ![Create Custom App Server More Actions](./images/click-instance-more-actions.png " ")
 
-5. In the **Placement section**, select ***AD 1***
+4. In the **Create in compartment** list, Select your assigned compartment ***MyCompartmentXX***
+   
+   Enter a **Name** for the image. For this lab, use the name ***MyCustomAppServerImage***
 
-6. In the **Image and shape** section, choose the image and shape for the instance:
+   ![Create Custom App Server Image](./images/create-custom-app-image.png " ")
 
-7. In the Networking section, configure the network details for the instance:
+5. Click **Create custom image**.
 
-      * Select the ***existing virtual cloud network*** option
-
-   Make the following selections:
-
-      * Virtual cloud network: The cloud network to create the instance in.
-
-      * Subnet: A subnet within the cloud network that the instance is attached to. The subnets are either public or private. Private means the instances in that subnet can't have public IP addresses.
-
-8. In the **Add SSH keys** section, generate an SSH key pair or upload your own public key.
-
-9. In the **Boot volume** section, configure the size and encryption options for the instance's boot volume.
-
-      * For this lab, You can accept the default value.
-
-10. Click **Create**.
 
 ## Task 2: Create Custom Database Software Image using OCI Console
 
-1. Open the navigation menu. Under **Oracle Database**, click **Exadata Cloud@Customer**.
+1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Cloud@Customer**.
 
 2. Under **Resources**, click **Database Software Images**.
 
@@ -71,17 +60,19 @@ This lab requires the completion of the following:
 
     ![Create Custom Database Software Image](./images/create-custom-dbsw.png " ")
 
-4. In the **Display name** field, provide a display name for your image.
+4. In the **Display name** field, provide a name for your database software image. For this lab, use the name ***MyCustomDBimage***
    
-5. Choose your assigned **Compartment**.
+5. Choose your **assigned compartment** ***MyCompartmentXX***. 
+   
+    ![Create Custom Database Software Image](./images/create-dbsw-page.png " ")
 
-6. Choose the **Database version** for your image. For this workshop, select the **19c** version.
+6. Choose the **Database version** for your image. For this workshop, select the ***19c*** version.
 
-7. Choose the **patch set update, proactive bundle patch, or release update**. For this workshop, choose **19.11.0.0**
+7. Choose the **patch set update, proactive bundle patch, or release update**. For this workshop, choose ***19.18.0.0***
 
 8. Click **Create Database Software Image**.
 
-    ![Create Custom Database Software Image Dialog Page](./images/create-dbsw-page.png " ")
+    ![Create Custom Database Software Image Dialog Page](./images/create-dbsw-version-page.png " ")
 
 You may now **proceed to the next lab**. 
 

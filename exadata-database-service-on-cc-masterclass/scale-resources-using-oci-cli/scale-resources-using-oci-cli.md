@@ -39,19 +39,19 @@ This lab requires the completion of the following:
    
    ![navigage oci console](./images/navigateocimenu.png " ")
 
-2. Select the assigned **Compartment** then in the left rail, **Exadata VM Clusters** is selected by default. Click on the name of your assigned VM Cluster 
-
-    The VM Cluster Details page displays information about the selected VM cluster. 
+2. In the left rail, **Exadata VM Clusters** is selected by default. Select your assigned Compartment ***MyCompartmentXX***. 
+   
+   Click on the name of your assigned VM Cluster ***MyVMClusterXX***. The VM Cluster Details page displays information about the selected VM cluster. 
     
-    Under the General Information, In the OCID Field. Click on **Show** to display the VM Cluster OCID, and Click on **Copy** and paste the **VM Cluster OCID** to your notepad or text editor.
+   Under the **General Information**, In the OCID Field. Click on **Show** to display the VM Cluster OCID, and Click on **Copy** and paste the **VM Cluster OCID** to your notepad or text editor.
 
-    Under the **Resource allocation**, pay attention to the number of **OCPUs:** which has the value of **4**
+   Under the **Resource allocation**, pay attention to the number of ***OCPUs:*** which has the value of ***6***
   
    ![vm cluster details page](./images/vmcluster-details-page.png " ")
 
-3. To use OCI CLI for this lab, we will be using the **Cloud OCI Shell tool**, where CLI is pre-configured with your credentials and ready to use immediately from within Cloud Shell in the OCI Web Console. 
+3. To use OCI CLI for this lab, we will be using the ***Cloud OCI Shell tool***, where CLI is pre-configured with your credentials and ready to use immediately from within Cloud Shell in the OCI Web Console. 
    
-4. Click the Cloud Shell/Code Editor icon in the Console header and select Cloud Shell from the drop-down menu. 
+   Click the Cloud Shell/Code Editor icon in the Console header and select Cloud Shell from the drop-down menu. 
    
    ![oci cloudshell](./images/cloudshell.png " ")
 
@@ -59,14 +59,14 @@ This lab requires the completion of the following:
 
    ![oci cloudshell](./images/cloudshelllaunch.png " ")
 
-5. Run the OCI CLI Command to Scale up the **VM Cluster OCPU Resources** from **4 OCPUs** to **6 OCPUs**
+4. Run the OCI CLI Command to Scale down the **VM Cluster OCPU Resources** from **6 OCPUs** to **4 OCPUs**
 
-      >**Note:** Replace **{vmClusterId}** with VM Cluster OCID copied from *(Task 1 Step 2)*
+      >**Note:** Replace ***{vmClusterId}*** with VM Cluster OCID copied from *(Task 1 Step 2)*
 
     ```
     <copy>
 
-      oci db vm-cluster update --vm-cluster-id {vmClusterId} --cpu-core-count 6
+      oci db vm-cluster update --vm-cluster-id {vmClusterId} --cpu-core-count 4
 
     </copy>
     ```
@@ -75,9 +75,11 @@ This lab requires the completion of the following:
 
    After running the command, you will see similar output below.
 
-  ![scale number of ocpus](./images/scale-vm-cluster-updating.png " ")
+  ![status updating for scale number of ocpus](./images/scale-vm-cluster-updating.png " ")
 
    While the scale up process is running, you can see the state of the VM cluster is changed to ***Updating***. Copy the **Compartment OCID** value from the **"compartmentId"** field and paste it in your notepad or text editor for later use.
+
+  ![copy compartment ocid](./images/copy-compartment-ocid.png " ")
 
 You may now **proceed to the next lab**
 

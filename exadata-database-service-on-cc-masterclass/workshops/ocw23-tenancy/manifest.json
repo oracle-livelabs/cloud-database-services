@@ -10,13 +10,13 @@
           "filename": "../../introduction/introduction.md"
       },
       {
-            "title": "Get started - Oracle Solution Center login",
-            "description": "Login to Oracle Cloud",
+            "title": "Get started - Connect to Oracle Cloud Tenancy",
+            "description": "Learn how to connect to Oracle Cloud Tenancy",
             "filename": "../../get-started/get-started.md"
         },
         {
-            "title": "Lab 1: Review and Connect to Cloud World Lab Resources",
-            "description": "Review OCW Lab Environment",
+            "title": "Lab 1: Discover and Connect to Cloud World Lab Resources",
+            "description": "Learn how to discover and connect to OCW Lab Resources",
             "filename": "../../review-ocw-env/review-ocw-env.md"
             
         },
