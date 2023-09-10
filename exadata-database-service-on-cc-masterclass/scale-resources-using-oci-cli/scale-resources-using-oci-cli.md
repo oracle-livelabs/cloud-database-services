@@ -66,7 +66,7 @@ This lab requires the completion of the following:
     ```
     <copy>
 
-      oci db vm-cluster update --vm-cluster-id {vmClusterId} --cpu-core-count 4
+      oci db vm-cluster update --vm-cluster-id {vmClusterId} --cpu-core-count 4 --query 'data.{VMClusterOCID:id, DisplayName:"display-name", LifecycleState:"lifecycle-state", CompartmentOCID:"compartment-id"}'
 
     </copy>
     ```
@@ -75,11 +75,9 @@ This lab requires the completion of the following:
 
    After running the command, you will see similar output below.
 
-  ![status updating for scale number of ocpus](./images/scale-vm-cluster-updating.png " ")
+  ![LifecycleState of updating is displayed for scale number of ocpus](./images/scale-vm-cluster-updating.png " ")
 
-   While the scale up process is running, you can see the state of the VM cluster is changed to ***Updating***. Copy the **Compartment OCID** value from the **"compartmentId"** field and paste it in your notepad or text editor for later use.
-
-  ![copy compartment ocid](./images/copy-compartment-ocid.png " ")
+   While the scale up process is running, you can see the LifecycleState of the VM cluster is changed to ***Updating***. Copy the ***Compartment OCID*** from the extracted values of the OCI CLI command results and paste it in your notepad or text editor for later use.
 
 You may now **proceed to the next lab**
 

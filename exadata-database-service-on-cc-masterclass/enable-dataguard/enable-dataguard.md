@@ -50,13 +50,15 @@ This lab requires completion of the following:
     
     **Select Peer VM Cluster**: 
 
-       * **Peer Region**: Select ***US East (Ashburn)*** for the peer region.
+       * **Peer Region**: Select your **assigned peer region** ***"US East (Ashburn) OR US West (San Jose)"***.
   
          >**Note:** The primary and standby databases could be running on two different VM clusters on a shared ExaDB-C@C system or on two geographically separated ExaDB-C@C systems managed from the same or different Oracle Cloud Infrastructure regions. For this lab, the primary and standby database will be running on a shared ExaDB-C@C system on the same region.
     
-       * **Exadata Cloud@Customer Infrastructure**: Select the Exadata Database Service on Cloud@Customer infrastructure where the standby database is located. Click the **Change Compartment** hyperlink and select ***OCW23ExaDBCC*** for the compartment. Select ***osc-rst-exacca*** for the Exadata Cloud@Customer Infrastructure
+       * **Exadata Cloud@Customer Infrastructure**: Select the Exadata Database Service on Cloud@Customer infrastructure where the standby database is located. Click the **Change Compartment** hyperlink and select ***OCW23ExaDBCC*** for the compartment. 
+         
+         Select your **assigned Exadata Cloud@Customer Infrastructure**. 
     
-       * **Peer VM Cluster**: Select the Exadata VM Cluster that contains the standby database. Click the **Change Compartment**, select ***MyStandByCompartment*** then select ***MyStandbyVMCluster*** for the Peer VM Cluster
+       * **Peer VM Cluster**: Select the Exadata VM Cluster that contains the standby database. Click the **Change Compartment**, select ***MyStandByCompartment_{Region}*** then select ***MyStandbyVMCluster*** for the Peer VM Cluster
   
    ![Select Peer VM Cluster](./images/select-peer-vmcluster.png " ")
     
@@ -75,7 +77,7 @@ This lab requires completion of the following:
 
     **Configure standby database**: Provide the unique name for the standby database. 
     
-       * Provide the **Database password**. For this lab, use the assigned password **Pass4-Student*XX*#** 
+       * Provide the **Database password**. For this lab, use the assigned password ***Pass4Stud3nt-#*** 
 
 6. Click **Enable Data Guard**.
 

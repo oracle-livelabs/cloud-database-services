@@ -17,7 +17,7 @@ Estimated Time: 20 minutes
 
 This lab requires the completion of the following:
 
-* Completion of **Lab10**
+* Completion of **Lab7**
 
 ## Task 1: Generate Terraform baseline configuration for Database development environment using OCI Resource Manager
 
@@ -254,25 +254,17 @@ This lab requires the completion of the following:
    
    ![Deploy Application Stack](./images/orm-deploy-application-stack.png " ")
 
-      * Choose your **assigned compartment**
-      * Provide the **Application Server display name**. For this lab, use the name ***MyAppServer***
+      * Choose your **Assigned compartment**
+      * Provide the **Application Server display name**. For this lab, use the name ***MyAppServer2***
       * Provide the **Custom Instance Image Source ID**. For DatabaseWorld, accept the default value
     
     Provide required variable details for the **Exadata Database Server Stack**.
    
-   ![Deploy Database CDB Stack](./images/orm-deploy-exadata-database-cdb.png " ")
-
-      * Provide the **Custom Database Software Image Home OCID**. Please see your ***MyEnvironment.txt*** from your cloud editor. 
-      * Provide the **Container Database display name**. For this lab, use the name ***MyCDB02***
-      * Provide the **Container Database unique name**. For this lab, use the name ***MyTFDB***
-      * Provide the **Container Database administrator password**
-   
    ![Deploy Database PDB Stack](./images/orm-deploy-exadata-database-pdb.png " ")
 
-      * Provide the **Pluggable Database (PDB1) display name**. For this lab, use the name  ***MyPDB1***
-      * Provide the **Pluggable Database (PDB2) display name**. For this lab, use the name  ***MyPDB2***
-      * Provide the **Pluggable Database (PDB3) display name**. For this lab, use the name  ***MyPDB3***
-      * Provide the **Pluggable Database administrator password**
+      * Provide the **Developer Container Database OCID**. For this lab, use the value for the ***MyCDB01*** 
+      * Provide the **Pluggable Database display name**. For this lab, use the name ***MyPDB2***
+      * Provide the **Pluggable Database administrator password** 
   
     Click on **Next**
 
@@ -316,7 +308,8 @@ This lab requires the completion of the following:
     >**Note:** This will cause the apply job to be created and our new Application and Database stack to be deployed once the job is completed.
 
     ![Stack Deployment Apply Succeeded ](./images/orm-apply-succeeded.png " ")
-    
+
+You may now **proceed to the next lab**
 
 <!--
 ## Learn More

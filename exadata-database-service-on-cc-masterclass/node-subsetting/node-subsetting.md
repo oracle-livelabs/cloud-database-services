@@ -21,7 +21,7 @@ Estimated Lab Time: 15 minutes
 
 This lab requires completion of the following:
 
-* Completion of **Lab7**
+* Completion of **Lab10**
 
 ## Task 1: Scale Exadata VM Cluster to run on a Subset of the available compute nodes 
 
@@ -33,10 +33,10 @@ This lab requires completion of the following:
 
 4. On the **Add Virtual Machines** page, select additional DB servers on which to add the VM.
    
-5. Select the DB servers with the **Available to add** status and then click **Save Changes**.
+      * Select the DB servers with the **Available to add** status and then click **Save Changes**.
 
+5. Note that the expansion of the VM Cluster will show the additional VM Capacity on the **VM Cluster Details page** and that the status of the VM Cluster will remain in the ***Updating*** state until the VMs are fully added.
 
-You may now **proceed to the next lab**
 
 ## Learn More
 

@@ -51,9 +51,9 @@
             "filename": "../../discover-env-details-api/discover-env-details-api.md"
         },
         {
-            "title": "Lab 8: Scale Exadata VM Cluster to run on a Subset of the available compute nodes",
-            "description": "Learn how to scale Exadata VM Cluster to run on a Subset of the available compute nodes",
-            "filename": "../../node-subsetting/node-subsetting.md"
+            "title": "Lab 8: Use OCI Resource Manager to generate and deploy Terraform for Application and Database Stack",
+            "description": "Learn how to Use OCI Resource Manager to generate Terraform for Application and Database Stack",
+            "filename": "../../use-orm-generate-tf-dbstack/use-orm-generate-tf-dbstack.md"
         },
         {
             "title": "Lab 9: Review Enable Automatic Backups",
@@ -66,11 +66,10 @@
             "filename": "../../automatic-infrastructure-maintenance/automatic-infrastructure-maintenance.md"
         },
         {
-            "title": "Lab 11: Use OCI Resource Manager to generate and deploy Terraform for Application and Database Stack",
-            "description": "Learn how to Use OCI Resource Manager to generate Terraform for Application and Database Stack",
-            "filename": "../../use-orm-generate-tf-dbstack/use-orm-generate-tf-dbstack.md"
-        },
-
+            "title": "Lab 11: Scale Exadata VM Cluster to run on a Subset of the available compute nodes",
+            "description": "Learn how to scale Exadata VM Cluster to run on a Subset of the available compute nodes",
+            "filename": "../../node-subsetting/node-subsetting.md"
+        }, 
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
