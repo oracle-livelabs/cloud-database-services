@@ -21,7 +21,7 @@ Estimated Lab Time: 15 minutes
 
 This lab requires completion of the following:
 
-* Completion of **Lab1**
+* Completion of **Lab3**
 
 ## Task 1: Configure Notification Topic and Subscription for Enabled OCPU or License Type change
 

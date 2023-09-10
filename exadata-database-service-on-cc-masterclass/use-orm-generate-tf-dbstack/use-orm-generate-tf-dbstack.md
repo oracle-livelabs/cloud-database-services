@@ -108,7 +108,7 @@ This lab requires the completion of the following:
 
         ## This is the discovered resource for the Exadata VM Cluster Resource
 
-        resource oci_database_vm_cluster export_ecc4c4 {
+        resource oci_database_vm_cluster export_MyVMClusterXX {
         compartment_id = var.compartment_ocid
         cpu_core_count = "0"
         data_collection_options {
@@ -124,7 +124,7 @@ This lab requires the completion of the following:
         ]
         defined_tags = {
         }
-        display_name              = "ecc4c4"
+        display_name              = "MyVMClusterXX"
         exadata_infrastructure_id = "ocid1.exadatainfrastructure.oc1.us-sanjose-1.a"
         freeform_tags = {
         }
@@ -149,15 +149,15 @@ This lab requires the completion of the following:
 
         ## This is the discovered resource for the Database Home
 
-        resource oci_database_db_home export_MyDBHome {
-        db_version = "19.13.0.0.0"
+        resource oci_database_db_home export_MyCustomDBHome {
+        db_version = "19.18.0.0.0"
         defined_tags = {
         }
-        display_name = "MyDBHome"
+        display_name = "MyCustomDBHome"
         freeform_tags = {
         }
         source        = "NONE"
-        vm_cluster_id = oci_database_vm_cluster.export_ecc4c4.id
+        vm_cluster_id = oci_database_vm_cluster.export_MyVMClusterXX.id
         }
     
     </copy>
@@ -170,22 +170,22 @@ This lab requires the completion of the following:
 
         ## This is the discovered resource for the Container Database
 
-        resource oci_database_database export_MyDBHome_database {
+        resource oci_database_database export_MyCustomDBHome_database {
         database {
             admin_password = "<placeholder for database admin password>" 
             character_set = "AL32UTF8"
-            db_name        = "MyExaDB"
-            db_unique_name = "exadb19"
+            db_name        = "MyCDB01"
+            db_unique_name = "cdb01"
             db_workload    = "OLTP"
             defined_tags = {
             }
             freeform_tags = {
             }
             ncharacter_set = "AL16UTF16"
-            pdb_name       = "mypdb"
+            pdb_name       = "mypdb1"
             sid_prefix     = "myexadbcc"
         }
-        db_home_id = oci_database_db_home.export_MyDBHome.id
+        db_home_id = oci_database_db_home.export_MyCustomDBHome.id
         source = "NONE" #Required attribute 
         lifecycle {
             ignore_changes = [source, database[0].admin_password]

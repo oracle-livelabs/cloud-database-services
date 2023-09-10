@@ -16,19 +16,19 @@
             "filename": "../../get-started/get-started.md"
         },
         {
-            "title": "Lab 1: Review and Connect to CloudWorld Lab Resources",
-            "description": "Review OCW Lab Environment",
+            "title": "Lab 1: Discover and Connect to Cloud World Lab Resources",
+            "description": "Learn how to Discover and Connect to Cloud World Lab Resources",
             "filename": "../../review-ocw-env/review-ocw-env.md"
             
         },
        {
-            "title": "Lab 2: Create Custom Database Software Image using OCI Console",
-            "description": "Learn how to Create Custom Database Software Image using OCI Console",
+            "title": "Lab 2: Create Application and Database Custom Image using OCI Console",
+            "description": "Learn how to Lab 2: Create Application and Database Custom Image using OCI Console",
             "filename": "../../create-database-custom-image/create-database-custom-image.md"
         },
         {
-            "title": "Lab 3: Scale Exadata VM Cluster OCPU using OCI CLI",
-            "description": "Learn how to Scale Exadata VM Cluster OCPU using OCI CLI",
+            "title": "Lab 3: Scale Exadata VM Cluster Resources using OCI CLI",
+            "description": "Learn how to Scale Exadata VM Cluster Resources using OCI CLI",
             "filename": "../../scale-vmcluster-ocpu-oci-cli/scale-vmcluster-ocpu-oci-cli.md"
         },
         {

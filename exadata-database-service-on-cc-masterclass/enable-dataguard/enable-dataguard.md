@@ -21,7 +21,7 @@ Estimated Lab Time: 15 minutes
 
 This lab requires completion of the following:
 
-* Completion of **Lab1**
+* Completion of **Lab2**
 
 
 ## Task 1: Enable Data Guard using OCI Console

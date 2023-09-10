@@ -18,7 +18,7 @@ Estimated Time: 10 minutes
 
 This lab requires the completion of the following:
 
-* Completion of **Lab 6**
+* Completion of **Lab6**
 
 ## Task 1: List the available Database Homes in a compartment using REST API
 
@@ -82,7 +82,7 @@ This lab requires the completion of the following:
         </copy>
       ```
 
-2. You will see a similar output as below. Having a Response *"status": "200 OK"* means the request was successfully received and was able to get a list of all the pluggable databases in the specified container database. 
+2. You will see a similar output as below. Having a Response ***"status": "200 OK"*** means the request was successfully received and was able to get a list of all the pluggable databases in the specified container database. 
    
 3. Copy the **PDB OCID** value from the **"id"** field and paste it in your notepad or text editor. 
 
@@ -106,7 +106,7 @@ This lab requires the completion of the following:
 
 2. Make an OCI REST API call to clone and start a pluggable database (PDB) in the same container database (CDB) by running the **OCI RAW-REQUEST** command below:
    
-    > **Note:** Replace the API endpoint region "***{region}***" with your **assigned region** and ***"{pluggableDatabaseID}"*** with the **Pluggable Database OCID** copied from *(Task3 Step 3)*
+    > **Note:** Replace the API endpoint region "***{region}***" with your **assigned region** and ***"{pluggableDatabaseID}"*** with the **Pluggable Database OCID** copied from ***Task3 Step 3***
    
       ```
       <copy>
@@ -132,7 +132,7 @@ This lab requires the completion of the following:
 
 2. Make an OCI REST API call to get Exadata VM Cluster details by running the **OCI RAW-REQUEST** command below. 
    
-    > **Note:** Replace the ***"{VMClusterOCID}"*** with the **VM Cluster OCID** copied from *(Lab 6 Task 1 step 2)*
+    > **Note:** Replace the ***"{VMClusterOCID}"*** with the **VM Cluster OCID** copied from ***Lab 6 (Task 1 step 2)***
 
 
     ```
@@ -169,7 +169,7 @@ This lab requires the completion of the following:
 
 1. Make OCI REST API call to list maintenance updates that can be applied to the specified VM Cluster by running the **OCI RAW-REQUEST** Command below.
    
-    > **Note:** Replace the ***"{VMClusterOCID}"*** with the **VM Cluster OCID** copied from *(Lab 6 Task 1 step 2)*
+    > **Note:** Replace the ***"{VMClusterOCID}"*** with the **VM Cluster OCID** copied from ***(Lab 6 Task 1 step 2)***
 
 
       ```
@@ -183,7 +183,7 @@ This lab requires the completion of the following:
 
     ![list VM Cluster updates](./images/get-vmcluster-updates.png " ")
 
-    You will see a similar output as below. Having a Response *"status": "200 OK"* means the request was successfully received and was able to get a list of all the maintenance updates that can be applied to the specified VM Cluster using REST API
+    You will see a similar output as below. Having a Response ***"status": "200 OK"*** means the request was successfully received and was able to get a list of all the maintenance updates that can be applied to the specified VM Cluster using REST API
 
     ```
     <copy>
@@ -197,8 +197,8 @@ This lab requires the completion of the following:
       ],
       "description": "Virtual Machine OS Update 22.1.11.0.0.230516",
       "id": "ocid1.dbupdate.oc1.us-sanjose-1....",
-      "lastAction": null,
-      "lifecycleDetails": null,
+      "lastAction":,
+      "lifecycleDetails":,
       "lifecycleState": "AVAILABLE",
       "timeReleased": "2023-06-06T19:15:24.842Z",
       "updateType": "OS_UPDATE",
