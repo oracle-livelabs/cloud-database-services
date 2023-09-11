@@ -17,7 +17,11 @@ Estimated Time: 20 minutes
 
 This lab requires the completion of the following:
 
+<<<<<<< HEAD
 * Completion of **Lab7**
+=======
+* Completion of **Lab10**
+>>>>>>> upstream/main
 
 ## Task 1: Generate Terraform baseline configuration for Database development environment using OCI Resource Manager
 
@@ -108,7 +112,11 @@ This lab requires the completion of the following:
 
         ## This is the discovered resource for the Exadata VM Cluster Resource
 
+<<<<<<< HEAD
         resource oci_database_vm_cluster export_MyVMClusterXX {
+=======
+        resource oci_database_vm_cluster export_ecc4c4 {
+>>>>>>> upstream/main
         compartment_id = var.compartment_ocid
         cpu_core_count = "0"
         data_collection_options {
@@ -124,7 +132,11 @@ This lab requires the completion of the following:
         ]
         defined_tags = {
         }
+<<<<<<< HEAD
         display_name              = "MyVMClusterXX"
+=======
+        display_name              = "ecc4c4"
+>>>>>>> upstream/main
         exadata_infrastructure_id = "ocid1.exadatainfrastructure.oc1.us-sanjose-1.a"
         freeform_tags = {
         }
@@ -149,6 +161,7 @@ This lab requires the completion of the following:
 
         ## This is the discovered resource for the Database Home
 
+<<<<<<< HEAD
         resource oci_database_db_home export_MyCustomDBHome {
         db_version = "19.18.0.0.0"
         defined_tags = {
@@ -158,6 +171,17 @@ This lab requires the completion of the following:
         }
         source        = "NONE"
         vm_cluster_id = oci_database_vm_cluster.export_MyVMClusterXX.id
+=======
+        resource oci_database_db_home export_MyDBHome {
+        db_version = "19.13.0.0.0"
+        defined_tags = {
+        }
+        display_name = "MyDBHome"
+        freeform_tags = {
+        }
+        source        = "NONE"
+        vm_cluster_id = oci_database_vm_cluster.export_ecc4c4.id
+>>>>>>> upstream/main
         }
     
     </copy>
@@ -170,22 +194,38 @@ This lab requires the completion of the following:
 
         ## This is the discovered resource for the Container Database
 
+<<<<<<< HEAD
         resource oci_database_database export_MyCustomDBHome_database {
         database {
             admin_password = "<placeholder for database admin password>" 
             character_set = "AL32UTF8"
             db_name        = "MyCDB01"
             db_unique_name = "cdb01"
+=======
+        resource oci_database_database export_MyDBHome_database {
+        database {
+            admin_password = "<placeholder for database admin password>" 
+            character_set = "AL32UTF8"
+            db_name        = "MyExaDB"
+            db_unique_name = "exadb19"
+>>>>>>> upstream/main
             db_workload    = "OLTP"
             defined_tags = {
             }
             freeform_tags = {
             }
             ncharacter_set = "AL16UTF16"
+<<<<<<< HEAD
             pdb_name       = "mypdb1"
             sid_prefix     = "myexadbcc"
         }
         db_home_id = oci_database_db_home.export_MyCustomDBHome.id
+=======
+            pdb_name       = "mypdb"
+            sid_prefix     = "myexadbcc"
+        }
+        db_home_id = oci_database_db_home.export_MyDBHome.id
+>>>>>>> upstream/main
         source = "NONE" #Required attribute 
         lifecycle {
             ignore_changes = [source, database[0].admin_password]
@@ -254,17 +294,38 @@ This lab requires the completion of the following:
    
    ![Deploy Application Stack](./images/orm-deploy-application-stack.png " ")
 
+<<<<<<< HEAD
       * Choose your **Assigned compartment**
       * Provide the **Application Server display name**. For this lab, use the name ***MyAppServer2***
+=======
+      * Choose your **assigned compartment**
+      * Provide the **Application Server display name**. For this lab, use the name ***MyAppServer***
+>>>>>>> upstream/main
       * Provide the **Custom Instance Image Source ID**. For DatabaseWorld, accept the default value
     
     Provide required variable details for the **Exadata Database Server Stack**.
    
+<<<<<<< HEAD
    ![Deploy Database PDB Stack](./images/orm-deploy-exadata-database-pdb.png " ")
 
       * Provide the **Developer Container Database OCID**. For this lab, use the value for the ***MyCDB01*** 
       * Provide the **Pluggable Database display name**. For this lab, use the name ***MyPDB2***
       * Provide the **Pluggable Database administrator password** 
+=======
+   ![Deploy Database CDB Stack](./images/orm-deploy-exadata-database-cdb.png " ")
+
+      * Provide the **Custom Database Software Image Home OCID**. Please see your ***MyEnvironment.txt*** from your cloud editor. 
+      * Provide the **Container Database display name**. For this lab, use the name ***MyCDB02***
+      * Provide the **Container Database unique name**. For this lab, use the name ***MyTFDB***
+      * Provide the **Container Database administrator password**
+   
+   ![Deploy Database PDB Stack](./images/orm-deploy-exadata-database-pdb.png " ")
+
+      * Provide the **Pluggable Database (PDB1) display name**. For this lab, use the name  ***MyPDB1***
+      * Provide the **Pluggable Database (PDB2) display name**. For this lab, use the name  ***MyPDB2***
+      * Provide the **Pluggable Database (PDB3) display name**. For this lab, use the name  ***MyPDB3***
+      * Provide the **Pluggable Database administrator password**
+>>>>>>> upstream/main
   
     Click on **Next**
 
@@ -308,8 +369,12 @@ This lab requires the completion of the following:
     >**Note:** This will cause the apply job to be created and our new Application and Database stack to be deployed once the job is completed.
 
     ![Stack Deployment Apply Succeeded ](./images/orm-apply-succeeded.png " ")
+<<<<<<< HEAD
 
 You may now **proceed to the next lab**
+=======
+    
+>>>>>>> upstream/main
 
 <!--
 ## Learn More
