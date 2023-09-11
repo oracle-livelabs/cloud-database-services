@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Get started - Connect to Oracle Cloud Tenancy
-=======
-# Get started - Oracle Solution Center login
->>>>>>> upstream/main
 
 
 ## Introduction
@@ -11,19 +7,11 @@ Oracle Cloud is the industry's broadest and most integrated cloud provider, with
 
 Estimated Time: 5 minutes
 
-<<<<<<< HEAD
 <u>**Types of Cloud Accounts that can be used for this workshop:**</u>
 
 **Oracle Cloud Paid Accounts**: When your tenancy is provisioned, Oracle sends an email to the default administrator at your company with the sign-in credentials and URL. This administrator can then create a user for each person who needs access to the Oracle Cloud. Check your email or contact your administrator for your credentials and account name.
 
 **Global Oracle Solutions Center (OSC) provided Account**: This type of environment can be obtained by engaging with your Sales Engineer to coordinate obtaining approval to obtain an Event Code which will provide access to an OSC provided environment.
-=======
-Types of Cloud Accounts that can be used for this workshop:
-
-**Oracle Cloud Paid Accounts**: When your tenancy is provisioned, Oracle sends an email to the default administrator at your company with the sign-in credentials and URL. This administrator can then create a user for each person who needs access to the Oracle Cloud. Check your email or contact your administrator for your credentials and account name.
-
-**Global Oracle Solutions Center (OSC) provided Account**: Environment is provided by engaging with your Sales Engineer to coordinate obtaining approval to obtain an Event Code which will provide access to an OSC provided environment.
->>>>>>> upstream/main
 
 
 
@@ -44,17 +32,11 @@ Types of Cloud Accounts that can be used for this workshop:
 * **Password** - Your assigned password for this workshop
 
 
-<<<<<<< HEAD
 ## Task 1: Log in to Oracle Cloud Tenancy provided by Global Oracle Solutions Center
 
 1. Go to [<u>**cloud.oracle.com**</u>](https://cloud.oracle.com/?region=us-sanjose-1&tenant=oscnas001) and enter your **Cloud Account Name** *(**Assigned Tenancy**)*. 
    
    For this workshop, make sure your assigned tenancy named ***oscnas001*** is selected. 
-=======
-## Task 1: Log in to Oracle Cloud Tenancy
-
-1. Go to [cloud.oracle.com](https://cloud.oracle.com), enter your **Cloud Account Name** *(**Assigned Tenancy**)*,  and click **Next**. 
->>>>>>> upstream/main
    
 
    ![osc login](./images/osc-login.png " ")
