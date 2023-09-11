@@ -63,4 +63,4 @@ You may now **proceed to the next lab**.
 
 * **Contributors** - Tammy Bednar, Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, July 2023.
+* **Last Updated By** - Leo Alvarado, Product Management, September 2023.
