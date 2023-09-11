@@ -1,322 +1,220 @@
-# Use OCI Resource Manager to generate and deploy Terraform for Application and Database Stack
+# Discover Environment Details using REST API
 
 
 ## Introduction
 
-This lab walks you through the steps to generate and deploy Terraform for Application and Database stack using OCI Resource Manage.
+Any operation that you can do with the web console, you can also do with a corresponding REST API. Like the web console, the REST APIs transit the Internet via HTTPS, requiring no special software to be installed on the local system. The Oracle Cloud Infrastructure APIs are typical REST APIs that use HTTPS requests and responses.
 
-Estimated Time: 20 minutes
+This lab walks you through the steps to discover Exadata Database Service on Cloud@Customer environment details using REST API.
 
+Estimated Time: 10 minutes
 
 ### Objectives
 
--   After completing this lab, you should be able to generate and deploy Terraform for Application and Database stack using OCI Resource Manager.
+-   After completing this lab, you should be able to discover Exadata Database Service on Cloud@Customer environment details using REST API.
 
 
 ### Prerequisites
 
 This lab requires the completion of the following:
 
-* Completion of **Lab4**
+* Completion of **Lab3**
 
-## Task 1: Generate Terraform baseline configuration for Database development environment using OCI Resource Manager
+## Task 1: List the available Database Homes in a compartment using REST API
 
-1. Open the navigation menu and click **Developer Services**. Under **Resource Manager**, click **Stacks**.
+1. Open the Cloud Shell. This displays the Cloud Shell at the bottom of the console:
+
+   ![oci cloudshell](./images/cloudshelllaunch.png " ")
+
+
+2. Make an OCI REST API call to get a list of available Database Homes in a compartment by running the **OCI RAW-REQUEST** command below:
    
-   ![Launch ORM Stacks](./images/oci-menu-orm.png " ")
-
-2. On the **Stacks** page, select your assigned compartment.
-
-3. Click **Create stack**.
-
-4. On the **Create stack** page, under **Choose the origin of the Terraform configuration**, select **Existing compartment**.
-
-5. Select your assigned **compartment** and assigned **region** containing the Exadata Database Service on Cloud@Customer Resource Model.
-
-    ![select compartment for resource discovery](./images/orm-create-stack-from-compartment.png " ")
-
-   This will create a stack that captures resources from the selected assigned compartment using **OCI Resource Manager (resource discovery)**
-
-6. Select the service types that you want to be discovered for your terraform script by: Selecting **Selected** for the Terraform provider services and then selecting **database** for the services value. 
+    > **Note:** Replace the API endpoint region "***{region}***" with your **assigned region** and ***"{CompartmentOCID}"*** with the **Compartment OCID** obtained from ***Lab3***.
    
-    ![Select compartment to create stack](./images/orm-discover-dbstack.png " ")
-   
-7. Provide the **Name** for your stack and Select the **compartment** where you want to create the stack.
-   
-    >**Note:** For this lab, use **MyTFBaseline-Database** for the name of your discovered database stack and use your assigned compartment for the **Create in compartment**
+      ```
+      <copy>
 
-    ![Create your discovered database stack](./images/orm-create-stack.png " ")
+          oci raw-request --http-method GET --target-uri "https://database.us-{region}-1.oraclecloud.com/20160918/dbHomes?compartmentId={CompartmentOCID}&lifecycleState=AVAILABLE&limit=10"
+
+      </copy>
+      ```
+3. You will see a similar output as below. Having a Response ***"status": "200 OK"*** means the request was successfully received and was able to get a list of all available DB Homes in the specified compartment.
+   
+   ![list available dbhomes](./images/list-dbhome.png " ")
+
+   Look for the Database Home with the **displayName** named ***MyCustomDBHome***. 
+   
+   Observe the following objects and values from the API response such as: 
+   
+      * ***databaseSoftwareImageId*** - If this field is populated then this is the **Custom Database Software Image** used for the Database Home  
+      * ***dbVersion*** - The **Database Version** of the Database Home
+
+
+## Task 2: List all the Container Databases in a Compartment
+
+1. From the Cloud Shell terminal, run the **OCI CLI command** below to get a list of the Container Databases in a Compartment.
+   
+    > **Note:** Replace the ***"{CompartmentID}"*** with the **Compartment OCID** used in ***Task 1***
+   
+      ```
+        <copy>
+
+          oci db database list --compartment-id {CompartmentID}  --query "data[*].{ContainerDatabase:\"db-name\",ContainerDatabaseOCID:id,State:\"lifecycle-state\"}" --output table
+
+        </copy>
+      ```
+
+2. You will see a similar output as below. Copy the **Container Database OCID** value and paste it in your notepad or text editor. 
+   
+   ![list pluggable database](./images/list-all-cdb-in-compartment.png " ")
+
+## Task 3: List all the Pluggable Databases in a Container Database using REST API
+
+1. From the Cloud Shell terminal, make an OCI REST API call to get a list of the Pluggable Databases in a Container Database by running the **OCI RAW-REQUEST** command below:
+   
+    > **Note:** Replace the API endpoint region "***{region}***" with your **assigned region** and ***"{ContainerDatabaseOCID}"*** with the **Container Database OCID** obtained from ***Task 2***
+   
+      ```
+        <copy>
+
+          oci raw-request --http-method GET --target-uri "https://database.us-{region}-1.oraclecloud.com/20160918/pluggableDatabases?databaseId={ContainerDatabaseOCID}&limit=10"
+
+        </copy>
+      ```
+
+2. You will see a similar output as below. Having a Response ***"status": "200 OK"*** means the request was successfully received and was able to get a list of all the pluggable databases in the specified container database. 
+   
+3. Copy the **PDB OCID** value from the **"id"** field and paste it in your notepad or text editor. 
+
+    ![list pluggable database](./images/getpdb.png " ")
 
     
+## Task 4: Clone and start a pluggable database (PDB) in the same database (CDB) using REST API
 
-8. Click **Next** twice. No variables are listed for the Existing compartment stack origin because no Terraform configuration exists yet.
+1. From the Cloud Shell terminal, create the JSON file for the REST API request body that contains the local clone pluggable database details resource.
 
-9.  In the Review panel, verify the stack configuration. Take note of the Terraform version for future use on your stack deployment.
-
-    ![Create database stack](./images/orm-create-stack-database.png " ")
-
-10. Click **Create**.
-    
-    
-
-11. Once the newly created stack is available, Download a copy of the generated Terraform script by clicking on the **Download** link next to **Terraform configuration**.
-
-    ![Download database stack](./images/orm-download-dbstack.png " ")
-
-    After downloading the zip file, you can unzip the file and view the generated Terraform configuration file in your text or code editor. 
-
-    View the *database.tf* file. 
-
-    >**Note:** Your database's generated baseline terraform code is similar to the output below. *Resources discovered in the Baseline Terraform configuration will be presented and discussed by the speakers*. Notes are added on each section of the discovered Exadata Database Service Resource Model
-
-    This is the discovered resource for the **Custom Database Software image**
-
-     ```
-    <copy>
-
-    ## This configuration was generated by terraform-provider-oci
-    
-
-        ## This is the discovered resource for the Custom Database Software image
-
-        resource oci_database_database_software_image export_MyCustomDBSW {
-        compartment_id = var.compartment_ocid
-        database_software_image_one_off_patches = [
-            "29780459",
-            "30310195",
-        ]
-        database_version = "19.0.0.0"
-        defined_tags = {
-        }
-        display_name = "MyCustomDBSW"
-        freeform_tags = {
-        }
-        image_shape_family = "EXACC_SHAPE"
-        image_type         = "DATABASE_IMAGE"
-        patch_set = "19.11.0.0"
-        }
-
-    </copy>
+   For this lab, the JSON file is pre-created; you can view the local clone pluggable database details by reading the JSON file.
+   
     ```
+      <copy>
 
-    This is the discovered resource for the **Exadata VM Cluster Resource**
+        cat MyClonePDB.json
 
-
-    ```
-    <copy>
-
-
-        ## This is the discovered resource for the Exadata VM Cluster Resource
-
-        resource oci_database_vm_cluster export_ecc4c4 {
-        compartment_id = var.compartment_ocid
-        cpu_core_count = "0"
-        data_collection_options {
-            is_diagnostics_events_enabled = "true"
-            is_health_monitoring_enabled  = "true"
-            is_incident_logs_enabled      = "true"
-        }
-        data_storage_size_in_tbs    = "30"
-        db_node_storage_size_in_gbs = "120"
-        db_servers = [
-            "ocid1.dbserver.oc1.us-sanjose-1.aaaaaaaaaaaaa",
-            "ocid1.dbserver.oc1.us-sanjose-1.aaaaaaaaaaaaa",
-        ]
-        defined_tags = {
-        }
-        display_name              = "ecc4c4"
-        exadata_infrastructure_id = "ocid1.exadatainfrastructure.oc1.us-sanjose-1.a"
-        freeform_tags = {
-        }
-        gi_version                  = "19.19.0.0.0"
-        is_local_backup_enabled     = "false"
-        is_sparse_diskgroup_enabled = "true"
-        license_model               = "BRING_YOUR_OWN_LICENSE"
-        memory_size_in_gbs          = "60"
-        ssh_public_keys = [
-        ]
-        time_zone             = "UTC"
-        vm_cluster_network_id = "ocid1.vmclusternetwork.oc1.us-sanjose-1.aaaaaaaa"
-        }
+      </copy>
+      ```
     
-    </copy>
-    ```
 
-    This is the discovered resource for the **Database Home**
+2. Make an OCI REST API call to clone and start a pluggable database (PDB) in the same container database (CDB) by running the **OCI RAW-REQUEST** command below:
+   
+    > **Note:** Replace the API endpoint region "***{region}***" with your **assigned region** and ***"{pluggableDatabaseID}"*** with the **Pluggable Database OCID** copied from ***Task3 Step 3***
+   
+      ```
+      <copy>
+
+        oci raw-request --http-method POST --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/pluggableDatabases/{pluggableDatabaseID}/actions/localClone" --request-body file://MyClonePDB.json
+
+      </copy>
+
+      ```
+
+   
+   
+3. You will see a similar output as below; you will see that the local clone pluggable database is on a lifecycle state of **PROVISIONING**
+
+  ![local clone pluggable database](./images/clonepdb.png " ")
+
+
+## Task 5: Discover Exadata VM Cluster Details using REST API
+
+1. Open the Cloud Shell. This displays the Cloud Shell at the bottom of the console.
+
+   ![oci cloudshell](./images/cloudshelllaunch.png " ")
+
+2. Make an OCI REST API call to get Exadata VM Cluster details by running the **OCI RAW-REQUEST** command below. 
+   
+    > **Note:** Replace the ***"{VMClusterOCID}"*** with the **VM Cluster OCID** copied from ***Lab 3 (Task 1 step 2)***
+
 
     ```
     <copy>
 
-        ## This is the discovered resource for the Database Home
+      oci raw-request --http-method GET --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/vmClusters/{VMClusterOCID}"
 
-        resource oci_database_db_home export_MyDBHome {
-        db_version = "19.13.0.0.0"
-        defined_tags = {
-        }
-        display_name = "MyDBHome"
-        freeform_tags = {
-        }
-        source        = "NONE"
-        vm_cluster_id = oci_database_vm_cluster.export_ecc4c4.id
-        }
-    
     </copy>
     ```
-    This is the discovered resource for the **Container Database**
+    
+
+    You will see a similar output below; pay attention to the **cpusEnabled** field.
+
+    ```
+    <copy>
+    {
+  "data": {
+    "availabilityDomain": "cuGa:US-SANJOSE-1-AD-1",
+    "compartmentId": "ocid1.compartment.oc1.....",
+    "cpusEnabled": 4,
+    "dataCollectionOptions": {
+      "isDiagnosticsEventsEnabled": true,
+      "isHealthMonitoringEnabled": true,
+      "isIncidentLogsEnabled": true
+    },
+    
+  "status": "200 OK"
+}
+  </copy>
+    ```
+
+
+## Task 6: List the Maintenance Updates that can be applied to the specified VM Cluster using REST API
+
+1. Make OCI REST API call to list maintenance updates that can be applied to the specified VM Cluster by running the **OCI RAW-REQUEST** Command below.
+   
+    > **Note:** Replace the ***"{VMClusterOCID}"*** with the **VM Cluster OCID** copied from ***Lab 3 (Task 1 step 2)***
+
+
+      ```
+      <copy>
+
+        oci raw-request --http-method GET --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/vmClusters/{VMClusterOCID}/updates"
+
+      </copy>
+      ```
+    
+
+    ![list VM Cluster updates](./images/get-vmcluster-updates.png " ")
+
+    You will see a similar output as below. Having a Response ***"status": "200 OK"*** means the request was successfully received and was able to get a list of all the maintenance updates that can be applied to the specified VM Cluster using REST API
 
     ```
     <copy>
 
-
-        ## This is the discovered resource for the Container Database
-
-        resource oci_database_database export_MyDBHome_database {
-        database {
-            admin_password = "<placeholder for database admin password>" 
-            character_set = "AL32UTF8"
-            db_name        = "MyExaDB"
-            db_unique_name = "exadb19"
-            db_workload    = "OLTP"
-            defined_tags = {
-            }
-            freeform_tags = {
-            }
-            ncharacter_set = "AL16UTF16"
-            pdb_name       = "mypdb"
-            sid_prefix     = "myexadbcc"
-        }
-        db_home_id = oci_database_db_home.export_MyDBHome.id
-        source = "NONE" #Required attribute 
-        lifecycle {
-            ignore_changes = [source, database[0].admin_password]
-        }
-        }
+    {
+  "data": [
+    {
+      "availableActions": [
+        "ROLLING_APPLY",
+        "PRECHECK"
+      ],
+      "description": "Virtual Machine OS Update 22.1.11.0.0.230516",
+      "id": "ocid1.dbupdate.oc1.us-sanjose-1....",
+      "lastAction":,
+      "lifecycleDetails":,
+      "lifecycleState": "AVAILABLE",
+      "timeReleased": "2023-06-06T19:15:24.842Z",
+      "updateType": "OS_UPDATE",
+      "version": "22.1.11.0.0.230516"
+    }
+  ],
+  "headers": {
     
+  },
+  "status": "200 OK"
+}
+
+    ```
     </copy>
-    ```
 
-    This is the discovered resource for the **Pluggable Databases**
-
-    ```
-    <copy>
-
-
-        ## This is the discovered resource for the Pluggable Databases
-
-        resource oci_database_pluggable_database export_pluggable_database {
-        container_database_id = oci_database_database.export_MyDBHome_database.id
-        defined_tags = {
-        }
-        freeform_tags = {
-        }
-        #pdb_admin_password = 
-        pdb_name = "MYPDB"
-        }
-
-        resource oci_database_pluggable_database export_pluggable_database_1 {
-        container_database_id = oci_database_database.export_MyDBHome_database.id
-        defined_tags = {
-        }
-        freeform_tags = {
-        }
-        #pdb_admin_password = 
-        pdb_name = "MYCLONEPDB"
-        }
-
-    </copy>
-    ```
-
-## Task 2: Deploy Gold Image Stack (Database and MyDesktop Application) using OCI Resource Manager and Terraform
-
-1. In the Breadcrumb link, Click on **Stacks** then select your assigned **compartment** and Click **Create stack**.
-
-    ![Deploy App and DB Stack](./images/orm-deploy-app-dbstack.png " ")
-
-2. On the **Create stack** page, under Choose the origin of the Terraform configuration, select **My configuration**.
-
-   Select **.Zip file** for the Terraform configuration source. then browse your desktop for a file called ***SampleTF.zip***. 
-   
-   
-    ![Upload zip file to deploy App and DB Stack](./images/orm-deploy-app-dbstack-from-zip.png " ")
-
-
-3. Provide the **Name** for your stack and select the **compartment** where you want to create the stack.
-
-    >**Note:** For this lab, use ***MyAppDBStack*** for the name of your discovered database stack and use your assigned compartment for the **Create in compartment**
-
-4. For Terraform version, select the *version 1.2.x*.
-   
-   ![Upload zip file to deploy App and DB Stack](./images/orm-create-name-stack.png " ")
-
-5. Click **Next**. In the **Configure variables panel**, review and provide the required variables listed from the Terraform configuration.
-
-    Provide required variable details for the **Application Server Stack**.
-   
-   ![Deploy Application Stack](./images/orm-deploy-application-stack.png " ")
-
-      * Choose your **Assigned compartment**
-      * Provide the **Application Server display name**. For this lab, use the name ***MyAppServer2***
-      * Provide the **Custom Instance Image Source ID**. For DatabaseWorld, accept the default value
-    
-    Provide required variable details for the **Exadata Database Server Stack**.
-   
-   ![Deploy Database PDB Stack](./images/orm-deploy-exadata-database-pdb.png " ")
-
-      * Provide the **Developer Container Database OCID**. For this lab, use the value for the ***MyCDB01*** 
-      * Provide the **Pluggable Database display name**. For this lab, use the name ***MyPDB2***
-      * Provide the **Pluggable Database administrator password** 
-  
-    Click on **Next**
-
-6. In the **Review** panel, verify the stack configuration and Click **Create** to establish your customized stack.
-   
-   ![Review App and Database Stack](./images/orm-deploy-app-db-review.png " ")
-
-    >**Note:** Now that we have a defined stack, let's prepare to use the stack to deploy a new developer environment consisting of an Application Server and 1 Exadata Container Database and 3 Pluggable Databases. 
-
-    ![App and Database Available Stack](./images/orm-myappdbstack-available.png " ")
-    
-7. Create Stack Deployment Plan by: Clicking on **Plan** on the Stack details page. 
-   
-    ![Create Stack Deployment Plan](./images/orm-plan-job.png " ")
-
-   In the Plan panel, use ***MyAppDBStackPlan*** for the Plan name and then Click on **Plan** to proceed. 
-
-    ![Confirm Create Stack Deployment Plan](./images/orm-click-plan.png " ")
-   
-    >**Note:** The plan job is created and is listed under Jobs. 
-
-    When the Stack Deployment Plan process is completed, the state of the plan job changes to **Succeeded**.
-
-    ![Stack Deployment Plan Succeeded](./images/orm-plan-success.png " ")
-   
-    
-8.  In the **Breadcrumb** link, Click on **Stack details**.  
-
-    ![View Stack Details Page ](./images/orm-plan-stackdetails.png " ")
-
-    Process Stack Deployment Plan by clicking on **Apply**.
-
-    ![Create Stack Deployment Apply ](./images/orm-stackdetails-apply.png " ")
-    
-    In the Apply panel, edit the default name for the job. For this lab, we will use ***MyAppDBStackApply*** for the Apply name. 
-
-    Select **Automatically Approve** for the Apply job plan resolution and then Click on **Apply**. 
-
-    ![Click Stack Deployment Apply ](./images/orm-apply-stack.png " ")
-    
-    >**Note:** This will cause the apply job to be created and our new Application and Database stack to be deployed once the job is completed.
-
-    ![Stack Deployment Apply Succeeded ](./images/orm-apply-succeeded.png " ")
-
-You may now **proceed to the next lab**
-
-<!--
-## Learn More
-
-* Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/exadata/doc/ecc-create-first-db.html) to learn more about Creating an Oracle Database on Exadata Database Service.
-
--->
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
