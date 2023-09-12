@@ -119,7 +119,7 @@ This lab requires the completion of the following:
 
    
    
-3. You will see a similar output as below; you will see that the local clone pluggable database is on a lifecycle state of **PROVISIONING**
+3. You will see a similar output as below; you will see that the local clone pluggable database is on a lifecycle state of ***PROVISIONING***
 
   ![local clone pluggable database](./images/clonepdb.png " ")
 

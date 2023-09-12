@@ -21,7 +21,7 @@ Estimated Lab Time: 15 minutes
 
 This lab requires completion of the following:
 
-* Completion of **Lab4**
+* Completion of **Lab1**
 
 ## Task 1: Change License Type using OCI Console 
 
@@ -42,9 +42,6 @@ This lab requires completion of the following:
 
 You may now **proceed to the next lab**
 
-## Learn More
-
-* Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-provisioning.html#GUID-4CB5B5E1-E853-4CA2-B43D-54CD18A8F28A) to learn more about Creating Infrastructure resource for Exadata Database Service on Cloud@Customer.
 
 ## Acknowledgements
 

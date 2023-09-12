@@ -21,7 +21,7 @@ Estimated Lab Time: 15 minutes
 
 This lab requires completion of the following:
 
-* Completion of **Lab9**
+* Completion of **Lab1**
 
 ## Task 1: Review Option to configure Automatic Infrastructure Maintenance
 

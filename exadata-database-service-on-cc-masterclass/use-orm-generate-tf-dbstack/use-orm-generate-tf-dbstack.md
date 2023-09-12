@@ -262,7 +262,7 @@ This lab requires the completion of the following:
    
    ![Deploy Database PDB Stack](./images/orm-deploy-exadata-database-pdb.png " ")
 
-      * Provide the **Developer Container Database OCID**. For this lab, use the value for the ***MyCDB01*** 
+      * Provide the **Developer Container Database OCID**. For this lab, use the value for the ***MyCDB01*** obtained from ***Lab7 (Task 2 Step 2)***
       * Provide the **Pluggable Database display name**. For this lab, use the name ***MyPDB2***
       * Provide the **Pluggable Database administrator password** 
   
