@@ -18,7 +18,7 @@ Estimated Time: 10 minutes
 
 This lab requires the completion of the following:
 
-* Completion of **Lab3**
+* Completion of **Lab4**
 
 ## Task 1: List the available Database Homes in a compartment using REST API
 
@@ -29,7 +29,7 @@ This lab requires the completion of the following:
 
 2. Make an OCI REST API call to get a list of available Database Homes in a compartment by running the **OCI RAW-REQUEST** command below:
    
-    > **Note:** Replace the API endpoint region "***{region}***" with your **assigned region** and ***"{CompartmentOCID}"*** with the **Compartment OCID** obtained from ***Lab3***.
+    > **Note:** Replace the API endpoint region "***{region}***" with your **assigned region** and ***"{CompartmentOCID}"*** with the **Compartment OCID** obtained from ***Lab4***.
    
       ```
       <copy>
@@ -119,7 +119,7 @@ This lab requires the completion of the following:
 
    
    
-3. You will see a similar output as below; you will see that the local clone pluggable database is on a lifecycle state of **PROVISIONING**
+3. You will see a similar output as below; you will see that the local clone pluggable database is on a lifecycle state of ***PROVISIONING***
 
   ![local clone pluggable database](./images/clonepdb.png " ")
 
@@ -132,7 +132,7 @@ This lab requires the completion of the following:
 
 2. Make an OCI REST API call to get Exadata VM Cluster details by running the **OCI RAW-REQUEST** command below. 
    
-    > **Note:** Replace the ***"{VMClusterOCID}"*** with the **VM Cluster OCID** copied from ***Lab 3 (Task 1 step 2)***
+    > **Note:** Replace the ***"{VMClusterOCID}"*** with the **VM Cluster OCID** copied from ***Lab 4 (Task 1 step 2)***
 
 
     ```
@@ -169,7 +169,7 @@ This lab requires the completion of the following:
 
 1. Make OCI REST API call to list maintenance updates that can be applied to the specified VM Cluster by running the **OCI RAW-REQUEST** Command below.
    
-    > **Note:** Replace the ***"{VMClusterOCID}"*** with the **VM Cluster OCID** copied from ***Lab 3 (Task 1 step 2)***
+    > **Note:** Replace the ***"{VMClusterOCID}"*** with the **VM Cluster OCID** copied from ***Lab 4 (Task 1 step 2)***
 
 
       ```

@@ -6,7 +6,7 @@ This workshop walks you through all the steps to automate the deployment of data
 
 Gain hands-on experience on how to create standard images, discover & capture gold environment images, and use automation to deploy standardized environment stacks.
 
-Estimated Workshop Time: 70 minutes
+Estimated Workshop Time: 80 minutes
 
 **Oracle Database Cloud Services Automation Functions**
 

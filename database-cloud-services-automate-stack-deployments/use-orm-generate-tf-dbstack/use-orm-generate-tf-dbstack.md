@@ -17,7 +17,7 @@ Estimated Time: 20 minutes
 
 This lab requires the completion of the following:
 
-* Completion of **Lab4**
+* Completion of **Lab5**
 
 ## Task 1: Generate Terraform baseline configuration for Database development environment using OCI Resource Manager
 
@@ -262,7 +262,7 @@ This lab requires the completion of the following:
    
    ![Deploy Database PDB Stack](./images/orm-deploy-exadata-database-pdb.png " ")
 
-      * Provide the **Developer Container Database OCID**. For this lab, use the value for the ***MyCDB01*** obtained from ***Lab4 (Task 2)*** 
+      * Provide the **Developer Container Database OCID**. For this lab, use the value for the ***MyCDB01*** obtained from ***Lab5 (Task 2 Step 2)*** 
       * Provide the **Pluggable Database display name**. For this lab, use the name ***MyPDB2***
       * Provide the **Pluggable Database administrator password** 
   

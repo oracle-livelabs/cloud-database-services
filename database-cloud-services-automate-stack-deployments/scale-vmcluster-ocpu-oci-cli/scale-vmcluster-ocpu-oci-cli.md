@@ -30,7 +30,7 @@ Estimated Time: 10 minutes
 
 This lab requires the completion of the following:
 
-* Completion of **Lab2**
+* Completion of **Lab1**
 
 
 ## Task 1: Scale Exadata VM Cluster OCPU using OCI CLI
@@ -83,7 +83,7 @@ You may now **proceed to the next lab**
 
 ## Learn More
 
-* Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-provisioning.html#GUID-4CB5B5E1-E853-4CA2-B43D-54CD18A8F28A) to learn more about Creating Infrastructure resource for Exadata Database Service on Cloud@Customer.
+* Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-manage-vm-clusters.html#GUID-B9529795-C3D0-423A-B83F-BDD96AB29E32) to learn more about Scaling Up or Scaling Down the VM Cluster Resources for Exadata Database Service on Cloud@Customer.
 
 ## Acknowledgements
 
