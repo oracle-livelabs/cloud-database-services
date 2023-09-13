@@ -40,7 +40,7 @@ This lab requires completion of the following:
 
 ## Learn More
 
-* Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-provisioning.html#GUID-4CB5B5E1-E853-4CA2-B43D-54CD18A8F28A) to learn more about Creating Infrastructure resource for Exadata Database Service on Cloud@Customer.
+* Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-manage-vm-clusters.html#GUID-53A7D800-C948-4160-BA46-C9D7907E247A) to learn more about VM Cluster Node Subsetting for Exadata Database Service on Cloud@Customer.
 
 ## Acknowledgements
 

@@ -59,7 +59,7 @@ You may now **proceed to the next lab**
 
 ## Learn More
 
-* Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-provisioning.html#GUID-4CB5B5E1-E853-4CA2-B43D-54CD18A8F28A) to learn more about Creating Infrastructure resource for Exadata Database Service on Cloud@Customer.
+* Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-manage-db-backup-and-recovery.html#GUID-07D1B1D6-4A06-4859-B7DF-4C3A681A6B40) to learn more about Managing Database Backup and Recovery on Oracle Exadata Database Service on Cloud@Customer.
 
 ## Acknowledgements
 
