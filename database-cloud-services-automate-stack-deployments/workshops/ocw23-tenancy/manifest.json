@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Hands-on: Learn how to automate database, application and stack deployments",
+    "workshoptitle": "Automate Database, Application and Stack Deployments",
 
     "help": "livelabs-help-db_us@oracle.com",
 
@@ -11,33 +11,38 @@
           "filename": "../../introduction/introduction.md"
       },
         {
-            "title": "Get Started",
+            "title": "Get started - Connect to Oracle Cloud Tenancy",
             "description": "Login to Oracle Cloud",
             "filename": "../../get-started/get-started.md"
         },
         {
-            "title": "Lab 1: Review and Connect to CloudWorld Lab Resources",
-            "description": "Review OCW Lab Environment",
+            "title": "Lab 1: Discover and Connect to Cloud World Lab Resources",
+            "description": "Learn how to Discover and Connect to Cloud World Lab Resources",
             "filename": "../../review-ocw-env/review-ocw-env.md"
             
         },
        {
-            "title": "Lab 2: Create Custom Database Software Image using OCI Console",
-            "description": "Learn how to Create Custom Database Software Image using OCI Console",
+            "title": "Lab 2: Create Application and Database Custom Image using OCI Console",
+            "description": "Learn how to Lab 2: Create Application and Database Custom Image using OCI Console",
             "filename": "../../create-database-custom-image/create-database-custom-image.md"
         },
         {
-            "title": "Lab 3: Scale Exadata VM Cluster OCPU using OCI CLI",
-            "description": "Learn how to Scale Exadata VM Cluster OCPU using OCI CLI",
+            "title": "Lab 3: Configure Notifications for OCPU Change",
+            "description": "Learn how to Configure Notifications for Enabled OCPU ",
+            "filename": "../../configure-notifications/configure-notifications.md"
+        },
+        {
+            "title": "Lab 4: Scale Exadata VM Cluster Resources using OCI CLI",
+            "description": "Learn how to Scale Exadata VM Cluster Resources using OCI CLI",
             "filename": "../../scale-vmcluster-ocpu-oci-cli/scale-vmcluster-ocpu-oci-cli.md"
         },
         {
-            "title": "Lab 4: Discover Environment Details using REST API",
+            "title": "Lab 5: Discover Environment Details using REST API",
             "description": "Learn how to Discover Environment Details using API",
             "filename": "../../discover-env-details-api/discover-env-details-api.md"
         },
         {
-            "title": "Lab 5: Use OCI Resource Manager to generate and deploy Terraform for Application and Database Stack",
+            "title": "Lab 6: Use OCI Resource Manager to generate and deploy Terraform for Application and Database Stack",
             "description": "Learn how to Use OCI Resource Manager to generate and deploy Terraform for Application and Database Stack",
             "filename": "../../use-orm-generate-tf-dbstack/use-orm-generate-tf-dbstack.md"
         },
