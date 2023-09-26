@@ -1,12 +1,12 @@
 
 
 
-# Review and Connect to Oracle CloudWorld Lab Resources
+# Discover and Connect to Oracle CloudWorld Lab Resources
 
 
 ## Introduction
 
-This lab walks you through reviewing and connecting to the Oracle Cloud World lab environment.
+This lab walks you through on how to discover and connect to the Oracle Cloud World lab resources.
 
 Estimated Time: 15 minutes
 
@@ -15,7 +15,7 @@ Estimated Time: 15 minutes
 -->
 ### Objectives
 
--   After completing this lab, you should be able to learn how to navigate, review and connect to the Oracle Cloud World lab environment.
+-   After completing this lab, you should be able to learn how to navigate, discover and connect to the Oracle Cloud World lab resources.
 
 ### Prerequisites
 
@@ -37,7 +37,7 @@ This lab requires completion of the following:
    
 3. Select your assigned **Compartment**.
    
-   From the list of Instances displays. Find the Compute named **MyAppServer**, and document the ***Private IP address*** for later use.
+   From the list of Instances displays. Find the Compute named ***MyCustomAppServer***, and document the ***Private IP address*** for later use.
 
    ![discover compute networking details](./images/discover-app-server.png " ")
    
@@ -161,4 +161,4 @@ You may now **proceed to the next lab**.
 
 * **Contributors** - Tammy Bednar, Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, July 2023.
+* **Last Updated By** - Leo Alvarado, Product Management, September 2023.
