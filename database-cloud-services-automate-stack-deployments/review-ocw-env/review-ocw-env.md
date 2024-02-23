@@ -1,12 +1,12 @@
 
 
 
-# Review and Connect to Oracle CloudWorld Lab Environment
+# Discover and Connect to Oracle CloudWorld Lab Resources
 
 
 ## Introduction
 
-This lab walks you through reviewing and connecting to the Oracle Cloud World lab environment.
+This lab walks you through on how to discover and connect to the Oracle Cloud World lab resources.
 
 Estimated Time: 15 minutes
 
@@ -15,14 +15,14 @@ Estimated Time: 15 minutes
 -->
 ### Objectives
 
--   After completing this lab, you should be able to learn how to navigate, review and connect to the Oracle Cloud World lab environment.
+-   After completing this lab, you should be able to learn how to navigate, discover and connect to the Oracle Cloud World lab resources.
 
 ### Prerequisites
 
 This lab requires completion of the following:
 
 * Login to **Oracle Cloud** using **OSC's tenancy** with your assigned workshop credentials
-* Obtain your assigned **Secure Global Desktop (SGD)** login credentials
+
 
 
 
@@ -37,58 +37,48 @@ This lab requires completion of the following:
    
 3. Select your assigned **Compartment**.
    
-   From the list of Instances displays. Find the Compute named **MyAppServer**, and document the **Private IP address** for later use.
+   From the list of Instances displays. Find the Compute named ***MyCustomAppServer***, and document the ***Private IP address*** for later use.
 
    ![discover compute networking details](./images/discover-app-server.png " ")
    
-4. Launch the **Secured Global Desktop (SGD)** by clicking on this [URL](https://sgdsca.osc.oracle.com/sgd/thin.jsp?clientmode=installed) 
-   
-   ![SGD login](./images/sgd-login.png " ")
-   
-   Enter your assigned Secured Global Desktop **Username** and **Password** for your login.
 
-5. Launch the SGD Linux Desktop
-   
-   ![SGD linux Desktop](./images/sgd-linux-desktop.png " ")
-
-6. Open the terminal and connect to the local OSC bastion server with the following command. 
+4. Open your local terminal and run the command to connect to the local OSC Bastion Server
    
       ```
         <copy>
 
-        ssh ocw23oscbastion.us.osc.oracle.com 
-
-        </copy>
-      ```
-   
-   ![ssh to osc bastion server](./images/ssh-oscbastion.png " ")
-
-   ![login to osc bastion server](./images/ssh-oscbastion-login.png " ")
-     
-
-7. Use the assigned SSH Key to connect to the application server instance
-   
-      ```
-        <copy>
-
-        ssh -i ~/sshkey_student_xx.key -l opc (Use the IP address of the application server discovered in Step 3)
+        ssh -i ~/sshkey_student_xx.key -l {login name} ocw23oscbastion 
 
         </copy>
         ```
+    
+    >**Note:** Replace the **{login name}** with your assigned username login ***student_XX*** for the local OSC Bastion Server 
+
+5. From the local OSC Bastion Server, Run the command to connect to the Application Server with SSH.
+   
+      ```
+        <copy>
+
+        ssh -i ~/sshkey_student_xx.key -l opc {App Server IP Address} 
+
+        </copy>
+        ```
+    
+    >**Note:** Replace the **{App Server IP Address}** with the ***Private IP address of the Application Server*** you obtained from *Step 3*
+
 ## Task 2: Discover and Connect to an Exadata Database Service Virtual Machine with SSH 
 
 1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Cloud@Customer**.
    
    ![navigage oci console](./images/navigateocimenu.png " ")
 
-2. Select your assigned **Compartment**, then Navigate to the **VM Cluster Details** page of your assigned VM Cluster named **MyVMClusterXX**.
+2. Select your assigned **Compartment**, and Click your assigned **VM Cluster** named ***MyVMClusterXX***.
    
    ![navigate to exadata vmcluster](./images/navigate-vmcluster.png " ")
 
     The VM Cluster Details page displays information about the selected VM cluster.
 
    ![exadata vmcluster details page](./images/vmcluster-details-page.png " ")
-
 
 
 3. Under the **Resources** section on the left banner, click on **Virtual Machines**.
@@ -99,18 +89,19 @@ This lab requires completion of the following:
 
     ![VM Client IP](./images/vm-client-ip.png" ")
 
-5. From the App Server, Run the command to connect to the Exadata Database Service Virtual Machine with SSH.
+5. From the Application Server, Run the command to connect to the Exadata Database Service Virtual Machine with SSH.
 
       ```
               <copy>
 
-              ssh -i ~/sshkey_student_xx.key -l opc (IP address of the virtual machine, obtained from step 4)
+              ssh -i ~/sshkey_student_xx.key -l opc {Exadata VM IP Address}
 
               </copy>
       ```
        
+      >**Note:** Replace **{Exadata VM IP Address}** with the Exadata Virtual Machine ***Client IP Address*** obtained from *step 4*
 
-## Task 3: Discover and Connect to the Oracle Database on Exadata Database Service
+## Task 3: Discover and Connect to the Oracle Database on Exadata Database Service with Oracle Sqldeveloper
 
 1. From the Virtual Machines list page, Under the **Resources** section on the left banner, Click on **Databases**, then Click on the **Container Database** named **MyCDB01**. 
 
@@ -128,9 +119,20 @@ This lab requires completion of the following:
 
   ![PDB Connection](./images/pdb-connection-string.png" ")
 
-5. From the application server compute instance, launch Oracle SQL Developer and connect to Oracle Database on Exadata Database Service.
+1. From the Application Server, Open the terminal and Run ***sqldeveloper*** to launch Oracle SQL Developer.
 
-      * Select **Create New Connection** Icon
+      
+                  
+  ![launch sqldeveloper](./images/run-sqldeveloper.png " ")
+
+                  
+        
+   
+  From the Oracle SQL Developer page provide the following information to connect to Oracle Database on Exadata Database Service.
+
+  ![connecting using sqldev](./images/sqldev.png" ")
+
+      * Click **Create New Connection** Icon
       * Enter a **Name** for the Connection
       * For the **Database Type**, select **Oracle**
       * For the **Username**, enter **Sys**
@@ -142,7 +144,7 @@ This lab requires completion of the following:
       * **Test** & **Save** the connection
       * Click on **Connect**
 
-  ![connecting using sqldev](./images/sqldev.png" ")
+  
 
 
 You may now **proceed to the next lab**.

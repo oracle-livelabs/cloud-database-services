@@ -17,7 +17,7 @@ Estimated Time: 20 minutes
 
 This lab requires the completion of the following:
 
-* Completion of **Lab4**
+* Completion of **Lab5**
 
 ## Task 1: Generate Terraform baseline configuration for Database development environment using OCI Resource Manager
 
@@ -108,7 +108,7 @@ This lab requires the completion of the following:
 
         ## This is the discovered resource for the Exadata VM Cluster Resource
 
-        resource oci_database_vm_cluster export_ecc4c4 {
+        resource oci_database_vm_cluster export_MyVMClusterXX {
         compartment_id = var.compartment_ocid
         cpu_core_count = "0"
         data_collection_options {
@@ -124,7 +124,7 @@ This lab requires the completion of the following:
         ]
         defined_tags = {
         }
-        display_name              = "ecc4c4"
+        display_name              = "MyVMClusterXX"
         exadata_infrastructure_id = "ocid1.exadatainfrastructure.oc1.us-sanjose-1.a"
         freeform_tags = {
         }
@@ -149,15 +149,15 @@ This lab requires the completion of the following:
 
         ## This is the discovered resource for the Database Home
 
-        resource oci_database_db_home export_MyDBHome {
-        db_version = "19.13.0.0.0"
+        resource oci_database_db_home export_MyCustomDBHome {
+        db_version = "19.18.0.0.0"
         defined_tags = {
         }
-        display_name = "MyDBHome"
+        display_name = "MyCustomDBHome"
         freeform_tags = {
         }
         source        = "NONE"
-        vm_cluster_id = oci_database_vm_cluster.export_ecc4c4.id
+        vm_cluster_id = oci_database_vm_cluster.export_MyVMClusterXX.id
         }
     
     </copy>
@@ -170,22 +170,22 @@ This lab requires the completion of the following:
 
         ## This is the discovered resource for the Container Database
 
-        resource oci_database_database export_MyDBHome_database {
+        resource oci_database_database export_MyCustomDBHome_database {
         database {
             admin_password = "<placeholder for database admin password>" 
             character_set = "AL32UTF8"
-            db_name        = "MyExaDB"
-            db_unique_name = "exadb19"
+            db_name        = "MyCDB01"
+            db_unique_name = "cdb01"
             db_workload    = "OLTP"
             defined_tags = {
             }
             freeform_tags = {
             }
             ncharacter_set = "AL16UTF16"
-            pdb_name       = "mypdb"
+            pdb_name       = "mypdb1"
             sid_prefix     = "myexadbcc"
         }
-        db_home_id = oci_database_db_home.export_MyDBHome.id
+        db_home_id = oci_database_db_home.export_MyCustomDBHome.id
         source = "NONE" #Required attribute 
         lifecycle {
             ignore_changes = [source, database[0].admin_password]
@@ -254,25 +254,17 @@ This lab requires the completion of the following:
    
    ![Deploy Application Stack](./images/orm-deploy-application-stack.png " ")
 
-      * Choose your **assigned compartment**
-      * Provide the **Application Server display name**. For this lab, use the name ***MyAppServer***
-      * Provide the **Custom Instance Image Source ID**
+      * Choose your **Assigned compartment**
+      * Provide the **Application Server display name**. For this lab, use the name ***MyAppServer2***
+      * Provide the **Custom Instance Image Source ID**. For DatabaseWorld, accept the default value
     
     Provide required variable details for the **Exadata Database Server Stack**.
    
-   ![Deploy Database CDB Stack](./images/orm-deploy-exadata-database-cdb.png " ")
-
-      * Provide the **Custom Database Software Image Home OCID**
-      * Provide the **Container Database display name**. For this lab, use the name ***MyCDB02***
-      * Provide the **Container Database unique name**. For this lab, use the name ***MyTFDB***
-      * Provide the **Containder Database administrator password**
-   
    ![Deploy Database PDB Stack](./images/orm-deploy-exadata-database-pdb.png " ")
 
-      * Provide the **Pluggable Database (PDB1) display name**. For this lab, use the name  ***MyPDB1***
-      * Provide the **Pluggable Database (PDB2) display name**. For this lab, use the name  ***MyPDB2***
-      * Provide the **Pluggable Database (PDB3) display name**. For this lab, use the name  ***MyPDB3***
-      * Provide the **Pluggable Database administrator password**
+      * Provide the **Developer Container Database OCID**. For this lab, use the value for the ***MyCDB01*** obtained from ***Lab5 (Task 2 Step 2)*** 
+      * Provide the **Pluggable Database display name**. For this lab, use the name ***MyPDB2***
+      * Provide the **Pluggable Database administrator password** 
   
     Click on **Next**
 
@@ -294,7 +286,7 @@ This lab requires the completion of the following:
    
     >**Note:** The plan job is created and is listed under Jobs. 
 
-    When the Stack Deployment Plan process completes, the state of the plan job changes to **Succeeded**.
+    When the Stack Deployment Plan process is completed, the state of the plan job changes to **Succeeded**.
 
     ![Stack Deployment Plan Succeeded](./images/orm-plan-success.png " ")
    
@@ -313,10 +305,11 @@ This lab requires the completion of the following:
 
     ![Click Stack Deployment Apply ](./images/orm-apply-stack.png " ")
     
-    >**Note:** This will cause the apply job to be created and our new Application and Database stack to be deployed once the job completes.
+    >**Note:** This will cause the apply job to be created and our new Application and Database stack to be deployed once the job is completed.
 
     ![Stack Deployment Apply Succeeded ](./images/orm-apply-succeeded.png " ")
-    
+
+You may now **proceed to the next lab**
 
 <!--
 ## Learn More
