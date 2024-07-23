@@ -1,0 +1,50 @@
+{
+    "workshoptitle": "Hands-on: Learn how to automate database, application and stack deployments",
+
+    "help": "livelabs-help-db_us@oracle.com",
+
+    "tutorials": [
+      {
+          "title": "Introduction",
+          "description": "Introduction",
+          "filename": "../../introduction/introduction.md"
+      },
+      {
+            "title": "Get Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/cloud-login.md"
+        },
+        {
+            "title": "Lab 1: Review and Connect to Cloud World Lab Environment",
+            "description": "Review OCW Lab Environment",
+            "filename": "../../review-ocw-env/review-ocw-env.md"
+            
+        },
+       {
+            "title": "Lab 2: Create Database Custom Image using OCI Console",
+            "description": "Learn how to Create Database Custom Image using OCI Console",
+            "filename": "../../create-database-custom-image/create-database-custom-image.md"
+        },
+        {
+            "title": "Lab 3: Scale Exadata VM Cluster OCPU using API",
+            "description": "Learn how to Scale Exadata VM Cluster OCPU using API",
+            "filename": "../../scale-vmcluster-ocpu-api/scale-vmcluster-ocpu-api.md"
+        },
+        {
+            "title": "Lab 4: Discover Environment Details using SDK",
+            "description": "Learn how to Discover Environment Details using SDK",
+            "filename": "../../discover-env-details-sdk/discover-env-details-sdk.md"
+        },
+        {
+            "title": "Lab 5: Use OCI Resource Manager to generate Terraform for Database Stack",
+            "description": "Learn how to Use OCI Resource Manager to generate Terraform for Database Stack",
+            "filename": "../../use-orm-generate-tf-dbstack/use-orm-generate-tf-dbstack.md"
+        },
+
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
