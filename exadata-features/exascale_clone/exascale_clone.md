@@ -172,8 +172,6 @@ The small amount of space that is being used is from two sources:
     ```
 
 
-
-
 CREATE TEMPORARY TABLESPACE TEMP_PDB TEMPFILE '@stud_01vault' SIZE 100M AUTOEXTEND ON NEXT 100M MAXSIZE UNLIMITED;
 ALTER DATABASE DEFAULT TEMPORARY TABLESPACE TEMP_PDB;
 DROP TABLESPACE TEMP INCLUDING CONTENTS AND DATAFILES;
@@ -181,62 +179,6 @@ DROP TABLESPACE TEMP INCLUDING CONTENTS AND DATAFILES;
 COLUMN tempfile NEW_VALUE tempfile
 select name tempfile from v$tempfile;
 alter database tempfile '&tempfile' resize 10M;
-
-
-    
-
-
-
-
-select 'rm ' || full_path || chr(13)
-from cdb_pdbs right join v$exa_file on (cdb_pdbs.con_id = v$exa_file.con_id)
-left join v$datafile on (v$datafile.name = full_path)
-where substr(used_by, instr(used_by, ':')+1) = (select db_unique_name from v$database)
-and file_type = 'DATAFILE'
-and v$datafile.name is null;
-
-
-SELECT pdb_name, name
-FROM v$datafile LEFT JOIN cdb_pdbs using (con_id)
-where substr(used_by, instr(used_by, ':')+1) = (select db_unique_name from v$database)
-and file_type = 'DATAFILE'
-and v$datafile.name is null;
-
-
-
-SELECT d.tablespace_name, d.file_name, c.name AS pdb_name, c.con_id
-FROM cdb_temp_files d, v$containers c
-WHERE d.con_id = c.con_id
-ORDER BY 4,1;
-
-
-    ```text
-    <copy>
-    SELECT v$tablespace.name, bytes/1073741824 space_used_gb
-    FROM (SELECT file#, ts#, con_id, bytes FROM v$datafile)
-    FULL JOIN (SELECT file#, ts#, con_id, bytes FROM v$tempfile) USING (ts#, con_id, bytes)
-    JOIN v$tablespace USING (ts#, con_id)
-    LEFT JOIN cdb_pdbs USING (con_id)
-    WHERE pdb_name = 'PDBC'
-    AND (v$tablespace.name like 'UNDO%' OR v$tablespace.name like 'TEMP%');
-
-    SELECT SUM(bytes)
-    FROM cdb_undo_extents WHERE 
-    con_id = 4;
-    
-    </copy>
-    ```
-
-
-## Task 2: Flash Cache
-
-1. List the cell disks associated with the flash modules in your Exadata cell. By default, there should be four cell disks having names that start with FD.
-
-    ```text
-    <copy>
-    list celldisk where disktype = FlashDisk
-    </copy>
-    ```
 
 
 You may now **proceed to the next lab**.
