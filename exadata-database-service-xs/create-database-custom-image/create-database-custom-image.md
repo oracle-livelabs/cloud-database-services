@@ -29,7 +29,7 @@ This lab requires the completion of the following:
 
 1. Open the navigation menu and click **Compute**. Under Compute, click **Instances**.
 
-  ![Naviage OCI Compute](./images/navigate-compute-instance.png" ")
+  ![Navigate OCI Compute](./images/navigate-compute-instance.png" ")
 
 2. In the left rail, **Instances** is selected by default. Select your assigned compartment named ***MyCompartmentXX***. 
    

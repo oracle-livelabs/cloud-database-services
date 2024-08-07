@@ -27,32 +27,44 @@ This lab requires completion of the following:
 
 *(For this lab, Informational Instructions for Enabling Automatic Backups for the Exadata Database Service on Cloud@Customer environment will be presented by the speakers)*
 
-1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Cloud@Customer**.
+1. Navigate to the Exadata Database Service on Exascale Infrastructure using OCI Console
+
+    * Open the **navigation menu** and click ***Oracle Database***. 
+    * Under **Oracle Database**, click ***Oracle Database Service on Exascale Infrastructure***.
+  ![Navigate from OCI Console to ExaDB-XS](./images/console-to-exadb-xs.png " ") 
+    * **Note:** This will cause the **VM Clusters** page to be displayed.
+
+2. Navigate to your Compartment and VM Cluster
+
+    * On the left rail, ensure that **VM Clusters** is selected (default selection). 
+    * For the **List Scope**, select your assigned compartment named ***MyCompartmentXX***. 
+    * In the list of displayed VM clusters, click on the name of your **Assigned VM Cluster** named ***MyDemoVMClusterXX***.
+  ![Navigate to Compartment and VM Cluster](./images/select-compartment-and-mydemo-vm-cluster.png " ")
+    * **Note:** This will cause the **VM Cluster Details** page to be displayed.
+
+3. Navigate from the VM Cluster to the Container Database (CDB)
+
+    * On the left rail under the **Resources** section, click on ***Container Databases***, 
+    * In the list of Container Databases diplayed, click on the name of the Container Database for which we will **enable Automatic Backups**. Click on ***MyDemoDB***. 
+  ![Navigate from VM Cluster to Container Database (CDB)](./images/mydemo-vm-cluster-details-page-to-cdb.png " ")
+    * **Note:** This will cause the **Container Database Details** page to be displayed.
+
+4. Click on the **Configure Automatic Backups** action button.
+* **Note:** This will cause the **Configure Automatic Backups** page to be displayed.
+ ![Launch Congigure Automatic Backups Action](./images/launch-configure-automatic-backups.png " ")
    
-2. Select your ***Assigned Compartment***, and Click your assigned **VM Cluster** named ***MyVMClusterXX***.
+5. Now lets **configure Automatic Backups** for the database
+    * **Select the checkbox** for ***Enable Automatic Backups***
+    * For the **Backup Destination:** Select ***Autonomous Recovery Service***
+    * For the **Protection Policy:** Select ***Silver***
+    * For the **Deletion options after database termination:** Select ***Retain backups according to the protection policy retention period***
+    * For this lab, we will **defer the initial backup** by **unchecking** the checkbox for ***Take the first backup immediately***
+    * Next, **schedule the Day of the week and time for the initial backup to start:** Select ***Sunday between 4AM and 6AM***.
+    * Now wrap up the Automatic Backup configuration by **scheduling the time of day for the daily backups to start:** Select ***4AM to 6AM***
+    * Click ***Save Changes*** to save the configuration and start automatic backups as defined.
 
-3. In the Resources list of the VM Cluster Details page, click Databases.
+  ![Configure Automatic Backups](./images/configure-automatic-backups-to-rcv.png " ")
 
-4. Click the name of the database for which you want to edit backup settings.
-
-5. Click Edit Backup Settings.
-   
-   Your current backup configuration determines the changes that you can make in the Backup Settings dialog, as follows:
-
-   If automatic backups are not configured (Backup Destination Type is set to None), then you can use the following settings to define the backup configuration for the database:
-
-   **Backup Destination Type**: From the list, choose an option.
-
-      * **None** Select if you do not define a backup configuration for the database.
-      * **Local** Select to store backups locally in the Exadata Storage Servers on your Exadata Database Service on Cloud@Customer system.
-      * **Object Storage** Select to store backups in an object storage container managed by Oracle on Oracle Cloud Infrastructure.
-      * **NFS** Select to store backups in one of your previously defined backup destinations that uses Network File System (NFS) storage.
-      * **Recovery Appliance** Select to store backups in one of your previously defined backup destinations that uses Oracle Zero Data Loss Recovery Appliance.
-   
-   **Enable automatic backups**: Select this option to enable daily backups using the policy for automatic backups.
-
-   **Backup retention period**: Select this option to choose one of the options for the length of time that automatic backups are retained.
-6. Click **Save Changes**.
 
 
 You may now **proceed to the next lab**

@@ -3,12 +3,15 @@
 
 ## Introduction
 
-This lab walks you through the steps to discover how to navigate to the Exadata Database Service on Exascale Infrastructure and discover the environment details for the Exadata VM Cluster, Container Database, Pluggable Database, and the Exascale Storage Vault using the OCI Console.
+  *(To enable you to have the most hands-on experince within this 90 minute workshop, we have pre-provisioned a VM Cluster & Container Database using the Exadata Database Service on Exascale Infrastructure - Informational Instructions for navigating the Exadata Database Service on Exascale Infrastructure environment will be presented by the speakers)*
+  
+  This lab walks you through the steps to discover how to navigate to the Exadata Database Service on Exascale Infrastructure and discover the environment details for the Exadata VM Cluster, Container Database, Pluggable Database, and the Exascale Storage Vault using the OCI Console.
 
 Estimated Time: 5 minutes
 
 Watch the video below for a quick walk-through of the lab.
-  [Discover Environment Details using OCI Console](youtube:<ReplaceMe>)
+  [Discover OCW Environment Details using OCI Console](youtube:<ReplaceMe>)
+
 
 ### Objectives
 
@@ -101,7 +104,7 @@ This lab requires the completion of the following:
     * The **Associated Services** Section of the page:
         * Informs you if the (optional) **Operations Insights** feature has been enabled for the container database.
     * The **Encryption** Section of the page:
-        * Provides you with information about the type of encryption key management that is being used.
+        * Provides you with information about the type of encryption key management that is being used. 
    
   ![Container Database Details page](./images/container-database-details-page.png " ")
   
@@ -141,7 +144,7 @@ This lab requires the completion of the following:
    
 3. On the **Exascale Storage Vault Details** page ***Discover the following Exascale Storage Vault Information***
     * On the **Exascale Storage Vault Details** page, you can see a list of actions that can be performed, such as scaling the storage vault or moving the Vault to another compartment.  
-    * In the **General Information** Section you can find the following key items:
+    * In the **General Information** Section of the **VM Cluster Information** tab, you can find the following key items:
       * The Lifecycle state of the Exascale Storage Vault.
       * What Compartment the Exascale Storage Vault is in.
       * The Availability Domain of the Exascale Storage Vault.
