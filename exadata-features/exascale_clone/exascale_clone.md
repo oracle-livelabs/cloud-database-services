@@ -21,37 +21,11 @@ This lab assumes:
 
 ## Task 1: 
 
-    COLUMN source_pdb NEW_VALUE source_pdb
-    COLUMN thick_pdb NEW_VALUE thick_pdb
-    COLUMN thin_pdb NEW_VALUE thin_pdb
-    SELECT LOWER(name) || '_pdba' source_pdb,
-        LOWER(name) || '_full_clone' thick_pdb,
-        LOWER(name) || '_thin_clone' thin_pdb
-    FROM v$database;
-    DROP PLUGGABLE DATABASE &thick_pdb INCLUDING DATAFILES;
-    DROP PLUGGABLE DATABASE &thin_pdb INCLUDING DATAFILES;
-
-
 1. Show the total space used by the data and temporary files of the source pluggable database.
 
     ```text
     <copy>
-    COLUMN pdb NEW_VALUE pdbvar NOPRINT
-    TTITLE LEFT 'PDB: ' pdbvar SKIP 2
-    BREAK ON pdb SKIP PAGE
-    COLUMN filename FORMAT A25
-    COMPUTE SUM OF gb ON pdb
-    SELECT p.name pdb, SUBSTR(v.name, INSTR(v.name, '/', -1)+1) filename, round(gb) gb
-    FROM (SELECT name, bytes/1024/1024/1024 gb, con_id FROM v$datafile 
-        UNION SELECT name, bytes/1024/1024/1024 gb, con_id FROM v$tempfile) v
-    JOIN v$pdbs p ON (v.con_id = p.con_id)
-    WHERE p.name LIKE (SELECT UPPER(name) FROM v$database) || '%'
-    ORDER BY (CASE pdb
-        WHEN (SELECT UPPER(name) FROM v$database) || '_PDBA' THEN 1
-        WHEN (SELECT UPPER(name) FROM v$database) || '_FULL_CLONE' THEN 2
-        WHEN (SELECT UPPER(name) FROM v$database) || '_THIN_CLONE' THEN 3
-        END), filename;
-    TTITLE OFF
+    @lab_exascale_clone_01.sql
 
     </copy>
     ```
@@ -60,17 +34,7 @@ This lab assumes:
 
     ```text
     <copy>
-    COLUMN space_used_gb NEW_VALUE hcsu_a NOPRINT
-    SELECT ROUND(hc_space_used/1073741824) space_used_gb
-    FROM v$exa_vault
-    WHERE LOWER(vault_name) = (SELECT LOWER(name) || 'vault' FROM v$database);
-
-    COLUMN source_pdb NEW_VALUE source_pdb
-    COLUMN thick_pdb NEW_VALUE thick_pdb
-    SELECT LOWER(name) || '_pdba' source_pdb,
-        LOWER(name) || '_full_clone' thick_pdb
-    FROM v$database;
-    CREATE PLUGGABLE DATABASE &thick_pdb FROM &source_pdb;
+    @lab_exascale_clone_02.sql
 
     </copy>
     ```
@@ -79,22 +43,7 @@ This lab assumes:
 
     ```text
     <copy>
-    COLUMN pdb NEW_VALUE pdbvar NOPRINT
-    TTITLE LEFT 'PDB: ' pdbvar SKIP 2
-    BREAK ON pdb SKIP PAGE
-    COLUMN filename FORMAT A25
-    COMPUTE SUM OF gb ON pdb
-    SELECT p.name pdb, SUBSTR(v.name, INSTR(v.name, '/', -1)+1) filename, round(gb) gb
-    FROM (SELECT name, bytes/1024/1024/1024 gb, con_id FROM v$datafile 
-        UNION SELECT name, bytes/1024/1024/1024 gb, con_id FROM v$tempfile) v
-    JOIN v$pdbs p ON (v.con_id = p.con_id)
-    WHERE p.name LIKE (SELECT UPPER(name) FROM v$database) || '%'
-    ORDER BY (CASE pdb
-        WHEN (SELECT UPPER(name) FROM v$database) || '_PDBA' THEN 1
-        WHEN (SELECT UPPER(name) FROM v$database) || '_FULL_CLONE' THEN 2
-        WHEN (SELECT UPPER(name) FROM v$database) || '_THIN_CLONE' THEN 3
-        END), filename;
-    TTITLE OFF
+    @lab_exascale_clone_03.sql
 
     </copy>
     ```
@@ -103,12 +52,7 @@ This lab assumes:
 
     ```text
     <copy>
-    COLUMN space_used_gb NEW_VALUE hcsu_b NOPRINT
-    SELECT ROUND(hc_space_used/1073741824) space_used_gb
-    FROM v$exa_vault
-    WHERE LOWER(vault_name) = (SELECT LOWER(name) || 'vault' FROM v$database);
-    SELECT 'FULL CLONE' type, &hcsu_b - &hcsu_a space_used_raw,
-        ROUND((&hcsu_b - &hcsu_a) / 2) space_used_actual FROM DUAL;
+    @lab_exascale_clone_04.sql
 
     </copy>
     ```
@@ -117,12 +61,7 @@ This lab assumes:
 
     ```text
     <copy>
-    COLUMN source_pdb NEW_VALUE source_pdb
-    COLUMN thin_pdb NEW_VALUE thin_pdb
-    SELECT LOWER(name) || '_pdba' source_pdb,
-        LOWER(name) || '_thin_clone' thin_pdb
-    FROM v$database;
-    CREATE PLUGGABLE DATABASE &thin_pdb FROM &source_pdb SNAPSHOT COPY;
+    @lab_exascale_clone_05.sql
 
     </copy>
     ```
@@ -131,29 +70,7 @@ This lab assumes:
 
     ```text
     <copy>
-    COLUMN pdb NEW_VALUE pdbvar NOPRINT
-    TTITLE LEFT 'PDB: ' pdbvar SKIP 2
-    BREAK ON pdb SKIP PAGE
-    COLUMN filename FORMAT A25
-    COMPUTE SUM OF gb gb_actual ON pdb
-    SELECT p.name pdb, SUBSTR(v.name, INSTR(v.name, '/', -1)+1) filename, round(gb) gb,
-        CASE WHEN p.name = (SELECT UPPER(name) FROM v$database) || '_THIN_CLONE'
-                AND v.filetype = 'DATAFILE'
-                THEN round(gb * 0.1, 1)
-            WHEN p.name = (SELECT UPPER(name) FROM v$database) || '_THIN_CLONE'
-                AND v.filetype = 'TEMPFILE'
-                THEN round(gb, 1)
-            ELSE 0 END gb_actual
-    FROM (SELECT 'DATAFILE' filetype, name, bytes/1024/1024/1024 gb, con_id FROM v$datafile 
-        UNION SELECT 'TEMPFILE' filetype, name, bytes/1024/1024/1024 gb, con_id FROM v$tempfile) v
-    JOIN v$pdbs p ON (v.con_id = p.con_id)
-    WHERE p.name LIKE (SELECT UPPER(name) FROM v$database) || '%'
-    ORDER BY (CASE pdb
-        WHEN (SELECT UPPER(name) FROM v$database) || '_PDBA' THEN 1
-        WHEN (SELECT UPPER(name) FROM v$database) || '_FULL_CLONE' THEN 2
-        WHEN (SELECT UPPER(name) FROM v$database) || '_THIN_CLONE' THEN 3
-        END), filename;
-    TTITLE OFF
+    @lab_exascale_clone_06.sql
 
     </copy>
     ```
@@ -165,12 +82,7 @@ The small amount of space that is being used is from two sources:
 
     ```text
     <copy>
-    COLUMN space_used_gb NEW_VALUE hcsu_c NOPRINT
-    SELECT ROUND(hc_space_used/1073741824) space_used_gb
-    FROM v$exa_vault
-    WHERE LOWER(vault_name) = (SELECT LOWER(name) || 'vault' FROM v$database);
-    SELECT 'FULL CLONE' type, &hcsu_b - &hcsu_a space_used_raw, round((&hcsu_b - &hcsu_a) / 2) space_used_actual UNION 
-    SELECT 'THIN CLONE' type, &hcsu_c - &hcsu_b space_used_raw, round((&hcsu_c - &hcsu_b) / 2) space_used_actual FROM DUAL;
+    @lab_exascale_clone_07.sql
 
     </copy>
     ```
