@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Hands-on: Oracle Exadata Database Service on Exascale Infrastructure",
+    "workshoptitle": "Hands-on Masterclass: Oracle Exadata Database Service on Exascale Infrastructure",
 
     "help": "livelabs-help-db_us@oracle.com",
 
@@ -7,7 +7,7 @@
       {
           "title": "Introduction",
           "description": "Introduction",
-          "filename": "../../introduction-ocw24-hol/introduction-ocw24-hol.md"
+          "filename": "../../introduction-ocw24-mc/introduction-ocw24-mc.md"
       },
       {
             "title": "Get Started",
@@ -17,13 +17,13 @@
         {
             "title": "Lab 1: Create Instance of Exadata Database Service on Exascale Infrastructure",
             "description": "Learn how to Create Instance of Exadata Database Service on Exscale Infrastructure using OCI Console",
-            "filename": "../../create-vmcluster-cdb-pdb-on-exascale/create-vmcluster-cdb-pdb-on-exascale.md"
+            "filename": "../../create-VMCluster-CDB-PDB-on-Exascale/create-VMCluster-CDB-PDB-on-Exascale.md"
             
         },
        {
             "title": "Lab 2: Discover VM Cluster, Container Database, & Pluggable Database Details",
             "description": "Learn how to Discover Environment Details using OCI Console",
-            "filename": "../../discover-env-details-on-exascale/discover-env-details-on-exascale.md"
+            "filename": "../../discover-env-details-on-Exascale/discover-env-details-on-Exascale.md"
         },
         {
             "title": "Lab 3: Create Thin Clone of PDB",
