@@ -1,4 +1,4 @@
-
+SET VERIFY OFF
 COLUMN source_pdb NEW_VALUE source_pdb
 COLUMN thin_pdb NEW_VALUE thin_pdb
 SELECT LOWER(name) || '_pdba' source_pdb,

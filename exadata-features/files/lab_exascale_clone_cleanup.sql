@@ -1,3 +1,4 @@
+SET VERIFY OFF
 COLUMN source_pdb NEW_VALUE source_pdb
 COLUMN thick_pdb NEW_VALUE thick_pdb
 COLUMN thin_pdb NEW_VALUE thin_pdb

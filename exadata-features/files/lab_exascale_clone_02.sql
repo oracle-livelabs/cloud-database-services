@@ -1,3 +1,4 @@
+SET VERIFY OFF
 COLUMN space_used_gb NEW_VALUE hcsu_a NOPRINT
 SELECT ROUND(hc_space_used/1073741824) space_used_gb
 FROM v$exa_vault
