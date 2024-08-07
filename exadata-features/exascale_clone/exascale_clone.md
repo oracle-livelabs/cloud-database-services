@@ -127,7 +127,7 @@ This lab assumes:
     </copy>
     ```
 
-6. Show the total space used by data and temporary files grouped by pluggable database. The first column shows the total space used and the second column shows 10% of the total space used, which should give us an idea of the actual space used by the snapshot files of a thin clone. Note that all three pluggable databases appear to be the exact same size.
+6. Show the total space used by data and temporary files grouped by pluggable database. The first column shows the total space used as it is represented in the database. The second column shows actual space used as it is represented on Exascale storage, which should give us an idea of the actual space used by the snapshot files of a thin clone.
 
     ```text
     <copy>
@@ -135,13 +135,17 @@ This lab assumes:
     TTITLE LEFT 'PDB: ' pdbvar SKIP 2
     BREAK ON pdb SKIP PAGE
     COLUMN filename FORMAT A25
-    COMPUTE SUM OF gb, gb_ten_percent ON pdb
+    COMPUTE SUM OF gb gb_actual ON pdb
     SELECT p.name pdb, SUBSTR(v.name, INSTR(v.name, '/', -1)+1) filename, round(gb) gb,
         CASE WHEN p.name = (SELECT UPPER(name) FROM v$database) || '_THIN_CLONE'
-            THEN round(gb * 0.1, 1)
-            ELSE 0 END gb_ten_percent 
-    FROM (SELECT name, bytes/1024/1024/1024 gb, con_id FROM v$datafile 
-        UNION SELECT name, bytes/1024/1024/1024 gb, con_id FROM v$tempfile) v
+                AND v.filetype = 'DATAFILE'
+                THEN round(gb * 0.1, 1)
+            WHEN p.name = (SELECT UPPER(name) FROM v$database) || '_THIN_CLONE'
+                AND v.filetype = 'TEMPFILE'
+                THEN round(gb, 1)
+            ELSE 0 END gb_actual
+    FROM (SELECT 'DATAFILE' filetype, name, bytes/1024/1024/1024 gb, con_id FROM v$datafile 
+        UNION SELECT 'TEMPFILE' filetype, name, bytes/1024/1024/1024 gb, con_id FROM v$tempfile) v
     JOIN v$pdbs p ON (v.con_id = p.con_id)
     WHERE p.name LIKE (SELECT UPPER(name) FROM v$database) || '%'
     ORDER BY (CASE pdb
@@ -165,8 +169,8 @@ The small amount of space that is being used is from two sources:
     SELECT ROUND(hc_space_used/1073741824) space_used_gb
     FROM v$exa_vault
     WHERE LOWER(vault_name) = (SELECT LOWER(name) || 'vault' FROM v$database);
-    SELECT 'FULL CLONE' type, &hcsu_b - &hcsu_a space_used_raw, (&hcsu_b - &hcsu_a) / 2 space_used_actual UNION 
-    SELECT 'THIN CLONE' type, &hcsu_c - &hcsu_b space_used_raw, (&hcsu_c - &hcsu_b) / 2 space_used_actual FROM DUAL;
+    SELECT 'FULL CLONE' type, &hcsu_b - &hcsu_a space_used_raw, round((&hcsu_b - &hcsu_a) / 2) space_used_actual UNION 
+    SELECT 'THIN CLONE' type, &hcsu_c - &hcsu_b space_used_raw, round((&hcsu_c - &hcsu_b) / 2) space_used_actual FROM DUAL;
 
     </copy>
     ```
