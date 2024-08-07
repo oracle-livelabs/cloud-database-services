@@ -11,7 +11,7 @@ SELECT p.name pdb, SUBSTR(v.name, INSTR(v.name, '/', -1)+1) filename, ROUND(gb) 
         WHEN p.name = (SELECT UPPER(name) FROM v$database) || '_THIN_CLONE'
             AND v.filetype = 'TEMPFILE'
             THEN ROUND(gb, 1)
-        ELSE 0 END gb_actual
+        ELSE ROUND(gb) END gb_actual
 FROM (SELECT 'DATAFILE' filetype, name, bytes/1024/1024/1024 gb, con_id FROM v$datafile 
     UNION SELECT 'TEMPFILE' filetype, name, bytes/1024/1024/1024 gb, con_id FROM v$tempfile) v
 JOIN v$pdbs p ON (v.con_id = p.con_id)
