@@ -7,8 +7,8 @@
             "filename": "../../introduction/introduction_tenancy.md"
         },
         {
-            "title": "Lab 1: Explore Exadata Storage",
-            "filename": "../../cell/cell.md"
+            "title": "Lab 1: Exascale Database Clones",
+            "filename": "../../exascale_clone/exascale_clone.md"
         },
         {
             "title": "Lab 2: Smart Scan",
