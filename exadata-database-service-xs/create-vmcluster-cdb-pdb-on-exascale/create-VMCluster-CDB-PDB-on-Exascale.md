@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This lab walks you through how to create an instance of the Exadata Database Service on Exascale Infrasturcture using the OCI Console. 
+This lab walks you through how to create an instance of the Exadata Database Service on Exascale Infrastructure using the OCI Console. 
  
 
 Estimated Time: 2 Hours 10 minutes
@@ -22,7 +22,7 @@ This lab requires completion of the following:
 
 * Successful Login to a Tenancy with a service limit assigned for the **Exadata Database Service on Exascale Infrastructure**
 
-## Task 1: (Pre-Created for OCW Only) --> Create an Exadata VM Cluster Resource with Exadata on Exascale Cloud Infrastructure
+## Task 1: (***Pre-Created for OCW Session***) --> Create an Exadata VM Cluster Resource with Exadata on Exascale Cloud Infrastructure
 
 1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Exascale Infrastructure**.
 
@@ -39,7 +39,7 @@ This lab requires completion of the following:
 4. **Provide the basic information to configure the Exadata VM cluster**.
     * For Compartment: Ensure that the compartment that you want the VM Cluster to be created in is displayed. It should display **your assigned compartment**.
 
-    * For Display Name: Enter ***MyDemoExaDB-XS_VMClusterXX*** 
+    * For Display Name: Enter ***MyDemoVMClusterXX*** 
 
     * For Cluster Name: Enter ***MyDemoClus*** 
 
@@ -51,12 +51,13 @@ This lab requires completion of the following:
     * For the number of VMs in the cluster: ***Enter 2***
     * For ECPUs enabled per VM: ***Enter 8***
 
-      ***Reserve 4 additonal ECPUs*** by clicking on **Reserve additional ECPU to increase link** and entering the following:   
-    * For **Total ECPUs per VM:** Provide a total number of ECPUs to allocate per VM. ***Enter 12***.  
-    * The **ECPUs additional reserved per VM** field which is (read only) will now indicate that there are now **4 reserved ECPUs**. 
-    * The **Memory per VM (GB)** field which is (read only) will display the amount of memory allocated to each VM. ***Memory is calculated based on 2.75 GB per total ECPU***. 
+    * ***Reserve 4 additonal ECPUs*** by clicking on **Reserve additional ECPU to increase link** and entering the following:   
+        * For **Total ECPUs per VM:** Provide a total number of ECPUs to allocate per VM. ***Enter 12***.  
+        * The **ECPUs additional reserved per VM** field which is (read only) will now indicate that there are now **4 reserved ECPUs**. 
+    * The **Memory per VM (GB)** field which is (read only) will display the amount of memory allocated to each VM. <br/> 
+    ***Memory is calculated based on 2.75 GB per total ECPU***. 
 
-      **Size the VM file system storage**: 
+      <u>**Size the VM file system storage**</u>: 
     * For system storage capacity per VM (GG): ***Enter 280***
 
       **Note:**  The VM Filesystems storage includes /u02 capacity, where your Database Homes will go, along with all of the other VM filesystems (/, /boot, /tmp, /var, /var/log, /var/log/audit, /home, swap, kdump, /u01, grid, /u02). Any extra capacity selected beyond system minimums will go into /u02. 
@@ -67,7 +68,7 @@ This lab requires completion of the following:
     * Select **Create new vault**. 
 
     **For a new vault, specify the following:** 
-    * For the **Exascale Vault name:** enter ***MyDemoVaultXX*** . 
+    * For the **Exascale Vault name:** enter ***MyDemoStorageVaultXX*** . 
     * For the **Storage Capacity for Databases (GB):** ***enter 300***. 
 
     **Note:** The minimum size configuration for an Exascale Database Storage Vault is 300 GB. 200 GB of the space that you allocate in your Vault is reserved for a 200 GB ACFS file system. This ACFS file system resides within your Exascale Database Storage Vault, but is reserved for system use. Thus, if you provisioned the minimum of 300 GB in your Exascale Database Storage Vault, then 100 GB of that 300 GB capacity will be available storage for your databases. 
@@ -77,22 +78,28 @@ This lab requires completion of the following:
   ![Configure Exascale Storage Vault](./images/configure-exascale-storage-vault.png" ")
 
 7. **Select the Oracle Grid Infrastructure version and add SSH key:** 
-    * **Grid Infrastructure Release and Version fields:** display the Oracle Grid Infrastructure versions available for deployment in the VM cluster. ***Accept the default values for the 23ai release***.
+    * **Grid Infrastructure Release and Version fields:** display the Oracle Grid Infrastructure versions available for deployment in the VM cluster. <br/>
+    ***Accept the default values for the 23ai release***.
 
-    * **Add your SSH Key for future access to your VMs**. Choose from:
+    * **Add your SSH Key for future access to your VMs**. <u>Choose from:</u>
 
-      * **Generate SSH key pair**(Default option) Select this option to generate an SSH keypair. Then in the dialog below click Save private key to download the key, and optionally click Save public key to download the key. 
-      * **Upload SSH key files**: Select this option to browse or drag and drop .pub files. 
-      * **Paste SSH keys:** Select this option to paste in individual public keys.
+        * **Generate SSH key pair**(Default option) Select this option to generate an SSH keypair. Then in the dialog below click Save private key to download the key, and optionally click Save public key to download the key. 
+        * **Upload SSH key files**: Select this option to browse or drag and drop .pub files. 
+        * **Paste SSH keys:** Select this option to paste in individual public keys.
 
   ![Configure Grid Infrastructure and SSH access](./images/configure-grid-infra-and-SSH-access.png" ")
  
 
 8. **To Configure the network settings, Select VCN and select Client and Backup subnet** 
-    * **For the Virtual Cloud Network (VCN):** Click Change Compartment and select compartment named ***MyDemo***.  Then select the Virtual Cloud Network named ***MyDemoVCN***.
-    * **For the Client subnet:** Select the client subnet in the assigned compartment named ***ClientAXX***. This is the subnet to which the VM cluster should attach. 
-    * **For the Backup Subnet:** Click Change Compartment and select compartment named ***MyDemo***.  Then select the Backup Subnet named ***MyPrivateBackupSubnet***.
-    * **For the Hostname Prefix:** Enter ***DemoDBXX***
+    * **For the Virtual Cloud Network (VCN):** Click Change Compartment and select compartment named ***MyDemo***.  <br/>
+    Then select the Virtual Cloud Network named ***MyDemoVCN***.
+    
+    * **For the Client subnet:** Select the client subnet in the assigned compartment named ***MyClient-PrivateSubnetAXX***. <br/>
+    
+    * **For the Backup Subnet:** Click Change Compartment and select compartment named ***MyDemo***.  <br/>
+    Then select the Backup Subnet named ***MyBackup-PrivateSubnet***.
+    
+    * **For the Hostname Prefix:** Enter ***MyHostVM***
 
   ![Configure Network Settings](./images/configure-network-settings.png" ")
 
@@ -123,9 +130,9 @@ In the Edit Diagnostics Collection Settings dialog, you can enable or disable an
   ![Navigate to Exadata Database Service on Exascale Infrastructure](./images/console-to-exadb-xs.png" ")
 
 2. **Navigate to the cloud VM cluster you want to create the database in:**
-    * In the left rail, **VM Clusters** is selected by default. 
+    * In the left rail, ensure ***VM Clusters*** is selected. 
     * Under **List Scope**, Select your assigned compartment named ***MyCompartmentXX***. 
-    * Then **click on your clusters highlighted name** to view the **VM Cluster Details page**. 
+    * Then **click on your VM Clusters** ***assigned name*** to view the **VM Cluster Details page**. 
    
   ![Select Compartment and VM Cluster where Container Database will reside](./images/select-compartment-and-vm-cluster.png" ")
 
@@ -144,39 +151,33 @@ In the Edit Diagnostics Collection Settings dialog, you can enable or disable an
 5. Specify the **Database Home Source and Administrator Credentials:**
     * For the **Database Home source** choose: **Select an Existing Database Home**
     * Select Database Home with display name of ***MyDemo23aiDBhome01***
-    * Next configure your **Administrator Credentials:** by entering ***Pass4StudentXX*** as the **password** for the **sys** username.
+    * Next configure your **Administrator Credentials:** by entering ***Pass4StudentOCW24-#*** as the **password** for the **sys** username.
    
-  ![Define DBhome and Admin Password](./images/define-dbhome-and-admin-pwd.png " ")
+  ![Define DBhome and Admin Password Image](./images/define-dbhome-and-admin-pwd.png " ")
 
-6. Now lets **configure Automatic Backups** for the database
-    * Select the checkbox for ** Enable Automatic Backups**
-    * For the **Backup Destination:** Select ***Autonomous Recovery Service***
-    * For the **Protection Policy:** Select ***Silver***
-    * For the **Deletion options after database termination:** Select ***Retain backups according to the protection policy retention period***
-    * Next, **schedule the Day of the week and time for the initial backup to start:** Select ***Sunday between 4AM and 6AM***.
-    * Now wrap up the Automatic Backup configuration by **scheduling the time of day for the daily backups to start:** Select ***4AM to 6AM***
+6. For this lab, we will not be enabling **Automatic Backups** for the database during the create database workflow.
+    * **Uncheck the box for:** ***Enable Automatic Backups***
 
-  ![Configure Automatic Backups](./images/configure-automatic-backups-to-rcv.png " ")
+  ![Uncheck Enable Automatic Backups Image](./images/uncheck-enable-automatic-backups.png " ")
 
 7. **Review & Configure Advanced Options** for the Container Database by clicking on the **Show Advanced Options** link.
-    * Under the **Management tab** set the Oracle_SID to ***ExaXSDemoDB***  
-  ![Configure Adv Options - Mgmt Tab](./images/configure-adv-options-mgmt-tab.png " ")
+    * Under the **Management tab** set the Oracle_SID to ***ExascaleDemo***  
+  ![Configure Adv Options - Mgmt Tab Image](./images/configure-adv-options-mgmt-tab.png " ")
     * Under the **Encryption tab** you can select the desired key management method. Select ***Use Oracle-managed keys***.
-  ![Configure Adv Options - Encryption Tab](./images/configure-adv-options-encrypt-tab.png " ")
+  ![Configure Adv Options - Encryption Tab Image](./images/configure-adv-options-encrypt-tab.png " ")
 
     * Under the **Tags tab:** you can add free-form tags to your resource.  If you want to apply a defined tag, you must have permissions to use the tag namespace. Remember that you can also apply tags to your resources after they are provisioned.
-  ![Configure Adv Options - Tags Tab](./images/configure-adv-options-tags-tab.png " ")
+  ![Configure Adv Options - Tags Tab Image](./images/configure-adv-options-tags-tab.png " ")
 
 8. Click on the **Create Container Database** button to proceed with creating the Container Database.
 
+    ![Container Database Details Page Image](./images/cdb-details-page-with-pdb.png " ")
 ***!!! Congratulations:*** You may now **proceed to the next lab**. 
 
-<!--
+
 ## Learn More
 
-* Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/exadata/doc/ecc-create-first-db.html) to learn more about Creating an Oracle Database on Exadata Database Service.
-
--->
+* Click [here](https://docs.oracle.com/en-us/iaas/exadb-xs/doc/manage-vm-clusters.html) to learn more about managing the VM clusters on the Exadata Database Service on Exascale Infrastructure.
 
 ## Acknowledgements
 

@@ -1,92 +1,108 @@
-# Create Application and Database Custom Image using OCI Console
+# Create Thin Clone of an Oracle Pluggable Database (PDB) leveraging Exadata Exascale Technology
 
 
 ## Introduction
 
-This lab walks you through creating Application and Database Custom Image using the OCI Console. 
+This lab walks you through how to create a thin cloned Oracle Pluggable Database of a Pluggable Database that is created on Exadata Exascale Infrastructure.
  
-  * **Database software images** are resources containing Oracle Database software used to provision and patch Oracle Databases and Oracle Database Homes.
-  * **Database software images** are either **Oracle-published software releases** or **custom software images you create**.
-  * **Custom Database Software Images** include specified patches and updates that meet your organization's standards.
+  * For Pluggable Databases created on the Exadata Database Service on Exascale Infrastructure (**ExaDB-XS**), you can clone an Oracle Pluggable Database as a standard **clone** or as a **thin clone** (***unique to ExaDB-XS***). 
+  * A PDB **clone** is an independent and complete copy of the given database as it existed at the time of the cloning operation. 
+  * A PDB **thin clone** is a special type of the Local Clone, that leverages the Exascale redirect-on-write technology, that allows the thin clone PDB to share unchanged storage blocks with the parent PDB. This results in the fast creation of the thin cloned PDB with reduced space consumption.
 
-Estimated Time: 10 minutes
+ * ***The following types of clones are supported:*** 
+    * ***Local Clone***: A full copy of the PDB that is created within the same CDB. 
+    * ***Thin Clone***: A thin clone copy of the PDB that is created within the same CDB (***Option Only avaiable for Local Clones***). 
+    * ***Remote Clone***: A full copy of the PDB that is created in a different CDB. 
+    * ***Refreshable Clone***: A refreshable clone enables you to keep your remote clone updated with the source PDB. The only open mode you can have is read-only and refresh cannot be done while it is in read-only mode. 
+   
+
+**Estimated Time:** ***10 minutes***
 
 Watch the video below for a quick walk-through of the lab.
-  [Create a Custom Database Software Image](youtube:jwxxIih3brQ)
+  [Create a Thin Clone PDB on ExaDB-XS](youtube:"Place Holder")
 
-### Objectives
+### **Objectives**
 
--   After completing this lab, you should be able to create application and database custom image using the OCI Console.
+-   After completing this lab, you should be able to navigate to your VM Cluster, locate your desired Container Database, and create a thin cloned Oracle Pluggable Database on the Exadata Database Service on Exascale Infrastructure using the OCI Console.
 
 
-### Prerequisites
+### **Prerequisites**
 
 This lab requires the completion of the following:
 
-* Completion of **Lab1**
+* Successful creation of a VM Cluster on Exadata Database Service on Exascale Infrastructure.
+* Successful creation of Container Database on the VM Cluster, which will also includes the initial PDB.
 
-## Task 1: Create Application Custom Image using OCI Console
+## Task 1: Create a Thin Clone PDB using OCI Console
 
-1. Open the navigation menu and click **Compute**. Under Compute, click **Instances**.
+1. Navigate to the Exadata Database Service on Exascale Infrastructure using OCI Console
 
-  ![Naviage OCI Compute](./images/navigate-compute-instance.png" ")
+    * Open the **navigation menu** and click ***Oracle Database***. 
+    * Under **Oracle Database**, click ***Oracle Database Service on Exascale Infrastructure***.
+  ![Navigate from OCI Console to ExaDB-XS](./images/console-to-exadb-xs.png " ") 
+    * **Note:** This will cause the **VM Clusters** page to be displayed.
 
-2. In the left rail, **Instances** is selected by default. Select your assigned compartment named ***MyCompartmentXX***. 
-   
-   Click on the name of your **Assigned Custom Application Server** named ***MyCustomAppServer***.
+2. Navigate to your Compartment and VM Cluster
 
-  ![Click MyCustomAppServer Instance](./images/click-create-instance.png" ")
+    * On the left rail, ensure that **VM Clusters** is selected (default selection). 
+    * For the **List Scope**, select your assigned compartment named ***MyCompartmentXX***. 
+    * In the list of displayed VM clusters, click on the name of your **Assigned VM Cluster** named ***MyDemoVMClusterXX***.
+  ![Navigate to Compartment and VM Cluster](./images/select-compartment-and-mydemo-vm-cluster.png " ")
+    * **Note:** This will cause the **VM Cluster Details** page to be displayed.
 
-3. Click **More Actions**, and then click **Create custom image**.
+3. Navigate from the VM Cluster to the Container Database (CDB)
 
-  ![Create Custom App Server More Actions](./images/click-instance-more-actions.png " ")
+    * On the left rail under the **Resources** section, click on ***Container Databases***, 
+    * In the list of Container Databases diplayed, click on the name of the Container Database whose PDB we will create a thin clone of. Click on ***MyDemoDB***. 
+  ![Navigate from VM Cluster to Container Database (CDB)](./images/mydemo-vm-cluster-details-page-to-cdb.png " ")
+    * **Note:** This will cause the **Container Database Details** page to be displayed.
 
-4. In the **Create in compartment** list, Select your assigned compartment ***MyCompartmentXX***
-   
-   Enter a **Name** for the image. For this lab, use the name ***MyCustomAppServerImage***
+4. Navigate from CDB to Pluggable Database (PDB)
 
-   ![Create Custom App Server Image](./images/create-custom-app-image.png " ")
+    * On the left rail under the **Resources** section, click on ***Pluggable Databases***. 
+    * From the list of available Pluggable Databases displayed, click on the name of the Pluggable Database we will create a thin clone of. Click on ***MyPDB01***. 
+  ![Navigate from CDB to Pluggable Database (PDB)](./images/navigate-cdb-to-pdb.png " ")
+    * **Note:** This will cause the **Pluggable Database Details** page to be displayed.
 
-5. Click **Create custom image**.
+5. Initiate the **Clone** Pluggable Database action
+
+    * On the **Pluggable Database Details** page, initiate the Clone PDB action by clicking on the ***Clone*** action button.
+  ![Initiate Clone Pluggable Database Action](./images/pdb-details-clone-pdb.png " ")
+    * **Note:** This will cause the **Clone Pluggable Database** configuration page to be displayed.
+
+6. Configure Clone PDB options and check the box to **Enable Thin Clone**
+
+    * In the **Clone Pluggable Database** configuration page, select the PDB Clone type. Select ***Local Clone***.
+    * Provide the information to configure the new PDB. 
+        * For the **PDB Name** enter: ***ThinPDB1***
+        * For the **Database TDE wallet password** enter: ***Pass4StudentOCW24-#***
+        * Ensure to ***check the box*** to **Enable Thin Clone**
+        * Click on the ***Create Pluggable Database*** button to start the clone provisioning process.
+  ![Configure Clone options and check box to Enable Thin Clone](./images/configure-pdb-thin-clone.png " ")
+    * **Note:** that the thin PDB clone will be created and presented as a new PDB.
+  ![New Thin Clone PDB Details page](./images/available-pdb-thin-clone-details-page.png " ")
+
+7. List all of the PDBs in the Container Database (CDB). 
+
+    * From the **Pluggable Database Details** page, select the ***Container Database Details*** link in the breadcrumb path at the top of the page.
+    * **Note:** that this will cause the **Container Database Details** page to be displayed.
+  ![List Thin Clone PDB from CDB](./images/list-pdb-thin-clone-from-cdb.png " ")
+    * On the left rail under the **Resources** section, click on ***Pluggable Databases***. 
+    * **Note:** that this will cause a list of available Pluggable Databases to be displayed and that the Thin Clone PDB is listed, as just another PDB.
+    
+    
+***Congratulations!!!*** You may now **proceed to the next lab**. 
 
 
-## Task 2: Create Custom Database Software Image using OCI Console
-
-1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Cloud@Customer**.
-
-2. Under **Resources**, click **Database Software Images**.
-
-3. Click **Create Database Software Image**.
-
-    ![Create Custom Database Software Image](./images/create-custom-dbsw.png " ")
-
-4. In the **Display name** field, provide a name for your database software image. For this lab, use the name ***MyCustomDBimage***
-   
-5. Choose your **assigned compartment** ***MyCompartmentXX***. 
-   
-    ![Create Custom Database Software Image](./images/create-dbsw-page.png " ")
-
-6. Choose the **Database version** for your image. For this workshop, select the ***19c*** version.
-
-7. Choose the **patch set update, proactive bundle patch, or release update**. For this workshop, choose ***19.18.0.0***
-
-8. Click **Create Database Software Image**.
-
-    ![Create Custom Database Software Image Dialog Page](./images/create-dbsw-version-page.png " ")
-
-You may now **proceed to the next lab**. 
-
-<!--
 ## Learn More
 
-* Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/exadata/doc/ecc-create-first-db.html) to learn more about Creating an Oracle Database on Exadata Database Service.
+* Click [here](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/exadata/doc/ecc-create-first-db.html) to learn more about Creating an Oracle Pluggable Database on Exadata Database Service on Exascale Infrastructure.
 
--->
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Eddie Ambler, Product Management
+* **Author** - Eddie Ambler, Leo Alvarado, Product Management
 
 * **Contributors** - Tammy Bednar, Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, September 2023.
+* **Last Updated By** - Eddie Ambler, Product Management, July 2024.
