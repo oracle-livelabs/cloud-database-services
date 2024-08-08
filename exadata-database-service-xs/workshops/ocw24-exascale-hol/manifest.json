@@ -18,7 +18,6 @@
             "title": "Lab 1: Create Instance of Exadata Database Service on Exascale Infrastructure",
             "description": "Learn how to Create Instance of Exadata Database Service on Exscale Infrastructure using OCI Console",
             "filename": "../../create-vmcluster-cdb-pdb-on-exascale/create-vmcluster-cdb-pdb-on-exascale.md"
-            
         },
        {
             "title": "Lab 2: Discover VM Cluster, Container Database, & Pluggable Database Details",
