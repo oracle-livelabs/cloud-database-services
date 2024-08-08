@@ -1,29 +1,23 @@
 
 
 
-# Scale Exadata VM Cluster Resources using OCI CLI
+# Scale Exascale Storage Vault Resources
 
 
 ## Introduction
 
-The OCI CLI is a small footprint tool that you can use on its own or with the Console to perform Database Cloud Services resource tasks and other OCI tasks. The CLI provides the same core functionality as the Console, plus additional commands. Some of these, such as the ability to run scripts, extend the Console's functionality.
-
-**Cloud Shell**: The CLI is pre-configured with your credentials and ready to use immediately from within Cloud Shell. 
-
-**Oracle Linux Cloud Developer image**: The CLI is pre-installed on the Oracle Linux Cloud Developer platform image. For more information.
-
-The CLI is built on the Oracle Cloud Infrastructure SDK for Python and runs on Mac, Windows, or Linux. The Python code makes calls to Oracle Cloud Infrastructure APIs to provide the functionality implemented for the various services. These are REST APIs that use HTTPS requests and responses.
-
-This lab walks you through the steps to Scale the Exadata VM Cluster OCPU resource using OCI CLI.
+This lab walks you through the steps to Scale the Exascale Storage Vault Resources using the OCI Console.
 
 Estimated Time: 10 minutes
 
-<!-- Watch the video below for a quick walk-through of the lab.
-[Create Oracle Database](youtube:JJ4Wx0l0gkc)
--->
+Watch the video below for a quick walk-through of the lab.
+[Scale Exascale Storage Vault Resources](youtube:"placeholder")
+
+
 ### Objectives
 
--   After completing this lab, you should be able to scale Exadata VM Cluster OCPU resource using OCI CLI
+-   After completing this lab, you should be able to scale the Exascale Storage Vault Resources using the OCI Console.
+-   List Exascale Storage Vault configuration using CLI
 
 
 ### Prerequisites
@@ -33,57 +27,81 @@ This lab requires the completion of the following:
 * Completion of **Lab1**
 
 
-## Task 1: Scale Exadata VM Cluster OCPU using OCI CLI
+## Task 1: Scale the Exascale Storage Vault Resources using the OCI Console
 
-1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Cloud@Customer**.
+1. Open the navigation menu. Under ***Oracle Database***, Click ***Oracle Exadata Database Service on Exascale Infrastructure***.
    
-   ![navigage oci console](./images/navigateocimenu.png " ")
+   ![navigate oci console](./images/navigateocimenu.png " ")
 
-2. In the left rail, **Exadata VM Clusters** is selected by default. Select your assigned Compartment ***MyCompartmentXX***. 
+2. On the left rail, click **Exascale Storage Vaults**. 
    
-   Click on the name of your assigned VM Cluster ***MyVMClusterXX***. The VM Cluster Details page displays information about the selected VM cluster. 
+   Select the name of your assigned Vault ***MyDemoStorageVaultXX*** that you want to scale. 
+
+   ![Display Exascale Storage Vaults](./images/exascale-storage-vault-list.png "Display Exascale Storage Vaults")
     
-   Under the **General Information**, In the OCID Field. Click on **Show** to display the VM Cluster OCID, and Click on **Copy** and paste the **VM Cluster OCID** to your notepad or text editor.
-
-   Under the **Resource allocation**, pay attention to the number of ***OCPUs:*** which has the value of ***6***
-  
-   ![vm cluster details page](./images/vmcluster-details-page.png " ")
-
-3. To use OCI CLI for this lab, we will be using the ***Cloud OCI Shell tool***, where CLI is pre-configured with your credentials and ready to use immediately from within Cloud Shell in the OCI Web Console. 
+3. The Exascale Storage Vault Details page displays information about the selected Vault. 
    
-   Click the Cloud Shell/Code Editor icon in the Console header and select Cloud Shell from the drop-down menu. 
+   Click on ***Scale storage vault***.
+
+   ![Display Exascale Storage Vaults](./images/exascale-storage-vault-details-page.png "Display Exascale Storage Vaults")
+
+   On the Scale Storage Vault dialog, enter a number for the capacity for High Capacity storage. 
+      >**Note:** This number should be the value for the total storage that you want to have provisioned after the scaling operation completes.
    
-   ![oci cloudshell](./images/cloudshell.png " ")
+   
+
+   For this lab, enter the value of ***400*** for the ***Storage capacity for Databases (GB)***, as we will scale up the Exascale Database Storage Vault from **300 GB to 400 GB**.
+
+   ![Scale Exascale Database Storage Vault](./images/scale-up-storage-vault.png "Scale Exascale Database Storage Vault")
+
+4. Click ***Save Changes***. Your Vault will be scaled automatically. 
+   
+      >**Note:** Once the scale up operation is complete, the Exascale Storage Vault status will change from ***Updating*** to ***Available***.
+
+   ![copy storage vault ocid](./images/scale-up-storage-vault-updating.png "copy storage vault ocid")
+
+   In the Exascale Storage Vault Details page, Copy the Storage Vault OCID by clicking the ***copy*** button in the **OCID** field under the **General Information** section. 
+   Paste the copied ***Exascale Storage Vault OCID*** to a text editor.
+
+   ![copy storage vault ocid](./images/scale-up-storage-vault-available.png "copy storage vault ocid")
+
+## Task 2: List Exascale Storage Vault Configuration using CLI
+
+To use OCI CLI for this lab, we will be using the ***OCI Cloud Shell tool***. 
+
+1. Click the **Developer tools** icon in the console header and select ***Cloud Shell*** from the drop-down menu. 
+   
+   ![navigate to oci cloudshell](./images/cloudshell.png "navigate to oci cloudshell")
 
    This displays the Cloud Shell in a "drawer" at the bottom of the console:
 
-   ![oci cloudshell](./images/cloudshelllaunch.png " ")
+   ![oci cloudshell launch](./images/cloudshelllaunch.png "oci cloudshell launch")
 
-4. Run the OCI CLI Command to Scale down the **VM Cluster OCPU Resources** from **6 OCPUs** to **4 OCPUs**
+2. Run the OCI CLI Command to get the Exascale Storage Vault Configuration.
 
-      >**Note:** Replace ***{vmClusterId}*** with VM Cluster OCID copied from *(Task 1 Step 2)*
+      >**Note:** Replace ***{ExascaleVaultID}*** with the Exascale Storage Vault OCID copied from *(Task 1 Step 4)*
 
     ```
     <copy>
 
-      oci db vm-cluster update --vm-cluster-id {vmClusterId} --cpu-core-count 4 --query 'data.{VMClusterOCID:id, DisplayName:"display-name", LifecycleState:"lifecycle-state", CompartmentOCID:"compartment-id"}'
+      oci db exascale-db-storage-vault get --exascale-db-storage-vault-id {ExascaleVaultID}
 
     </copy>
     ```
 
-  ![scale number of ocpus](./images/scale-ocpu.png " ")
-
    After running the command, you will see similar output below.
 
-  ![LifecycleState of updating is displayed for scale number of ocpus](./images/scale-vm-cluster-updating.png " ")
+   ![show storage vault details](./images/get-storage-vault-details.png "show storage vault details")
 
-   While the scale up process is running, you can see the LifecycleState of the VM cluster is changed to ***Updating***. Copy the ***Compartment OCID*** from the extracted values of the OCI CLI command results and paste it in your notepad or text editor for later use.
+   The output of the command displays information about the configuration of the selected  ***Exascale Storage Vault***, such as:
 
-You may now **proceed to the next lab**
+      * ***Storage Vault Display Name***
+      * ***Exascale Database Storage Capacity Available size in gbs***
+      * ***Exascale Database Storage Capacity Total size in gbs***
+      * ***Lifecycle state***
+      * ***Exascale Storage Vault Associated VM Cluster Count and OCID***
 
-## Learn More
-
-* Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-manage-vm-clusters.html#GUID-B9529795-C3D0-423A-B83F-BDD96AB29E32) to learn more about Scaling Up or Scaling Down the VM Cluster Resources for Exadata Database Service on Cloud@Customer.
+***Congratulations!!!*** You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
@@ -91,4 +109,4 @@ You may now **proceed to the next lab**
 
 * **Contributors** - Tammy Bednar, Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, September 2023.
+* **Last Updated By** - Leo Alvarado, Product Management, August 2024.
