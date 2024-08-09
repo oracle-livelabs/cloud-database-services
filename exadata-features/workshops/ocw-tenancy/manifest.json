@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Experiment with Oracle Exadata Platform performance features",
+    "workshoptitle": "Hands-on for High Database Performance with Exadata Exascale and Exadata 24.1",
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
@@ -27,7 +27,7 @@
             "filename": "../../storage_indexes/storage_indexes.md"
         },
         {
-            "title": "Oracle CloudWorld 2023 - Need Help",
+            "title": "Oracle CloudWorld 2024 - Need Help",
             "filename": "https://oracle-livelabs.github.io/common/support/ocwsupportlab/ocwsupportlab.md"
         }
     ]
