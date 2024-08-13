@@ -6,9 +6,16 @@
 
 ## Introduction
 
-The OCI Notifications service communicates when something happens with your resources in Oracle Cloud Infrastructure.
+This lab walks you through the steps to configure & validate notifications for monitoring ECPU Scaling changes.
+
+Estimated Lab Time: 15 minutes
+
+Watch the video below for a quick walk-through of the lab.
+[Configure & Validate Notifications for Monitoring ECPU Scaling changes](youtube:"placeholder")
 
 **How Notifications Work?**
+
+The OCI Notifications service communicates when something happens with your resources in Oracle Cloud Infrastructure.
 
 The Notifications service lets you to set up communication channels for publishing messages using topics  and subscriptions. When a message is published to a topic, the Notifications service sends the message to all of the topic's subscriptions.
 
@@ -40,13 +47,6 @@ The following concepts are essential to working with OCI Notifications Service:
 **Create Events Rule to Create Notification Automation for Database Service Events**
 
 The Database Service Events feature implementation generates events for Data Plane operations and conditions and Notifications by leveraging the existing OCI Events service and Notification service. Users can subscribe to the Database Service Events and receive notifications. To receive notifications, subscribe to the Database Service Events and get notified using the Oracle Notification service.
-
-This lab walks you through the steps to configure & validate notifications for monitoring ECPU Scaling changes.
-
-Estimated Lab Time: 15 minutes
-
-Watch the video below for a quick walk-through of the lab.
-[Configure & Validate Notifications for Monitoring ECPU Scaling changes](youtube:"placeholder")
 
 ### Objectives
 
