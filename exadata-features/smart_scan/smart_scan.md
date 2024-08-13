@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this practice, you are introduced to the Smart Scan capability of Exadata. You will execute queries with and without Smart Scan enabled, and examine statistics to measure the effect of Smart Scan.
+In this practice, you are introduced to the Smart Scan capability of Exadata. You will execute queries with and without Smart Scan enabled, and examine statistics to measure the effect of Smart Scan. There are two tasks in this lab. The first task demonstrates the query results without the Smart Scan capabilities. The second task demonstrates the advantages of using Smart Scan when executing the exact same query.
 
 Estimated Time: 10 minutes
 

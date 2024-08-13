@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this practice, you are introduced to the Storage Indexes capability of Exadata.
+In this practice, you are introduced to the Storage Indexes capability of Exadata. There are two tasks in this lab. The first task demonstrates the query results without the Storage Index capabilities. The second task demonstrates the advantages of using Storage Indexes when executing the exact same query.
 
 Estimated Time: 10 minutes
 

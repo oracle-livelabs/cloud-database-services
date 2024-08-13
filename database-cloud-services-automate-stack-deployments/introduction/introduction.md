@@ -6,9 +6,9 @@ This workshop walks you through all the steps to automate the deployment of data
 
 Gain hands-on experience on how to create standard images, discover & capture gold environment images, and use automation to deploy standardized environment stacks.
 
-Estimated Workshop Time: 70 minutes
+Estimated Workshop Time: 80 minutes
 
-**OCI Management Interfaces for Database Cloud Services**
+**Oracle Database Cloud Services Automation Functions**
 
 Oracle Cloud Infrastructure provides a wide choice of management interfaces that can be used with Oracle Database Cloud Services.  
 
@@ -50,7 +50,7 @@ Oracle Exadata Database Service on Cloud@Customer enables you to apply the combi
 
 Oracle Exadata Database Service on Cloud@Customer is the simplest way to move an organization’s business-critical Oracle Database workloads to the cloud. It simultaneously runs Oracle Exadata Database Service and the fully managed Oracle Autonomous Database Service inside customers’ data centers and behind their firewalls to help meet strict data residency and security requirements.
 
-These hands-on lab guides provide step-by-step directions to Learn how to automate the deployment of database environments that will run on the Oracle Exadata Database Service on Cloud@Customer using the OCI Management interfaces (OCI Console, CLI, APIs, SDKs, and Terraform). 
+These hands-on lab guides provide step-by-step directions to Learn how to automate the deployment of Oracle Database environments that will run on the Exadata Database Service on Cloud@Customer using the OCI Management interfaces (OCI Console, CLI, APIs, SDKs, and Terraform). 
 
 Gain hands-on experience on how to create standard images, discover & capture gold environment images, and use automation to deploy standardized environment stacks.
 
@@ -60,6 +60,8 @@ You may now **proceed to the next lab**.
 ## Learn More
 
 * Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-whats-new-in-exadata-cloud-at-customer-gen2.html#GUID-2F27E5A9-67A8-459E-9453-81E1F68043DE) to learn about What's New in Exadata Database Service on Cloud@Customer.
+  
+* Click the [Learning Path](https://mylearn.oracle.com/ou/learning-path/become-a-exadata-database-service-cloud-administrator/121071) to become a Exadata Database Service Cloud Administrator
 
 ## Acknowledgements
 

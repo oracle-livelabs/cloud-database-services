@@ -1,4 +1,4 @@
-# Get started - Oracle Solution Center login
+# Get started - Connect to Oracle Cloud Tenancy
 
 
 ## Introduction
@@ -7,12 +7,11 @@ Oracle Cloud is the industry's broadest and most integrated cloud provider, with
 
 Estimated Time: 5 minutes
 
-Types of Cloud Accounts
-We offer two types of Cloud Accounts:
+<u>**Types of Cloud Accounts that can be used for this workshop:**</u>
 
-*Free Tier Accounts*: After you sign up for the free Oracle Cloud promotion or a paid account, you’ll get a welcome email. The email provides you with your cloud account details and sign-in credentials.
+**Oracle Cloud Paid Accounts**: When your tenancy is provisioned, Oracle sends an email to the default administrator at your company with the sign-in credentials and URL. This administrator can then create a user for each person who needs access to the Oracle Cloud. Check your email or contact your administrator for your credentials and account name.
 
-*Oracle Cloud Paid Accounts*: When your tenancy is provisioned, Oracle sends an email to the default administrator at your company with the sign-in credentials and URL. This administrator can then create a user for each person who needs access to the Oracle Cloud. Check your email or contact your administrator for your credentials and account name.
+**Global Oracle Solutions Center (OSC) provided Account**: This type of environment can be obtained by engaging with your Sales Engineer to coordinate obtaining approval to obtain an Event Code which will provide access to an OSC provided environment.
 
 
 
@@ -21,7 +20,7 @@ We offer two types of Cloud Accounts:
 -->
 ### Objectives
 
--   Learn how to log in to Oracle Cloud using **Oracle Solution Center** login
+-   For this workshop we will learn how to login to a tenancy provided by the **Global Oracle Solutions Center**. 
 
 
 ### Prerequisites
@@ -32,9 +31,12 @@ We offer two types of Cloud Accounts:
 
 * **Password** - Your assigned password for this workshop
 
-## Task 1: Log in to Oracle Cloud
 
-1. Go to [cloud.oracle.com](https://cloud.oracle.com), enter your **Cloud Account Name** *(**assigned tenancy**)*,  and click **Next**. 
+## Task 1: Log in to Oracle Cloud Tenancy provided by Global Oracle Solutions Center
+
+1. Go to [<u>**cloud.oracle.com**</u>](https://cloud.oracle.com/?region=us-sanjose-1&tenant=oscnas001) and enter your **Cloud Account Name** *(**Assigned Tenancy**)*. 
+   
+   For this workshop, make sure your assigned tenancy named ***oscnas001*** is selected. 
    
 
    ![osc login](./images/osc-login.png " ")
@@ -48,6 +50,9 @@ We offer two types of Cloud Accounts:
    
    ![oci login](./images/oci-login-page.png " ")
 
+## Task 2: Review Exadata Database Service, Exadata Cloud Infrastructure, Custom Database & Application Images, and Oracle Database Cloud MAA
+
+  *(For this lab, The Exadata Database Service on Cloud@Customer Resource Model is pre-provisioned - Informational Instructions for navigating the Exadata Database Service on Cloud@Customer environment will be presented by the speakers)*
 
 You may now **proceed to the next lab**.
 

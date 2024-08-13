@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this practice, you are introduced to the cellcli utility for querying and manipulating Exadata storage attributes. You will execute list commands to show various Exadata storage components.
+In this practice, you are introduced to the cellcli utility for querying and manipulating Exadata storage attributes. You will execute list commands to show various Exadata storage components. None of these commands will make changes to the system you are working on.
 
 Estimated Time: 20 minutes
 

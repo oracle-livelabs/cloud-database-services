@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this practice, you are introduced to the Flash Cache capability of Exadata.
+In this practice, you are introduced to the Flash Cache capability of Exadata. There are two tasks in this lab. The first task demonstrates the query results without the Flash Cache capabilities. The second task demonstrates the advantages of using Flash Cache when executing the exact same query.
 
 Estimated Time: 10 minutes
 
@@ -55,7 +55,7 @@ This lab assumes:
     </copy>
     ```
 
-    > Note: If cell flash cache read hits is not showing near zero, run the `lab_flash_cache_cleanup.sql` script to reset the table used for this practice and start the practice over again.
+    > Note: If `cell flash cache read hits` is not showing near zero, run the `lab_flash_cache_cleanup.sql` script to reset the table used for this practice and start the practice over again.
 
 ## Task 2: Query With Flash Cache
 
@@ -90,6 +90,8 @@ This lab assumes:
     @lab_flash_cache_01.sql
     </copy>
     ```
+
+    > Note: If `cell flash cache read hits` is showing zero, you may be running this lab on a system with Extreme Flash storage cells. Since the flash cache on EF systems prior to X10M is on the storage disks and is not used for standard queries, `cell flash cache read hits` shows zero.
 
 You may now **proceed to the next lab**.
 

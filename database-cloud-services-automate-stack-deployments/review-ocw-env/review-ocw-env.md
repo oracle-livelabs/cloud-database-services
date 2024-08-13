@@ -1,12 +1,12 @@
 
 
 
-# Review and Connect to Oracle CloudWorld Lab Environment
+# Discover and Connect to Oracle CloudWorld Lab Resources
 
 
 ## Introduction
 
-This lab walks you through reviewing and connecting to the Oracle Cloud World lab environment.
+This lab walks you through on how to discover and connect to the Oracle Cloud World lab resources.
 
 Estimated Time: 15 minutes
 
@@ -15,23 +15,19 @@ Estimated Time: 15 minutes
 -->
 ### Objectives
 
--   After completing this lab, you should be able to learn how to navigate, review and connect to the Oracle Cloud World lab environment.
+-   After completing this lab, you should be able to learn how to navigate, discover and connect to the Oracle Cloud World lab resources.
 
 ### Prerequisites
 
 This lab requires completion of the following:
 
 * Login to **Oracle Cloud** using **OSC's tenancy** with your assigned workshop credentials
-* Obtain your assigned **Secure Global Desktop (SGD)** login credentials
 
 
 
 
-## Task 1: Review creating an Exadata Database Service on Cloud@Customer Resource Model
 
-  *(For this lab, The Exadata Database Service on Cloud@Customer Resource Model is pre-provisioned - Informational Instructions for navigating the Exadata Database Service on Cloud@Customer environment will be presented by the speakers)*
-
-## Task 2: Discover and Connect to the Application Server (Oracle Cloud Developer Image)
+## Task 1: Discover and Connect to the Application Server (Oracle Cloud Developer Image)
 
 1. Open the navigation menu. Under **Compute**, click **Instances**.
    
@@ -41,87 +37,77 @@ This lab requires completion of the following:
    
 3. Select your assigned **Compartment**.
    
-   The list of Instances displays. The **name**, **state**, and **IP address** are displayed for each compute host.
+   From the list of Instances displays. Find the Compute named ***MyCustomAppServer***, and document the ***Private IP address*** for later use.
 
    ![discover compute networking details](./images/discover-app-server.png " ")
    
-4. Launch the **Secured Global Desktop (SGD)** by clicking on this [URL](https://sgdsca.osc.oracle.com/sgd/thin.jsp?clientmode=installed) 
-   
-   ![SGD login](./images/sgd-login.png " ")
-   
-   Enter your assigned Secured Global Desktop **username** and **Password** for your login.
 
-5. Launch the SGD Linux Desktop
-   
-   ![SGD linux Desktop](./images/sgd-linux-desktop.png " ")
-
-6. Open the terminal and type the following command. 
-   
-   ![ssh to database client](./images/ssh-app-tool.png " ")
-    
-      ```
-        <copy>
-
-        ssh ocw23bastion.us.osc.oracle.com 
-
-        </copy>
-      ```     
-
-7. Use the assigned SSH Key to connect to the application server instance
+4. Open your local terminal and run the command to connect to the local OSC Bastion Server
    
       ```
         <copy>
 
-        ssh -i ~/sshkey_student_xx.key -l opc (Use the IP address of the application server discovered in Step 2)
+        ssh -i ~/sshkey_student_xx.key -l {login name} ocw23oscbastion 
 
         </copy>
         ```
-## Task 3: Discover and Connect to an Exadata Database Service Virtual Machine with SSH 
+    
+    >**Note:** Replace the **{login name}** with your assigned username login ***student_XX*** for the local OSC Bastion Server 
+
+5. From the local OSC Bastion Server, Run the command to connect to the Application Server with SSH.
+   
+      ```
+        <copy>
+
+        ssh -i ~/sshkey_student_xx.key -l opc {App Server IP Address} 
+
+        </copy>
+        ```
+    
+    >**Note:** Replace the **{App Server IP Address}** with the ***Private IP address of the Application Server*** you obtained from *Step 3*
+
+## Task 2: Discover and Connect to an Exadata Database Service Virtual Machine with SSH 
 
 1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Cloud@Customer**.
    
    ![navigage oci console](./images/navigateocimenu.png " ")
 
-2. Select the assigned **Compartment**, then Navigate to the **VM Cluster Details** page of the VM Cluster that contains the virtual machine you are interested in.
+2. Select your assigned **Compartment**, and Click your assigned **VM Cluster** named ***MyVMClusterXX***.
+   
+   ![navigate to exadata vmcluster](./images/navigate-vmcluster.png " ")
 
     The VM Cluster Details page displays information about the selected VM cluster.
 
-3. In the **Resources** list, click **Virtual Machines**.
+   ![exadata vmcluster details page](./images/vmcluster-details-page.png " ")
+
+
+3. Under the **Resources** section on the left banner, click on **Virtual Machines**.
 
     The list of virtual machines displays. The **name**, **state**, and **client IP address** are displayed for each virtual machine in the VM cluster.
 
-4. Find the virtual machine you want in the Virtual Machines list and check its state.
-
-    The color of the icon and the associated text indicate its status.
-
-      * **Available**: Green icon. The node is operational.
-      * **Starting**: Yellow icon. The node is starting because of a start or reboot action in the Console or API.
-      * **Stopping**: Yellow icon. The node is stopping because of a stop or reboot action in the Console or API.
-      * **Stopped**: Yellow icon. The node is stopped.
-      * **Failed**: Red icon. An error condition prevents the continued operation of the virtual machine.
-
-    Take note of the client IP address of the virtual machine.
+4. Find and document the **Client IP Address** of the first virtual machine for later use.
 
     ![VM Client IP](./images/vm-client-ip.png" ")
 
-5. From your Bastion host *(In Task 2 Step 5)*, Run the command to connect to the Exadata Database Service Virtual Machine with SSH.
+5. From the Application Server, Run the command to connect to the Exadata Database Service Virtual Machine with SSH.
 
       ```
               <copy>
 
-              ssh -i ~/sshkey_student_xx.key -l opc (IP address of the virtual machine, obtained from step 4)
+              ssh -i ~/sshkey_student_xx.key -l opc {Exadata VM IP Address}
 
               </copy>
       ```
        
+      >**Note:** Replace **{Exadata VM IP Address}** with the Exadata Virtual Machine ***Client IP Address*** obtained from *step 4*
 
-## Task 4: Discover and Connect to the Oracle Database on Exadata Database Service
+## Task 3: Discover and Connect to the Oracle Database on Exadata Database Service with Oracle Sqldeveloper
 
-1. From the Virtual Machines list page, On the left rail, Under **Resources**, Click on **Databases**, then Click on the **Name of your Container Database**. 
+1. From the Virtual Machines list page, Under the **Resources** section on the left banner, Click on **Databases**, then Click on the **Container Database** named **MyCDB01**. 
 
   ![Navigate CDB](./images/navigate-cdb.png" ")
 
-2. On the left rail, under **Resources**, Click on **Pluggable Databases**. Then Click on the **Name of your Pluggable Database**.
+2. Under the **Resources** section on the left banner, Click on **Pluggable Databases**. Then Click on the **Pluggable Database** named **MyPDB**.
 
   ![PDB list menu](./images/mypdb-list.png" ")
 
@@ -133,20 +119,32 @@ This lab requires completion of the following:
 
   ![PDB Connection](./images/pdb-connection-string.png" ")
 
-1. From the application server compute instance, launch Oracle SQL Developer and connect to Oracle Database on Exadata Database Service.
+1. From the Application Server, Open the terminal and Run ***sqldeveloper*** to launch Oracle SQL Developer.
 
-      * Select Create New Connection Icon
-      * Enter a Name for the Connection
-      * For the Database Type, select Oracle
-      * For the Username, enter Sys
-      * Enter the Sys password
-      * For the Role, select SYSDBA
-      * For Hostname, enter localhost
-      * For Port enter 1521
-      * Enter Database Service Name
-      * Test & Save the connection
+      
+                  
+  ![launch sqldeveloper](./images/run-sqldeveloper.png " ")
+
+                  
+        
+   
+  From the Oracle SQL Developer page provide the following information to connect to Oracle Database on Exadata Database Service.
 
   ![connecting using sqldev](./images/sqldev.png" ")
+
+      * Click **Create New Connection** Icon
+      * Enter a **Name** for the Connection
+      * For the **Database Type**, select **Oracle**
+      * For the **Username**, enter **Sys**
+      * Enter the Sys **password**
+      * For the Role, select **SYSDBA**
+      * For the **Hostname**, enter the **Hostname** *(from the PDB connection string - obtained from Step 4)*
+      * For the **Port** enter **1521**
+      * Enter the Database **Service Name**, enter the **Service Name** *(from the PDB connection string - obtained from Step 4)* 
+      * **Test** & **Save** the connection
+      * Click on **Connect**
+
+  
 
 
 You may now **proceed to the next lab**.
