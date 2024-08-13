@@ -9,7 +9,7 @@ Estimated Workshop Time: 60 minutes
 ### Objectives
 
 In this workshop, you will learn about:
-* Storage server features through CellCLI
+* Exascale Database Clones
 * Smart Scan
 * Hybrid Columnar Compression
 * Flash Cache
@@ -18,7 +18,6 @@ In this workshop, you will learn about:
 ### Prerequisites
 
 This lab assumes you have:
-* Access to cellcli on an Exadata storage server or a cellcli simulator
 * Sqlplus access to a database running on an Exadata
 
 ## Learn More
@@ -29,5 +28,5 @@ This lab assumes you have:
 
 ## Acknowledgements
 * **Author** - Seth Miller, Principal Product Manager, Exadata Product Management
-* **Contributors** - Alex Blythe, Exadata Product Management
-* **Last Updated By/Date** - Seth Miller, March 2023
+* **Contributors** - Alex Blythe & Natarajan Shankar, Exadata Product Management
+* **Last Updated By/Date** - Seth Miller, August 2024
