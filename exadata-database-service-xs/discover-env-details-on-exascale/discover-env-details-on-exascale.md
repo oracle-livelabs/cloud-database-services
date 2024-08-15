@@ -27,7 +27,7 @@ This lab requires the completion of the following:
 ## Task 1: Discover Exadata VM Cluster Details
 
 1. **Navigate to the Exadata Database Service on Exascale Infrastructure:** 
-    * Open the navigation menu. 
+    * Open the **Navigation Menu**. 
     * Under **Oracle Database**, click **Exadata Database Service on Exascale Infrastructure**.
 
   ![Navigate to Exadata Database Service on Exascale Infrastructure](./images/console-to-exadb-xs.png" ")
@@ -68,10 +68,11 @@ This lab requires the completion of the following:
 
 4. On the left side of the page, under the **Resources** section: ***Discover the additional VM Cluster resources:***
       * You can click the **Container Database** link to see a list of available databases.
+  ![VM Cluster Details page Resources Section Container Databases](./images/vm-cluster-details-page-resource-section-cdb-list.png" ")
       * You can click the **Database Homes** link to see a list of the existing database homes.
+  ![VM Cluster Details page Resources Section Database Homes](./images/vm-cluster-details-page-resource-section-dbhome-list.png" ")
       * You can click the **Virtual Machines** link to see a list of the Virtual Machines that are allocated to your VM Cluster
-      
-  ![Review Resources Section on VM Cluster Details page](./images/vm-cluster-details-page-resource-section.png" ")
+  ![VM Cluster Details page Resources Section Virtual Machines](./images/vm-cluster-details-page-resource-section-vm-list.png" ")
 
 
 
@@ -85,6 +86,7 @@ This lab requires the completion of the following:
 
 2. On the **Container Database Details** page ***Discover the following Container Database Information***
 
+    * On the **Container Database (CDB) Details** page, you can see a list of actions that can be performed, such as obtaining the connection string, and Restoring, Configuring Automatic Backups, Creating a Database from a Backup, and more actions.
     * In the **General Information** Section you can find the following key items:
         * The Lifecycle state of the Container Database.
         * The OCID of the Container Database.
@@ -108,13 +110,16 @@ This lab requires the completion of the following:
    
   ![Container Database Details page](./images/container-database-details-page.png " ")
   
+
 3. On the left side of the page, under the **Resources** section: ***Discover the additional Container Database resources:***
     * You can click the **Backups** link to see a list of available database backups.
+  ![VM Cluster Details page Resources Section Backups](./images/container-database-details-page-resource-section-backup-list.png" ")
     * You can click the **Data Guard Association** link to see if this database has a Data Guard Peer.
+  ![VM Cluster Details page Resources Section Data Guard Association ](./images/container-database-details-page-resource-section-dg-list.png" ")
     * You can click the **Pluggable Database** link to see a list of the Pluggable Databases that have been created in this Container Database.
+  ![VM Cluster Details page Resources Section Pluggable Databases ](./images/container-database-details-page-resource-section-pdb-list.png" ")
       
-  ![Review Resources Section on VM Cluster Details page](./images/container-database-details-page-resource-section.png" ")
-
+  
 4. Now lets ***Discover Details about our Pluggable Databases***
     * From the **Resources** Section of the **Container Database Details** page, Click on the **Pluggable Database** Link
     * Select the **name of your Pluggable Database** link to navigate the **Pluggable Database Details** page.
@@ -135,24 +140,28 @@ This lab requires the completion of the following:
 
 ## Task 3: Discover Exascale Storage Vault Details
 
-1. Navigate to the **VM Clusters** page, where we will find a list of existing VM Clustsers and their associated **Exascale Storage Vaults**. 
-    *  On the **Pluggable Database Details** page, you will see the navigation bread crumb links. ***Click on the VM Clusters*** link.
+1. Navigate from the **Pluggable Database Details** page to the **VM Cluster Details** page.
 
-  ![VM Clusters page - via breadcrumb link](./images/vmc-page-via-breadcumb-link.png " ")
+    *  On the **Pluggable Database Details** page, you will see the navigation bread crumb links. ***Click on the VM Cluster Details*** link.
 
-2. On the **VM Clusters** page,  click on the **Exascale Storage Vault name** for your VM Cluster. This will launch the **Exascale Storage Vault Details** page.
+  ![VM Cluster Details page - via breadcrumb link](./images/pdb-to-vmc-via-breadcrumb-link.png " ")
+
+2. On the **VM Clusters** page, click on the ***Exascale Storage Vault name*** for your VM Cluster. 
+<br/> This will launch the **Exascale Storage Vault Details** page.
+  ![Navigate from VM Cluster Details page to Exascale Storage Vault](./images/navigate-vmc-details-to-exascale-storage-vault.png " ")
+
    
 3. On the **Exascale Storage Vault Details** page ***Discover the following Exascale Storage Vault Information***
     * On the **Exascale Storage Vault Details** page, you can see a list of actions that can be performed, such as scaling the storage vault or moving the Vault to another compartment.  
     * In the **General Information** Section of the **VM Cluster Information** tab, you can find the following key items:
-      * The Lifecycle state of the Exascale Storage Vault.
-      * What Compartment the Exascale Storage Vault is in.
-      * The Availability Domain of the Exascale Storage Vault.
-      * The OCID of the Exascale Storage Vault.
+        * The Lifecycle state of the Exascale Storage Vault.
+        * What Compartment the Exascale Storage Vault is in.
+        * The Availability Domain of the Exascale Storage Vault.
+        * The OCID of the Exascale Storage Vault.
     * In the **Exascale Database Storage** Section you will find:
-      * The amount of Exascale database storage that was allocated and how much is free.
+        * The amount of Exascale database storage that was allocated and how much is free.
     * On the left side of the page, under the **Resources** section: 
-      *   You can click on the **Associated VM Clusters** link to see a list of VM Clusters that are using this storage vault.
+        *   You can click on the **Associated VM Clusters** link to see a list of VM Clusters that are using this storage vault.
 
   ![Exascale Storage Vault Details page](./images/exascale-storage-vault-details-page.png " ")
 
