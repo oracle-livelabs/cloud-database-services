@@ -76,7 +76,8 @@ This lab requires the completion of the following:
     * Provide the information to configure the new PDB. 
         * For the **PDB Name** enter: ***ThinPDB1***
         * For the **Database TDE wallet password** enter: ***Pass4StudentOCW24-#***
-        * Ensure to ***check the box*** to **Enable Thin Clone**
+        * For this lab we will defer the initial PDB backup by ***unchecking the box*** to **Take a backup of the PDB immediately after cloning**
+        * Next, ensure to ***check the box*** to **Enable Thin Clone**
         * Click on the ***Create Pluggable Database*** button to start the clone provisioning process.
   ![Configure Clone options and check box to Enable Thin Clone](./images/configure-pdb-thin-clone.png " ")
     * **Note:** that the thin PDB clone will be created and presented as a new PDB.
