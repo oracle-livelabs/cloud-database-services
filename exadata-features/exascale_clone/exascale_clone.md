@@ -24,7 +24,15 @@ This lab assumes:
 
 ## Task 1: 
 
-1. Execute the SQL script `lab_exascale_clone_01.sql` to show the total space used by the data and temporary files of the source pluggable database.
+1. Connect to the database with `sqlplus /@cdb as SYSDBA`. Use the alias `sqlp_sys`. The rest of the lab will be executed in sqlplus.
+
+    ```text
+    <copy>
+    sqlp_sys
+    </copy>
+    ```
+
+2. Execute the SQL script `lab_exascale_clone_01.sql` to show the total space used by the data and temporary files of the source pluggable database.
 
     ```text
     <copy>
@@ -32,7 +40,7 @@ This lab assumes:
     </copy>
     ```
 
-2. Execute the SQL script `lab_exascale_clone_02.sql` to create a full-size copy of the source pluggable database.
+3. Execute the SQL script `lab_exascale_clone_02.sql` to create a full-size copy of the source pluggable database.
 
     ```text
     <copy>
@@ -40,7 +48,7 @@ This lab assumes:
     </copy>
     ```
 
-3. Execute the SQL script `lab_exascale_clone_03.sql` to show the total space used by the data and temporary files grouped by pluggable database.
+4. Execute the SQL script `lab_exascale_clone_03.sql` to show the total space used by the data and temporary files grouped by pluggable database.
 
     ```text
     <copy>
@@ -48,7 +56,7 @@ This lab assumes:
     </copy>
     ```
 
-4. Execute the SQL script `lab_exascale_clone_04.sql` to show the increase in space used in the Exascale vault. The first value is the total increased raw space used. The second value is the increased space used after accounting for data redundancy. Since this vault is set up for normal redundancy, the second value shows half of the raw space used, which should closely match the space used by the full clone PDB created in the previous step.
+5. Execute the SQL script `lab_exascale_clone_04.sql` to show the increase in space used in the Exascale vault. The first value is the total increased raw space used. The second value is the increased space used after accounting for data redundancy. Since this vault is set up for normal redundancy, the second value shows half of the raw space used, which should closely match the space used by the full clone PDB created in the previous step.
 
     ```text
     <copy>
@@ -56,7 +64,7 @@ This lab assumes:
     </copy>
     ```
 
-5. Execute the SQL script `lab_exascale_clone_05.sql` to create a thin clone of the same source pluggable database.
+6. Execute the SQL script `lab_exascale_clone_05.sql` to create a thin clone of the same source pluggable database.
 
     ```text
     <copy>
@@ -64,7 +72,7 @@ This lab assumes:
     </copy>
     ```
 
-6. Execute the SQL script `lab_exascale_clone_06.sql` to show the total space used by data and temporary files grouped by pluggable database. The first column shows the total space used as it is represented in the database. The second column shows actual space used as it is represented on Exascale storage, which should give us an idea of the actual space used by the snapshot files of a thin clone.
+7. Execute the SQL script `lab_exascale_clone_06.sql` to show the total space used by data and temporary files grouped by pluggable database. The first column shows the total space used as it is represented in the database. The second column shows actual space used as it is represented on Exascale storage, which should give us an idea of the actual space used by the snapshot files of a thin clone.
 
     ```text
     <copy>
@@ -72,7 +80,7 @@ This lab assumes:
     </copy>
     ```
 
-7. Execute the SQL script `lab_exascale_clone_07.sql` to show the increase in space used in the Exascale vault. The space used by the thin clone should be significantly smaller than the full clone. The small amount of space that is being used is from two sources:
+8. Execute the SQL script `lab_exascale_clone_07.sql` to show the increase in space used in the Exascale vault. The space used by the thin clone should be significantly smaller than the full clone. The small amount of space that is being used is from two sources:
     * When creating thin clones of pluggable databases, each cloned datafile will consume 10% of its original size.
     * When creating full or thin clones of pluggable databases, temporary tablespace files are never cloned. If the source pluggable database contains temporary tablespaces, these temp files will be newly created in the clone PDB and will consume space equal to the original file size.
 

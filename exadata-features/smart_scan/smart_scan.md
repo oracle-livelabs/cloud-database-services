@@ -23,7 +23,15 @@ This lab assumes:
 
 ## Task 1: Query Without Smart Scan
 
-1. Execute the SQL script `lab_smart_scan_01.sql` and verify that the statistics are at or near zero values. If any statistics are significantly greater than zero then reconnect and try again.
+1. Connect to the database with `sqlplus /@db`. Use the alias `sqlp`. The rest of the lab will be executed in sqlplus.
+
+    ```text
+    <copy>
+    sqlp
+    </copy>
+    ```
+
+2. Execute the SQL script `lab_smart_scan_01.sql` and verify that the statistics are at or near zero values. If any statistics are significantly greater than zero then reconnect and try again.
 
     ```text
     <copy>
@@ -31,7 +39,7 @@ This lab assumes:
     </copy>
     ```
 
-2. Execute the SQL script `lab_smart_scan_02.sql`. Note the optimizer hint that disables Smart Scan for the query.
+3. Execute the SQL script `lab_smart_scan_02.sql`. Note the optimizer hint that disables Smart Scan for the query.
 
     ```text
     <copy>
@@ -39,7 +47,7 @@ This lab assumes:
     </copy>
     ```
 
-3. Repeat the statistics query from the SQL script `lab_smart_scan_01.sql`. Note that all of the data processed by the query in previous step (`physical read total bytes`) is returned to the database server over the storage network (`cell physical IO interconnect bytes`).
+4. Repeat the statistics query from the SQL script `lab_smart_scan_01.sql`. Note that all of the data processed by the query in previous step (`physical read total bytes`) is returned to the database server over the storage network (`cell physical IO interconnect bytes`).
 
     ```text
     <copy>
@@ -78,4 +86,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 * **Author** - Seth Miller, Principal Product Manager, Exadata Product Management
 * **Contributors** - Alex Blythe, Exadata Product Management
-* **Last Updated By/Date** - Seth Miller, July 2023
+* **Last Updated By/Date** - Seth Miller, August 2024
