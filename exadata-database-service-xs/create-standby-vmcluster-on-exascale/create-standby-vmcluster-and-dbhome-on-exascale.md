@@ -1,9 +1,9 @@
-# Create Instance of Exadata Database Service on Exascale Infrasturcture using OCI Console
+# Create Standby Exadata VM Cluster & Database Home using OCI Console
 
 
 ## Introduction
 
-This lab walks you through how to create an instance of the Exadata Database Service on Exascale Infrastructure using the OCI Console. 
+This lab walks you through how to create an Exadata VM Cluster & Database Home deployed on the Exadata Database Service on Exascale Infrastructure using the OCI Console. This Exadata VM Cluster will be used as a standby target inour upcoming labs.
  
 
 Estimated Time: 2 Hours 10 minutes
@@ -13,7 +13,7 @@ Watch the video below for a quick walk-through of the lab.
 
 ### Objectives
 
--   After completing this lab, you should be able to create an Exadata VM cluster and an Oracle Database on Exascale technology using the OCI Console.
+-   After completing this lab, you should be able to create an Exadata VM cluster and an Oracle Database Home on the Exadata Database Service on Exascale Infrastructure using the OCI Console.
 
 
 ### Prerequisites
@@ -22,15 +22,15 @@ This lab requires completion of the following:
 
 * Successful Login to a Tenancy with a service limit assigned for the **Exadata Database Service on Exascale Infrastructure**
 
-## Task 1: (***Pre-Created for OCW Session***) --> Create an Exadata VM Cluster Resource with Exadata on Exascale Cloud Infrastructure
+## Task 1: Create an Exadata VM Cluster Resource with Exadata on Exascale Cloud Infrastructure
 
 1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Exascale Infrastructure**.
 
   ![Navigate to Exadata Database Service on Exascale Infrastructure](./images/console-to-exadb-xs.png" ")
 
-2. In the left rail, **VM Clusters** is selected by default. Under **List Scope**, Select your assigned compartment named ***MyCompartmentXX***. 
+2. In the left rail, **VM Clusters** is selected by default. Under **List Scope**, Select your assigned standby compartment named ***MyStandbyCompartmentXX***. 
    
-  ![Select Compartment where VM Cluster will reside](./images/select-compartment.png" ")
+  ![Select Compartment where Standby Exadata VM Cluster will reside](./images/select-standby-compartment.png" ")
 
 3. Click **Create VM Cluster** button 
     
@@ -39,23 +39,17 @@ This lab requires completion of the following:
 4. **Provide the basic information to configure the Exadata VM cluster**.
     * For Compartment: Ensure that the compartment that you want the VM Cluster to be created in is displayed. It should display **your assigned compartment**.
 
-    * For Display Name: Enter ***MyDemoVMClusterXX*** 
+    * For Display Name: Enter ***MyStandbyVMClusterXX*** 
 
     * For Cluster Name: Enter ***MyDemoClus*** 
 
     * For Availability Domain: Select the availability domain from the displayed options available. 
 
- ![Provide Basic VM Cluster Info](./images/provide-basic-vm-cluster-info-exascale.png" ")
+ ![Provide Basic Standby VM Cluster Info Image](./images/provide-basic-standby-vm-cluster-info-exascale.png" ")
 
 5. **To Configure the VM cluster, provide the following information:** 
     * For the number of VMs in the cluster: ***Enter 2***
-    * For ECPUs enabled per VM: ***Enter 8***
-
-    * ***Reserve 4 additonal ECPUs*** by clicking on **Reserve additional ECPU to increase link** and entering the following:   
-        * For **Total ECPUs per VM:** Provide a total number of ECPUs to allocate per VM. ***Enter 12***.  
-        * The **ECPUs additional reserved per VM** field which is (read only) will now indicate that there are now **4 reserved ECPUs**. 
-    * The **Memory per VM (GB)** field which is (read only) will display the amount of memory allocated to each VM. <br/> 
-    ***Memory is calculated based on 2.75 GB per total ECPU***. 
+    * For ECPUs enabled per VM: ***Enter 8*** 
 
       <u>**Size the VM file system storage**</u>: 
     * For system storage capacity per VM (GG): ***Enter 280***
@@ -68,10 +62,10 @@ This lab requires completion of the following:
     * Select **Create new vault**. 
 
     **For a new vault, specify the following:** 
-    * For the **Exascale Vault name:** enter ***MyDemoStorageVaultXX*** . 
+    * For the **Exascale Vault name:** enter ***MyStandbyStorageVaultXX*** . 
     * For the **Storage Capacity for Databases (GB):** ***enter 300***. 
 
-    **Note:** The minimum size configuration for an Exascale Database Storage Vault is 300 GB. 200 GB of the space that you allocate in your Vault is reserved for a 200 GB ACFS file system. This ACFS file system resides within your Exascale Database Storage Vault, but is reserved for system use. Thus, if you provisioned the minimum of 300 GB in your Exascale Database Storage Vault, then 100 GB of that 300 GB capacity will be available storage for your databases. 
+    **Note:** The minimum size configuration for an Exascale Database Storage Vault is 300 GB. 50 GB of the space that you allocate in your Vault is reserved for an internal ACFS file system. This ACFS file system resides within your Exascale Database Storage Vault, but is reserved for system use. Thus, if you provisioned the minimum of 300 GB in your Exascale Database Storage Vault, then 250 GB of that 300 GB capacity will be available storage for your databases. 
 
     When you create a new vault, the Provisioning status window opens to provide you with the status of vault creation, and the name of the vault that is being created in the format Vault-YYYYMMDDHHMM indicating the creation date, where YYYY is the year, MM is the month, DD is the day, HH is the hour, and Mm is the minute. 
 
@@ -94,7 +88,7 @@ This lab requires completion of the following:
     * **For the Virtual Cloud Network (VCN):** Click Change Compartment and select compartment named ***MyDemo***.  <br/>
     Then select the Virtual Cloud Network named ***MyDemoVCN***.
     
-    * **For the Client subnet:** Select the client subnet in the assigned compartment named ***MyClient-PrivateSubnetAXX***. <br/>
+    * **For the Client subnet:** Select the client subnet in the **assigned standby compartment** named ***MyClient-PrivateSubnetBXX***. <br/>
     
     * **For the Backup Subnet:** Click Change Compartment and select compartment named ***MyDemo***.  <br/>
     Then select the Backup Subnet named ***MyBackup-PrivateSubnet***.
@@ -121,7 +115,7 @@ In the Edit Diagnostics Collection Settings dialog, you can enable or disable an
 
 
 
-## Task 2: Create an Oracle Database on Exadata Database Service on Exascale Infrastructure using OCI Console
+## Task 2: Create an Oracle Database Home using OCI Console
 
 1. **Navigate to the Exadata Database Service on Exascale Infrastructure:** 
     * Open the navigation menu. 
@@ -129,45 +123,18 @@ In the Edit Diagnostics Collection Settings dialog, you can enable or disable an
 
   ![Navigate to Exadata Database Service on Exascale Infrastructure](./images/console-to-exadb-xs.png" ")
 
-2. **Navigate to the cloud VM cluster you want to create the database in:**
+2. **Navigate to the cloud VM cluster you want to create the database home in:**
     * In the left rail, ensure ***VM Clusters*** is selected. 
-    * Under **List Scope**, Select your assigned compartment named ***MyCompartmentXX***. 
+    * Under **List Scope**, Select your assigned compartment named ***MyStandbyCompartmentXX***. 
     * Then **click on your VM Clusters** ***assigned name*** to view the **VM Cluster Details page**. 
    
   ![Select Compartment and VM Cluster where Container Database will reside](./images/select-compartment-and-vm-cluster.png" ")
 
-3. On the **VM Cluster Details page** Click on **Create Container Database**.
+3. On the **VM Cluster Details page** under **Resources** Click on **Database Homes** and then click on the ***Create Database Home** button.
 
   ![Create Container Database button](./images/vmc-details-pg-create-cdb-on-exascale.png " ")
 
-4. In the **Create Container Database** page enter the **basic information for creating the container database:** 
-    * For the **Database Name:** Enter ***DemoDBXX***
-    * For the **Database Unique Name Suffix:** Enter ***DemoDBXX_23aiExascale01***
-    * For the **Database Version:** Select ***23ai***
-    * For the **Pluggable Database Name:** Enter ***MyPDBXX***
-
-  ![Create Container Database Basic Info](./images/create-cdb-basic-info.png " ")
-   
-5. Specify the **Database Home Source and Administrator Credentials:**
-    * For the **Database Home source** choose: **Select an Existing Database Home**
-    * Select Database Home with display name of ***MyDemo23aiDBhome01***
-    * Next configure your **Administrator Credentials:** by entering ***Pass4StudentOCW24-#*** as the **password** for the **sys** username.
-   
-  ![Define DBhome and Admin Password Image](./images/define-dbhome-and-admin-pwd.png " ")
-
-6. For this lab, we will not be enabling **Automatic Backups** for the database during the create database workflow.
-    * **Uncheck the box for:** ***Enable Automatic Backups***
-
-  ![Uncheck Enable Automatic Backups Image](./images/uncheck-enable-automatic-backups.png " ")
-
-7. **Review & Configure Advanced Options** for the Container Database by clicking on the **Show Advanced Options** link.
-    * Under the **Management tab** set the Oracle_SID to ***ExascaleDemo***  
-  ![Configure Adv Options - Mgmt Tab Image](./images/configure-adv-options-mgmt-tab.png " ")
-    * Under the **Encryption tab** you can select the desired key management method. Select ***Use Oracle-managed keys***.
-  ![Configure Adv Options - Encryption Tab Image](./images/configure-adv-options-encrypt-tab.png " ")
-
-    * Under the **Tags tab:** you can add free-form tags to your resource.  If you want to apply a defined tag, you must have permissions to use the tag namespace. Remember that you can also apply tags to your resources after they are provisioned.
-  ![Configure Adv Options - Tags Tab Image](./images/configure-adv-options-tags-tab.png " ")
+4. 
 
 8. Click on the **Create Container Database** button to proceed with creating the Container Database.
 
