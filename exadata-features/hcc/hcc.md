@@ -94,6 +94,15 @@ This lab assumes:
     </copy>
     ```
 
+
+3. Exit the sqlplus session before starting the next lab.
+
+    ```text
+    <copy>
+    exit
+    </copy>
+    ```
+
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
