@@ -175,7 +175,7 @@ This lab requires completion of the following:
 
 ## Task 4: List VM Cluster Configuration using CLI 
 
-To use OCI CLI for this lab, we will be using the ***OCI Cloud Shell tool***. 
+>**Note:** To use OCI CLI for this lab, we will be using the ***OCI Cloud Shell tool***. 
    
 1. In the VM Cluster Details page, Copy the VM Cluster OCID by clicking on the ***copy*** button in the ***OCID*** field under the **General Information** section. 
    
