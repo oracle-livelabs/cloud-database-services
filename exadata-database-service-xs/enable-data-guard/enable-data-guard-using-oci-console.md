@@ -90,7 +90,6 @@ This lab requires completion of the following:
   
    ![Data Guard Association Completed Image](./images/dataguard-association-completed.png " ")
 
-
 ***Congratulations***, you may now **proceed to the next lab**.
 
 ## Learn More
