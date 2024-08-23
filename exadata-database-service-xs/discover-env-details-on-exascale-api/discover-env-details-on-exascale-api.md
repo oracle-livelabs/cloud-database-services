@@ -20,7 +20,7 @@ This lab requires the completion of the following:
 
 ## Task 1: Get the VM Cluster Details using OCI CLI
 
-**<u>To use OCI CLI for this lab, we will be using the** ***OCI Cloud Shell tool***</u>. 
+>**Note:** To use **OCI CLI** for this lab, we will be using the ***OCI Cloud Shell tool***. 
    
 
 1. Click the **Developer tools** icon in the console header and select ***Cloud Shell*** from the drop-down menu. 
@@ -32,9 +32,9 @@ This lab requires the completion of the following:
    ![oci cloudshell launch](./images/cloudshelllaunch.png "oci cloudshell launch")
 
 
-**<u>For this lab, we will be using the** ***OCI Code Editor*** **to store the required details in this lab.**</u>
+>**Note:** For this lab, we will be using the ***OCI Code Editor*** to store the required details in this lab.
 
-2. Click on the ***Expand*** icon in **Actions** and select ***Open Code Editor***. 
+1. Click on the ***Expand*** icon in **Actions** and select ***Open Code Editor***. 
    
    ![expand actions to show open code editor](./images/expand-code-editor.png "expand actions to show open code editor")
    
@@ -117,6 +117,8 @@ This lab requires the completion of the following:
 
     The REST API Request is: ***GET /20160918/dbHomes?compartmentId={CompartmentOCID}&lifecycleState=AVAILABLE&limit=10***
 
+    **<u>Where:</u>** 
+
       * ***dbHomes*** is the **resource type** for the Oracle Database Home.
       * ***compartmentId*** is the ***Compartment OCID*** of the Compartment where you want to list the available Database Homes.
       * ***lifecycleState=AVAILABLE*** is the **query** to include a filter to return only Database Homes with the lifecycle state of Available.
@@ -183,6 +185,8 @@ This lab requires the completion of the following:
 
     The REST API Request is: ***GET /20160918/pluggableDatabases?databaseId={ContainerDatabaseOCID}&limit=10***
 
+    **<u>Where:</u>** 
+
       * ***pluggableDatabases*** is the **resource type** for the Pluggable Database (PDB).
       * ***databaseId*** is the **Container Database OCID**.
       * ***limit*** is the **query** to define the maximum number of items to return per page
@@ -227,9 +231,7 @@ This lab requires the completion of the following:
    
    Open the **OCI Cloud Shell** tab and run the following command
 
-   ![create thin clone using REST API](./images/create-thin-clone-pdb.png "create thin clone using REST API")
-   
-    > **Note:** Replace the API endpoint region "***{region}***" with your **assigned region**
+   ![create thin clone using REST API](./images/create-thin-clone-cloud-shell.png "create thin clone using REST API")
    
       ```
       <copy>
@@ -242,6 +244,8 @@ This lab requires the completion of the following:
     **<u>Description:</u>** 
 
     The REST API Request is: ***POST /20160918/pluggableDatabases***
+
+    **<u>Where:</u>** 
 
       * ***pluggableDatabases*** is the **resource type** for the Pluggable Database (PDB).
       * ***--request-body*** contains the **Create Pluggable Database Details** resource stored in the JSON file ***MyThinClonePDB.json***.
@@ -269,11 +273,11 @@ This lab requires the completion of the following:
 
       ```
 
-
-    
   **<u>Description:</u>** 
 
   The REST API Request is: ***GET /20160918/exascaleDbStorageVaults***
+
+  **<u>Where:</u>** 
 
       * ***exascaleDbStorageVaults*** is the **resource type** for the Exascale Storage Vault.
       * ***compartmentId*** is the ***Compartment OCID*** of the Compartment where you want to get a list of the available Exascale Storage Vaults.

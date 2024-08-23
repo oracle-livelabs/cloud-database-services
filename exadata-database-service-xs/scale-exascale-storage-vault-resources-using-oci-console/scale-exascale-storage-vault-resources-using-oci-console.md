@@ -67,7 +67,7 @@ This lab requires the completion of the following:
 
 ## Task 2: List Exascale Storage Vault Configuration using CLI
 
-To use OCI CLI for this lab, we will be using the ***OCI Cloud Shell tool***. 
+   >**Note:** To use **OCI CLI** for this lab, we will be using the ***OCI Cloud Shell tool***. 
 
 1. Click the **Developer tools** icon in the console header and select ***Cloud Shell*** from the drop-down menu. 
    

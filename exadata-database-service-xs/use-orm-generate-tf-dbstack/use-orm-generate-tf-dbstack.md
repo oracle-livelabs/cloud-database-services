@@ -210,7 +210,7 @@ This lab requires the completion of the following:
    ![Deploy Database PDB Stack](./images/orm-deploy-exadata-database-pdb.png "Deploy Database PDB Stack")
 
       * Provide the **Developer Container Database OCID**. For this lab, use the value for the ***ContainerDatabaseOCID*** obtained from ***Lab10 Task 3***
-      * Provide the **Pluggable Database display name**. For this lab, use the name ***ThinPDB3***
+      * Provide the ***Pluggable Database display name***. For this lab, use the name ***ThinPDB3***
       * Provide the ***Pluggable Database administrator password***
       * Provide the ***TDE Wallet Password*** 
   
