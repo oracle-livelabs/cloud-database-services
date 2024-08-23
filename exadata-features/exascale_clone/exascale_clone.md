@@ -90,6 +90,15 @@ This lab assumes:
     </copy>
     ```
 
+9. Exit the sqlplus session before starting the next lab.
+
+    ```text
+    <copy>
+    exit
+    </copy>
+    ```
+
+
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
