@@ -50,7 +50,7 @@
             "filename": "../../configure-notifications-for-exascale-ecpu/configure-notifications-for-exascale-ecpu.md"
         },
         {
-            "title": "Lab 8: Change Exadata VM Cluster License Type using OCI Console",
+            "title": "Lab 8: Change Exadata VM Cluster License Type using OCI CLI",
             "description": "Learn how to Change the Exadata VM Cluster License Type using OCI Console",
             "filename": "../../change-license-type/change-license-type-using-oci-console.md"
         },
