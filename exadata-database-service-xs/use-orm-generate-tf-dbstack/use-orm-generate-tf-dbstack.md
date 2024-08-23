@@ -255,7 +255,7 @@ This lab requires the completion of the following:
 
     ![Stack Deployment Apply Succeeded ](./images/orm-apply-succeeded.png " ")
 
-You may now **proceed to the next lab**
+
 
 <!--
 ## Learn More

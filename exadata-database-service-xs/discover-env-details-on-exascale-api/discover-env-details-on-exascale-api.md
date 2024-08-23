@@ -258,31 +258,34 @@ This lab requires the completion of the following:
 
 1. Make an OCI REST API call to get a list of the Exascale Storage Vaults in the specified compartment by running the **OCI RAW-REQUEST** command below:
    
-   > **Note:** Replace ***{CompartmentOCID}*** with the ***Compartment OCID*** obtained from ***Task 1***
+    > **Note:** Replace ***{CompartmentOCID}*** with the ***Compartment OCID*** obtained from ***Task 1***
    
       ```
-      <copy>
+        <copy>
 
-        oci raw-request --http-method GET --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/exascaleDbStorageVaults?compartmentId={CompartmentOCID}&limit=10"
+          oci raw-request --http-method GET --target-uri "https://database.us-sanjose-1.oraclecloud.com/20160918/exascaleDbStorageVaults?compartmentId={CompartmentOCID}&limit=10"
 
-      </copy>
+        </copy>
 
       ```
-    **<u>Description:</u>** 
 
-    The REST API Request is: ***GET /20160918/exascaleDbStorageVaults***
+
+    
+  **<u>Description:</u>** 
+
+  The REST API Request is: ***GET /20160918/exascaleDbStorageVaults***
 
       * ***exascaleDbStorageVaults*** is the **resource type** for the Exascale Storage Vault.
       * ***compartmentId*** is the ***Compartment OCID*** of the Compartment where you want to get a list of the available Exascale Storage Vaults.
 
-    After running the command, you will see similar output below.
+  After running the command, you will see similar output below.
 
     ![list exascale storage vault](./images/list-exascale-storage-vault-in-a-compartment.png "list exascale storage vault")
 
     Having a Response ***"status": "200 OK"*** means the request was successfully received and was able to get a list of the available Exascale Storage Vaults in a specified comparment.
 
 
-You may now **proceed to the next lab**.
+***Congratulations!!!*** You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
