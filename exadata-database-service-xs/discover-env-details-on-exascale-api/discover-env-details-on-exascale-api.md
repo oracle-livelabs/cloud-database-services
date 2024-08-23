@@ -32,9 +32,9 @@ This lab requires the completion of the following:
    ![oci cloudshell launch](./images/cloudshelllaunch.png "oci cloudshell launch")
 
 
->**Note:** For this lab, we will be using the ***OCI Code Editor*** to store the required details in this lab.
+  >**Note:** For this lab, we will be using the ***OCI Code Editor*** to store the required details in this lab.
 
-1. Click on the ***Expand*** icon in **Actions** and select ***Open Code Editor***. 
+2. Click on the ***Expand*** icon in **Actions** and select ***Open Code Editor***. 
    
    ![expand actions to show open code editor](./images/expand-code-editor.png "expand actions to show open code editor")
    
