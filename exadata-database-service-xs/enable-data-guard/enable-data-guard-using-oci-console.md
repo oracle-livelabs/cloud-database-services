@@ -55,9 +55,9 @@ This lab requires completion of the following:
     
     **<u>In the Select Peer VM Cluster Section of the page:</u>** 
 
-      * For the **Peer Region**: Select your ***assigned peer region*** 
-      * For the **Availability Domain**: Select your ***assigned availabilty domain***
-      * Then select the **Compartment** named ***MyDemoStandby*** and Select the **peer VM Cluster** named  ***MyDemoStandbyVMCluster***
+      * For the **Peer Region**: Select your ***assigned Peer Region*** 
+      * For the **Availability Domain**: Select your ***assigned Availabilty Domain***
+      * Then select the **Compartment** named ***MyStandbyCompartmentXX*** and Select the **peer VM Cluster** named  ***MyStandbyVMClusterXX***
   
          >**Note:** The peer Region selected will determine if you are configuring a local standby or a DR standby.  
     
@@ -70,12 +70,12 @@ This lab requires completion of the following:
    ![Select Peer VMC and Data Guard Association Details Image](./images/choose-peer-vmc-and-dg-association-details.png " ")
 
 6. **Choose the Database Home and name the standby database:** 
-    * For the **Database Home** choose ***Select an existing Database Home*** then select ***MyDemoStandby23aiDBHome02***.
+    * For the **Database Home** choose ***Select an existing Database Home*** then select ***MyDemo23aiDBHome02***.
 
     * For the **Database unique name** for the standby database: enter ***MyDemoDB_23aiStandbyXX*** 
     <br/>( Where ***XX*** is your assigned student # for the workshop).
     
-    * For the **Database password**. For this lab, use ***Pass4OCW24-#*** 
+    * For the **Database password**. For this lab, use ***Pass4OCW24Student-#*** 
 
     **<u>Under Advanced Options on the Management Tab:</u>**
 
@@ -91,7 +91,7 @@ This lab requires completion of the following:
    ![Data Guard Association Completed Image](./images/dataguard-association-completed.png " ")
 
 
-You may now **proceed to the next lab**
+***Congratulations***, you may now **proceed to the next lab**.
 
 ## Learn More
 

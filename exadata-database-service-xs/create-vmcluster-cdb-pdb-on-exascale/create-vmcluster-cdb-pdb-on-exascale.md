@@ -151,7 +151,7 @@ In the Edit Diagnostics Collection Settings dialog, you can enable or disable an
 5. Specify the **Database Home Source and Administrator Credentials:**
     * For the **Database Home source** choose: **Select an Existing Database Home**
     * Select Database Home with display name of ***MyDemo23aiDBhome01***
-    * Next configure your **Administrator Credentials:** by entering ***Pass4StudentOCW24-#*** as the **password** for the **sys** username.
+    * Next configure your **Administrator Credentials:** by entering ***Pass4OCW24Student-#*** as the **password** for the **sys** username.
    
   ![Define DBhome and Admin Password Image](./images/define-dbhome-and-admin-pwd.png " ")
 
