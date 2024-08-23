@@ -26,78 +26,81 @@ This lab requires completion of the following:
 
 ## Task 1: Enable Data Guard using OCI Console
 
-1. In the Breadcrumb link, Click on **Oracle Exadata Database Service on Cloud@Customer**. 
-   
-   ![Navigate to Exadata VM Cluster](./images/navigate-exadbcc-vmcluster.png " ")
-   
-2. In the left rail, **Exadata VM Clusters** is selected by default. Select your assigned Compartment ***MyCompartmentXX*** then Click on the name of your assigned VM Cluster ***MyVMClusterXX***.
-   
-   ![Select assigned Compartment and assigned VM Cluster](./images/select-compartment.png " ")
+1. **Navigate to the Exadata Database Service on Exascale Infrastructure:** 
+    * Open the **Navigation Menu**. 
+    * Under **Oracle Database**, click ***Exadata Database Service on Exascale Infrastructure***.
 
-3. On the left rail, under **Resources** of the VM Cluster details page, select **Databases** and from the list of the displayed databases click the container database named ***MyCDB01***. 
+  ![Navigate to Exadata Database Service on Exascale Infrastructure Image](./images/console-to-exadb-xs.png" ")
+
+2. **Navigate to the Exadata VM cluster** in your assigned compartment:
+    * In the left rail, select ***VM Clusters***. 
+    * Under **List Scope**, Select your assigned compartment named ***MyCompartmentXX***. 
+    * Then click on the name of ***your VM Cluster*** to view the **VM Cluster Details page**. 
    
-   ![Select CDB](./images/select-cdb.png " ")
+  ![Select Compartment and VM Cluster where Container Database will reside Image](./images/select-compartment-and-vm-cluster.png" ")
 
-4. In the Container Database details page, under **Resources**, click **Data Guard Associations**.
+3. **Navigate to the Continer Database** we want to configure a Data Guard Association for.
+    * On the left rail of the **VM Cluster details page**, under **Resources** , select ***Container Databases*** 
+    * From the list of the displayed databases **click on the container database named** ***DemoDBXX***. 
    
-   ![Click on Dataguard Associations](./images/navigate-dg-association.png " ")
+   ![Select CDB Image](./images/select-cdb.png " ")
 
-5. Click **Enable Data Guard**. 
+4. Start the **Data Guard Association process**
+      * In the Container Database details page, under **Resources**, click on ***Data Guard Associations***.
+      * Then click on the ***Enable Data Guard*** button.
+   
+   ![Start Enable Dataguard Associations Image](./images/start-dg-association.png " ")
 
-   ![Click Enable Data Guard](./images/enable-dataguard.png " ")
-
-   In the Enable Data Guard page, configure your Data Guard association.
+5. In the Enable Data Guard page, **provide the information to configure your Data Guard association.**
     
-    **Select Peer VM Cluster**: 
+    **<u>In the Select Peer VM Cluster Section of the page:</u>** 
 
-       * **Peer Region**: Select your **assigned peer region** ***"US East (Ashburn) OR US West (San Jose)"***.
+      * For the **Peer Region**: Select your ***assigned peer region*** 
+      * For the **Availability Domain**: Select your ***assigned availabilty domain***
+      * Then select the **Compartment** named ***MyDemoStandby*** and Select the **peer VM Cluster** named  ***MyDemoStandbyVMCluster***
   
-         >**Note:** The primary and standby databases could be running on two different VM clusters on a shared ExaDB-C@C system or on two geographically separated ExaDB-C@C systems managed from the same or different Oracle Cloud Infrastructure regions. For this lab, the primary and standby database will be running on a shared ExaDB-C@C system on the same region.
+         >**Note:** The peer Region selected will determine if you are configuring a local standby or a DR standby.  
     
-       * **Exadata Cloud@Customer Infrastructure**: Select the Exadata Database Service on Cloud@Customer infrastructure where the standby database is located. Click the **Change Compartment** hyperlink and select ***OCW23ExaDBCC*** for the compartment. 
-         
-         Select your **assigned Exadata Cloud@Customer Infrastructure**. 
+    **<u>In the DataGuard Association Details section of the page:</u>**
     
-       * **Peer VM Cluster**: Select the Exadata VM Cluster that contains the standby database. Click the **Change Compartment**, select ***MyStandByCompartment_{Region}*** then select ***MyStandbyVMCluster*** for the Peer VM Cluster
-  
-   ![Select Peer VM Cluster](./images/select-peer-vmcluster.png " ")
+      * For the **Data Guard type**: you can choose between Active Data Guard or Data Guard. For this lab, select ***Active Data Guard***
     
-    **Data Guard Assocation Details:**
+      * For the **Protection mode**:  you can choose between Maximum Performance and Maximum Availability. For this lab, select ***Maximum Performance***
+
+   ![Select Peer VMC and Data Guard Association Details Image](./images/choose-peer-vmc-and-dg-association-details.png " ")
+
+6. **Choose the Database Home and name the standby database:** 
+    * For the **Database Home** choose ***Select an existing Database Home*** then select ***MyDemoStandby23aiDBHome02***.
+
+    * For the **Database unique name** for the standby database: enter ***MyDemoDB_23aiStandbyXX*** 
+    <br/>( Where ***XX*** is your assigned student # for the workshop).
     
-       * **Select the Data Guard type**: Select Active Data Guard or Data Guard. For this lab, select ***Active Data Guard***
-    
-       * **Protection mode**: Select a protection mode the Data Guard association. For this lab, select ***Maximum Performance***
+    * For the **Database password**. For this lab, use ***Pass4OCW24-#*** 
 
-   ![Select Data Guard Association](./images/dg-association-details.png " ")
+    **<u>Under Advanced Options on the Management Tab:</u>**
 
-    **Choose Database Home**: Choose ***Select an existing Database Home*** then select ***MyStandbyDBHome*** for the Database Home.
+    * For the **Oracle SID Prefix** enter: **ExaStandby*****XX*** 
+    <br/>( Where ***XX*** is your assigned student # for the workshop).
 
-  
-   ![Choose Database Home](./images/choose-database-home.png " ")
+    * Then Click on the **Enable Data Guard** button to start the cloud automation workflow.
 
-    **Configure standby database**: Provide the unique name for the standby database. 
-    
-       * Provide the **Database password**. For this lab, use the assigned password ***Pass4Stud3nt-#*** 
-
-6. Click **Enable Data Guard**.
-
-   ![Click Enable Data Guard](./images/click-enable-dataguard.png " ")
+   ![Choose DB Home and Name Standby Image](./images/choose-dbhome-and-name-standby.png " ")
    
-   The Data Guard Association process will run in the background. When the association is created, the details for a database and its peer display their respective roles as ***Primary*** or ***Standby***.
+   >*The Data Guard Association process will run in the background. When the association is created, the details for a database and its peer display their respective roles as ***Primary*** or ***Standby***.
   
-
+   ![Data Guard Association Completed Image](./images/dataguard-association-completed.png " ")
 
 
 You may now **proceed to the next lab**
 
 ## Learn More
 
-* Click [here](https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-using-data-guard.html#GUID-6EBC4D6A-C58B-4721-B756-F22FC6819A45) to learn more about using Oracle Data Guard with Exadata Database Service on Cloud@Customer.
+* Click [here](https://docs.oracle.com/en-us/iaas/exadb-xs/doc/using-data-guard-with-exadb-xs.html) to learn more about using Oracle Data Guard with Exadata Database Service on Exascale Infrastructure.
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Eddie Ambler, Product Management
+* **Author** - Eddie Ambler, Leo Alvarado, Product Management
 
 * **Contributors** - Tammy Bednar, Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, September 2023.
+* **Last Updated By** - Eddie Ambler, Product Management, August 2024.

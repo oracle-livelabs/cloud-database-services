@@ -6,14 +6,15 @@ This workshop is designed to provide you with hands on experience using the Exad
 
 In this workshop, you will use several of the OCI management interfaces to conduct various database lifecycle tasks on the Exadata Database Service on Exascale Infrastructure.  
 
-The workshop exercises are designed to provide you with operational experience creating & managing the Exascale Storage Vault, the Exadata VM Cluster, Container Databases, Pluggable Databases, and thin clones that leverage the Exascale technology stack.
+The workshop exercises are designed to provide you with operational experience creating & managing the Exascale Storage Vault, the Exadata VM Cluster, Container Databases, Pluggable Databases, and PDB Thin Clones that leverage the Exascale technology stack.
 
-You will also learn how to configure alerts and notifications for events that we will trigger during some of the workshop lab tasks. 
+During this workshop, you will learn how to use cloud automation to configure Maximum Availability constructs for your databases by enabling high availability and disaster recovery with Data Guard and Active Data Guard and cloud-based automatic backup and recovery. 
+<br/> You will also learn how to capture and deploy infrastructure as code with terraform and how to configure alerts and notifications for events that we will trigger during some of the workshop lab tasks. 
 
 Don’t miss your chance to be one of the first to gain hand-on experience with Exadata & the Exascale technology stack.
 
 
-**Estimated Workshop Time:** ***90 minutes***
+**Estimated Workshop Time:** ***8 Hours***
 
 
 ### **What is an Oracle Exadata Database Service?**
