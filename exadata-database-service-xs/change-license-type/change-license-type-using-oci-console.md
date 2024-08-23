@@ -29,7 +29,7 @@ This lab requires completion of the following:
    
 2. Select your ***Assigned Compartment***, and Click your assigned **VM Cluster** named ***MyVMClusterXX***.
    
-   **<u>To use OCI CLI for this lab, we will be using the ***OCI Cloud Shell tool***</u>.** 
+    >**Note:** To use **OCI CLI** for this lab, we will be using the ***OCI Cloud Shell tool*** 
    
 3. In the VM Cluster Details page, Copy the VM Cluster OCID by clicking on the ***copy*** button in the ***OCID*** field under the **General Information** section. 
    
