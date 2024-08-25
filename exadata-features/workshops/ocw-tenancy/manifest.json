@@ -1,0 +1,35 @@
+{
+    "workshoptitle": "Hands-on for High Database Performance with Exadata Exascale and Exadata 24.1",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "filename": "../../introduction/introduction_tenancy.md"
+        },
+        {
+            "title": "Lab 1: Exascale Database Clones",
+            "filename": "../../exascale_clone/exascale_clone.md"
+        },
+        {
+            "title": "Lab 2: Smart Scan",
+            "filename": "../../smart_scan/smart_scan.md"
+        },
+        {
+            "title": "Lab 3: Hybrid Columnar Compression",
+            "filename": "../../hcc/hcc.md"
+        },
+        {
+            "title": "Lab 4: Flash Cache",
+            "filename": "../../flash_cache/flash_cache.md"
+        },
+        {
+            "title": "Lab 5: Storage Indexes",
+            "filename": "../../storage_indexes/storage_indexes.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}

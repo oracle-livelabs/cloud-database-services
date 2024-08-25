@@ -24,7 +24,15 @@ This lab assumes:
 
 ## Task 1: Verify the Source Table
 
-1. Determine the size of the uncompressed CUSTOMERS table using the SQL script `lab_hcc_01.sql`.
+1. Connect to the database with `sqlplus /@db`. Use the alias `sqlp`. The rest of the lab will be executed in sqlplus.
+
+    ```text
+    <copy>
+    sqlp
+    </copy>
+    ```
+
+2. Determine the size of the uncompressed CUSTOMERS table using the SQL script `lab_hcc_01.sql`.
 
     ```text
     <copy>
@@ -32,7 +40,7 @@ This lab assumes:
     </copy>
     ```
 
-2. Verify that the CUSTOMERS table is uncompressed using the SQL script `lab_hcc_02.sql`.
+3. Verify that the CUSTOMERS table is uncompressed using the SQL script `lab_hcc_02.sql`.
 
     ```text
     <copy>
@@ -86,9 +94,18 @@ This lab assumes:
     </copy>
     ```
 
+
+3. Exit the sqlplus session before starting the next lab.
+
+    ```text
+    <copy>
+    exit
+    </copy>
+    ```
+
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Seth Miller, Principal Product Manager, Exadata Product Management
 * **Contributors** - Alex Blythe, Exadata Product Management
-* **Last Updated By/Date** - Seth Miller, July 2023
+* **Last Updated By/Date** - Seth Miller, August 2024
