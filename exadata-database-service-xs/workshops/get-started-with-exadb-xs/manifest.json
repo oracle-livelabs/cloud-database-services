@@ -1,0 +1,78 @@
+{
+    "workshoptitle": "Get Started with Oracle Exadata Database Service on Exascale Infrastructure",
+
+    "help": "livelabs-help-db_us@oracle.com",
+
+    "tutorials": [
+      {
+          "title": "Introduction",
+          "description": "Introduction",
+          "filename": "../../introduction-ocw24-mc/introduction-ocw24-mc.md"
+      },
+      {
+            "title": "Get Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "../../get-started-ocw24/get-started-ocw24.md"
+        },
+        {
+            "title": "Lab 1: Create Instance of Exadata Database Service on Exascale Infrastructure",
+            "description": "Learn how to Create Instance of Exadata Database Service on Exscale Infrastructure using OCI Console",
+            "filename": "../../create-vmcluster-cdb-pdb-on-exascale/create-vmcluster-cdb-pdb-on-exascale.md"   
+        },
+        {
+             "title": "Lab 2: Create Standby Exadata VM Cluster & Database Home",
+             "description": "Create Standby Exadata VM Cluster & Database Home for use with Data Guard using OCI Console",
+             "filename": "../../create-standby-vmcluster-on-exascale/create-standby-vmcluster-and-dbhome-on-exascale.md"
+         },
+       {
+            "title": "Lab 3: Discover VM Cluster, Container Database, & Pluggable Database Details",
+            "description": "Learn how to Discover Environment Details using OCI Console",
+            "filename": "../../discover-env-details-on-exascale/discover-env-details-on-exascale.md"
+        },
+        {
+            "title": "Lab 4: Scale Exascale Storage Vault Resources",
+            "description": "Learn how to Scale Exascale Storage Vault Resources using OCI Console",
+            "filename": "../../scale-exascale-storage-vault-resources-using-oci-console/scale-exascale-storage-vault-resources-using-oci-console.md"
+        },
+        {
+            "title": "Lab 5: Enable Automatic Database Backups",
+            "description": "Learn how to Enable Automatic Database Backups using OCI Console",
+            "filename": "../../enable-automatic-backups/enable-automatic-backups-using-oci-console.md"
+        },
+        {
+            "title": "Lab 6: Create Thin Clone of PDB",
+            "description": "Learn how to Create PDB Thin Clone on Exadata Exascale using OCI Console",
+            "filename": "../../create-thin-clone-pdb-on-exascale/create-thin-clone-pdb-on-exascale.md"
+        },
+        {
+            "title": "Lab 7: Configure & Validate Notifications for Monitoring ECPU Scaling Changes",
+            "description": "Learn how to Configure & Validate Notifications for Monitoring ECPU Scaling Changes",
+            "filename": "../../configure-notifications-for-exascale-ecpu/configure-notifications-for-exascale-ecpu.md"
+        },
+        {
+            "title": "Lab 8: Change Exadata VM Cluster License Type using OCI CLI",
+            "description": "Learn how to Change the Exadata VM Cluster License Type using OCI Console",
+            "filename": "../../change-license-type/change-license-type-using-oci-console.md"
+        },
+        {
+            "title": "Lab 9: Enable Data Guard Standby for Local HA",
+            "description": "Learn how to Enable Data Guard Standby for Local HA",
+            "filename": "../../enable-data-guard/enable-data-guard-using-oci-console.md"
+        },
+        {
+            "title": "Lab 10: Discover Environmental Details using REST API",
+            "description": "Learn how to Discover Environmental Details using REST API",
+            "filename": "../../discover-env-details-on-exascale-api/discover-env-details-on-exascale-api.md"
+        },
+        {
+            "title": "Lab 11: Use OCI Resource Manager to generate and deploy Terraform for Application & Database Stack",
+            "description": "Learn how to Use OCI Resource Manager to generate and deploy Terraform for Application & Database Stack",
+            "filename": "../../use-orm-generate-tf-dbstack/use-orm-generate-tf-dbstack.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
