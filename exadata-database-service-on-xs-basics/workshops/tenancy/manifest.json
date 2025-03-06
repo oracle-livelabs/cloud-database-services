@@ -1,0 +1,38 @@
+{
+    "workshoptitle": "Oracle Exadata Database Service on Exascale Infrastructure Basics",
+
+    "help": "livelabs-help-db_us@oracle.com",
+
+    "tutorials": [
+      {
+          "title": "Introduction",
+          "description": "Introduction",
+          "filename": "../../introduction/introduction.md"
+      },
+      {
+            "title": "Get Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "../../get-started/get-started.md"
+        },
+        {
+            "title": "Lab 1: Create an Exadata VM Cluster",
+            "description": "Use the OCI Console to Create an Exadata VM Cluster on Exascale Infrastructure",
+            "filename": "../../vm-cluster/vm-cluster.md"
+        },
+       {
+            "title": "Lab 2: Create a Container & Pluggable Database on the Exadata VM Cluster",
+            "description": "Use the OCI Console to Create a Container & Pluggable Database on the Exadata VM Cluster.",
+            "filename": "../../create-cdb-pdb/create-cdb-pdb.md"
+        },
+        {
+            "title": "Lab 3: Create a thin clone of a PDB on an Exadata VM Cluster",
+            "description": "Create a thin clone of a PDB on an Exadata VM Cluster on Exascale Infrastructure",
+            "filename": "../../create-pdb-thin/create-pdb-thin.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
