@@ -152,9 +152,7 @@ In the Edit Diagnostics Collection Settings dialog, you can enable or disable an
 1. For this lab, we will not be enabling **Automatic Backups** for the database during the create database workflow.
     * **Uncheck the box for:** ***Enable Automatic Backups***
 
-  ![Uncheck Enable Automatic Backups Image](./images/uncheck-enable-automatic-backups.png " ")
-
-7. **Review & Configure Advanced Options** for the Container Database by clicking on the **Show Advanced Options** link.
+2. **Review & Configure Advanced Options** for the Container Database by clicking on the **Show Advanced Options** link.
     * Under the **Management tab** set the Oracle_SID to ***ExascaleDemo***  
   ![Configure Adv Options - Mgmt Tab Image](./images/configure-adv-options-mgmt-tab.png " ")
     * Under the **Encryption tab** you can select the desired key management method. Select ***Use Oracle-managed keys***.
@@ -163,9 +161,10 @@ In the Edit Diagnostics Collection Settings dialog, you can enable or disable an
     * Under the **Tags tab:** you can add free-form tags to your resource.  If you want to apply a defined tag, you must have permissions to use the tag namespace. Remember that you can also apply tags to your resources after they are provisioned.
   ![Configure Adv Options - Tags Tab Image](./images/configure-adv-options-tags-tab.png " ")
 
-8. Click on the **Create Container Database** button to proceed with creating the Container Database.
+1. Click on the **Create Container Database** button to proceed with creating the Container Database.
 
     ![Container Database Details Page Image](./images/cdb-details-page-with-pdb.png " ")
+    
 ***!!! Congratulations:*** You may now **proceed to the next lab**. 
 
 

@@ -229,6 +229,8 @@ This lab requires completion of the following:
       * ***Enabled ECPU Core Count*** 
       * ***Reserved ECPU Core Count***
 
+***!!! Congratulations:*** You may now **proceed to the next lab**. 
+
 ## Learn More
 
 * Click [here](https://docs.oracle.com/en-us/iaas/exadb-xs/doc/exadata-cloud-infrastructure-events.html) to learn more about Oracle Exadata Database Service on Exascale Infrastructure Events.
