@@ -13,7 +13,7 @@ You will also learn how to configure alerts and notifications for events that we
 Don’t miss your chance to be one of the first to gain hand-on experience with Exadata & the Exascale technology stack.
 
 
-**Estimated Workshop Time:** ***90 minutes***
+**Estimated Workshop Time:** ***3 hours***
 
 
 ### **Oracle Exadata Exascale: World’s Only Intelligent Data Architecture for Cloud**

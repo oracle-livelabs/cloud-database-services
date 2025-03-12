@@ -6,7 +6,7 @@
 This lab walks you through how to create an instance of the Exadata Database Service on Exascale Infrastructure using the OCI Console. 
  
 
-Estimated Time: 2 Hours 10 minutes
+**Estimated Time:** ***2 Hours 10 minutes***
 
 Watch the video below for a quick walk-through of the lab.
   [Create a Custom Database Software Image](youtube:ggh0pIuPj2g)
