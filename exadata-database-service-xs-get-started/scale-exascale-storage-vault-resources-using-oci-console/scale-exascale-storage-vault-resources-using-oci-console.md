@@ -8,7 +8,7 @@
 
 This lab walks you through the steps to Scale the Exascale Storage Vault Resources using the OCI Console.
 
-Estimated Time: 10 minutes
+**Estimated Time:** ***10 minutes***
 
 
 ### Objectives

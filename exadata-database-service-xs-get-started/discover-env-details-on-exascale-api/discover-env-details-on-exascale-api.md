@@ -5,7 +5,7 @@
 
 This lab walks you through the steps to discover how to navigate to the Exadata Database Service on Exascale Infrastructure and discover the environment details for the Exadata VM Cluster, Container Database, Pluggable Database, and the Exascale Storage Vault using the OCI API.
 
-Estimated Time: 10 minutes
+**Estimated Time:** ***10 minutes***
 
 ### Objectives
 

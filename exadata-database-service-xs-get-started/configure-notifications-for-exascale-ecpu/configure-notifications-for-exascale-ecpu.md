@@ -8,7 +8,7 @@
 
 This lab walks you through the steps to configure & validate notifications for monitoring ECPU Scaling changes.
 
-Estimated Lab Time: 15 minutes
+**Estimated Lab Time:** ***15 minutes***
 
 **How Notifications Work?**
 
