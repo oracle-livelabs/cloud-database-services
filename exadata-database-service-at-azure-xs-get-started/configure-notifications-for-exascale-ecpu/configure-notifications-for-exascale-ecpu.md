@@ -173,22 +173,20 @@ This lab requires completion of the following:
 
 ## Task 4: List VM Cluster Configuration using CLI 
 
->**Note:** To use OCI CLI for this lab, we will be using the ***OCI Cloud Shell tool***. 
+>**Note:** For this lab, we will be using the ***Azure Cloud Shell tool*** with an **OCI CLI** configured. 
    
-1. In the VM Cluster Details page, Copy the VM Cluster OCID by clicking on the ***copy*** button in the ***OCID*** field under the **General Information** section. 
+1. From the Azure portal, In the Oracle Exascale VM Cluster properties page, Copy the Exascale VM Cluster OCID by clicking on the ***copy to clipboard*** button in the ***OCID*** field under the **Properties** section. 
    
    ![copy vmcluster ocid](./images/copy-vmcluster-ocid.png "copy vmcluster ocid")
 
    Paste the VM Cluster OCID to a text editor.
    
-2. Click the **Developer tools** icon in the console header and select ***Cloud Shell*** from the drop-down menu. 
+2. Click the **Azure Cloud Shell** icon in the console header. 
    
-   ![navigate to oci cloudshell](./images/oci-cloud-shell.png "navigate to oci cloudshell")
+   ![navigate to oci cloudshell](./images/azure-cloud-shell.png "navigate to oci cloudshell")
 
-   This displays the Cloud Shell in a "drawer" at the bottom of the console:
-
-   ![oci cloudshell launch](./images/cloudshelllaunch.png "oci cloudshell launch")
-
+   This displays the Azure Cloud Shell in a "drawer" at the bottom of the portal.
+   
 3. Run the OCI CLI Command to get the VM Cluster Configuration.
 
       >**Note:** Replace ***{VMClusterId}*** with VM Cluster OCID copied from *(Task 4 Step 1)*

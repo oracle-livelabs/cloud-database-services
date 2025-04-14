@@ -21,48 +21,23 @@ This lab requires the completion of the following:
 
 ## Task 1: Get the VM Cluster Details using OCI CLI
 
->**Note:** To use **OCI CLI** for this lab, we will be using the ***OCI Cloud Shell tool***. 
+>**Note:** For this lab, we will be using the ***Azure Cloud Shell tool*** with an **OCI CLI** configured. 
    
-
-1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Exascale Infrastructure**.
-   
-2. Select your ***Compartment***, and Select your **VM Cluster**.
-   
-   ![Navigate to the VM Cluster ](./images/navigate-vmcluster.png "Navigate to the VM Cluster")
-
-3. Click the **Developer tools** icon in the console header and select ***Cloud Shell*** from the drop-down menu. 
-   
-   ![navigate to oci cloudshell](./images/oci-cloud-shell.png "navigate to oci cloudshell")
-
-   This displays the Cloud Shell in a "drawer" at the bottom of the console:
-
-   ![oci cloudshell launch](./images/cloudshelllaunch.png "oci cloudshell launch")
-
-    >**Note:** For this lab, we will be using the ***OCI Code Editor*** to store the required details in this lab.
-   
-   Click on the ***Expand*** icon in **Actions** and select ***Open Code Editor***. 
-   
-   ![expand actions to show open code editor](./images/expand-code-editor.png "expand actions to show open code editor")
-   
-   This displays the Code Editor in a side by side view with the Cloud Shell.
-   
-   ![launch code editor](./images/code-editor-launch.png "launch code editor")
-
-   You can use the code editor to copy and paste obtained environment details in the lab. For better code viewing, under ***View*** select ***View: Toggle Word Wrap***.
-
-
-4. In the VM Cluster Details page, Copy the VM Cluster OCID by clicking on the ***copy*** button in the ***OCID*** field under the **General Information** section. 
+1. From the Azure portal, In the Oracle Exascale VM Cluster properties page, Copy the Exascale VM Cluster OCID by clicking on the ***copy to clipboard*** button in the ***OCID*** field under the **Properties** section. 
    
    ![copy vmcluster ocid](./images/copy-vmcluster-ocid.png "copy vmcluster ocid")
 
+   Paste the VM Cluster OCID to a text editor.
    
-   Paste the VM Cluster OCID value in your code or text editor.
+2. Click the **Azure Cloud Shell** icon in the console header. 
+   
+   ![navigate to oci cloudshell](./images/azure-cloud-shell.png "navigate to oci cloudshell")
 
+   This displays the Azure Cloud Shell in a "drawer" at the bottom of the portal.
+   
+3. Run the OCI CLI Command to get the VM Cluster Configuration.
 
-
-5. Run the OCI CLI Command to get the VM Cluster Configuration.
-
-      >**Note:** Replace ***{VMClusterId}*** with VM Cluster OCID copied from *(Task 1 Step 4)*
+      >**Note:** Replace ***{VMClusterId}*** with VM Cluster OCID copied from *(Task 1 Step 1)*
 
     ```
     <copy>
@@ -99,12 +74,13 @@ This lab requires the completion of the following:
 
 1. From the Cloud Shell terminal, make an OCI REST API call to get a list of the available Database Homes in a compartment by running the **OCI RAW-REQUEST** command below:
    
-    > **Note:** Replace the API endpoint region "***{region}***" with your **assigned region** and ***"{CompartmentOCID}"*** with the **Compartment OCID** obtained from ***Task 1 Step 5***
+    > **Note:** Replace the [<u>**API endpoint region**</u>](https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/) "***{region}***" with your **assigned region** and ***"{CompartmentOCID}"*** with the **Compartment OCID** obtained from ***Task 1 Step 3***
+  
    
       ```
         <copy>
 
-          oci raw-request --http-method GET --target-uri "https://database.us-{region}-1.oraclecloud.com/20160918/dbHomes?compartmentId={CompartmentOCID}&lifecycleState=AVAILABLE&limit=10"
+          oci raw-request --http-method GET --target-uri "https://database.{region}.oraclecloud.com/20160918/dbHomes?compartmentId={CompartmentOCID}&lifecycleState=AVAILABLE&limit=10"
 
         </copy>
       ```
@@ -167,12 +143,12 @@ This lab requires the completion of the following:
 
 1. Run the OCI CLI Command to list the available Pluggable Databases in a Container Database.
 
-      >**Note:** Replace the API endpoint region "***{region}***" with your **assigned region** and ***{ContainerDatabaseOCID}*** with the ***Container Database (CDB) OCID*** obtained from ***Task 3*** 
+      > **Note:** Replace the [<u>**API endpoint region**</u>](https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/) "***{region}***" with your **assigned region** and ***{ContainerDatabaseOCID}*** with the ***Container Database (CDB) OCID*** obtained from ***Task 3*** 
 
     ```
     <copy>
 
-      oci raw-request --http-method GET --target-uri "https://database.us-{region}-1.oraclecloud.com/20160918/pluggableDatabases?databaseId={ContainerDatabaseOCID}&limit=10"
+      oci raw-request --http-method GET --target-uri "https://database.{region}.oraclecloud.com/20160918/pluggableDatabases?databaseId={ContainerDatabaseOCID}&limit=10"
 
     </copy>
     ```
@@ -199,8 +175,6 @@ This lab requires the completion of the following:
 
 1. Prepare the JSON file for the Create Pluggable Database REST API call request body that contain the Create Thin Clone Pluggable Database Details resource.
 
-   Open the ***Code Editor*** tab. 
-
    Create a JSON file ***MyThinClonePDB.json*** with the required ***Create Pluggable Database*** details below
    
       * **pdbName:** ***"ThinPDB2"***
@@ -218,14 +192,14 @@ This lab requires the completion of the following:
    
    Open the **OCI Cloud Shell** tab and run the following command
 
-    >**Note:** Replace the API endpoint region "***{region}***" with your **assigned region** 
+    > **Note:** Replace the [<u>**API endpoint region**</u>](https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/) "***{region}***" with your **assigned region** 
 
    ![create thin clone using REST API](./images/create-thin-clone-cloud-shell.png "create thin clone using REST API")
    
     ```
       <copy>
 
-        oci raw-request --http-method POST --target-uri "https://database.us-{region}-1.oraclecloud.com/20160918/pluggableDatabases" --request-body file://MyThinClonePDB.json
+        oci raw-request --http-method POST --target-uri "https://database.{region}.oraclecloud.com/20160918/pluggableDatabases" --request-body file://MyThinClonePDB.json
 
       </copy>
 
@@ -252,12 +226,12 @@ This lab requires the completion of the following:
 
 1. Make an OCI REST API call to get a list of the Exascale Storage Vaults in the specified compartment by running the **OCI RAW-REQUEST** command below:
    
-    > **Note:** Replace the API endpoint region "***{region}***" with your **assigned region** and ***{CompartmentOCID}*** with the ***Compartment OCID*** obtained from ***Task 1***
+    > **Note:** Replace the [<u>**API endpoint region**</u>](https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/) "***{region}***" with your **assigned region** and ***{CompartmentOCID}*** with the ***Compartment OCID*** obtained from ***Task 1***
    
       ```
         <copy>
 
-          oci raw-request --http-method GET --target-uri "https://database.us-{region}-1.oraclecloud.com/20160918/exascaleDbStorageVaults?compartmentId={CompartmentOCID}&limit=10"
+          oci raw-request --http-method GET --target-uri "https://database.{region}.oraclecloud.com/20160918/exascaleDbStorageVaults?compartmentId={CompartmentOCID}&limit=10"
 
         </copy>
 
