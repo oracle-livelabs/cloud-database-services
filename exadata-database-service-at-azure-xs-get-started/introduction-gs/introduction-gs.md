@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-This workshop is designed to provide you with hands on experience using the Exadata Database Service on Exascale Infrastructure, which is Oracle’s next generation architecture of the Exadata Database Service. 
+This workshop is designed to provide you with hands on experience using the Exadata Database Service on Exascale Infrastructure on Oracle Database@Azure.  
 
 In this workshop, you will use several of the OCI management interfaces to conduct various database lifecycle tasks on the Exadata Database Service on Exascale Infrastructure.  
 
