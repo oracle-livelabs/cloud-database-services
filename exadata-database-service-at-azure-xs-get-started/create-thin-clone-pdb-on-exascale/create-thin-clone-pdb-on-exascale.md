@@ -23,7 +23,7 @@ This lab requires the completion of the following:
 ## Task 1: Create Thin clone of a Pluggable Database
 
 
-1. In the **Pluggable Database Details** page, click **Clone** to initiate the **Clone PDB** action.
+1. In the **Pluggable Database Details** page, click the **Actions** button and select **Clone** to initiate the **Clone PDB** action.
 
 ![Initiate Clone Pluggable Database Action](./images/click-clone-pdb.png "Initiate Clone Pluggable Database Action")
 
@@ -43,7 +43,7 @@ This lab requires the completion of the following:
    Enable thin clone.
    * You can select **Take a backup of the PDB immediately after cloning**
    * ***Enable Thin Clone*** checkbox will be checked by default. Unchecking this box will create a thick clone instead of a thin clone of a pluggable database.
-   * Click ***Clone pluggable database*** to start the clone provisioning process.
+   * Click ***Clone*** to start the clone provisioning process.
 
 ![Configure Clone options and check box to Enable Thin Clone](./images/enable-thin-clone.png "Configure Clone options and check box to Enable Thin Clone")
 
@@ -51,11 +51,11 @@ This lab requires the completion of the following:
    
 ![New Thin Clone PDB Details page](./images/thin-clone-available.png " ")
 
-3. List all of the PDBs in the CDB. From the **Pluggable Database Details** page, click **Database Details** in the breadcrumb path.
+3. List all of the PDBs in the CDB. From the **Pluggable Database Details** page, click the back arrow to go back to the **Container Database Details** in the breadcrumb path.
 
 ![New Thin Clone PDB Details page](./images/cdb-details-path.png " ")
 
-   Under **Resources**, click **Pluggable databases**.
+   Click **Pluggable databases**.
 
 ![New Thin Clone PDB Details page](./images/list-of-pdb.png " ")
 
@@ -74,4 +74,4 @@ This lab requires the completion of the following:
 
 * **Author** - Leo Alvarado, Tammy Bednar, Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, April 2025.
+* **Last Updated By** - Leo Alvarado, Product Management, August 2025.
