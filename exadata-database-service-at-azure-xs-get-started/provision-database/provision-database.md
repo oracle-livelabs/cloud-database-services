@@ -26,7 +26,7 @@ This lab walks you through how to create an Oracle Database on the Oracle Exadat
 
 ![Image showing VM Cluster details page](./images/oci-vm-cluster-details-page.png "Image showing VM Cluster details page")
 
-3. Under **Resources**, select **Container databases** and click ***Create container database***.
+3. Select **Container databases** and click ***Create container database***.
 
 ![Image showing create CDB](./images/create-cdb.png "Image showing create CDB")
 
@@ -72,7 +72,7 @@ This lab walks you through how to create an Oracle Database on the Oracle Exadat
 
 ![Image showing the option to add container database tags](./images/enter-container-db-tag.png "Image showing the option to add container database tags")
 
-7. Click **Create container database**.
+7. Click **Create** to create the container database.
 
 ![Image showing the option confirm creation of container database](./images/click-create-container-db.png "Image showing the option confirm creation of container database")
 
@@ -80,7 +80,7 @@ This lab walks you through how to create an Oracle Database on the Oracle Exadat
 
 ![Image showing created container database](./images/created-cdb.png "Image showing created container database")
 
-8.  In the **Container Database details** page, under **Resources**, select **Pluggable Databases**.
+1.  In the **Database details** page, select the **Pluggable Databases** tab.
 
 ![Image showing created pdb](./images/click-pdb.png "Image showing created pdb")
 
@@ -99,4 +99,4 @@ This lab walks you through how to create an Oracle Database on the Oracle Exadat
 
 * **Author** - Leo Alvarado, Tammy Bednar,  Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, April 2025.
+* **Last Updated By** - Leo Alvarado, Product Management, August 2025.

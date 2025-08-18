@@ -38,9 +38,7 @@ This lab requires the completion of the following:
 
    ![Image showing scale Exascale storage vault](./images/scale-storage-vault-page-before.png "Image showing scale storage vault")
 
-   Click **Save Changes**.
-
-   ![Image showing scale Exascale storage vault](./images/scale-storage-vault-page.png "Image showing scale storage vault")
+   Click **Scale**.
 
    The **Exascale Storage Vault details** page is now displayed. While the scale storage vault process is running, the lifecycle state of the Exascale storage vault shows ***UPDATING***.
 
@@ -50,7 +48,7 @@ This lab requires the completion of the following:
 
    ![Image showing scale Exascale storage vault](./images/scale-vault-available.png "Image showing scale storage vault")
 
-   The **Exascale Storage Vault details** page displays information about the new allocated Exascale database storage.
+   The **Exascale Storage Vault information** page displays information about the new allocated Exascale database storage.
 
    In the Exascale Storage Vault Details page, Copy the Storage Vault OCID by clicking the ***copy*** button in the ***OCID*** field under the **General Information** section. 
    Paste the copied ***Exascale Storage Vault OCID*** to a text editor.
@@ -108,4 +106,4 @@ This lab requires the completion of the following:
 
 * **Author** - Leo Alvarado, Tammy Bednar, Product Management
   
-* **Last Updated By** - Leo Alvarado, Product Management, March 2025.
+* **Last Updated By** - Leo Alvarado, Product Management, August 2025.
