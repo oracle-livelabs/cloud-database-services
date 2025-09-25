@@ -27,11 +27,17 @@ This lab requires the completion of the following:
 ## Task 1: Scale an Existing Exascale Storage Vault
 
 
-1. In the **Exascale Storage Vault details** page, select **Scale Storage Vault**.
+1. Navigate to the Exascale VM Cluster page. In the **VM Cluster information** tab, under the **Exascale database storage** section, click on the **Exascale database storage:** ***MyDemoStorageVault***.
+   
+   ![Image showing scale Exascale storage vault](./images/navigate-storage-vault.png "Image showing scale storage vault")
+     
+2. In the **Exascale Storage Vault details** page, click ***Scale Storage Vault***.
 
    ![Image showing scale Exascale storage vault](./images/scale-storage-vault.png "Image showing scale storage vault")
 
-2. In **Scale Storage Vault**, enter a value for the desired storage capacity for databases. This number should be the value for the total storage that you want to have provisioned after the scaling operation completes.
+3. On the **Scale Storage Vault** page, enter a value for the desired storage capacity for databases. This number should be the value for the total storage that you want to have provisioned after the scaling operation completes.
+   
+   For this lab, enter the value of ***400*** for the ***Storage capacity for Databases (GB)***, as we will scale up the Exascale Database Storage Vault from **300 GB to 400 GB**.
 
    ![Image showing scale Exascale storage vault](./images/scale-storage-vault-page-before.png "Image showing scale storage vault")
 
@@ -47,20 +53,23 @@ This lab requires the completion of the following:
 
    The **Exascale Storage Vault information** page displays information about the new allocated Exascale database storage.
 
-   In the Exascale Storage Vault Details page, Copy the Storage Vault OCID by clicking the ***copy*** button in the ***OCID*** field under the **General Information** section. 
+4. In the Exascale Storage Vault Details page, Copy the Storage Vault OCID by clicking the ***copy*** button in the **OCID** field under the General Information section. 
+   
    Paste the copied ***Exascale Storage Vault OCID*** to a text editor.
 
    ![copy storage vault ocid](./images/storage-vault-copy-ocid.png "copy storage vault ocid")
 
 ## Task 2: List Exascale Storage Vault Configuration using CLI
 
-   >**Note:** For this lab, we will be using the ***Azure Cloud Shell tool*** with an **OCI CLI** configured. 
+   >**Note:** To use **OCI CLI** for this lab, we will be using the ***OCI Cloud Shell tool***. 
 
-1. Click the **Azure Cloud Shell** icon in the console header. 
+1. Click the **Developer tools** icon in the console header and select ***Cloud Shell*** from the drop-down menu. 
    
-   ![navigate to oci cloudshell](./images/azure-cloud-shell.png "navigate to oci cloudshell")
+   ![navigate to oci cloudshell](./images/cloudshell.png "navigate to oci cloudshell")
 
-   This displays the Azure Cloud Shell in a "drawer" at the bottom of the portal.
+   This displays the Cloud Shell in a "drawer" at the bottom of the console:
+
+   ![oci cloudshell launch](./images/cloudshelllaunch.png "oci cloudshell launch")
 
 2. Run the OCI CLI Command to get the Exascale Storage Vault Configuration.
 
@@ -96,6 +105,7 @@ This lab requires the completion of the following:
       * ***Exascale Database Storage Capacity Total size in gbs***
       * ***Lifecycle state***
       * ***Exascale Storage Vault Associated VM Cluster Count and OCID***
+
 
 ***Congratulations!!!*** You may now **proceed to the next lab**.
 

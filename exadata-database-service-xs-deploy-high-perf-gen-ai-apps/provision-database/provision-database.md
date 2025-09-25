@@ -1,4 +1,4 @@
-# Create Oracle Database on Oracle Exadata Database Service on Exascale Infrastructure
+# Create an Oracle Database on Oracle Exadata Database Service on Exascale Infrastructure
 
 
 ## Introduction
@@ -14,75 +14,67 @@ This lab walks you through how to create an Oracle Database on the Oracle Exadat
 
 ### Prerequisites
 
-* A provisioned Oracle Exadata Database Service on Exascale Infrastructure on Oracle Database@Azure Instance.
+* A provisioned Oracle Exadata Database Service on Exascale Infrastructure VM Cluster to host the database.
 
 ## Task 1: Provision an Oracle Database
 
-1. Log in to the OCI Console and navigate to **VM Cluster Details**.
+1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Exascale Infrastructure**.
 
-![Image showing VM Cluster details page](./images/oci-vm-cluster-details-page.png "Image showing VM Cluster details page")
+   ![Navigate to Exascale page using the console](./images/navigate-oci-console.png "Navigate to Exascale page using the console")
 
-2. Select **Container databases** and click ***Create container database***.
-
-![Image showing create CDB](./images/create-cdb.png "Image showing create CDB")
-
-3. In the **Create container database** page, enter the following information.
+2. Select your assigned **Region** and select your assigned **compartment** from the applied filter to navigate to your assigned **Exascale VM Cluster**.  
    
-* **Basic information for container database:**
-     * **Provide the database name:** Enter a name for the database.
-     * **Provide a unique name for the database ***(Optional)***:** Enter a unique name for the database
-     * **Select a database version:** Select the database version available.
-     * **Provide a PDB name ***(Optional)***:** Enter the name of the first PDB to be created.
+   ![Navigate to the VM Cluster page](./images/select-compartment.png "Navigate to the VM Cluster page")
+   
+   Click the name of your assigned VM Cluster to open the **VM Cluster** page.
+   
+   ![Navigate to the VM Cluster page](./images/select-vm-cluster.png "Navigate to the VM Cluster page")
 
-![Image showing the basic container database information to enter](./images/create-cdb-details.png "Image showing the basic container database information to enter")
+3. In the **VM Clusters** page, click on the **Container databases** tab and click ***Create container database***.
 
-* **Specify a database Home:**
-     * **Database Home source:** Select to use an ***existing Database Home*** or ***Create a new Database Home***.
-     * **Database Home display name:** Use the default database home name or enter a database home name.
-     * **Change Database Image ***(Optional)***:** Determines what Oracle Database version is used for the database. By default, the latest Oracle-published database software image is selected. Select to use an older Oracle-published image or a custom database software image that you have created in advance.
+   ![Image showing create CDB](./images/create-cdb.png "Image showing create CDB")
 
-![Image showing Database Home selection](./images/enter-database-home.png "Image showing Database Home selection")
+4. In the **Create Container Database** page enter the **basic information for creating the container database:**
+   
+     * For the **Database Name:** Enter ***DemoDB01***
+     * For the **Database Unique Name Suffix:** Enter ***DemoDB_23aiExascale***
+     * For the **Pluggable Database Name:** Enter ***MyPDB01***
+     * For the **Database release:** Select ***23ai***  
+     * For the **Database Home source** choose: **Select an Existing Database Home**
+     * Select Database Home with display name of ***MyDemo23aiDBhome01***
 
-* **Create administrator credentials:**
-     * **Password:** Password must be 9 to 30 characters and contain at least 2 uppercase, 2 lowercase, 2 special, and 2 numeric characters. The special characters must be `\`, `_`, `#`, or `-`.
-     * **Confirm Password:** Enter the same password.
+   ![Image showing the basic container database information to enter](./images/create-cdb-details.png "Image showing the basic container database information to enter")
 
-![Image showing Administrator credentials to enter](./images/enter-administrator-credentials.png "Image showing Administrator credentials to enter")
+     * Next configure your **Administrator Credentials:** by entering ***Pass4AIW25Student-#*** as the password for the ***sys*** username
+
+   ![Image showing Administrator credentials to enter](./images/enter-administrator-credentials.png "Image showing Administrator credentials to enter")
 
 
-4. In the **Configure Database backups** page, if you accept the defaults setting, the database will be backed up using the Oracle Database Autonomous Recovery Service. You have the option to use OCI Object Storage by changing the **Backup destination**. The database will not be backed up if you deselect **Enable automatic backups**. Automatic backups can be enabled after the container database is created.
+5. In the **Configure Database backups** page, if you accept the defaults setting, the database will be backed up using the Oracle Database Autonomous Recovery Service. You have the option to use OCI Object Storage by changing the **Backup destination**. 
+   
+   ![Image showing database backup configuration options](./images/configure-db-backup.png "Image showing database backup configuration options")
+   
+   For this lab, we will not be enabling **Automatic Backups** for the database during the create database workflow.
+    * **Uncheck the box for:** ***Enable Automatic Backups***
 
-![Image showing database backup configuration options](./images/configure-db-backup.png "Image showing database backup configuration options")
+   ![Image showing database backup configuration options](./images/disable-auto-backup.png "Image showing database backup configuration options")
       
-5. Click **Show advanced options** and enter the following information.
+6. **Review & Configure Advanced Options** for the Container Database by clicking on the **Show Advanced Options** link.
+   
+   Under the **Management tab** set the Oracle_SID to ***ExascaleDemo***
 
-   -  **Management:** You can add **Oracle SID prefix (_Optional_)** and select the **Character set** and **National Character set**.
+   ![Image showing Oracle SID and Character set selection](./images/select-sid-character-set.png "Image showing Oracle SID and Character set selection")
 
-![Image showing Oracle SID and Character set selection](./images/select-sid-character-set.png "Image showing Oracle SID and Character set selection")
+   Under the **Encryption tab** you can select the desired key management method. Select ***Use Oracle-managed keys***.
 
-   - **Encryption:** Configure key management, you have options to manage database keys. Select **Use Oracle-managed keys** to manage database keys using the wallet or select **Use customer-managed keys** to manage database keys using OCI Vaults.
+   ![Image showing console connection copy SSH string options](./images/select-encryption-option.png "Image showing console connection copy SSH string options")
 
-![Image showing console connection copy SSH string options](./images/select-encryption-option.png "Image showing console connection copy SSH string options")
+   Under the **Tags tab:** you can add free-form tags to your resource.  If you want to apply a defined tag, you must have permissions to use the tag namespace. Remember that you can also apply tags to your resources after they are provisioned.
 
-   - **Tags:** Apply free-form or defined tags to this resource.
+   
+7. Click **Create** to create the container database.
 
-![Image showing the option to add container database tags](./images/enter-container-db-tag.png "Image showing the option to add container database tags")
-
-6. Click **Create** to create the container database.
-
-![Image showing the option confirm creation of container database](./images/click-create-container-db.png "Image showing the option confirm creation of container database")
-
-   Once the provisioning process of the container database is completed, the state of the container database will show as **Available**.
-
-![Image showing created container database](./images/created-cdb.png "Image showing created container database")
-
-7.  In the **Database details** page, select the **Pluggable Databases** tab.
-
-![Image showing created pdb](./images/click-pdb.png "Image showing created pdb")
-
-   Click **Pluggable Database** to view the details of the pluggable database.
-
-![Image showing created pdb](./images/click-pdb-details.png "Image showing created pdb")
+   ![Image showing the option confirm creation of container database](./images/click-create-container-db.png "Image showing the option confirm creation of container database")
 
 ***!!! Congratulations:*** You may now **proceed to the next lab**. 
  
