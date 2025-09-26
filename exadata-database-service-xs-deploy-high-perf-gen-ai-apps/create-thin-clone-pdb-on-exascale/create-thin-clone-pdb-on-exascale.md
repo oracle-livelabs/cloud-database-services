@@ -18,18 +18,39 @@ This lab requires the completion of the following:
 
 * Successful creation of a VM Cluster on Exadata Database Service on Exascale Infrastructure.
 * Successful creation of Container Database on the VM Cluster, which will also includes the initial PDB.
-* Completion of **Lab 4**
+* Completion of **Lab 3**
 
 ## Task 1: Create Thin clone of a Pluggable Database
 
 
-1. In the **Pluggable Database Details** page, click the **Actions** button and select **Clone** to initiate the **Clone PDB** action.
+1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Exascale Infrastructure**.
 
-![Initiate Clone Pluggable Database Action](./images/click-clone-pdb.png "Initiate Clone Pluggable Database Action")
+   ![Navigate to Exascale page using the console](./images/navigate-oci-console.png "Navigate to Exascale page using the console")
+
+2. Select your assigned **Region** and select your assigned **compartment** from the applied filter to navigate to your assigned **Exascale VM Cluster**.  
+   
+   ![Navigate to the VM Cluster page](./images/select-compartment.png "Navigate to the VM Cluster page")
+   
+   Click the name of your assigned VM Cluster to open the **VM Cluster** page.
+   
+   ![Navigate to the VM Cluster page](./images/select-vm-cluster.png "Navigate to the VM Cluster page")
+
+3. In the **VM Clusters** page, click on the **Container databases** tab and click ***AIDemoDB*** Container Database. 
+
+   ![Image showing create CDB](./images/create-cdb.png "Image showing create CDB")
+
+   In the Database page, Navigate to the **Pluggable Databases** tab and click on ***PDB1*** Pluggable Database.
+
+   ![Image showing PDB](./images/navigate-pdb.png "Image showing PDB")
+
+
+4. In the **Pluggable Database Details** page, click the **Actions** button and select **Clone** to initiate the **Clone PDB** action.
+
+   ![Initiate Clone Pluggable Database Action](./images/click-clone-pdb.png "Initiate Clone Pluggable Database Action")
 
    > **Note:** This will cause the **Clone Pluggable Database** configuration page to be displayed.
 
-2. Configure clone PDB options and select **Enable Thin Clone**.
+5. Configure clone PDB options and select **Enable Thin Clone**.
 
    In the **Clone Pluggable Database** configuration page, select **Local Clone** as PDB clone type.
 
@@ -38,26 +59,26 @@ This lab requires the completion of the following:
    * Enter **PDB Name**.
    * Enter **Database TDE wallet password**.
 
-![Initiate Clone Pluggable Database Action](./images/clone-pdb-local.png "Initiate Clone Pluggable Database Action")
+   ![Initiate Clone Pluggable Database Action](./images/clone-pdb-local.png "Initiate Clone Pluggable Database Action")
 
    Enable thin clone.
    * You can select **Take a backup of the PDB immediately after cloning**
    * ***Enable Thin Clone*** checkbox will be checked by default. Unchecking this box will create a thick clone instead of a thin clone of a pluggable database.
    * Click ***Clone*** to start the clone provisioning process.
 
-![Configure Clone options and check box to Enable Thin Clone](./images/enable-thin-clone.png "Configure Clone options and check box to Enable Thin Clone")
+   ![Configure Clone options and check box to Enable Thin Clone](./images/enable-thin-clone.png "Configure Clone options and check box to Enable Thin Clone")
 
-   > **Note:** The thin PDB clone will be created and presented as a new PDB.
+   * The thin PDB clone will be created and presented as a new PDB.
    
-![New Thin Clone PDB Details page](./images/thin-clone-available.png " ")
+   ![New Thin Clone PDB Details page](./images/thin-clone-available.png " ")
 
-3. List all of the PDBs in the CDB. From the **Pluggable Database Details** page, click the back arrow to go back to the **Container Database Details** in the breadcrumb path.
+6. List all of the PDBs in the CDB. From the **Pluggable Database Details** page, click the back arrow to go back to the **Container Database Details** in the breadcrumb path.
 
-![New Thin Clone PDB Details page](./images/cdb-details-path.png " ")
+   ![New Thin Clone PDB Details page](./images/cdb-details-path.png " ")
 
    Click **Pluggable databases**.
 
-![New Thin Clone PDB Details page](./images/list-of-pdb.png " ")
+   ![New Thin Clone PDB Details page](./images/list-of-pdb.png " ")
 
    > **Note:** This will cause a list of available pluggable databases to be displayed and that the thin clone PDB is listed, as just another PDB.
     
