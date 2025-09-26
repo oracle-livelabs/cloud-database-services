@@ -26,18 +26,18 @@
         },
         {
             "title": "Lab 3: Explore Oracle Exadata Performance Features for building GenAI Apps",
-            "description": "Learn how to Create PDB Thin Clone on Exadata Exascale using OCI Console",
+            "description": "Learn how to explore Oracle Exadata Performance Features for building GenAI Apps ",
             "filename": "../../exadata-performance-features-for-building-gen-ai/exadata-performance-features-for-building-gen-ai.md"
         },
         {
-            "title": "Lab 4: Create Thin Clone of PDB",
-            "description": "Learn how to Create PDB Thin Clone on Exadata Exascale using OCI Console",
+            "title": "Lab 4: Create a Snapshot and Thin Clone of an Oracle Pluggable Database (PDB)",
+            "description": "Learn how to create a Snapshot and Thin Clone of an Oracle Pluggable Database (PDB)",
             "filename": "../../create-thin-clone-pdb-on-exascale/create-thin-clone-pdb-on-exascale.md"
         },
         
         {
-            "title": "Lab 5: Configure & Validate Notifications for Monitoring ECPU Scaling Changes",
-            "description": "Learn how to Configure & Validate Notifications for Monitoring ECPU Scaling Changes",
+            "title": "Lab 5: Configure Notifications & Events for Monitoring Exadata Database Service on Exascale Infrastructure",
+            "description": "Learn how to configure Notifications & Events for Monitoring Exadata Database Service on Exascale Infrastructure",
             "filename": "../../configure-notifications-for-exascale-ecpu/configure-notifications-for-exascale-ecpu.md"
         },
         {
