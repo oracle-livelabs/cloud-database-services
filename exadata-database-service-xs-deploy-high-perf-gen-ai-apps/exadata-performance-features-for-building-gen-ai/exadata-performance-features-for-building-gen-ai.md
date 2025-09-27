@@ -149,10 +149,6 @@ This lab requires the completion of the following:
       </copy>
       ```
    ![use hnsw index](./images/hsnw.png "use hnsw index")
-
-   Look at the SQL access path (HNSW index)
-   
-   Check Autotrace for **physical read total IO requests**
    
 
 2. Look at the amount of Vector Memory used
@@ -162,7 +158,15 @@ This lab requires the completion of the following:
 
       select * from gv$vector_memory_pool
         order by con_id, inst_id;
-      
+    </copy>
+
+    ```
+   
+   ![look at the amount of vector memory used](./images/vector-memory-used.png "look at the amount of vector memory used")
+
+    ```
+    <copy>
+
       select owner, index_name, allocated_bytes, used_bytes
         from v$vector_graph_index;
    
@@ -170,7 +174,7 @@ This lab requires the completion of the following:
 
     ```
 
-    ![look at the amount of vector memory used](./images/vector-memory-used.png "look at the amount of vector memory used")
+   ![look at the amount of vector memory used](./images/vector-memory-used-index.png "look at the amount of vector memory used")
 
 3. Query a copy of the table that has IVF index
    
@@ -187,9 +191,17 @@ This lab requires the completion of the following:
     </copy>
 
     ```
+   
+   ![use ai vector search](./images/ivf-search-term.png "use ai vector search")
+
+   You can use ***please show any scheduled car races*** for the **search_term**
+
+   ![use ivf index](./images/ivf.png "use ivf index")
 
    * Look at the SQL Access path (IVF Index)
-   * Check Autotrace for “physical read total IO requests”
+   
+   ![show ivf index explain plan](./images/ivf-explain-plan.png "show ivf index explain plan")
+  
     
     
     
