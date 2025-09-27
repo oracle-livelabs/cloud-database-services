@@ -132,9 +132,9 @@ This lab requires the completion of the following:
    * Notice the benefits over keyword
    * Look at the SQL access path (scan)
    * Check Autotrace for **physical read total IO requests**
-
-
    
+   ![use ai vector search](./images/ai-vector-search-results-explain-plan.png "use ai vector search")
+
 
 ## Task 5: Explore AI Vector Indexing strategies to accelerate AI Vector Search at any scale
 
