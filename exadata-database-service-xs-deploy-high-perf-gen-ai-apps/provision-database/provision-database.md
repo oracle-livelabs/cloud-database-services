@@ -40,7 +40,7 @@ This lab walks you through how to create an Oracle Database on the Oracle Exadat
      * For the **Database Unique Name Suffix:** Enter ***DemoDB_23aiExascale***
      * For the **Pluggable Database Name:** Enter ***MyPDB01***
      * For the **Database release:** Select ***23ai***  
-     * For the **Database Home source** choose: **Select an Existing Database Home**
+     * For the **Database Home source** choose: ***Select an existing Database Home***
      * Select Database Home with display name of ***MyDemo23aiDBhome01***
 
    ![Image showing the basic container database information to enter](./images/create-cdb-details.png "Image showing the basic container database information to enter")
@@ -55,11 +55,11 @@ This lab walks you through how to create an Oracle Database on the Oracle Exadat
    ![Image showing database backup configuration options](./images/configure-db-backup.png "Image showing database backup configuration options")
    
    For this lab, we will not be enabling **Automatic Backups** for the database during the create database workflow.
-    * **Uncheck the box for:** ***Enable Automatic Backups***
+    * ***Uncheck*** **the box for:** ***Enable Automatic Backups***
 
    ![Image showing database backup configuration options](./images/disable-auto-backup.png "Image showing database backup configuration options")
       
-6. **Review & Configure Advanced Options** for the Container Database by clicking on the **Show Advanced Options** link.
+6. **Review & Configure Advanced Options** for the Container Database by clicking on the ***Show Advanced Options*** link.
    
    Under the **Management tab** set the Oracle_SID to ***ExascaleDemo***
 
@@ -72,7 +72,7 @@ This lab walks you through how to create an Oracle Database on the Oracle Exadat
    Under the **Tags tab:** you can add free-form tags to your resource.  If you want to apply a defined tag, you must have permissions to use the tag namespace. Remember that you can also apply tags to your resources after they are provisioned.
 
    
-7. Click **Create** to create the container database.
+7. Click ***Create*** to create the container database.
 
    ![Image showing the option confirm creation of container database](./images/click-create-container-db.png "Image showing the option confirm creation of container database")
 
@@ -85,6 +85,6 @@ This lab walks you through how to create an Oracle Database on the Oracle Exadat
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Bob Thome, Christian Craft, Seth Miller  Product Management
+* **Author** - Leo Alvarado, Christian Craft Product Management
 
 * **Last Updated By** - Leo Alvarado, Product Management, Aug 2025.

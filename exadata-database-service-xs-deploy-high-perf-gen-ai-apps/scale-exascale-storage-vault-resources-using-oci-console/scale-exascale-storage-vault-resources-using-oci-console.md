@@ -14,7 +14,7 @@ This lab walks you through the steps to Scale the Exascale Storage Vault Resourc
 ### Objectives
 
 -   After completing this lab, you should be able to scale the Exascale Storage Vault Resources using the OCI Console.
--   List Exascale Storage Vault configuration using **OCI CLI**
+-   List Exascale Storage Vault configuration using ***OCI CLI***.
 
 
 ### Prerequisites
@@ -41,7 +41,7 @@ This lab requires the completion of the following:
 
    ![Image showing scale Exascale storage vault](./images/scale-storage-vault-page-before.png "Image showing scale storage vault")
 
-   Click **Scale**.
+   Click ***Scale***.
 
    The **Exascale Storage Vault details** page is now displayed. While the scale storage vault process is running, the lifecycle state of the Exascale storage vault shows ***UPDATING***.
 
@@ -67,7 +67,7 @@ This lab requires the completion of the following:
    
    ![navigate to oci cloudshell](./images/cloudshell.png "navigate to oci cloudshell")
 
-   This displays the Cloud Shell in a "drawer" at the bottom of the console:
+   This displays the Cloud Shell in a **drawer** at the bottom of the console:
 
    ![oci cloudshell launch](./images/cloudshelllaunch.png "oci cloudshell launch")
 

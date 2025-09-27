@@ -9,7 +9,12 @@ This lab walks you through exploring Oracle Exadata Performance Features for bui
 
 ### **Objectives**
 
--   After completing this lab, you should be able to. 
+After completing this lab, you should be able to:
+
+* Execute a traditional keyword search on unstructured text. 
+* Explore AI Vectors and how they are created.
+* Execute AI Vector Search on the same unstructured text to see the benefits.
+* Explore AI Vector Indexing strategies to accelerate AI Vector Search at any scale.
 
 
 ### **Prerequisites**
@@ -23,11 +28,11 @@ This lab requires the completion of the following:
 ## Task 1: Connect to the AI Demo Database
 
 
-1. Open the navigation menu, select **Developer Services** and under the **Database Tools** section, select **SQL Worksheet**.
+1. Open the navigation menu, select **Developer Services** and under the **Database Tools** section, select ***SQL Worksheet***.
 
    ![Navigate to SQL Worksheet](./images/navigate-sql-worksheet.png "Navigate to SQL Worksheet")
 
-2. On the SQL Worksheet page, use the Connection menu to select a database connection. Select your assigned **Compartment** and assigned **database connection**.
+2. On the SQL Worksheet page, use the Connection menu to select a database connection. Select your assigned ***Compartment*** and assigned ***database connection***.
 
    ![Navigate to SQL Worksheet](./images/select-connection.png "Navigate to SQL Worksheet")
 
@@ -83,6 +88,11 @@ This lab requires the completion of the following:
     </copy>
     ```
 
+   You can use ***please show any scheduled car races*** for the **search_term** and click on ***OK***.
+
+   ![Run a query to run the AI Model on a sample search term](./images/search-keyword.png "Run a query to run the AI Model on a sample search term")
+
+   ![Run a query to run the AI Model on a sample search term](./images/vector-results.png "Run a query to run the AI Model on a sample search term")
 
 
 3. See a row of data from the table
@@ -95,8 +105,9 @@ This lab requires the completion of the following:
     </copy>
     ```
    
-   ![See row of data from the table](./images/see-row-data-tb.png "See row of data from the table")
-    
+   ![See row of data from the table](./images/headline-to-vector.png "See row of data from the table")
+   
+
 
 
 
