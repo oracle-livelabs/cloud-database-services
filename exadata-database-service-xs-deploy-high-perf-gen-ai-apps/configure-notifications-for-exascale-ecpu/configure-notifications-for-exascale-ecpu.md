@@ -158,18 +158,22 @@ This lab requires completion of the following:
    
    ![Navigate to the VM Cluster page](./images/select-vm-cluster.png "Navigate to the VM Cluster page")
    
-3. In the VM Cluster Details page, Click **Scale VM Cluster**. 
+3. In the **VM Cluster information** tab under **Resource allocation**, review the current VM Cluster resource allocation.     
    
-   ![Scale VM Cluster](./images/scale-vmcluster.png "Scale VM Cluster")
+   ![Scale VM Cluster](./images/vmcluster-information.png "Scale VM Cluster")
 
    ![View Enabled ECPU](./images/current-ecpu.png "View Enabled ECPU")
+
+4. Click **Scale VM Cluster**.
+   
+   ![Scale VM Cluster](./images/scale-vmcluster.png "Scale VM Cluster")
 
    Scale Up the number of ***ECPUs enabled per VM*** from ***8 ECPU*** to ***12 ECPU***
 
    ![Scale Up ECPU](./images/scale-ecpu.png "Scale Up ECPU")
    
       
-4. Click **Save Changes**
+   Click **Scale**
    
    >**Note:** ECPU scaling activities are done online with no downtime. Once the scale up operation is complete, the VM Cluster status changes from ***Updating*** to ***Available***.
 
