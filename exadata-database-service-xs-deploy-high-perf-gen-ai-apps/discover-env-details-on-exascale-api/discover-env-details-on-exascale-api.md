@@ -148,7 +148,9 @@ This lab requires the completion of the following:
    
    ![list database homes](./images/list-db-home-results.png "list database homes")
    
-   Copy the **DB Home OCID** of the Database Home ***DBHome01*** value from the ***"id"*** field and paste it in your notepad or text editor.
+   Database Home fields such as **Display Name**, **Database Home OCID**, **Lifecycle State** and **Version** are displayed from the REST API call output.
+
+***!!! Congratulations:*** this is the end of the Lab. 
    
 
 ## Acknowledgements
