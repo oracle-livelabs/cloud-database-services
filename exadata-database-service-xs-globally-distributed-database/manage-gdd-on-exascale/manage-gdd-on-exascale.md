@@ -73,28 +73,7 @@ You can add shards in two scenarios:
 > - If you are *scaling up* a **deployed** Distributed ExaDB-XS, you must deploy the new shards within **7 days** of completing this procedure. If not, you will receive an error and must terminate the new shard resources and start again.
 > - If you are *adding shards* to an **undeployed** Distributed ExaDB-XS, you also have **7 days** from completing the original resource creation to add any shards and complete deployment. After 7 days, you must terminate and re-create resources.
 
-## Task 2: Modify a Shard in a Globally Distributed Exadata Database on Exascale Infrastructure
-
-This lab explains how to modify a shard’s configuration in your Globally Distributed Exadata Database on Exascale Infrastructure (Distributed ExaDB-XS) *before* deploying the configuration. You may need to change the region or VM cluster assignment for a shard prior to deployment.
-
-
-1. **Navigate to the Distributed ExaDB-XS Details:** In the Oracle Cloud Console, go to the **Globally Distributed Exadata Database on Exascale Infrastructure** list page. 
-   
-   Select the Distributed ExaDB-XS you want to update. Open its **Details** page.
-
-2. **Edit the Shard:** In the **Shards** section of the details page, locate the shard you want to update.
-
-    Click the **Actions** (three dots) menu next to the shard. Select **Edit**.
-
-3. **Update Shard Configuration:** In the **Edit Shard** pane, modify the desired settings:
-   
-   **Region**: Change the region where the shard will be deployed.
-   
-   **VM cluster**: Select a different VM cluster if required.
-
-4. **Save Your Changes**: After making your changes, click **Edit** to save the updated shard configuration.
-
-## Task 3: Terminate (Deleting) a Shard
+## Task 2: Terminate (Deleting) a Shard
 
 Terminating a shard in a Globally Distributed Exadata Database on Exascale Infrastructure (Distributed ExaDB-XS) configuration permanently deletes it and removes all automatic backups.
 
@@ -107,10 +86,6 @@ You cannot recover a terminated shard.
 3. On the Terminate shard dialog enter the Distributed ExaDB-XS name to confirm that you want to remove the shard.
    
 4. Click Remove.
-
-    
-    
-***Congratulations!!!*** You may now **proceed to the next lab**. 
 
 
 ## Learn More
