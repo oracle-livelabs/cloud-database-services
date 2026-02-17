@@ -1,14 +1,14 @@
 
 
 
-# Configure & Validate Notifications for Monitoring ECPU Scaling changes
+# Configure Notifications & Events for Monitoring Exadata Database Service on Exascale Infrastructure
 
 
 ## Introduction
 
-This lab walks you through the steps to configure & validate notifications for monitoring ECPU Scaling changes.
+This lab walks you through the steps to configure & validate notifications and events for monitoring Exadata Database Service on Exascale Infrastructure.
 
-**Estimated Lab Time:** ***15 minutes***
+**Estimated Lab Time:** ***10 minutes***
 
 **How Notifications Work?**
 
@@ -47,7 +47,7 @@ The Database Service Events feature implementation generates events for Data Pla
 
 ### Objectives
 
--   After completing this lab, you should be able to configure notifications and events rules for monitoring ECPU Scaling changes for Exadata Database Service on Exascale Infrastructure
+-   After completing this lab, you should be able to configure notifications and events rules for monitoring state changes for Exadata Database Service on Exascale Infrastructure
 
 ### Prerequisites
 
@@ -147,67 +147,34 @@ This lab requires completion of the following:
 ## Task 3: Validate the Current VM Cluster Resource Allocation and Scale up the Enabled ECPUs  using the Console 
 
 1. Open the navigation menu. Under **Oracle Database**, click **Exadata Database Service on Exascale Infrastructure**.
-   
-2. Select your ***Compartment***, and Select your **VM Cluster**.
-   
-   ![Navigate to the VM Cluster ](./images/navigate-vmcluster.png "Navigate to the VM Cluster")
 
-    The VM Cluster Details page displays information about the selected VM cluster. Under the **Resource allocation**, pay attention to the number of ***Enabled ECPUs:*** 
+   ![Navigate to Exascale page using the console](./images/navigate-oci-console.png "Navigate to Exascale page using the console")
 
-   ![Navigate to the Resource allocation](./images/resource-allocation.png "Navigate to the Resource allocation")
+2. Select your **Region** and select your **compartment** from the applied filter to navigate to your  **Exascale VM Cluster**. Click the name of your VM Cluster to open the **VM Cluster** page.
    
-3. In the VM Cluster Details page, Click **Scale VM Cluster**. 
+   ![Navigate to the VM Cluster page](./images/select-vm-cluster.png "Navigate to the VM Cluster page")
    
-   ![Scale VM Cluster](./images/scale-vmcluster.png "Scale VM Cluster")
+3. In the **VM Cluster information** tab under **Resource allocation**, review the current VM Cluster resource allocation.     
+   
+   ![Scale VM Cluster](./images/vmcluster-information.png "Scale VM Cluster")
 
    ![View Enabled ECPU](./images/current-ecpu.png "View Enabled ECPU")
+
+4. Click **Scale VM Cluster**.
+   
+   ![Scale VM Cluster](./images/scale-vmcluster.png "Scale VM Cluster")
 
    Scale Up the number of ***ECPUs enabled per VM*** from ***8 ECPU*** to ***12 ECPU***
 
    ![Scale Up ECPU](./images/scale-ecpu.png "Scale Up ECPU")
    
       
-4. Click **Save Changes**
+   Click **Scale**
    
    >**Note:** ECPU scaling activities are done online with no downtime. Once the scale up operation is complete, the VM Cluster status changes from ***Updating*** to ***Available***.
 
-## Task 4: List VM Cluster Configuration using CLI 
 
->**Note:** To use OCI CLI for this lab, we will be using the ***OCI Cloud Shell tool***. 
-   
-1. In the VM Cluster Details page, Copy the VM Cluster OCID by clicking on the ***copy*** button in the ***OCID*** field under the **General Information** section. 
-   
-   ![copy vmcluster ocid](./images/copy-vmcluster-ocid.png "copy vmcluster ocid")
-
-   Paste the VM Cluster OCID to a text editor.
-   
-2. Click the **Developer tools** icon in the console header and select ***Cloud Shell*** from the drop-down menu. 
-   
-   ![navigate to oci cloudshell](./images/oci-cloud-shell.png "navigate to oci cloudshell")
-
-   This displays the Cloud Shell in a "drawer" at the bottom of the console:
-
-   ![oci cloudshell launch](./images/cloudshelllaunch.png "oci cloudshell launch")
-
-3. Run the OCI CLI Command to get the VM Cluster Configuration.
-
-      >**Note:** Replace ***{VMClusterId}*** with VM Cluster OCID copied from *(Task 4 Step 1)*
-
-    ```
-    <copy>
-
-      oci db exadb-vm-cluster get --exadb-vm-cluster-id {VMClusterID} --query 'data.{DisplayName:"display-name", EnabledECPU:"enabled-e-cpu-count",LifecycleState:"lifecycle-state"}'
-
-    </copy>
-    ```
-
-   After running the command, you will see similar output below.
-
-   ![show new enabled ecpus](./images/show-new-enabled-ecpu-ocicli.png "show new enabled ecpus")
-
-   You can see the new ***Enabled ECPU*** for the VM Cluster and with the ***Lifecycle State*** of ***Available***. 
-
-## Task 5: Confirm Notifications output in the notification email that was configured
+## Task 4: Confirm Notifications output in the notification email that was configured
 
 1. Open your assigned email. You should be receiving two notification emails. 
    
@@ -237,6 +204,6 @@ This lab requires completion of the following:
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Tammy Bednar, Product Management
+* **Author** - Leo Alvarado, Tammy Bednar  Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, March 2025.
+* **Last Updated By** - Leo Alvarado, Product Management, Feb 2026.
