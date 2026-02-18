@@ -60,14 +60,16 @@ You can add shards in two scenarios:
 
 3. **Set Administrator Credentials**: In **Create administrator credentials**, set the password for the ADMIN user of the new shard database.
 
-**Choose Encryption Key**
-    - Select the compartment, vault, and master encryption key for the new shard. Use resources configured as per *Task 5. Configure Security Resources* in your environment setup.
+    ![set credentials](./images/set-credentials.png "set credentials")
 
-**Validate Configuration**
-    - Click **Validate** to run system checks and ensure all new shard settings are correct.
-    - If errors appear, resolve them and re-run validation.
 
-4. **Add the Shards**: When validation passes, click **Add Shards** to deploy the new shards to your Distributed ExaDB-XS.
+4. Click **Validate** to run system checks and ensure all new shard settings are correct.
+
+    ![validate shard](./images/validate-shard.png "validate shard")
+
+5. When validation passes, click **Add Shards** to deploy the new shards to your Distributed ExaDB-XS.
+
+    ![validate shard](./images/validate-shard-successful.png "validate shard")
 
 > **Notes**
 > - If you are *scaling up* a **deployed** Distributed ExaDB-XS, you must deploy the new shards within **7 days** of completing this procedure. If not, you will receive an error and must terminate the new shard resources and start again.
@@ -81,11 +83,15 @@ You cannot recover a terminated shard.
 
 1. On the Globally Distributed Exadata Database on Exascale Infrastructure list page, select a Distributed ExaDB-XS.
    
-2. On the Details page, in the Shards section, select the shard, and then select Terminate.
+2. On the Details page, in the **Shards** tab, select the shard, and then select **Terminate** from the action menu.
+
+    ![terminate shard](./images/terminate-shard.png "terminate shard")
    
-3. On the Terminate shard dialog enter the Distributed ExaDB-XS name to confirm that you want to remove the shard.
+3. On the Terminate shard dialog, click **Terminate** to confirm that you want to remove the shard.
+
+    ![terminate shard](./images/confirm-terminate.png "terminate shard")
    
-4. Click Remove.
+
 
 
 ## Learn More
@@ -95,6 +101,6 @@ You cannot recover a terminated shard.
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Deeksha Shrivastava, Shefali Bhargava,  Product Management, Product Management
+* **Author** - Leo Alvarado, Deeksha Shrivastava, Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, Nov 2025.
+* **Last Updated By** - Leo Alvarado, Product Management, Feb 2026.

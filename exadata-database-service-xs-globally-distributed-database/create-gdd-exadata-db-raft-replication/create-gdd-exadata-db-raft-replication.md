@@ -25,17 +25,49 @@ This lab requires the completion of the following:
    
 2. Review the environment details such as region, shard count, and replication type.
 
-   Go to the Shards tab to view Shards information such as shard 
+   Go to the **Shards** tab to view list of all shards with their configuration settings. 
+
+   ![discover shards](./images/discover-shards.png "discover shards")
+
+   Select **View Replication Units** in the action Menu to see the status of the replication unit leaders and followers on each shard. 
+
+   ![View Replication Units](./images/click-view-replication.png "View Replication Units")
+
+   ![View Replication Units](./images/view-rep-details.png "View Replication Units")
+
+   Select **Additional shard details** for more details.
    
-3. Use the Actions Menu to view configuration details and settings.
+3. Go to the **Catalog** tab to view the configuration settings for the catalog database.
+
+   Use the Actions Menu to view configuration details and settings.
    
-4. Understand preconfigured prerequisites for the Global Distributed Database environment
+4. Go to the **Resource map** to display a visual representation of the shards and catalog configuration. 
+
+   ![view resource map](./images/view-resource-map.png "view resource map")
+
+
+   Hover over the numbers to see some configuration information, including availability domain (AD), and click the information icon for more details.
+
+   ![view map details](./images/view-map-details.png "view map details")
+
+5. **Replication details** displays a list of the replication units by ID number and each member is labeled with the shard it resides on.
+
+   ![view replication details](./images/view-rep-details.png "view replication details")
+
+   Understand preconfigured prerequisites for the Global Distributed Database environment.
+
+6. Click on the **Monitoring** tab to view and monitor the shards.
+
+   ![monitor shards](./images/monitor-shards.png "monitor shards")
+
+   ![monitor shards](./images/monitor-shards-cpu.png "monitor shards")
+
 
 
 ***!!! Congratulations:*** You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Deeksha Shrivastava, Shefali Bhargava,  Product Management
+* **Author** - Leo Alvarado, Deeksha Shrivastava, Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, Nov 2025.
+* **Last Updated By** - Leo Alvarado, Product Management, Feb 2026.

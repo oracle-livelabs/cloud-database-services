@@ -2,18 +2,18 @@
 
 ## About this Workshop
 
-This workshop is designed to provide you with hands on experience using the Oracle Globally Distributed Exadata Database on Exascale Infrastructure.., which is Oracle’s next generation architecture of the Exadata Database Service. 
+In this hands-on workshop, you'll explore Oracle's cutting-edge distributed database solution that combines the power of sharded databases with Exadata Database on  Exascale infrastructure. Oracle Globally Distributed Exadata Database on Exascale Infrastructure is a fully managed cloud service designed for mission-critical applications that demand massive scale, high availability, and global distribution. You'll learn how data is sharded across geographically distributed databases, how Raft replication provides consensus-based availability with zero data loss, and how Exascale technology decouples compute from storage to deliver flexible, dynamic provisioning. By the end of this lab, you'll understand how to deploy and manage a globally distributed database architecture that can handle enterprise-scale workloads with exceptional performance and reliability.
 
-In this workshop, you will use several of the OCI management interfaces to conduct various database lifecycle tasks on the Exadata Database Service on Exascale Infrastructure.  
+This workshop is designed to provide you with hands on experience using the Oracle Globally Distributed Exadata Database on Exascale Infrastructure.
 
-The workshop exercises are designed to provide you with operational experience creating & managing the Exascale Storage Vault, the Exadata VM Cluster, Container Databases, Pluggable Databases, and thin clones that leverage the Exascale technology stack.
+Throughout the lab, you'll gain hands-on experience with key lifecycle management operations including provisioning VM clusters, creating and managing sharded databases, configuring catalog and shard replication, scaling compute and storage resources on-demand, and monitoring database health and performance metrics.  
 
-You will also learn how to configure alerts and notifications for events that we will trigger during some of the workshop lab tasks. 
+By the end of this lab, you'll understand how to deploy and manage a globally distributed database architecture that can handle enterprise-scale workloads with exceptional performance and reliability.
 
 Don’t miss your chance to be one of the first to gain hand-on experience with Exadata & the Exascale technology stack.
 
 
-**Estimated Workshop Time:** ***3 hours***
+**Estimated Workshop Time:** ***1 hour 30 minutes***
 
 
 ### **Oracle Exadata Exascale: World’s Only Intelligent Data Architecture for Cloud**
@@ -45,6 +45,6 @@ You may now **proceed to the next lab**
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Deeksha Shrivastava, Shefali Bhargava,  Product Management
+* **Author** - Leo Alvarado, Deeksha Shrivastava, Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, Nov 2025.
+* **Last Updated By** - Leo Alvarado, Product Management, Feb 2026.

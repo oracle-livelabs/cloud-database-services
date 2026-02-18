@@ -224,6 +224,6 @@ You may now **proceed to lab 1**.
 
 ## Acknowledgements
 
-* **Author** - Leo Alvarado, Deeksha Shrivastava, Shefali Bhargava,  Product Management
+* **Author** - Leo Alvarado, Deeksha Shrivastava, Product Management
 
-* **Last Updated By** - Leo Alvarado, Product Management, Nov 2025.
+* **Last Updated By** - Leo Alvarado, Product Management, Feb 2026.
