@@ -1,0 +1,40 @@
+{
+    "workshoptitle": "Get Started with Oracle Globally Distributed Exadata Database on Exascale Infrastructure",
+
+    "help": "livelabs-help-exadata_us@oracle.com",
+
+    "tutorials": [
+      {
+          "title": "Introduction",
+          "description": "Introduction",
+          "filename": "../../introduction-gs/introduction-gs.md"
+      },
+      {
+            "title": "Get Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "../../get-started-gs/get-started-gs.md"
+        },
+        {
+            "title": "Lab 1: Create a Globally Distributed Exadata Database on Exascale Infrastructure with Raft Replication",
+            "description": "Learn how to Create a Globally Distributed Exadata Database on Exascale Infrastructure",
+            "filename": "../../create-gdd-exascale/create-gdd-exascale.md"
+        },
+       {
+            "title": "Lab 2: Discover the Globally Distributed Exadata Database on Exascale Infrastructure Resource",
+            "description": "Learn how to create a Globally Distributed Exadata Database with Raft Replication",
+            "filename": "../../create-gdd-exadata-db-raft-replication/create-gdd-exadata-db-raft-replication.md"
+        },
+        {
+            "title": "Lab 3: Manage Oracle Globally Distributed Exadata Database on Exascale Infrastructure",
+            "description": "Learn how to manage Oracle Globally Distributed Exadata Database on Exascale Infrastructure ",
+            "filename": "../../manage-gdd-on-exascale/manage-gdd-on-exascale.md"
+        },
+        
+
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

@@ -6,7 +6,7 @@
 This lab walks you through how to create an instance of the Exadata Database Service on Exascale Infrastructure using the OCI Console. 
  
 
-**Estimated Time:** ***2 Hours 10 minutes***
+**Estimated Time:** ***1 Hour 10 minutes***
 
 Watch the video below for a quick walk-through of the lab.
   [Create a Custom Database Software Image](youtube:ggh0pIuPj2g)
@@ -28,67 +28,85 @@ This lab requires completion of the following:
 
   ![Navigate to Exadata Database Service on Exascale Infrastructure](./images/console-to-exadb-xs.png" ")
 
-2. In the left rail, **VM Clusters** is selected by default. Under **List Scope**, Select your compartment. 
-   
-  ![Select Compartment where VM Cluster will reside](./images/select-compartment.png" ")
-
-3. Click the **Create VM Cluster** button. 
+2. In the left rail, **VM Clusters** is selected by default. In the **Applied filters**, Select your compartment. Click the **Create VM Cluster** button. 
   
   ![Click Create VM Cluster](./images/click-create-vm-cluster.png" ")
     
     This causes the **Create VM Cluster** page to be displayed.  
 
-4. **Provide the basic information to configure the Exadata VM cluster**.
+3. **Provide the basic information to configure the VM cluster** in an Oracle Exadata Database Service on Exascale Infrastructure.
+
     * For **Compartment**: Ensure that the compartment that you want the VM Cluster to be created in is displayed.
 
-    * For **Display Name**: Enter ***MyDemoVMCluster*** 
+    * Enter the **Display Name** for the VM Cluster 
 
-    * For **Cluster Name**: Enter ***MyDemoClus*** 
+    * Enter the **Cluster Name** 
 
     * For **Availability Domain**: Select the availability domain from the displayed options available. 
 
  ![Provide Basic VM Cluster Info](./images/provide-basic-vm-cluster-info-exascale.png" ")
 
-5. **To Configure the VM cluster, provide the following information:** 
+4. **To Configure the VM cluster, provide the following information:** 
     * For the **Number of VMs in the cluster**: ***Enter 2***
     * For **ECPUs enabled per VM**: ***Enter 8***
 
+    ![Configure VM Cluster](./images/configure-vm-cluster-exascale.png" ")
+
     * ***Reserve 4 additonal ECPUs*** by clicking on **Reserve additional ECPU to increase link** and entering the following:   
         * For **Total ECPUs per VM:** Provide a total number of ECPUs to allocate per VM. ***Enter 12***.  
-        * The **ECPUs additional reserved per VM** field which is (read only) will now indicate that there are now **4 reserved ECPUs**. 
+        * The **Additional ECPUs reserved per VM** field which is (read only) will now indicate that there are now **4 reserved ECPUs per VM**. 
     * The **Memory per VM (GB)** field which is (read only) will display the amount of memory allocated to each VM. <br/> 
     ***Memory is calculated based on 2.75 GB per total ECPU***. 
 
-      <u>**Size the VM file system storage**</u>: 
-    * For system storage capacity per VM (GG): ***Enter 280***
+    ![Configure VM Cluster](./images/configure-vm-cluster-reserve-ecpu.png" ")
+
+    Click on **Save**
+
+    * For the **Storage type**: Select ***Exascale smart storage***
+
+    * Enter the **VM file system storage** capacity per VM (GB)
 
       **Note:**  The VM Filesystems storage includes /u02 capacity, where your Database Homes will go, along with all of the other VM filesystems (/, /boot, /tmp, /var, /var/log, /var/log/audit, /home, swap, kdump, /u01, grid, /u02). Any extra capacity selected beyond system minimums will go into /u02. 
+    
+    ![Configure VM Cluster](./images/configure-storage.png" ")
 
-  ![Configure VM Cluster](./images/configure-vm-cluster-exascale.png" ")
+  
 
-6. **Enter Configuration Details for Exascale Database Storage Vault:** 
+5. **Enter Configuration Details for Exascale Database Storage Vault:** 
     * Select **Create new vault**. 
 
     **For a new vault, specify the following:** 
     * For the **Exascale Vault name:** enter ***MyDemoStorageVault*** . 
     * For the **Storage Capacity for Databases (GB):** ***enter 300***. 
 
-  ![Configure Exascale Storage Vault](./images/configure-exascale-storage-vault.png" ")
+  ![Configure Exascale Storage Vault](./images/configure-storage-vault.png" ")
 
-1. **Select the Oracle Grid Infrastructure version and add SSH key:** 
+    For **Storage auto scaling**, ensure the ***Storage auto scaling toggle switch*** is turned on. By default, the **Storage auto scaling** is on.  
+   
+    Specify the desired **Auto scaling limit in GB**.
+
+    > **Note:** Users must define an auto scaling limit. By default, the auto scaling limit is set to 10% above the allocated storage vault size.
+
+    ![Configure Exascale Storage Vault](./images/configure-auto-scale-storage.png" ")
+
+    With auto scaling enabled, if the system detects that vault's free space is less than or equal to 5% of allocated storage capacity, it automatically expands the vault capacity in increments of 10% (of the allocated storage) until the user-defined auto scaling limit is reached.
+
+6. **Select the Oracle Grid Infrastructure version and add SSH key:** 
     * **Grid Infrastructure Release and Version fields:** display the Oracle Grid Infrastructure versions available for deployment in the VM cluster. <br/>
-    ***Accept the default values for the 23ai release***.
+    ***Accept the default values for the 26ai release***.
 
-    * **Add your SSH Key for future access to your VMs**. <u>Choose from:</u>
+    * **Add your SSH Key for future access to your VMs**. 
+      
+        <u>Choose from:</u>
 
         * **Generate SSH key pair**(Default option) Select this option to generate an SSH keypair. Then in the dialog below click Save private key to download the key, and optionally click Save public key to download the key. 
         * **Upload SSH key files**: Select this option to browse or drag and drop .pub files. 
         * **Paste SSH keys:** Select this option to paste in individual public keys.
 
-  ![Configure Grid Infrastructure and SSH access](./images/configure-grid-infra-and-SSH-access.png" ")
+  ![Configure Grid Infrastructure and SSH access](./images/configure-gi-ssh.png" ")
  
 
-8. **To Configure the network settings, Select VCN and select Client and Backup subnet** 
+7. **To Configure the network settings, Select VCN and select Client and Backup subnet** 
     * **For the Virtual Cloud Network (VCN):** Select the ***virtual cloud network (VCN)*** for the compartment in which you want to create the VM cluster. Click ***Change Compartment*** to select a VCN in a different compartment.
     
     * **For the Client subnet:** Select the ***client subnet*** in the compartment. This is the subnet to which the VM cluster should attach. Click ***Change Compartment*** to select a subnet in a different compartment.
@@ -99,78 +117,78 @@ This lab requires completion of the following:
 
   ![Configure Network Settings](./images/configure-network-settings.png" ")
 
-9. **Select license type & choose opt-in choices for Diagnostic & Collections options.**
+8. **Select license type & choose opt-in choices for Diagnostic & Collections options.**
     * **Choose a license type:** The type of license that you want to use for the VM cluster. Your choice affects metering for billing. Select the ***Bring Your Own License (BYOL)*** OR ***License Included*** option.
 
-  ![Choose VM Cluster License Type](./images/choose-license-type.png" ")
+  **Select Diagnostic and Collections Options**
 
-10. **Select Diagnostic and Collections Options**
-In the Edit Diagnostics Collection Settings dialog, you can enable or disable any of the Diagnostics Collections options. By enabling diagnostics collection and notifications, Oracle Cloud Operations and you will be able to identify, investigate, track, and resolve guest VM issues quickly and effectively. ***Accept the default values***.
+  In the Edit Diagnostics Collection Settings dialog, you can enable or disable any of the Diagnostics Collections options. By enabling diagnostics collection and notifications, Oracle Cloud Operations and you will be able to identify, investigate, track, and resolve guest VM issues quickly and effectively. ***Accept the default values***.
+
     * **Enable Diagnostics Events:** Allows Oracle to collect and publish critical, warning, error, and information events to me. For more information, see Overview of Database Service Events
     * **Enable Health Monitoring:** Allows Oracle to collect health metrics/events such as Oracle Database up/down, disk space usage, and so on, and share them with Oracle Cloud operations. You will also receive notification of some events. 
     * **Enable Incident logs and trace collection:** Allows Oracle to collect incident logs and traces to enable fault diagnosis and issue resolution. 
+  
+  ![Choose VM Cluster License Type](./images/choose-license-type.png" ")
  
-  ![Choose Diagnostic & Collections options](./images/choose-diagnostic-and-collections-options.png" ")
-
-11. Click **Create VM Cluster** to proceed with provisioning. 
+  
+9. Click **Create VM Cluster** to proceed with provisioning. 
 
 
 ## Task 2: Create an Oracle Database on Exadata Database Service on Exascale Infrastructure using OCI Console
 
-1. **Navigate to the Exadata Database Service on Exascale Infrastructure:** 
-    * Open the navigation menu. 
-    * Under **Oracle Database**, click **Exadata Database Service on Exascale Infrastructure**.
+1. In the **VM Clusters** page, click on the **Container databases** tab and click ***Create container database***.
 
-  ![Navigate to Exadata Database Service on Exascale Infrastructure](./images/console-to-exadb-xs.png" ")
+   ![Image showing create CDB](./images/create-cdb.png "Image showing create CDB")
 
-2. **Navigate to the cloud VM cluster you want to create the database in:**
-    * In the left rail, ensure ***VM Clusters*** is selected. 
-    * Under **List Scope**, Select your assigned compartment named ***MyCompartmentXX***. 
-    * Then **click on your VM Clusters** ***assigned name*** to view the **VM Cluster Details page**. 
+2. In the **Create Container Database** page enter the **basic information for creating the container database:**
    
-  ![Select Compartment and VM Cluster where Container Database will reside](./images/select-compartment-and-vm-cluster.png" ")
+     * For the **Database Name:** Enter ***My26aiDB***
+     * For the **Database Unique Name Suffix:** Enter ***DemoDB_26aiExascale***
+     * For the **Pluggable Database Name:** Enter ***MyPDB01***
+     * For the **Database release:** Select ***26ai***  
+     * For the **Database Home source** choose: ***Create a new Database Home***
+     * Select Database Home with display name of ***MyDemo26aiDBhome01***
 
-3. On the **VM Cluster Details page** Click on **Create Container Database**.
+   ![Image showing the basic container database information to enter](./images/create-cdb-details.png "Image showing the basic container database information to enter")
 
-  ![Create Container Database button](./images/vmc-details-pg-create-cdb-on-exascale.png " ")
+     * Next configure your **Administrator Credentials:** 
 
-4. In the **Create Container Database** page enter the **basic information for creating the container database:** 
-    * For the **Database Name:** Enter ***DemoDB***
-    * For the **Database Unique Name Suffix:** Enter ***DemoDB_23aiExascale***
-    * For the **Database Version:** Select ***23ai***
-    * For the **Pluggable Database Name:** Enter ***MyPDB***
+   ![Image showing Administrator credentials to enter](./images/enter-administrator-credentials.png "Image showing Administrator credentials to enter")
 
-  ![Create Container Database Basic Info](./images/create-cdb-basic-info.png " ")
+
+3. In the **Configure Database backups** page, if you accept the defaults setting, the database will be backed up using the Oracle Database Autonomous Recovery Service. You have the option to use OCI Object Storage by changing the **Backup destination**. 
    
-5. Specify the **Database Home Source and Administrator Credentials:**
-    * For the **Database Home source** choose: **Select an Existing Database Home**
-    * Select Database Home with display name of ***MyDemo23aiDBhome01***
-    * Next configure your **Administrator Credentials:** 
+   ![Image showing database backup configuration options](./images/configure-db-backup.png "Image showing database backup configuration options")
    
-  ![Define DBhome and Admin Password Image](./images/define-dbhome-and-admin-pwd.png " ")
+   For this lab, we will not be enabling **Automatic Backups** for the database during the create database workflow.
+    * ***Uncheck*** **the box for:** ***Enable Automatic Backups***
 
-1. For this lab, we will not be enabling **Automatic Backups** for the database during the create database workflow.
-    * **Uncheck the box for:** ***Enable Automatic Backups***
+   ![Image showing database backup configuration options](./images/disable-auto-backup.png "Image showing database backup configuration options")
+      
+4. **Review & Configure Advanced Options** for the Container Database by clicking on the ***Show Advanced Options*** link.
+   
+   Under the **Management tab** set the Oracle_SID to ***ExascaleDemo***
 
-2. **Review & Configure Advanced Options** for the Container Database by clicking on the **Show Advanced Options** link.
-    * Under the **Management tab** set the Oracle_SID to ***ExascaleDemo***  
-  ![Configure Adv Options - Mgmt Tab Image](./images/configure-adv-options-mgmt-tab.png " ")
-    * Under the **Encryption tab** you can select the desired key management method. Select ***Use Oracle-managed keys***.
-  ![Configure Adv Options - Encryption Tab Image](./images/configure-adv-options-encrypt-tab.png " ")
+   ![Image showing Oracle SID and Character set selection](./images/select-sid-character-set.png "Image showing Oracle SID and Character set selection")
 
-    * Under the **Tags tab:** you can add free-form tags to your resource.  If you want to apply a defined tag, you must have permissions to use the tag namespace. Remember that you can also apply tags to your resources after they are provisioned.
-  ![Configure Adv Options - Tags Tab Image](./images/configure-adv-options-tags-tab.png " ")
+   Under the **Encryption tab** you can select the desired key management method. Select ***Use Oracle-managed keys***.
 
-1. Click on the **Create Container Database** button to proceed with creating the Container Database.
+   ![Image showing console connection copy SSH string options](./images/select-encryption-option.png "Image showing console connection copy SSH string options")
 
-    ![Container Database Details Page Image](./images/cdb-details-page-with-pdb.png " ")
+   Under the **Tags tab:** you can add free-form tags to your resource.  If you want to apply a defined tag, you must have permissions to use the tag namespace. Remember that you can also apply tags to your resources after they are provisioned.
+
+   
+5. Click ***Create*** to create the container database.
+
+   ![Image showing the option confirm creation of container database](./images/click-create-container-db.png "Image showing the option confirm creation of container database")
+
     
 ***!!! Congratulations:*** You may now **proceed to the next lab**. 
 
 
 ## Learn More
 
-* Click [here](https://docs.oracle.com/en-us/iaas/exadb-xs/doc/manage-vm-clusters.html) to learn more about managing the VM clusters on the Exadata Database Service on Exascale Infrastructure.
+* Click [here](https://docs.oracle.com/en-us/iaas/exadb-xs/doc/manage-vm-clusters.html) to learn more about managing the VM clusters on Oracle Exadata Database Service on Exascale Infrastructure.
 
 ## Acknowledgements
 
