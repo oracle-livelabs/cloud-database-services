@@ -1,0 +1,55 @@
+{
+    "workshoptitle": "Easily Deploy & Manage High-Performance GenAI Apps on Exadata Database Service",
+
+    "help": "livelabs-help-exadata_us@oracle.com",
+
+    "tutorials": [
+      {
+          "title": "Introduction",
+          "description": "Introduction",
+          "filename": "../../introduction-gs/introduction-gs.md"
+      },
+      {
+            "title": "Get Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "../../get-started-aiworld/get-started-gs.md"
+        },
+       {
+            "title": "Lab 1: Create Oracle Database on Oracle Exadata Database Service on Exascale Infrastructure",
+            "description": "Learn how to create Oracle Database on Oracle Exadata Database Service on Exascale Infrastructure on Oracle Database@Azure",
+            "filename": "../../provision-database/provision-database.md"
+        },
+        {
+            "title": "Lab 2: Scale Exascale Storage Vault Resources",
+            "description": "Learn how to Scale Exascale Storage Vault Resources using OCI Console",
+            "filename": "../../scale-exascale-storage-vault-resources-using-oci-console/scale-exascale-storage-vault-resources-using-oci-console.md"
+        },
+        {
+            "title": "Lab 3: Explore Oracle Exadata Performance Features for building GenAI Apps",
+            "description": "Learn how to explore Oracle Exadata Performance Features for building GenAI Apps ",
+            "filename": "../../exadata-performance-features-for-building-gen-ai/exadata-performance-features-for-building-gen-ai.md"
+        },
+        {
+            "title": "Lab 4: Create a Snapshot and Thin Clone of an Oracle Pluggable Database (PDB)",
+            "description": "Learn how to create a Snapshot and Thin Clone of an Oracle Pluggable Database (PDB)",
+            "filename": "../../create-thin-clone-pdb-on-exascale/create-thin-clone-pdb-on-exascale.md"
+        },
+        
+        {
+            "title": "Lab 5: Configure Notifications & Events for Monitoring Exadata Database Service on Exascale Infrastructure",
+            "description": "Learn how to configure Notifications & Events for Monitoring Exadata Database Service on Exascale Infrastructure",
+            "filename": "../../configure-notifications-for-exascale-ecpu/configure-notifications-for-exascale-ecpu.md"
+        },
+        {
+            "title": "Lab 6: Discover Exadata Database Service on Exascale Infrastructure Environment Details using APIs",
+            "description": "Learn how to Discover Environment Details using APIs",
+            "filename": "../../discover-env-details-on-exascale-api/discover-env-details-on-exascale-api.md"
+        },
+
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

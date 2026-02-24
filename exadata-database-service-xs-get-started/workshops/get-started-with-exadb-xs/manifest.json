@@ -1,0 +1,54 @@
+{
+    "workshoptitle": "Get Started with Oracle Exadata Database Service on Exascale Infrastructure",
+
+    "help": "livelabs-help-exadata_us@oracle.com",
+
+    "tutorials": [
+      {
+          "title": "Introduction",
+          "description": "Introduction",
+          "filename": "../../introduction-gs/introduction-gs.md"
+      },
+      {
+            "title": "Get Started",
+            "description": "Login to Oracle Cloud",
+            "filename": "../../get-started-gs/get-started-gs.md"
+        },
+        {
+            "title": "Lab 1: Create Instance of Exadata Database Service on Exascale Infrastructure",
+            "description": "Learn how to Create Instance of Exadata Database Service on Exscale Infrastructure using OCI Console",
+            "filename": "../../create-vmcluster-cdb-pdb-on-exascale/create-vmcluster-cdb-pdb-on-exascale.md"
+        },
+       {
+            "title": "Lab 2: Discover VM Cluster, Container Database, & Pluggable Database Details",
+            "description": "Learn how to Discover Environment Details using OCI Console",
+            "filename": "../../discover-env-details-on-exascale/discover-env-details-on-exascale.md"
+        },
+        {
+            "title": "Lab 3: Create Thin Clone of PDB",
+            "description": "Learn how to Create PDB Thin Clone on Exadata Exascale using OCI Console",
+            "filename": "../../create-thin-clone-pdb-on-exascale/create-thin-clone-pdb-on-exascale.md"
+        },
+        {
+            "title": "Lab 4: Scale Exascale Storage Vault Resources",
+            "description": "Learn how to Scale Exascale Storage Vault Resources using OCI Console",
+            "filename": "../../scale-exascale-storage-vault-resources-using-oci-console/scale-exascale-storage-vault-resources-using-oci-console.md"
+        },
+        {
+            "title": "Lab 5: Configure & Validate Notifications for Monitoring ECPU Scaling Changes",
+            "description": "Learn how to Configure & Validate Notifications for Monitoring ECPU Scaling Changes",
+            "filename": "../../configure-notifications-for-exascale-ecpu/configure-notifications-for-exascale-ecpu.md"
+        },
+        {
+            "title": "Lab 6: Discover Exadata Database Service on Exascale Infrastructure Environment Details using APIs",
+            "description": "Learn how to Discover Environment Details using APIs",
+            "filename": "../../discover-env-details-on-exascale-api/discover-env-details-on-exascale-api.md"
+        },
+
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://oracle-livelabs.github.io/common/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

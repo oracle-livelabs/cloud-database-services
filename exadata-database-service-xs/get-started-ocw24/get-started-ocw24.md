@@ -20,7 +20,7 @@ Oracle Cloud is the industry's broadest and most integrated cloud provider, with
 -->
 ### **Objectives**
 
--   For this workshop we will learn how to login to a tenancy provided by the **Oracle Product Mangement & Sales Teams**. 
+-   For this workshop we will learn how to login to a tenancy provided by the **Oracle Product Management & Sales Teams**. 
 
 
 ### **Prerequisites**
