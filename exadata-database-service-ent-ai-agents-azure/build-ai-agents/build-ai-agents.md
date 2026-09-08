@@ -411,11 +411,21 @@ You have now located and reviewed the preconfigured MCP Server in Private Agent 
 
    Submit the prompt.
 
+   ![database tools](./images/database-tools.png)
+
 24. Verify that the agent recognizes the tools exposed through the MCP Server.
 
 25. Enter a natural-language question that requires information from the Oracle AI Database.
 
-    > **Note:** Use a question that corresponds to the sample database objects and data provided with the workshop.
+    > **Note:** Use a question that corresponds to the sample database objects and data provided with the workshop. For this demonstration, we are using a sample retail sales dataset containing transaction, product, channel, regional, sales, margin, and return information.
+
+    For example:
+
+    **Establish the data scope**
+
+    ```text
+    <copy>Give me an executive summary of the retail sales data for the full available period. Include the date range, total net sales, total orders, total refunds, and sales by channel.</copy>
+    ```
 
 26. Submit the question.
 
@@ -424,6 +434,45 @@ You have now located and reviewed the preconfigured MCP Server in Private Agent 
 28. Verify that the agent invokes an appropriate MCP tool rather than attempting to answer the database-specific question using only the language model.
 
 29. Review the response returned by the agent.
+
+    Ask more sample questions:
+
+    **Analyze regional performance**
+
+    ```text
+    <copy>For the full available period, show total net sales by region. Include order count and each region’s percentage of total net sales. Sort from highest to lowest.</copy>
+    ```
+
+    **Analyze sales trends**
+
+    ```text
+    <copy>Show monthly net sales trends for the full available period. Include net sales, order count, and month-over-month change. Identify the highest and lowest sales months.</copy>
+    ```
+
+    **Compare sales channels**
+
+    ```text
+    <copy>Compare WEB, STORE, and MOBILE for the full available period using total net sales, order count, average order value, gross margin amount, and margin percentage. Sort by net sales.</copy>
+    ```
+
+    **Analyze product profitability**
+
+    ```text
+    <copy>Using gross margin amount, defined as net sales minus cost, which five products generated the highest total gross margin? Include product name, category, net sales, cost, gross margin, and margin percentage.</copy>
+    ```
+
+     **Ask a cross-analysis question**
+
+    ```text
+    <copy>Among the five highest-margin products, which channel and region generated the most net sales?</copy>
+    ```
+
+    **Identify improvement opportunities**
+
+    ```text
+    <copy>Which region has the highest return rate? Calculate return rate as returned transactions divided by total transactions, and include net sales and refund amount.</copy>
+    ```
+
 
 30. Verify that the answer is based on information returned from Oracle AI Database.
 
