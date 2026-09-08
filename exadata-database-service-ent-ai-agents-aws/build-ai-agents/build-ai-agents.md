@@ -479,24 +479,6 @@ You have now located and reviewed the preconfigured MCP Server in Private Agent 
 
 Congratulations! You have now created a custom AI agent that can interact with Oracle AI Database through the managed MCP Server.
 
-### Verify the Custom Agent
-
-The workflow separates the AI agent from direct database connectivity:
-
-```text
-Private Agent Factory
-        |
-        | MCP
-        v
-OCI Database Tools MCP Server
-        |
-        | Database Tools Connection
-        v
-Oracle AI Database
-```
-
-The custom agent uses only the database capabilities exposed through the MCP Server and made available to the workflow.
-
 This architecture enables AI applications to use enterprise database capabilities through a standardized MCP interface while database access remains governed independently from the agent.
 
 ## Acknowledgements
