@@ -10,6 +10,9 @@ In this lab, you will:
 
 * Prepare the Oracle Database@AWS target for the database migration
 
+> ***IMPORTANT — Pre-configured Environment.*** The configuration steps included in the following tasks are provided for instructional purposes only and will be discussed during the session. ***You do not need to perform these steps unless instructed.***
+
+
 ## Task 1: Prepare the target database host on Oracle AI Database@AWS
 
 Copy the ZDM user's SSH public key to all VMs in the target VM cluster
@@ -34,6 +37,6 @@ aa.bb.sr.db onphost</copy>
 
 **Authors** 
 
-* Leo Alvarado, Sebastian Solbach, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
+* Leo Alvarado, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
 
 **Last Updated Date** - August, 2026

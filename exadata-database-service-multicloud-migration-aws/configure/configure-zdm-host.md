@@ -10,6 +10,9 @@ In this lab, you will:
 
 * Prepare and Configure the ZDM host for the database migration
 
+> ***IMPORTANT — Pre-configured Environment.*** The configuration steps included in the following tasks are provided for instructional purposes only and will be discussed during the session. ***You do not need to perform these steps unless instructed.***
+
+
 ## Task 1: Prepare the ZDM Service Host On-Premises
 
 Add the source and target hostnames and IP addresses to `/etc/hosts`.
@@ -154,6 +157,6 @@ For ZDM server troubleshooting, check:
 
 **Authors** 
 
-* Leo Alvarado, Sebastian Solbach, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
+* Leo Alvarado, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
 
 **Last Updated Date** - August, 2026

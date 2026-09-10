@@ -16,17 +16,10 @@ In this lab, you will:
 > 
 > The Exadata Database Service on Exascale Infrastructure on Oracle AI Database@AWS environment used in this lab has been ***pre-configured for this session***. The configuration steps in the following tasks are provided for reference and will be discussed during the session. ***You do not need to perform these steps unless instructed.***
 
-## Task 1: Review the Target Architecture
+## Task 1: Provision Oracle Exadata Database Service on Exascale Infrastructure on Oracle AI Database@AWS
 
-<!--![architecture](./images/introduction.png " ")
-
-Figure 1. This is a High-Level Architectural overview showcasing the customer data center where the source database and ZDM’s server reside. It also shows all connectivity to the target Oracle Exadata Database Service on Oracle AI Database@AWS.-->
-
-
-## Task 2: Provision Oracle Exadata Database Service on Exascale Infrastructure on Oracle AI Database@AWS
-
-> ***This lab will be presented as a guided demonstration in the session using a preconfigured Exadata Database Service on Exascale Infrastructure on Oracle AI Database@AWS environment.***
->
+1. Follow this get started guide to [provision an Oracle Exadata Database Service on Exascale Infrastructure on Oracle AI
+Database@AWS](https://docs.oracle.com/en-us/iaas/Content/database-at-aws-exadata-awscr/awscr-create-exascale-vm-cluster.html)
 
 
 
@@ -34,7 +27,7 @@ Figure 1. This is a High-Level Architectural overview showcasing the customer da
 
 **Authors** 
 
-* Leo Alvarado, Sebastian Solbach, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
+* Leo Alvarado, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
 
 **Last Updated Date** - August, 2026
 
