@@ -83,28 +83,30 @@ Run ZDM in evaluation mode. This validates the source and target
 configuration without starting the migration.
 
 ``` bash
-<copy>[zdmuser@zdmhost ~]$ $ZDMHOME/bin/zdmcli migrate database \
--rsp /home/zdmuser/physical_online/physical_online.rsp \
--sourcesid oradb \
--sourcenode onphost \
--srcauth zdmauth \
--srcarg1 user:onpuser \
--srcarg2 identity_file:/home/zdmuser/.ssh/id_rsa \
--srcarg3 sudo_location:/usr/bin/sudo \
--targetnode exadbaws1 \
--tgtauth zdmauth \
--tgtarg1 user:opc \
--tgtarg2 identity_file:/home/zdmuser/.ssh/id_rsa \
--tgtarg3 sudo_location:/usr/bin/sudo \
--targethome /u02/app/oracle/product/19.0.0.0/dbhome_1 \
--tdekeystorepasswd \
--eval
+<copy>[zdmuser@zdmhost ~]$ /home/zdmuser/zdmhome/bin/zdmcli migrate database \
+  -rsp /home/zdmuser/physical_online/physical_online.rsp \
+  -sourcesid cdb1 \
+  -sourcenode <replace with your sourcedb hostname> \
+  -srcauth zdmauth -srcarg1 user:oracle \
+  -srcarg2 identity_file:/home/zdmuser/.ssh/id_rsa \
+  -srcarg3 sudo_location:/usr/bin/sudo \
+  -targetnode <replace-with-target-host> \
+  -tgtauth zdmauth -tgtarg1 user:opc \
+  -tgtarg2 identity_file:/home/zdmuser/.ssh/id_rsa \
+  -tgtarg3 sudo_location:/usr/bin/sudo \
+  -targethome /u02/app/oracle/product/23.0.0.0/dbhome_1 \
+  -tdekeystorepasswd \
+  -ignore PATCH_CHECK \
+  -eval
 
+  </copy>
+
+```
 Enter source database oradb SYS password:
 Enter source database oradb TDE keystore password:
 
 zdmhost: Processing response file ...
-Operation "zdmcli migrate database" scheduled with the job ID "1".</copy>
+Operation "zdmcli migrate database" scheduled with the job ID "1".
 ```
 
 > **Note:** If the source database uses ASM for storage management, use

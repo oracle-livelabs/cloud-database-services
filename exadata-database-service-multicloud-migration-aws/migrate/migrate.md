@@ -17,22 +17,20 @@ Use `-pauseafter ZDM_CONFIGURE_DG_SRC` to pause before the role swap and
 switchover.
 
 ``` bash
-<copy>[zdmuser@zdmhost ~]$ $ZDMHOME/bin/zdmcli migrate database \
--rsp /home/zdmuser/physical_online/physical_online.rsp \
--sourcesid oradb \
--sourcenode onphost \
--srcauth zdmauth \
--srcarg1 user:onpuser \
--srcarg2 identity_file:/home/zdmuser/.ssh/id_rsa \
--srcarg3 sudo_location:/usr/bin/sudo \
--targetnode exadbaws1 \
--tgtauth zdmauth \
--tgtarg1 user:opc \
--tgtarg2 identity_file:/home/zdmuser/.ssh/id_rsa \
--tgtarg3 sudo_location:/usr/bin/sudo \
--targethome /u02/app/oracle/product/19.0.0.0/dbhome_1 \
--tdekeystorepasswd \
--pauseafter ZDM_CONFIGURE_DG_SRC
+<copy>[zdmuser@zdmhost ~]$ /home/zdmuser/zdmhome/bin/zdmcli migrate database \
+  -rsp /home/zdmuser/physical_online/physical_online.rsp \
+  -sourcesid cdb1 \
+  -sourcenode <replace with your sourcedb hostname> \
+  -srcauth zdmauth -srcarg1 user:oracle \
+  -srcarg2 identity_file:/home/zdmuser/.ssh/id_rsa \
+  -srcarg3 sudo_location:/usr/bin/sudo \
+  -targetnode <replace-with-target-host> \
+  -tgtauth zdmauth -tgtarg1 user:opc \
+  -tgtarg2 identity_file:/home/zdmuser/.ssh/id_rsa \
+  -tgtarg3 sudo_location:/usr/bin/sudo \
+  -targethome /u02/app/oracle/product/23.0.0.0/dbhome_1 \
+  -tdekeystorepasswd \
+  -pauseafter ZDM_CONFIGURE_DG_SRC -ignore PATCH_CHECK
 
 Enter source database oradb SYS password:
 Enter source database oradb TDE keystore password:
