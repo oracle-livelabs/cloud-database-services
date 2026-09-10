@@ -12,26 +12,29 @@ the target database.
 
 - Configure the on-premises Oracle Database for migration.
 
+> ***IMPORTANT — Pre-configured Environment.*** The configuration steps included in the following tasks are provided for instructional purposes only and will be discussed during the session. ***You do not need to perform these steps unless instructed.***
+
 ## Task 1: Prepare the Source Database Host On-Premises
+
 
 Copy the ZDM user's SSH public key to the source database host.
 
 ``` bash
-<copy>#on ZDM host as zdmuser
+#on ZDM host as zdmuser
 [zdmuser@zdmhost ~]$ cat .ssh/id_rsa.pub
 #on the source database host as user onpuser
 [onpuser@onphost ~]$ vi .ssh/authorized_keys
-#insert the public key and save the changes</copy>
+#insert the public key and save the changes
 ```
 
 Add the target database hostname, IP address, and SCAN name to
 `/etc/hosts` on the source host.
 
 ``` bash
-<copy>[root@onphost ~]# vi /etc/hosts
+[root@onphost ~]# vi /etc/hosts
 #add the following entries
 ta.db.oa.1 oradb_exa_sample.oravcn.sample.com target
-ta.db.oa.1 demo-scan-sample.oravcn.sample.com target-scan</copy>
+ta.db.oa.1 demo-scan-sample.oravcn.sample.com target-scan
 ```
 
 ## Task 2: Prepare the Source Database On-Premises
@@ -64,7 +67,7 @@ RMAN> CONFIGURE CONTROLFILE AUTOBACKUP ON;</copy>
 
 **Authors** 
 
-* Leo Alvarado, Sebastian Solbach, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
+* Leo Alvarado, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
 
 **Last Updated Date** - August, 2026
 
