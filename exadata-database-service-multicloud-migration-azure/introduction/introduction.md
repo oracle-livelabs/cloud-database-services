@@ -17,7 +17,7 @@ ready to perform the switchover. This approach avoids an intermediate
 backup location and limits application downtime primarily to the final
 switchover.
 
-By the end of this workshop, you will have gained hands-on experience with the complete Oracle Zero Downtime Migration workflow and understand the key steps involved in migrating Oracle databases to Oracle Database@Azure.
+By the end of this workshop, you will have gained hands-on experience with the complete Oracle Zero Downtime Migration workflow and understand the key steps involved in migrating Oracle databases to Oracle AI Database@Azure.
 
 
 **Estimated Workshop Time:** 60 minutes.
@@ -164,6 +164,6 @@ You may now **proceed to the next lab**
 
 **Authors** 
 
-* Leo Alvarado, Sebastian Solbach, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
+* Leo Alvarado, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
 
 **Last Updated Date** - August, 2026

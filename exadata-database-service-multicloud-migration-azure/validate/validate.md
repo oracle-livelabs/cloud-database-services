@@ -27,6 +27,6 @@ Database@Azure is complete.
 
 **Authors** 
 
-* Leo Alvarado, Sebastian Solbach, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
+* Leo Alvarado, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
 
 **Last Updated Date** - August, 2026
