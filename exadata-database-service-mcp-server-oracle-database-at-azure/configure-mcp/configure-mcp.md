@@ -302,6 +302,8 @@ This corresponds to the **Resource Principal / Resource Principal / Password** c
 9.  Open the **Navigation menu**.
 
 10. Select **Identity & Security**, and then select **Policies**.
+    
+    ![navigate policies](./images/nav-pol.png " ")
 
 11. Select the compartment where the workshop policy will be created, or
     use the location specified by your workshop administrator.
@@ -309,7 +311,7 @@ This corresponds to the **Resource Principal / Resource Principal / Password** c
 12. Create a policy named:
 
 ``` text
-<copy>dbtools-mcp</copy>
+<copy>mcp-policy</copy>
 ```
 
 13. Add the policy that allows members of the MCP group to invoke the
@@ -351,7 +353,15 @@ allow any-user to manage objects in compartment <compartment_name> where request
 
 > **Important:** The policies above are specifically for the workshop's **Resource Principal / Resource Principal / Password** configuration. Do not copy these policies unchanged into an environment that uses Authenticated Principal or token-based database authentication. Those configurations require different policy statements.
 
-### Understand Resource Principal Access
+> **Note:** If you plan to use the **Generative AI SQL Assistant** toolset, add the following policy to allow the MCP Server resource principal to use the OCI Generative AI NL2SQL service:
+
+ ```text
+ <copy>allow any-user to use generative-ai-nl2sql in compartment <compartment_name> where request.principal.id = '<mcp-server-ocid>'</copy>
+ ```
+
+> This policy is not required when using only the **Built-in SQL tools**, **Custom SQL tools**, or **Customizable reporting tools** configured in this workshop.
+
+### **Understand Resource Principal Acces**
 
 With this workshop configuration:
 
@@ -398,6 +408,8 @@ Database Tools supports the following MCP toolset types:
 
 2.  Click **Create Model Context Protocol Toolset**.
 
+   ![create mcp toolsets](./images/mcp-toolset.png " ")
+
 3.  Enter the following information:
 
    | Field | Value |
@@ -408,9 +420,11 @@ Database Tools supports the following MCP toolset types:
    | Type | **Built-in SQL tools** |
    | Default execution type | **Synchronous** |
 
+   ![create mcp toolsets](./images/create-mcp-toolsets.png " ")
+
 4.  Review the tools provided by the Built-in SQL tools toolset.
 
-The built-in toolset includes capabilities such as:
+   The built-in toolset includes capabilities such as:
 
    | Tool | Purpose |
    | --- | --- |
@@ -418,40 +432,19 @@ The built-in toolset includes capabilities such as:
    | `schema_information`  | Retrieves and enriches database schema metadata. |
    | `request_status` | Retrieves the status and result of an asynchronous tool request.  |
 
+   ![create mcp toolsets](./images/review-mcptoolset.png " ")
+
 5.  Create the toolset.
 
 6.  Wait until the toolset is available.
 
+   ![create sql tools](./images/sqltools.png " ")
+
 7.  Verify that `SQL Tools` appears on the **Toolsets** tab.
 
+   ![view sql tools](./images/view-sqltools.png " ")
+
 > **Important:** `sql_run` can execute ad-hoc SQL and PL/SQL using the privileges of the database user configured in the Database Tools Connection. Restrict that database user's privileges to the minimum required for the agent's use case. **Security Recommendation:** For production environments, prefer predefined, parameterized Custom SQL tools or SQL Reports when unrestricted ad-hoc SQL is not required. Use application roles and least-privilege database accounts to restrict access.
-
-### Optional: Understand a Curated Custom SQL Tool
-
-For a more restricted production pattern, a Custom SQL tool can expose a
-specific query instead of general SQL execution.
-
-For example, a tool named:
-
-``` text
-<copy>get_customer_orders</copy>
-```
-
-could expose a predefined parameterized query such as:
-
-``` sql
-<copy>SELECT order_id,
-       order_date,
-       order_status,
-       order_total
-FROM customer_orders
-WHERE customer_id = :customer_id
-ORDER BY order_date DESC</copy>
-```
-
-The tool can require a specific allowed application role and expose only the parameter needed by the agent.
-
-> **Note:** The custom SQL example is provided to illustrate how MCP toolsets can narrow an agent's database capabilities. The workshop uses the Built-in SQL tools toolset unless otherwise instructed.
 
 ## Task 5: Validate the MCP Server and Register an MCP Client
 
@@ -486,10 +479,12 @@ MCP clients are registered in the same IAM Identity Domain as the MCP Server. Th
 
 7.  Click **Register Model Context Protocol client**.
 
+   ![register client](./images/register-client.png " ")
+
 8.  Enter a client name.
 
 ``` text
-<copy>azure-foundry-mcp-client</copy>
+<copy>microsoft-foundry-mcp-client</copy>
 ```
 
 9.  Enter a description.
@@ -504,6 +499,8 @@ MCP clients are registered in the same IAM Identity Domain as the MCP Server. Th
 > **Note:** The exact OAuth client settings depend on the authentication method used by Microsoft Foundry. In the next lab, Microsoft Foundry will use the registered remote MCP Server as an agent tool. If the Foundry OAuth flow generates a redirect URI, add that URI to this client registration as instructed in Lab 2.
 
 11. Complete the client registration.
+
+   ![register client](./images/reg-client-details.png " ")
 
 12. Open the registered client.
 
