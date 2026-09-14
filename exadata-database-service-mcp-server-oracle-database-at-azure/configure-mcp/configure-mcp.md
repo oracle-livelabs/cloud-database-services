@@ -2,7 +2,7 @@
 
 ## Introduction
 
-> ***This lab uses a pre-configured MCP Server environment.***
+> ***IMPORTANT — Pre-configured Environment.*** The MCP servers used in this HOL are **preconfigured** and ready to use for this session. The configuration steps included in the following tasks are provided for instructional purposes only and will be discussed during the session. ***You do not need to perform these steps unless instructed.***
 
 In this lab, you will configure an **OCI Database Tools Model Context Protocol (MCP) Server** to provide secure, governed access to Oracle AI Database.
 
@@ -34,9 +34,7 @@ Before starting this lab, verify that the following resources are available:
 
 
 
-> ***IMPORTANT — Pre-configured Environment***
-> 
-> The MCP Server environment used in this lab has been ***pre-configured for this session***. The configuration steps in the following tasks are provided for reference and will be discussed during the session. ***You do not need to perform these steps unless instructed.***
+> ***IMPORTANT — Pre-configured Environment.*** The MCP servers used in this HOL are **preconfigured** and ready to use for this session. The configuration steps included in the following tasks are provided for instructional purposes only and will be discussed during the session. ***You do not need to perform these steps unless instructed.***
 
 ## Task 1: Configure MCP Server for Oracle AI Database. 
 
@@ -52,41 +50,41 @@ The MCP Server provides the managed MCP endpoint that AI applications will use t
 
 4. Under **Database Tools**, select **Model Context Protocol Servers**.
 
-    > **Note:** Database Tools MCP Servers are managed MCP endpoints provided by OCI. They use Database Tools Connections to communicate with Oracle Database.
+   > **Note:** Database Tools MCP Servers are managed MCP endpoints provided by OCI. They use Database Tools Connections to communicate with Oracle Database.
 
 5. On the **Model Context Protocol Servers** page, click **Create Model Context Protocol server**.
 
 6. On the **Create Model Context Protocol server** page, configure the server using the workshop resources.
 
-    | Field | Value |
-    | --- | --- |
-    | Name | `mcpserver` |
-    | Compartment | Select the workshop compartment |
-    | Domain | Select the workshop IAM Identity Domain |
-    | Connection | Select the Database Tools Connection for the Oracle AI Database |
-    | Object Storage compartment | Select the workshop compartment |
-    | Object Storage bucket | Select the workshop bucket |
+   | Field | Value |
+   | --- | --- |
+   | Name | `mcpserver` |
+   | Compartment | Select the workshop compartment |
+   | Domain | Select the workshop IAM Identity Domain |
+   | Connection | Select the Database Tools Connection for the Oracle AI Database |
+   | Object Storage compartment | Select the workshop compartment |
+   | Object Storage bucket | Select the workshop bucket |
 
-    > **Note:** The Database Tools Connection determines which Oracle Database the MCP Server accesses.
+   > **Note:** The Database Tools Connection determines which Oracle Database the MCP Server accesses.
 
 7. Expand **Advanced options**.
 
 8. Review the **OAuth options**.
 
-    The access token expiration determines how long a Personal Access Token remains valid after it is issued.
+   The access token expiration determines how long a Personal Access Token remains valid after it is issued.
 
-    For this workshop, retain the value provided by the workshop environment unless instructed otherwise.
+   For this workshop, retain the value provided by the workshop environment unless instructed otherwise.
 
 9. Under **Settings**, review **Runtime Identity**.
 
-    The MCP Server supports two runtime identity models:
+   The MCP Server supports two runtime identity models:
 
-    - **Authenticated principal** – database operations execute using the authenticated user's identity.
-    - **Resource principal** – database operations execute using the MCP Server's workload identity and permissions granted through OCI IAM policies.
+   - **Authenticated principal** – database operations execute using the authenticated user's identity.
+   - **Resource principal** – database operations execute using the MCP Server's workload identity and permissions granted through OCI IAM policies.
 
-    Select the runtime identity specified for this workshop.
+   Select the runtime identity specified for this workshop.
 
-    > **Note:** The workshop environment is preconfigured with the IAM policies required for the selected runtime identity.
+   > **Note:** The workshop environment is preconfigured with the IAM policies required for the selected runtime identity.
 
 10. Review the configuration and click **Create**.
 
@@ -141,10 +139,10 @@ In this task, you will verify that the MCP Server and its associated resources a
 
 5. Review the MCP Server configuration and verify the following:
 
-    - The correct **compartment** is selected.
-    - The correct **IAM Identity Domain** is associated with the server.
-    - The server uses the expected **Database Tools Connection**.
-    - The expected runtime identity is configured.
+   - The correct **compartment** is selected.
+   - The correct **IAM Identity Domain** is associated with the server.
+   - The server uses the expected **Database Tools Connection**.
+   - The expected runtime identity is configured.
 
 6. Select the **Toolsets** tab.
 
@@ -190,37 +188,37 @@ In this task, you will create the client registration that will be used in a lat
 
 4. Enter a name for the client.
 
-    For example:
+   For example:
 
-    ```text
-    workshop-mcp-client
-    ```
+   ```text
+   workshop-mcp-client
+   ```
 
 5. Enter a description.
 
-    For example:
+   For example:
 
-    ```text
-    MCP client for the Multicloud Enterprise AI Assistant workshop
-    ```
+   ```text
+   MCP client for the Multicloud Enterprise AI Assistant workshop
+   ```
 
 6. Select the **Client Type** required for the workshop.
 
-    MCP client registrations support different client types depending on where the application runs:
+   MCP client registrations support different client types depending on where the application runs:
 
-    - **Public** – intended for applications running on user devices that cannot securely store client secrets.
-    - **Confidential** – intended for server-side applications capable of securely storing credentials.
-    - **Trusted** – intended for trusted server-side applications that can act on behalf of users.
+   - **Public** – intended for applications running on user devices that cannot securely store client secrets.
+   - **Confidential** – intended for server-side applications capable of securely storing credentials.
+   - **Trusted** – intended for trusted server-side applications that can act on behalf of users.
 
-    Select the client type specified for the workshop architecture.
+   Select the client type specified for the workshop architecture.
 
 7. Review the **Allowed grant types**.
 
-    The available OAuth grant types are determined by the selected client type.
+   The available OAuth grant types are determined by the selected client type.
 
 8. Review the **Allowed scope**.
 
-    The scope identifies the MCP Server resources that the client is permitted to request access to.
+   The scope identifies the MCP Server resources that the client is permitted to request access to.
 
 9. If required for the selected client type, enter the **Redirect URI** provided for the workshop client.
 
@@ -276,5 +274,8 @@ In the next lab, you will use this MCP foundation to build enterprise AI agent c
 
 ## Acknowledgements
 
-- **Author** - Oracle
-- **Last Updated By/Date** - Oracle, August 2026
+**Authors** 
+
+* Leo Alvarado, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
+
+**Last Updated Date** - August, 2026

@@ -51,7 +51,7 @@ Users are encouraged to skip around to the lab most pertinent to them.
 
 ### Prerequisites
 
-* An OCI Tenancy with the assigned username and password.
+* An Azure Event Account with the assigned username and password.
 * An Agent Factory Instance with the assigned username and password.
 * An Exascale Database Instance 
 
@@ -65,4 +65,4 @@ You may now **proceed to the next lab**
 
 * Leo Alvarado, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
 
-**Last Updated Date** - April, 2026
+**Last Updated Date** - August, 2026
