@@ -40,7 +40,7 @@ Before starting this lab, verify that you have:
 
 > **Important:** Do not include client secrets, access tokens, or other confidential credentials in screenshots, prompts, documentation, or other shared content.
 
----
+
 
 ## Task 1: Connect the Oracle MCP Server to Your Microsoft Foundry Agent
 
@@ -142,7 +142,7 @@ Oracle AI Database@Azure
 
 > **Important:** The Microsoft Foundry agent does not connect directly to Oracle AI Database@Azure. The managed Oracle MCP Server provides the database access layer and exposes only the capabilities permitted by its MCP toolsets, application roles, IAM policies, and underlying database privileges.
 
----
+
 
 ## Task 2: Test the AI Agent
 
