@@ -48,7 +48,7 @@ available:
 -   An Oracle AI Database@Azure database supported by OCI Database
     Tools.
 -   An existing **Database Tools Connection** for the Oracle AI
-    Database@Azure database.
+    Database@Azure database. For information about creating a Database Tools Connection, see [Creating a Connection](https://docs.oracle.com/en-us/iaas/database-tools/doc/creating-connection.html).
 -   An OCI Vault, encryption key, and secrets used by the Database Tools
     Connection, when using password-based database authentication.
 -   An OCI IAM Identity Domain where you have permission to manage MCP
@@ -92,12 +92,20 @@ identity is allowed to invoke.
 ### **Access OCI from Oracle AI Database@Azure**
 
 1. Navigate to your **Oracle AI Database@Azure** environment.
+   
+   ![navigate odaa](./images/nav-od-azure.png " ")
+
+   ![navigate odaa](./images/nav-od-azure-overview.png " ")
 
 2. Select the **VM cluster** that contains the Oracle AI Database you will use for this workshop.
+   
+   ![navigate vmc](./images/navigate-vmc.png " ")
 
 3. On the VM cluster details page, locate the link to access the corresponding resource in **Oracle Cloud Infrastructure (OCI)**.
 
 4. Click the **OCI** link.
+   
+   ![go to oci link](./images/go-to-oci.png " ")
 
    A new browser tab opens and redirects you to the corresponding resource in the **Oracle Cloud Console**.
 
@@ -108,6 +116,8 @@ identity is allowed to invoke.
 5. In the Oracle Cloud Console, open the **Navigation menu**.
 
 6. Select **Identity & Security**, and then select **Domains**.
+   
+   ![navigate domains](./images/domains.png " ")
 
 7. Select the IAM Identity Domain provided for the workshop.
 
@@ -133,13 +143,17 @@ The Oracle Database Tools MCP Server provides the following predefined applicati
    | `MCP_Operators` | `MCP_Operator` |
    | `MCP_Users` | `MCP_User` |
 
+   ![mcp groups](./images/mcp-groups.png " ")
+
 > **Note:** The `MCP_All_Users` group is used by the OCI IAM policy that authorizes members to invoke the MCP Server. It is not an MCP application-role mapping.
 
+
 7. Add your workshop user to the group specified.
+   
+   ![mcp add users](./images/mcp-add-users.png " ")
 
 > **Note:** For this workshop, a user who needs to exercise the Built-in SQL tools should be assigned the role required by that toolset. In a production environment, follow least privilege and provide users only the MCP and database privileges required for their responsibilities.
 ***Important:*** OCI IAM **Identity Domain application roles** and OCI IAM **policies** serve different purposes. Application roles control what an authenticated identity can do inside the MCP Server. OCI IAM policies authorize identities and resource principals to invoke the MCP Server and access OCI resources such as Database Tools Connections, Vault secrets, work requests, and Object Storage.
-
 
 
 ## Task 2: Create the MCP Server for Oracle AI Database 
@@ -155,6 +169,8 @@ runtime identity.
 
 3.  Under **Database Tools**, select **Model Context Protocol Servers**.
 
+   ![navigate mcp](./images/nav-mcp.png " ")
+
 4.  On the **Model Context Protocol Servers** page, click **Create Model
     Context Protocol server**.
 
@@ -168,9 +184,9 @@ runtime identity.
    | Connection | Select the Database Tools Connection for Oracle AI Database@Azure |
    | Object Storage bucket | Select the workshop bucket if asynchronous operations will be used |
 
-> **Note:** The selected Database Tools Connection determines which
+   ![create mcp](./images/create-mcp.png " ")
 
-> Oracle database the MCP Server accesses.
+> **Note:** The selected Database Tools Connection determines which Oracle AI Database the MCP Server accesses. For information about creating a Database Tools Connection, see [Creating a Connection](https://docs.oracle.com/en-us/iaas/database-tools/doc/creating-connection.html).
 
 ### **Configure OAuth Options**
 
@@ -179,29 +195,29 @@ runtime identity.
 7.  Under **OAuth options**, review **Access token expiration
     (seconds)**.
 
-The access token expiration determines how long an access token is
-valid. The default is one hour. If Personal Access Tokens will be used
-by a client, the Oracle tutorial suggests increasing this value when a
-longer workshop session is required.
+    ![configure oauth](./images/configure-oauth.png " ")
 
-For example, one week is:
+   The access token expiration determines how long an access token is valid. The default is one hour. If Personal Access Tokens will be used by a client, the Oracle tutorial suggests increasing this value when a longer workshop session is required.
 
-   ``` text
-   <copy>604800</copy>
-   ```
 
-8.  Review **Refresh token expiration (seconds)**. This determines how
-    long a client can continue renewing access tokens before the user
-    must authenticate again.
+   For example, one week is:
+
+      ``` text
+      <copy>604800</copy>
+      ```
+
+8.  Review **Refresh token expiration (seconds)**. This determines how long a client can continue renewing access tokens before the user must authenticate again.
 
 ### **Configure Runtime Identity**
 
 9.  Under **Settings**, locate **Runtime Identity**.
 
 10. Select **Resource principal**.
+    
+    ![configure runtime identity](./images/runtime-id.png " ")
+    
 
-The MCP Server runtime identity determines which identity is used when
-the server accesses OCI resources:
+The MCP Server runtime identity determines which identity is used when the server accesses OCI resources:
 
 -   **Authenticated principal** runs requests using the authenticated
     user's identity.
@@ -210,34 +226,25 @@ the server accesses OCI resources:
 
 For this workshop, use **Resource principal**.
 
-> **Why Resource Principal?** The MCP Server can access authorized OCI
-
-> resources using its own temporary workload identity instead of
-
-> requiring each user to be granted direct access to the underlying
-
-> connection credentials and supporting resources. The MCP Server
-
-> resource principal is governed by OCI IAM policies.
+> **Why Resource Principal?** The MCP Server can access authorized OCI resources using its own temporary workload identity instead of requiring each user to be granted direct access to the underlying connection credentials and supporting resources. The MCP Server resource principal is governed by OCI IAM policies.
 
 > **Important:** The MCP Server runtime identity and the **Database Tools Connection runtime identity** are separate settings. The policies required by the MCP Server depend on both runtime identities and on whether the Database Tools Connection uses password-based or token-based database authentication.
 
-11. Click **Create**.
+11.  Click **Create**.
 
 12. Wait until the MCP Server is created successfully.
 
 13. Open the MCP Server details page.
 
 14. Copy the **MCP Server OCID**.
+    
+   ![copy ocid](./images/copy-ocid.png " ")
 
-You will use this OCID when configuring the resource-principal IAM
-policies.
+You will use this OCID when configuring the resource-principal IAM policies.
 
 ## Task 3: Configure MCP Application Roles and OCI IAM Policies
 
-In this task, you will map the IAM Identity Domain groups to MCP
-application roles and configure the OCI IAM policies required by the MCP
-Server.
+In this task, you will map the IAM Identity Domain groups to MCP application roles and configure the OCI IAM policies required by the MCP Server.
 
 ### Assign Groups to MCP Application Roles
 
@@ -245,14 +252,19 @@ Server.
 
 2.  Click **Assign Roles**.
 
-3.  For `MCP_Administrator`, open the Actions menu and select **Manage
-    groups**.
+   ![assign roles](./images/assign-roles.png " ")
+
+3.  For `MCP_Administrator`, open the Actions menu and select **Manage groups**.
+   
+   ![manage groups](./images/manage-groups.png " ")
 
 4.  Click **Assign groups**.
 
 5.  Select: **MCP_Administrators**
 
 6.  Click **Assign**.
+
+   ![assign groups](./images/assign-groups.png " ")
 
 7.  Repeat the process to map the remaining groups:
     
@@ -265,9 +277,7 @@ Server.
 8.  Verify that your workshop user belongs to the group required for the
     lab.
 
-> **Important:** A user must have an MCP application role assigned to
-
-> use the MCP Server and to download a Personal Access Token.
+> **Important:** A user must have an MCP application role assigned to use the MCP Server and to download a Personal Access Token.
 
 ### **Configure OCI IAM Policies**
 
@@ -287,9 +297,7 @@ For this workshop, the following example assumes:
    | Database Authentication | **Password** |
    | Policy Scope | **Compartment** |
 
-This corresponds to the **Resource Principal / Resource Principal /
-Password** configuration in the Database Tools MCP Server policy
-documentation.
+This corresponds to the **Resource Principal / Resource Principal / Password** configuration in the Database Tools MCP Server policy documentation.
 
 9.  Open the **Navigation menu**.
 
@@ -318,9 +326,7 @@ documentation.
 <copy>allow any-user to use database-tools-connections in compartment <compartment_name> where request.principal.id = '<mcp-server-ocid>'</copy>
 ```
 
-15. Because the workshop Database Tools Connection uses **Resource
-    Principal**, allow the connection resource principal to read the
-    Vault secrets used by the connection:
+15. Because the workshop Database Tools Connection uses **Resource Principal**, allow the connection resource principal to read the Vault secrets used by the connection:
 
 ``` text
 <copy>allow any-user to read secret-bundles in compartment <compartment_name> where request.principal.id = '<connection-ocid>'</copy>
@@ -332,35 +338,18 @@ documentation.
 <copy>allow any-user to use database-tools-runtime-work-requests in compartment <compartment_name> where request.principal.id = '<mcp-server-ocid>'</copy>
 ```
 
-17. If the workshop uses Object Storage for asynchronous results, allow
-    the Database Tools Connection resource principal to use the bucket
-    and manage objects:
+17. If the workshop uses Object Storage for asynchronous results, allow the Database Tools Connection resource principal to use the bucket and manage objects:
 
 ``` text
 <copy>allow any-user to use buckets in compartment <compartment_name> where request.principal.id = '<connection-ocid>'
 allow any-user to manage objects in compartment <compartment_name> where request.principal.id = '<connection-ocid>'</copy>
 ```
 
-18. Replace the placeholders with the values from your workshop
-    environment and save the policy.
+18. Replace the placeholders with the values from your workshop environment and save the policy.
 
-> **Note:** OCI also provides **View recommended policies** for an MCP
+> **Note:** OCI also provides **View recommended policies** for an MCP Server. Use it to generate policy statements appropriate for the actual MCP Server, Database Tools Connection, authentication type, and policy scope in your environment.
 
-> Server. Use it to generate policy statements appropriate for the
-
-> actual MCP Server, Database Tools Connection, authentication type, and
-
-> policy scope in your environment.
-
-> **Important:** The policies above are specifically for the workshop's
-
-> **Resource Principal / Resource Principal / Password** configuration.
-
-> Do not copy these policies unchanged into an environment that uses
-
-> Authenticated Principal or token-based database authentication. Those
-
-> configurations require different policy statements.
+> **Important:** The policies above are specifically for the workshop's **Resource Principal / Resource Principal / Password** configuration. Do not copy these policies unchanged into an environment that uses Authenticated Principal or token-based database authentication. Those configurations require different policy statements.
 
 ### Understand Resource Principal Access
 
@@ -385,17 +374,12 @@ OCI Vault Secrets
 Oracle AI Database@Azure
 ```
 
-The MCP application role authorizes the user or client to use MCP
-capabilities. The OCI IAM policies authorize the MCP Server and Database
-Tools Connection resource principals to access the OCI resources
-required to execute the request.
+The MCP application role authorizes the user or client to use MCP capabilities. The OCI IAM policies authorize the MCP Server and Database Tools Connection resource principals to access the OCI resources required to execute the request.
 
 
 ## Task 4: Create an MCP Toolset
 
-An MCP Server does not expose arbitrary database functionality
-automatically. You create one or more **MCP toolsets** to define the
-database capabilities that MCP clients can discover and invoke.
+An MCP Server does not expose arbitrary database functionality automatically. You create one or more **MCP toolsets** to define the database capabilities that MCP clients can discover and invoke.
 
 Database Tools supports the following MCP toolset types:
 
@@ -440,21 +424,7 @@ The built-in toolset includes capabilities such as:
 
 7.  Verify that `SQL Tools` appears on the **Toolsets** tab.
 
-> **Important:** `sql_run` can execute ad-hoc SQL and PL/SQL using the
-
-> privileges of the database user configured in the Database Tools
-
-> Connection. Restrict that database user's privileges to the minimum
-
-> required for the agent's use case.
-
-> **Security Recommendation:** For production environments, prefer
-
-> predefined, parameterized Custom SQL tools or SQL Reports when
-
-> unrestricted ad-hoc SQL is not required. Use application roles and
-
-> least-privilege database accounts to restrict access.
+> **Important:** `sql_run` can execute ad-hoc SQL and PL/SQL using the privileges of the database user configured in the Database Tools Connection. Restrict that database user's privileges to the minimum required for the agent's use case. **Security Recommendation:** For production environments, prefer predefined, parameterized Custom SQL tools or SQL Reports when unrestricted ad-hoc SQL is not required. Use application roles and least-privilege database accounts to restrict access.
 
 ### Optional: Understand a Curated Custom SQL Tool
 
@@ -479,21 +449,13 @@ WHERE customer_id = :customer_id
 ORDER BY order_date DESC</copy>
 ```
 
-The tool can require a specific allowed application role and expose only
-the parameter needed by the agent.
+The tool can require a specific allowed application role and expose only the parameter needed by the agent.
 
-> **Note:** The custom SQL example is provided to illustrate how MCP
-
-> toolsets can narrow an agent's database capabilities. The workshop
-
-> uses the Built-in SQL tools toolset unless otherwise instructed.
-
-
+> **Note:** The custom SQL example is provided to illustrate how MCP toolsets can narrow an agent's database capabilities. The workshop uses the Built-in SQL tools toolset unless otherwise instructed.
 
 ## Task 5: Validate the MCP Server and Register an MCP Client
 
-In this task, you will validate the MCP Server configuration and prepare
-the information required to connect it to Microsoft Foundry.
+In this task, you will validate the MCP Server configuration and prepare the information required to connect it to Microsoft Foundry.
 
 ### **Validate the MCP Server**
 
@@ -518,9 +480,7 @@ the information required to connect it to Microsoft Foundry.
 
 ### **Register an MCP Client**
 
-MCP clients are registered in the same IAM Identity Domain as the MCP
-Server. The registration creates an integrated application used for
-OAuth authentication.
+MCP clients are registered in the same IAM Identity Domain as the MCP Server. The registration creates an integrated application used for OAuth authentication.
 
 6.  Select the **Clients** tab.
 
@@ -541,15 +501,7 @@ OAuth authentication.
 10. Select the client type and OAuth configuration specified for the
     workshop.
 
-> **Note:** The exact OAuth client settings depend on the authentication
-
-> method used by Microsoft Foundry. In the next lab, Microsoft Foundry
-
-> will use the registered remote MCP Server as an agent tool. If the
-
-> Foundry OAuth flow generates a redirect URI, add that URI to this
-
-> client registration as instructed in Lab 2.
+> **Note:** The exact OAuth client settings depend on the authentication method used by Microsoft Foundry. In the next lab, Microsoft Foundry will use the registered remote MCP Server as an agent tool. If the Foundry OAuth flow generates a redirect URI, add that URI to this client registration as instructed in Lab 2.
 
 11. Complete the client registration.
 
@@ -562,9 +514,7 @@ OAuth authentication.
 -   OAuth authorization and token information required by the selected
     client type
 
-> **Important:** Do not share client secrets, access tokens, Personal
-
-> Access Tokens, or other authentication credentials.
+> **Important:** Do not share client secrets, access tokens, Personal Access Tokens, or other authentication credentials.
 
 ### **Verify Access Requirements**
 
@@ -583,8 +533,6 @@ following authorization layers must be satisfied:
 You have now configured the managed Oracle MCP Server and the identity,
 policy, role, and toolset layers required for an MCP client to access
 Oracle AI Database@Azure.
-
-------------------------------------------------------------------------
 
 ## Summary
 
@@ -626,6 +574,8 @@ information from Oracle AI Database@Azure.
     Roles](https://docs.oracle.com/en-us/iaas/database-tools/doc/application-roles.html)
 -   [Database Tools MCP
     Toolsets](https://docs.oracle.com/en-us/iaas/database-tools/doc/database-tools-mcp-toolsets.html)
+
+-   [Creating a Database Connection](https://docs.oracle.com/en-us/iaas/database-tools/doc/creating-connection.html).
 
 ## Acknowledgements
 
