@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Build a Multicloud Enterprise AI Assistant on Oracle AI Database",
+  "workshoptitle": "Build an Enterprise AI Assistant with Azure AI Foundry, Oracle MCP, and Oracle AI Database@Azure",
   "help": "livelabs-help-database_us@oracle.com",
   "tutorials": [
     {
@@ -7,12 +7,12 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Configure MCP Server for Oracle AI Database@Azure",
+      "title": "Lab 1: Create and Configure the MCP Server for Oracle AI Database@Azure",
       "filename": "../../configure-mcp/configure-mcp.md"
     },
    
     {
-      "title": "Lab 2: Build Multicloud AI Agents with Azure Foundry, Oracle MCP, and Oracle AI Database@Azure",
+      "title": "Lab 2: Connect Your Microsoft Foundry Agent to Oracle AI Database@Azure Using MCP",
       "filename": "../../consume/consume-azure.md"
     },
     {
