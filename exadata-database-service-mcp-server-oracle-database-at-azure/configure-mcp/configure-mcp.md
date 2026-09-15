@@ -550,9 +550,7 @@ In this lab, you:
 -   Registered an MCP client and recorded the information required for
     Microsoft Foundry.
 
-In the next lab, you will add the Oracle MCP Server as a tool in Azure
-AI Foundry and build an agent that uses the MCP tools to retrieve live
-information from Oracle AI Database@Azure.
+In the next lab, you will add the Oracle MCP Server as a tool in Microsoft Foundry and build an agent that uses the MCP tools to retrieve live information from Oracle AI Database@Azure.
 
 ## Learn More
 
