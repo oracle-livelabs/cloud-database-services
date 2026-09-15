@@ -114,7 +114,7 @@ The Oracle Database Tools MCP Server provides the following predefined applicati
 
 5. In the selected domain, select **User management**, and then select **Groups**.
 
-6.  Create the following groups if they are not already available in the workshop environment:
+6. Create the following groups if they are not already available in the workshop environment:
 
     | Group | Assigned MCP Application Role |
     | --- | --- |
