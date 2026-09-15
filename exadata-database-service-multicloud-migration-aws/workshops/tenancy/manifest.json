@@ -1,0 +1,42 @@
+{
+  "workshoptitle": "Migrate your data to Oracle AI Database@AWS using Oracle Zero Downtime Migration",
+  "help": "livelabs-help-database_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started",
+      "filename": "../../get-started/get-started.md"
+    },
+    {
+      "title": "Lab 1: Provision the target database on Oracle Database@AWS",
+      "filename": "../../provision/provision.md"
+    },
+    {
+      "title": "Lab 2: Prepare the source database",
+      "filename": "../../sourcedb/sourcedb.md"
+    },
+    {
+      "title": "Lab 3: Prepare the Oracle Database@AWS target",
+      "filename": "../../target/target.md"
+    },
+    {
+      "title": "Lab 4: Prepare the Oracle Zero Downtime Migration (ZDM) Host",
+      "filename": "../../configure/configure-zdm-host.md"
+    },
+    {
+      "title": "Lab 5: Migrate the database using Oracle Zero Downtime Migration (ZDM)",
+      "filename": "../../migrate/migrate.md"
+    },
+    {
+      "title": "Lab 6: Validate the migration",
+      "filename": "../../validate/validate.md"
+    },
+    {
+      "title": "Need Help?",
+      "filename": "../../need_help/need_help.md"
+    }
+  ]
+}
