@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will log in to your ***Azure Event Account*** to complete the hands-on exercises.
+In this lab, you will log in to your ***Azure Regular Account*** to complete the hands-on exercises.
 
 **Estimated Time:** ***3 minutes***
 
@@ -21,13 +21,26 @@ In this lab, you will log in to your ***Azure Event Account*** to complete the h
 
 
 ### Objectives
-* Log in to your Lab environment to complete the hands-on exercises
+* Log in to your Oracle AI Database@Azure Environment to complete the hands-on exercises.
 
 
 
-## Task 1: Log in to your Lab Environment
+## Task 1: Log in to your Azure Account
 
-> ***IMPORTANT — Pre-configured Environment.*** Your instructor will provide the URL and workshop credentials required to access the lab environment
+1. Login to your Azure Account.
+   
+2. Enter your **email address** or **username**, then click **Next**.
+   
+3. Type your password, then click **Sign in**. 
+   
+4. Complete any Multi-Factor Authentication (MFA) prompts if required.
+   
+5. Navigate to your **Oracle AI Database@Azure** environment.
+   
+   ![navigate odaa](./images/nav-od-azure.png " ")
+
+   ![navigate odaa](./images/nav-od-azure-overview.png " ")
+
 
 You may now **proceed to the next lab**
 
@@ -35,6 +48,6 @@ You may now **proceed to the next lab**
 
 **Authors** 
 
-* Leo Alvarado, Vishal Patil, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
+* Leo Alvarado, Tammy Bednar, Product Management, Oracle Database Cloud Services, Multicloud 
 
 **Last Updated Date** - August, 2026
