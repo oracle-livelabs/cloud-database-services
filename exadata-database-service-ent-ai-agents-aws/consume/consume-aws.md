@@ -10,5 +10,5 @@
 
  
 ## Task 1: Create an AI agent with AWS Bedrock and connect them to Oracle AI Database@AWS through the MCP Server. 
-## Task 2: Test the AI Agent. 
+
 
