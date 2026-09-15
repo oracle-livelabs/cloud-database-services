@@ -40,38 +40,38 @@ In this task, you will access Oracle AI Database Private Agent Factory and famil
 
 1. Open the **Oracle AI Database Private Agent Factory** URL provided for the workshop.
 
-   > **Note:** Your instructor or workshop environment provides the URL and credentials required to access Private Agent Factory.
+    > **Note:** Your instructor or workshop environment provides the URL and credentials required to access Private Agent Factory.
 
 2. Sign in using the credentials provided for the workshop.
    
-   ![login](./images/login.png " ")
+    ![login](./images/login.png " ")
 
 3. After signing in, verify that the Private Agent Factory home page is displayed.
 
-   ![home-page](./images/home-page.png " ")
+    ![home-page](./images/home-page.png " ")
 
 4. Review the available Private Agent Factory capabilities.
 
-   Depending on the workshop environment and installed version, you will use capabilities for:
+    Depending on the workshop environment and installed version, you will use capabilities for:
 
-   ![capabilities](./images/capabilities.png " ")
+    ![capabilities](./images/capabilities.png " ")
 
-   - Creating and managing **Knowledge Agents**.
-   - Creating **Deep Data Research Agents**.
-   - Managing enterprise **Data Sources**.
-   - Building custom agent workflows with **Agent Builder**.
-   - Configuring external **MCP Servers**.
-   - Testing agents and workflows in **Playground**.
+    - Creating and managing **Knowledge Agents**.
+    - Creating **Deep Data Research Agents**.
+    - Managing enterprise **Data Sources**.
+    - Building custom agent workflows with **Agent Builder**.
+    - Configuring external **MCP Servers**.
+    - Testing agents and workflows in **Playground**.
 
 5. Locate the area used to manage **Data Sources**.
    
-   ![datasource](./images/datasource.png " ")
+    ![datasource](./images/datasource.png " ")
 
 6. Verify that you can access the area used to create agents.
 
-   Locate **Agent Builder**.
+    Locate **Agent Builder**.
 
-   ![agent-builder](./images/agent-builder.png " ")
+    ![agent-builder](./images/agent-builder.png " ")
    
 
 7. Locate **MCP Servers**.
@@ -94,61 +94,61 @@ A Knowledge Agent uses enterprise content as a knowledge source so that response
 
 2. Review the available data sources and locate the knowledge source provided for this workshop.
 
-   Your instructor will identify the appropriate data source if multiple sources are available.
+    Your instructor will identify the appropriate data source if multiple sources are available.
 
 3. From the **Data Sources** navigtate to **Web source** and **File sources**. Review its details, including its name, description, documents, and processing status.
 
-   ![web sources](./images/web-sources.png " ")
+    ![web sources](./images/web-sources.png " ")
 
-   ![file-sources](./images/file-sources.png " ")
+    ![file-sources](./images/file-sources.png " ")
 
 4. Confirm that the data source is available and ready to use.
 
-   > **Important:** The workshop knowledge sources have already been uploaded for you. **Do not create a new data source or upload additional documents unless instructed.**
+    > **Important:** The workshop knowledge sources have already been uploaded for you. **Do not create a new data source or upload additional documents unless instructed.**
 
 ### **Create the Knowledge Agent**
 
 5. Navigate to **Pre-Built Agents** then select **Knowledge Agent**.
 
-   Click **Create agent**. 
+    Click **Create agent**. 
 
-   ![click create agent](./images/create-ka.png " ")
+    ![click create agent](./images/create-ka.png " ")
 
 6. Select the data (knowledge) sources for your agent to learn from:
    
-   Select the knowledge source from **Web sources**
+    Select the knowledge source from **Web sources**
 
-   ![select web source](./images/create-ka-step1.png " ")
+    ![select web source](./images/create-ka-step1.png " ")
 
-   Select the PDF file knowledge source from the **file system**
+    Select the PDF file knowledge source from the **file system**
 
-   ![select file system](./images/create-ka-step1-fs.png " ")
+    ![select file system](./images/create-ka-step1-fs.png " ")
 
 7. In the **Knowledge base configuration** form, enter the following values:
 
-   **Agent name** *(required)*
+    **Agent name** *(required)*
 
         <copy>Exascale AI Development Advisor</copy>
 
-   **Description** *(required)*
+    **Description** *(required)*
 
         <copy>Provides practical guidance on Oracle Exadata Database Service with Exascale, including architecture, development, storage, security, and operations.</copy>
 
-   For **Generative Model** *(required)*, select **llm-model-entry**
+    For **Generative Model** *(required)*, select **llm-model-entry**
 
-   **Help description** *(optional)*
+    **Help description** *(optional)*
 
         <copy>Ask about designing and operating AI development environments on Exascale. I can help with architecture, databases, storage, security, connectivity, backup, monitoring, and operational decisions. I provide concise, practical answers with short bullets and source references. Include the service type, database version, region, workload, and environment scale when known.</copy>
 
-   Review the information and click on **Next**.
+    Review the information and click on **Next**.
 
-   ![knowledge agent configuration](./images/ka-configuration.png " ")
+    ![knowledge agent configuration](./images/ka-configuration.png " ")
 
 8. Review and deploy your knowledge agent. Click **Publish agent**
 
-   ![publish agent](./images/publish-ka.png " ")
+    ![publish agent](./images/publish-ka.png " ")
 
-   Wait until the agent is ready.
+    Wait until the agent is ready.
 
 
 
@@ -160,11 +160,11 @@ A Knowledge Agent uses enterprise content as a knowledge source so that response
 
 2. Enter a question about information contained in the preconfigured workshop knowledge source.
    
-   Expand the editor mode
+    Expand the editor mode
 
     ![Expand chat](./images/expand-chat.png)
 
-   Use the following sample question:
+    Use the following sample question:
 
     ```nohighlight
     <copy>I’m designing an AI development environment on Exadata Database Service on Exascale Infrastructure. We need 20 isolated development PDBs for teams testing AI workloads, including RAG applications, vector search, model evaluation, prompt engineering, and different AI model versions against representative copies of database data.
@@ -186,48 +186,48 @@ A Knowledge Agent uses enterprise content as a knowledge source so that response
 
     > **Note:** Choose a question that can be answered using the information in the preconfigured workshop knowledge source. 
    
-   ![Submit the Question](./images/submit-question.png)
+    ![Submit the Question](./images/submit-question.png)
 
-   Click the **Send Message** button to submit the question.
+    Click the **Send Message** button to submit the question.
 
 
 3. Review the Knowledge Agent’s response.
    
-   ![Review response](./images/review-response.png)
+    ![Review response](./images/review-response.png)
 
-   Confirm that the response is grounded in information from the workshop documentation.
+    Confirm that the response is grounded in information from the workshop documentation.
 
-   If source references or citations are displayed, review them and confirm that they point to the appropriate workshop documentation.
+    If source references or citations are displayed, review them and confirm that they point to the appropriate workshop documentation.
 
 4. Ask a follow-up question related to the initial response.
    
-   Use the following sample question:
+    Use the following sample question:
 
     ```nohighlight
     <copy>Now act as a security and compliance reviewer for the proposed 20-PDB AI development environment.
 
-The platform will support RAG, vector search, model evaluation, prompt engineering, and testing different AI model versions against representative database data.
+    The platform will support RAG, vector search, model evaluation, prompt engineering, and testing different AI model versions against representative database data.
 
-Using the supplied Exascale overview and Oracle Exadata Database Service security documentation, assess the security posture of the proposed environment.
+    Using the supplied Exascale overview and Oracle Exadata Database Service security documentation, assess the security posture of the proposed environment.
 
-Focus on:
+    Focus on:
 
-- Data classification, handling, and protection requirements
-- Private connectivity and network segmentation
-- Encryption in transit and at rest
-- Identity, access control, and privileged operations
-- Database auditing, monitoring, and alerting
-- Backup protection, retention, and recovery
-- Isolation and access boundaries between development teams
+    - Data classification, handling, and protection requirements
+    - Private connectivity and network segmentation
+    - Encryption in transit and at rest
+    - Identity, access control, and privileged operations
+    - Database auditing, monitoring, and alerting
+    - Backup protection, retention, and recovery
+    - Isolation and access boundaries between development teams
 
-For each area, summarize the relevant controls and validation actions, focusing on how they apply to the Exascale environment.
+    For each area, summarize the relevant controls and validation actions, focusing on how they apply to the Exascale environment.
 
-Begin with a concise security recommendation, use short bullet points, and conclude with the most important security action, the top three validation steps, and relevant source references.</copy>
+    Begin with a concise security recommendation, use short bullet points, and conclude with the most important security action, the top three validation steps, and relevant source references.</copy>
     ```
 
-   Click the **Send Message** button to submit the question.
+    Click the **Send Message** button to submit the question.
 
-   ![Submit the Question](./images/security-ka.png)
+    ![Submit the Question](./images/security-ka.png)
 
 5. Confirm that the Knowledge Agent continues to use the configured knowledge source when answering the follow-up question.
    
@@ -276,33 +276,33 @@ In this task, you will locate and review the MCP Server that has already been co
 
 4. Confirm that the MCP Server status is **Connected**.
    
-   ![mcp servers](./images/mcp-servers.png)
+    ![mcp servers](./images/mcp-servers.png)
 
-   > **Important:** The MCP Server has already been configured for you. Do not click **Add MCP server**, modify the configuration, enter credentials, or delete the existing MCP Server.
+    > **Important:** The MCP Server has already been configured for you. Do not click **Add MCP server**, modify the configuration, enter credentials, or delete the existing MCP Server.
 
 
 5. In the **Actions** column, click the **View** icon.
 
 6. Review the MCP Server details displayed in the dialog, including:
 
-   - MCP Server name
-   - Resource access
-   - Sharing information
-   - Ownership
+    - MCP Server name
+    - Resource access
+    - Sharing information
+    - Ownership
 
    <!-- ![MCP Server details](./images/mcp-server-details.png) -->
 
-You have now located and reviewed the preconfigured MCP Server in Private Agent Factory.
+    You have now located and reviewed the preconfigured MCP Server in Private Agent Factory.
 
 ### **Create a Custom Agent Flow**
 
 7. Navigate to **Agent Builder**.
    
-   ![agent builder](./images/navigate-agent-builder.png)
+    ![agent builder](./images/navigate-agent-builder.png)
 
 8. On the Agent Builder canvas, add the components required for the custom agent workflow.
    
-   Add the **Agent** component 
+    Add the **Agent** component 
 
     ![name flow](./images/name-flow.png)
 
@@ -314,7 +314,7 @@ You have now located and reviewed the preconfigured MCP Server in Private Agent 
     <copy>Database MCP Agent</copy>
     ```
 
-   Enter a description.
+    Enter a description.
 
     For example:
 
@@ -322,7 +322,7 @@ You have now located and reviewed the preconfigured MCP Server in Private Agent 
     <copy>Custom AI agent that interacts with Oracle AI Database using MCP</copy>
     ```
 
-   ![name flow](./images/name-flow-save.png)
+    ![name flow](./images/name-flow-save.png)
 
 10. Click **Save changes** to create the flow.
 
@@ -359,7 +359,7 @@ You have now located and reviewed the preconfigured MCP Server in Private Agent 
 
 17. Review the Agent configuration 
 
-   ![name flow](./images/configure-agent.png)
+    ![name flow](./images/configure-agent.png)
 
 
 ### **Add the MCP Tools**
@@ -368,40 +368,40 @@ You have now located and reviewed the preconfigured MCP Server in Private Agent 
 
     Review the tools available from the MCP Server.
 
-   ![mcp server tool](./images/mcp-server-tool.png)
+    ![mcp server tool](./images/mcp-server-tool.png)
 
-   Select only the tools required by this custom agent.
+    Select only the tools required by this custom agent.
 
     > **Note:** Limiting an agent to the tools required for its intended task reduces unnecessary capabilities and helps maintain a governed agent workflow.
 
 19. Connect the MCP Server component to the **Tools** input of the Agent component.
     
-   ![mcp server tool](./images/connect-mcp.png)
+    ![mcp server tool](./images/connect-mcp.png)
 
 20. Verify that the remaining workflow components are connected correctly.
     
     Add the Chat Input and Chat Output components.
 
-   ![chat components](./images/chat-components.png)
+    ![chat components](./images/chat-components.png)
 
     Connect both components to the Agent 
 
-   ![connect chat](./images/connect-chat.png)
+    ![connect chat](./images/connect-chat.png)
 
 
 21. Click **Save** to save the custom agent flow.
     
-   ![save flow](./images/save-flow.png)
+    ![save flow](./images/save-flow.png)
 
 ### **Test the MCP Connection in Playground**
 
 22. Open the completed workflow in **Playground**.
     
-   ![open playground](./images/playground.png)
+    ![open playground](./images/playground.png)
 
 23. Enter a prompt that asks the agent about its available database capabilities.
    
-   ![chat mcp](./images/mcp-chat.png)
+    ![chat mcp](./images/mcp-chat.png)
 
     For example:
 
@@ -409,9 +409,9 @@ You have now located and reviewed the preconfigured MCP Server in Private Agent 
     <copy>What database tools do you have available?</copy>
     ```
 
-   Submit the prompt.
+    Submit the prompt.
 
-   ![database tools](./images/database-tools.png)
+    ![database tools](./images/database-tools.png)
 
 24. Verify that the agent recognizes the tools exposed through the MCP Server.
 

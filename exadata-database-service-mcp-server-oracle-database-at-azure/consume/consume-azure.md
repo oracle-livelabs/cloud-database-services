@@ -54,7 +54,7 @@ In this task, you will register the managed Oracle MCP Server configured in Lab 
 
 2. Open the **Microsoft Foundry** resource provided for the workshop.
    
-   ![open foundry](./images/nav-foundry.png " ")
+    ![open foundry](./images/nav-foundry.png " ")
 
 3. Open the Foundry project that contains the agent you will use for this lab.
 
@@ -78,7 +78,7 @@ In this task, you will register the managed Oracle MCP Server configured in Lab 
 
     ![select oracle mcp](./images/select-oracle-mcp.png " ")
    
-9.  Select **Oracle** then click on **Create**.
+9. Select **Oracle** then click on **Create**.
     
     ![create tool](./images/create-tool.png " ")
 
@@ -119,21 +119,21 @@ In this task, you will register the managed Oracle MCP Server configured in Lab 
 
 14. Review the tool details.
 
-Depending on the Foundry interface, the connection details can include:
+    Depending on the Foundry interface, the connection details can include:
 
-- Remote MCP server endpoint.
-- Redirect URL.
-- Authentication method.
-- Project connection ID.
-- Agents using the tool.
+    - Remote MCP server endpoint.
+    - Redirect URL.
+    - Authentication method.
+    - Project connection ID.
+    - Agents using the tool.
 
-> **Note:** These values are specific to your environment. Do not expose confidential authentication values in screenshots or workshop documentation.
+    > **Note:** These values are specific to your environment. Do not expose confidential authentication values in screenshots or workshop documentation.
 
 15. Verify that the connection represents the Oracle MCP Server configured in Lab 1.
 
 16. Review the MCP capabilities made available through the connection.
 
-The available capabilities are controlled by the **MCP toolset** and authorization configuration created in Lab 1.
+    The available capabilities are controlled by the **MCP toolset** and authorization configuration created in Lab 1.
 
 ### Add the Oracle Tool to Your Existing Agent
 
@@ -187,7 +187,7 @@ In this task, you will test the agent and verify that it can use the Oracle MCP 
 
 4. Enter a natural-language request that requires information from Oracle AI Database@Azure.
    
-   ![test the agent](./images/playground.png " ")
+    ![test the agent](./images/playground.png " ")
 
 
 5. Submit the request.
@@ -196,11 +196,11 @@ In this task, you will test the agent and verify that it can use the Oracle MCP 
 
 7. Verify that the agent recognizes when the Oracle MCP tool is required.
    
-   ![test the agent](./images/approved-dbtools.png " ")
+    ![test the agent](./images/approved-dbtools.png " ")
 
 8. Review the tool invocation and response.
    
-   ![test the agent](./images/response.png " ")
+    ![test the agent](./images/response.png " ")
    
    
 
@@ -211,7 +211,7 @@ In this task, you will test the agent and verify that it can use the Oracle MCP 
     Use a question appropriate for the schema and sample data.
 
 
-10.  Submit the request.
+10. Submit the request.
 
 
 11. Verify that the agent invokes an Oracle MCP tool.
@@ -222,7 +222,7 @@ In this task, you will test the agent and verify that it can use the Oracle MCP 
 
 13. Verify that the agent uses the returned database information in its final response.
 
-> **Note:** The exact response depends on the data and database objects available in the workshop environment.
+    > **Note:** The exact response depends on the data and database objects available in the workshop environment.
 
 ### Verify the Integration
 
