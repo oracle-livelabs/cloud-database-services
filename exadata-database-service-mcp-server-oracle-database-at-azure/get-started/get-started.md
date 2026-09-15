@@ -33,7 +33,7 @@ In this lab, you will log in to your ***Azure Regular Account*** to complete the
    
 3. Type your password, then click **Sign in**. 
    
-4. Complete any Multi-Factor Authentication (MFA) prompts if required.
+4. Complete any multi-factor authentication (MFA) prompts if prompted.
    
 5. Navigate to your **Oracle AI Database@Azure** environment.
    
