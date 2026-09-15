@@ -53,46 +53,69 @@ In this task, you will register the managed Oracle MCP Server configured in Lab 
 1. Sign in to the **Microsoft Azure portal**.
 
 2. Open the **Microsoft Foundry** resource provided for the workshop.
+   
+   ![open foundry](./images/nav-foundry.png " ")
 
 3. Open the Foundry project that contains the agent you will use for this lab.
 
+    ![open foundry](./images/open-project.png " ")
+
+    ![open foundry](./images/foundry-portal.png " ")
+
 4. In the project navigation, select **Build**.
+
+    ![select build](./images/build.png " ")
 
 5. Select **Tools**.
 
 6. On the **Tools** page, select **Connect a tool**.
 
-7. Select **Oracle**.
+    ![connect tool](./images/connect-tool.png " ")
 
-> **Note:** The Oracle tool represents the remote Oracle Database Tools MCP Server created and configured in OCI in Lab 1.
+7. Select **Catalog**
+   
+8. In the Catalog, select **Remote MCP** for the Type. Search **Oracle**
 
-8. In the **Connect the Oracle tool** dialog, enter the MCP Server and authentication information from Lab 1.
+    ![select oracle mcp](./images/select-oracle-mcp.png " ")
+   
+9.  Select **Oracle** then click on **Create**.
+    
+    ![create tool](./images/create-tool.png " ")
 
-Configure the following fields:
+    > **Note:** The Oracle tool represents the remote Oracle Database Tools MCP Server created and configured in OCI in Lab 1.
 
-- **OCID:** Enter the OCID of the MCP Server created in Lab 1.
-- **Authentication:** Select **OAuth Identity Passthrough**.
-- **OAuth Provider:** Select the option required by the workshop. For the demonstrated configuration, select **Custom**.
-- **Client ID:** Enter the client ID from the MCP client registration created in Lab 1.
-- **Client secret:** Enter the client secret from the MCP client registration.
-- **Token URL:** Enter the OAuth token endpoint for the OCI IAM Identity Domain.
-- **Auth URL:** Enter the OAuth authorization endpoint for the OCI IAM Identity Domain.
-- **Refresh URL:** Enter the refresh-token endpoint if required by the client configuration.
-- **Scopes:** Enter the scope required to access the MCP Server.
+10. In the **Connect the Oracle tool** dialog, enter the MCP Server and authentication information from Lab 1.
 
-> **Important:** Use the values provided by the workshop environment. Do not copy real client secrets, tokens, or other confidential values into this guide.
 
-9. Review the MCP Server and OAuth settings.
+    Configure the following fields:
 
-10. Select **Connect**.
+    - **OCID:** Enter the OCID of the MCP Server created in Lab 1.
+    - **Authentication:** Select **OAuth Identity Passthrough**.
+    - **OAuth Provider:** Select the option required by the workshop. For the demonstrated configuration, select **Custom**.
+    - **Client ID:** Enter the client ID from the MCP client registration created in Lab 1.
+    - **Client secret:** Enter the client secret from the MCP client registration.
+    - **Token URL:** Enter the OAuth token endpoint for the OCI IAM Identity Domain.
+    - **Auth URL:** Enter the OAuth authorization endpoint for the OCI IAM Identity Domain.
+    - **Refresh URL:** Enter the refresh-token endpoint if required by the client configuration.
+    - **Scopes:** Enter the scope required to access the MCP Server.
 
-11. Wait for the Oracle tool connection to complete.
+    > **Important:** Use the values provided by the workshop environment. Do not copy real client secrets, tokens, or other confidential values into this guide.
 
-12. Verify that the **Oracle** tool appears in the project's **Tools** list.
+    ![connect the oracle tool](./images/configure-connect.png " ")
+
+11. Review the MCP Server and OAuth settings.
+
+12. Select **Connect**.
+
+13. Wait for the Oracle tool connection to complete.
+
+14. Verify that the **Oracle** tool appears in the project's **Tools** list.
 
 ### Review the Connected Oracle Tool
 
 13. Open the connected **Oracle** tool.
+
+    ![view the oracle tool](./images/view-tool.png " ")
 
 14. Review the tool details.
 
@@ -116,7 +139,9 @@ The available capabilities are controlled by the **MCP toolset** and authorizati
 
 17. Navigate to **Agents** in the Foundry project.
 
-18. Open the existing agent provided for this workshop.
+18. Open the existing agent.
+
+    ![open the agent](./images/agent.png " ")
 
 19. Open the agent's **Tools** configuration.
 
@@ -125,6 +150,8 @@ The available capabilities are controlled by the **MCP toolset** and authorizati
 21. Save the agent configuration.
 
 22. Verify that the Oracle tool is available to the agent.
+    
+    ![verify the oracle tool](./images/connected-tool.png " ")
 
 The agent is now connected to Oracle AI Database@Azure through the managed Oracle MCP Server.
 
@@ -159,38 +186,39 @@ In this task, you will test the agent and verify that it can use the Oracle MCP 
 ### Ask the Agent About the Oracle Database
 
 4. Enter a natural-language request that requires information from Oracle AI Database@Azure.
+   
+   ![test the agent](./images/playground.png " ")
 
-For example:
-
-```text
-<copy>What database information can you retrieve using the Oracle tools?</copy>
-```
 
 5. Submit the request.
 
 6. Observe the agent execution.
 
 7. Verify that the agent recognizes when the Oracle MCP tool is required.
+   
+   ![test the agent](./images/approved-dbtools.png " ")
 
 8. Review the tool invocation and response.
+   
+   ![test the agent](./images/response.png " ")
+   
+   
 
 ### Run a Database Query Through MCP
 
 9. Enter a question that requires data from the sample Oracle AI Database@Azure environment.
+    
+    Use a question appropriate for the schema and sample data.
 
-Use a question appropriate for the schema and sample data provided by the workshop.
 
-For example:
+10.  Submit the request.
 
-```text
-<copy>List the tables available in the database and describe what information they contain.</copy>
-```
-
-10. Submit the request.
 
 11. Verify that the agent invokes an Oracle MCP tool.
 
 12. Review the response returned by the tool.
+
+    ![test the agent](./images/response-complete.png " ")
 
 13. Verify that the agent uses the returned database information in its final response.
 
@@ -200,7 +228,11 @@ For example:
 
 14. Confirm that the agent can use the Oracle MCP tool without a direct database connection configured in the agent.
 
+    ![test the agent](./images/trace-start.png " ")
+
 15. Confirm that the Oracle MCP Server remains the access layer between Microsoft Foundry and Oracle AI Database@Azure.
+
+    ![test the agent](./images/trace.png " ")
 
 The integration is complete:
 
