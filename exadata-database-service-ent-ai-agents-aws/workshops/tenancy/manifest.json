@@ -1,0 +1,32 @@
+{
+  "workshoptitle": "Build a Multicloud Enterprise AI Assistant on Oracle AI Database",
+  "help": "livelabs-help-database_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Get Started",
+      "filename": "../../get-started/get-started.md"
+    },
+    {
+      "title": "Lab 1: Configure MCP Server for Oracle AI Database@AWS",
+      "filename": "../../configure-mcp/configure-mcp.md"
+    },
+    {
+      "title": "Lab 2: Build Enterprise AI Agents with Oracle Private Agent Factory",
+      "filename": "../../build-ai-agents/build-ai-agents.md"
+      
+    },
+   
+    {
+      "title": "Lab 3: Integrate Amazon Bedrock AI Applications with Oracle AI Database@AWS using MCP",
+      "filename": "../../consume/consume-aws.md"
+    },
+    {
+      "title": "Need Help?",
+      "filename": "../../need_help/need_help.md"
+    }
+  ]
+}
