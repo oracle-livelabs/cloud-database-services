@@ -113,11 +113,12 @@ In this task, you will register the managed Oracle MCP Server configured in Lab 
 
 ### Review the Connected Oracle Tool
 
-13. Open the connected **Oracle** tool.
+15. Open the connected **Oracle** tool.
 
     ![view the oracle tool](./images/view-tool.png " ")
 
-14. Review the tool details.
+
+16. Review the tool details.
 
     Depending on the Foundry interface, the connection details can include:
 
@@ -129,27 +130,27 @@ In this task, you will register the managed Oracle MCP Server configured in Lab 
 
     > **Note:** These values are specific to your environment. Do not expose confidential authentication values in screenshots or workshop documentation.
 
-15. Verify that the connection represents the Oracle MCP Server configured in Lab 1.
+17. Verify that the connection represents the Oracle MCP Server configured in Lab 1.
 
-16. Review the MCP capabilities made available through the connection.
+18. Review the MCP capabilities made available through the connection.
 
     The available capabilities are controlled by the **MCP toolset** and authorization configuration created in Lab 1.
 
 ### Add the Oracle Tool to Your Existing Agent
 
-17. Navigate to **Agents** in the Foundry project.
+19. Navigate to **Agents** in the Foundry project.
 
-18. Open the existing agent.
+20. Open the existing agent.
 
     ![open the agent](./images/agent.png " ")
 
-19. Open the agent's **Tools** configuration.
+21. Open the agent's **Tools** configuration.
 
-20. Add the connected **Oracle** tool to the agent.
+22. Add the connected **Oracle** tool to the agent.
 
-21. Save the agent configuration.
+23. Save the agent configuration.
 
-22. Verify that the Oracle tool is available to the agent.
+24. Verify that the Oracle tool is available to the agent.
     
     ![verify the oracle tool](./images/connected-tool.png " ")
 
